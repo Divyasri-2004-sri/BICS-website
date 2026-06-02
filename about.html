@@ -13,115 +13,94 @@
 :root{--navy:#0A1F44;--deep:#0D2B5E;--ocean:#1565C0;--blue:#2196F3;--teal:#00897B;--teal2:#26A69A;--teal3:#80CBC4;--green2:#43A047;--gold:#F9A825;--gold2:#FFD54F;--white:#FFFFFF;--sky:#E3F2FD;--muted:#1a2e4a;--text:#0A1F44;--card-bg:rgba(255,255,255,0.75);--card-border:rgba(33,150,243,0.2);--card-hover:rgba(255,255,255,0.92)}
 html{scroll-behavior:smooth}
 body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);overflow-x:hidden}
-body.menu-open{overflow:hidden}
 
+/* ═══ NAVIGATION ═══ */
 nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(10,31,68,.08);box-shadow:0 1px 6px rgba(0,0,0,.04)}
-.nav-inner{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1300px;margin:0 auto;padding:.45rem 2.5rem}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1400px;margin:0 auto;padding:.55rem 2.5rem}
 .nav-logo{display:flex;align-items:center;text-decoration:none}
-.nav-logo img{height:44px;width:auto;object-fit:contain;transition:transform .2s}
-.nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center}
-.nav-links a{font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:600;color:var(--navy);text-decoration:none;transition:color .2s;letter-spacing:.3px;position:relative;padding-bottom:3px}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--ocean));transition:width .25s;border-radius:2px}
-.nav-links a:hover{color:var(--teal)}
-.nav-links a:hover::after{width:100%}
-.nav-links a.active{color:var(--teal)}
-.nav-links a.active::after{width:100%}
+.nav-logo img{height:46px;width:auto;object-fit:contain}
 
-.nav-item{position:relative}
+.nav-desktop{display:flex;gap:2.2rem;list-style:none;align-items:center}
+.nav-desktop a{font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:600;color:var(--navy);text-decoration:none;transition:color .2s;letter-spacing:.3px;position:relative;padding-bottom:3px}
+.nav-desktop a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--ocean));transition:width .25s;border-radius:2px}
+.nav-desktop a:hover{color:var(--teal)}
+.nav-desktop a:hover::after{width:100%}
+.nav-desktop a.active{color:var(--teal)}
+.nav-desktop a.active::after{width:100%}
+.nav-desktop .nav-item{position:relative}
 .nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(10px);background:rgba(255,255,255,.98);backdrop-filter:blur(16px);min-width:220px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.08);border:1px solid rgba(10,31,68,.06);padding:.5rem 0;opacity:0;visibility:hidden;transition:all .25s ease;z-index:10;list-style:none}
-.has-dropdown:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-item:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
 .nav-dropdown li a{display:flex;align-items:center;gap:.6rem;padding:.6rem 1.2rem;font-size:.85rem;font-weight:500;letter-spacing:0}
 .nav-dropdown li a::after{display:none}
 .nav-dropdown li a:hover{background:var(--sky);color:var(--teal)}
-.dropdown-toggle{display:none;cursor:pointer;background:none;border:none;color:var(--navy)}
 
 .nav-right{display:flex;align-items:center;gap:1rem}
-.btn-reg{font-size:.92rem;font-family:'Poppins',sans-serif;font-weight:600;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border:none;padding:.5rem 1.4rem;border-radius:999px;cursor:pointer;transition:opacity .2s,transform .15s,box-shadow .2s;letter-spacing:.3px;box-shadow:0 2px 12px rgba(0,137,123,.25);text-decoration:none;display:inline-block}
+.btn-reg{font-size:.92rem;font-family:'Poppins',sans-serif;font-weight:600;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border:none;padding:.55rem 1.5rem;border-radius:999px;cursor:pointer;transition:opacity .2s,transform .15s,box-shadow .2s;letter-spacing:.3px;box-shadow:0 2px 12px rgba(0,137,123,.25);text-decoration:none;display:inline-block}
 .btn-reg:hover{opacity:.9;transform:scale(1.03);box-shadow:0 4px 18px rgba(0,137,123,.35)}
-.nav-toggle{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:rgba(10,31,68,.06);border:none;font-size:1.2rem;color:var(--navy);cursor:pointer;flex-shrink:0}
-.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9998}
-.nav-overlay.open{display:block}
-.nav-close{display:none}
+.nav-hamburger{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:rgba(10,31,68,.06);border:none;font-size:1.25rem;color:var(--navy);cursor:pointer;flex-shrink:0;transition:background .2s}
+.nav-hamburger:hover{background:rgba(10,31,68,.12)}
 
-@media(max-width:960px){
-  .nav-toggle{display:flex}
-  .nav-links{
-    display:flex;flex-direction:column;gap:0;list-style:none;
-    position:fixed;top:0;right:0;bottom:0;
-    width:min(290px,82vw);
-    background:#fff;
-    z-index:9999;
-    overflow-y:auto;
-    transform:translateX(100%);
-    transition:transform .32s cubic-bezier(.4,0,.2,1);
-    box-shadow:-6px 0 32px rgba(0,0,0,.15);
-    padding-top:64px;
-  }
-  .nav-links.open{transform:translateX(0)}
-  .nav-close{
-    display:flex;align-items:center;justify-content:center;
-    position:absolute;top:0;right:0;
-    width:100%;height:64px;
-    background:linear-gradient(135deg,var(--navy),var(--deep));
-    border:none;cursor:pointer;
-    color:rgba(255,255,255,.8);
-    font-size:.85rem;font-family:'Poppins',sans-serif;font-weight:600;
-    gap:.5rem;letter-spacing:.3px;flex-shrink:0;z-index:1;
-  }
-  .nav-close::before{content:'\f00d';font-family:'Font Awesome 6 Free';font-weight:900;font-size:1rem;color:#fff}
-  .nav-close-text{color:rgba(255,255,255,.8)}
-  .nav-item{width:100%;border-bottom:1px solid rgba(10,31,68,.07)}
-  .nav-item:last-child{border-bottom:none}
-  .nav-item>a{display:block;padding:.9rem 1.4rem;font-size:.97rem;font-weight:600;color:var(--navy)}
-  .nav-item>a:hover,.nav-item>a.active{color:var(--teal);background:rgba(0,137,123,.04)}
-  .nav-item>a::after{display:none}
-  .has-dropdown{flex-wrap:wrap}
-  .has-dropdown>a{flex:1;padding-right:0}
-  .dropdown-toggle{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:44px;height:44px;
-    border:none;background:transparent;
-    color:var(--teal);cursor:pointer;
-    transition:transform .25s;flex-shrink:0;font-size:.9rem;
-  }
-  .has-dropdown.open .dropdown-toggle i{transform:rotate(45deg)}
-  .nav-dropdown{
-    display:none;flex-direction:column;
-    width:100%;
-    background:rgba(0,137,123,.04);
-    border-top:1px solid rgba(0,137,123,.1);
-    position:static;opacity:1;visibility:visible;
-    transform:none;backdrop-filter:none;
-    box-shadow:none;border-radius:0;min-width:auto;
-    list-style:none;padding:.3rem 0;
-  }
-  .has-dropdown.open .nav-dropdown{display:flex}
-  .nav-dropdown li a{
-    display:block;padding:.6rem 1.4rem .6rem 2rem;
-    font-size:.88rem;font-weight:500;color:var(--muted);
-  }
-  .nav-dropdown li a::after{display:none}
-  .nav-dropdown li a:hover{color:var(--teal);background:rgba(0,137,123,.06)}
-  .participate-grid,.program-grid,.roles-grid,.venue-grid,.scopus-grid,.info-grid{grid-template-columns:1fr}
-  .topic-card ul{grid-template-columns:1fr}
-  .btn-reg{font-size:.82rem;padding:.42rem 1rem}
-}
+/* Overlay */
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10000;opacity:0;transition:opacity .3s}
+.nav-overlay.open{display:block;opacity:1}
 
+/* Mobile Sidebar */
+.nav-sidebar{position:fixed;top:0;right:0;bottom:0;width:min(380px,92vw);height:100vh;background:#fff;z-index:10001;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:-8px 0 40px rgba(0,0,0,.18);display:flex;flex-direction:column;overflow:hidden}
+.nav-sidebar.open{transform:translateX(0)}
+
+.nav-sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.3rem;background:linear-gradient(135deg,var(--navy),var(--deep));border-bottom:2px solid rgba(0,137,123,.3);flex-shrink:0}
+.nav-sidebar-brand{display:flex;flex-direction:column;gap:.3rem}
+.nav-sidebar-logo-wrap{display:inline-flex;background:rgba(255,255,255,.95);border-radius:8px;padding:5px 10px;line-height:0}
+.nav-sidebar-logo{height:44px;width:auto;object-fit:contain}
+.nav-sidebar-tagline{font-family:'Poppins',sans-serif;font-size:.62rem;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase}
+.nav-sidebar-close{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.nav-sidebar-close:hover{background:rgba(255,255,255,.2)}
+
+.nav-sidebar-links{list-style:none;overflow-y:auto;flex:1;padding:0;margin:0}
+.nav-sidebar-links li{border-bottom:1px solid rgba(10,31,68,.07)}
+.nav-sidebar-links li:last-child{border-bottom:none}
+.nav-sidebar-links li>a{display:flex;align-items:center;gap:.7rem;padding:.9rem 1.3rem;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:600;color:var(--navy);text-decoration:none;transition:all .2s}
+.nav-sidebar-links li>a:hover,.nav-sidebar-links li>a.active{color:var(--teal);background:rgba(0,137,123,.04)}
+.nav-sidebar-links li>a.active .sb-icon{background:var(--teal);color:#fff}
+
+.sb-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:rgba(0,137,123,.1);color:var(--teal);font-size:.85rem;flex-shrink:0;transition:background .2s,color .2s}
+
+.sb-dropdown-toggle{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:none;background:transparent;color:var(--teal);cursor:pointer;font-size:1rem;transition:transform .25s;flex-shrink:0}
+.sb-has-dropdown{display:flex;flex-wrap:wrap;align-items:center}
+.sb-has-dropdown>a{flex:1}
+.sb-has-dropdown.open .sb-dropdown-toggle i{transform:rotate(45deg)}
+.sb-submenu{display:none;flex-direction:column;width:100%;background:rgba(0,137,123,.04);border-top:1px solid rgba(0,137,123,.1);list-style:none;padding:.4rem 0;margin:0}
+.sb-has-dropdown.open .sb-submenu{display:flex}
+.sb-submenu li a{display:flex;align-items:center;gap:.6rem;padding:.7rem 1.3rem .7rem 2.4rem;font-size:.88rem;font-weight:500;color:var(--muted);text-decoration:none}
+.sb-submenu li a:hover{color:var(--teal);background:rgba(0,137,123,.06)}
+.sb-dd-icon{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:7px;background:rgba(21,101,192,.08);color:var(--ocean);font-size:.7rem;flex-shrink:0}
+
+.sb-register-btn{display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:700;background:linear-gradient(135deg,var(--teal),var(--ocean)) !important;color:#fff !important;padding:.75rem 1.5rem;border-radius:999px;text-decoration:none;width:100%;box-shadow:0 3px 14px rgba(0,137,123,.3);transition:transform .2s,box-shadow .2s,opacity .2s}
+.sb-register-btn:hover{transform:translateY(-2px);box-shadow:0 5px 20px rgba(0,137,123,.45);background:linear-gradient(135deg,var(--teal),var(--ocean)) !important;color:#fff !important;opacity:.92}
+.nav-sidebar-links li:last-child:hover{background:transparent}
+
+@media(min-width:961px){.nav-sidebar,.nav-overlay{display:none !important}.nav-hamburger{display:none !important}}
+@media(max-width:960px){.nav-desktop{display:none !important}.nav-hamburger{display:flex}.nav-inner{padding:.5rem 1.3rem}.nav-logo img{height:40px}.btn-reg{display:none}}
+@media(max-width:600px){.nav-sidebar{width:min(300px,94vw)}.nav-sidebar-header{padding:.85rem 1rem}.nav-sidebar-logo{height:38px}.nav-sidebar-tagline{font-size:.48rem}.nav-sidebar-close{width:32px;height:32px;font-size:1rem;border-radius:8px}.sb-icon{width:30px;height:30px;font-size:.78rem;border-radius:8px}.nav-sidebar-links li>a{padding:.75rem 1rem;font-size:.88rem;gap:.6rem}.sb-submenu li a{padding:.6rem 1rem .6rem 2rem;font-size:.82rem}}
+
+/* ═══ PAGE BANNER ═══ */
 .page-banner{padding:7rem 0 3rem;background:linear-gradient(160deg,#060E1A 0%,#0D2B5E 50%,#060E1A 100%);position:relative;overflow:hidden}
 .page-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(0,137,123,.12) 0%,transparent 60%);pointer-events:none}
-.page-banner-inner{max-width:1300px;margin:0 auto;padding:0 2.5rem;position:relative;z-index:2}
+.page-banner-inner{max-width:1400px;margin:0 auto;padding:0 2.5rem;position:relative;z-index:2}
 .page-banner h1{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--white);margin-bottom:.5rem}
-.page-banner p{font-size:.95rem;color:rgba(255,255,255,.85);max-width:650px;line-height:1.7;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.page-banner p{font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.7;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 
+/* ═══ SECTIONS ═══ */
 .sec{padding:4.5rem 0;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .sec.vis{opacity:1;transform:translateY(0)}
-.container{max-width:1300px;margin:0 auto;padding:0 2.5rem}
+.container{max-width:1400px;margin:0 auto;padding:0 2.5rem}
 .sec-label{font-size:.8rem;color:var(--teal);letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin-bottom:.6rem}
-.sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2;max-width:700px}
+.sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2}
 .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(21,101,192,.15),transparent)}
 
-.text-block{font-size:1rem;color:var(--muted);line-height:1.85;font-weight:400;max-width:800px;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.text-block{font-size:1rem;color:var(--muted);line-height:1.85;font-weight:400;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 .text-block p{margin-bottom:1rem}
+.text-block p:last-child{margin-bottom:0}
 .text-block strong{color:var(--navy);font-weight:600}
 
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem}
@@ -133,23 +112,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255
 .info-card li{padding:.2rem 0;display:flex;align-items:flex-start;gap:.4rem}
 .info-card li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--teal);font-size:.65rem;margin-top:.25rem;flex-shrink:0}
 
-.vision-box{margin-top:1.5rem;padding:1.5rem 1.8rem;background:rgba(0,137,123,.06);border-left:3px solid var(--teal2);border-radius:0 12px 12px 0;max-width:700px}
+.vision-box{margin-top:1.5rem;padding:1.5rem 1.8rem;background:rgba(0,137,123,.06);border-left:3px solid var(--teal2);border-radius:0 12px 12px 0;width:100%}
 .vision-text{font-size:.98rem;color:var(--muted);line-height:1.75;font-weight:400;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 
-.mission-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:2rem}
-.mission-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:1.2rem 1.3rem;display:flex;align-items:flex-start;gap:.9rem;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 6px rgba(0,0,0,.03)}
-.mission-card:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.05)}
-.mission-icon{width:36px;height:36px;background:rgba(0,137,123,.1);border:1px solid rgba(0,137,123,.2);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--teal);flex-shrink:0}
-.mission-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:.15rem}
-.mission-text{font-size:.9rem;color:var(--muted);line-height:1.6;font-weight:400;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.mission-list{list-style:none;padding:0;margin:0}
+.mission-list li{margin-bottom:.9rem;padding-left:1.3rem;position:relative;font-size:.98rem;color:var(--muted);line-height:1.75;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.mission-list li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--teal);font-size:.7rem;position:absolute;left:0;top:5px}
+.mission-list li:last-child{margin-bottom:0}
+.mission-list li strong{color:var(--navy);font-weight:600}
 
-.themes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.9rem;margin-top:2rem}
+.themes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.9rem;margin-top:2rem}
 .theme-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:1.1rem 1.2rem;display:flex;align-items:center;gap:.9rem;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 6px rgba(0,0,0,.03)}
 .theme-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.05)}
 .theme-icon{width:38px;height:38px;background:linear-gradient(135deg,rgba(0,137,123,.1),rgba(21,101,192,.1));border:1px solid rgba(0,137,123,.18);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--teal);flex-shrink:0}
 .theme-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:.95rem;color:var(--navy)}
 
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:2rem}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
 .why-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,.03);border-top:3px solid var(--teal)}
 .why-card h4{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);margin-bottom:.7rem;font-size:1.05rem}
 .why-card ul{list-style:none;padding:0}
@@ -159,22 +137,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255
 .topic-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:1.8rem;margin-top:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,.03)}
 .topic-card h3{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.15rem;color:var(--navy);margin-bottom:.8rem}
 .topic-card h5{font-family:'Poppins',sans-serif;font-weight:600;color:var(--teal);margin-top:1rem;margin-bottom:.4rem;font-size:.9rem}
-.topic-card ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.3rem 1rem}
+.topic-card ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.3rem 1.5rem}
 .topic-card li{font-size:.9rem;color:var(--muted);line-height:1.5;padding-left:1rem;position:relative}
 .topic-card li::before{content:'\f111';font-family:'Font Awesome 6 Free';font-weight:900;font-size:.35rem;color:var(--teal);position:absolute;left:0;top:8px}
 .topic-why{background:rgba(0,137,123,.06);padding:.8rem 1rem;border-radius:8px;margin-top:.8rem;font-size:.92rem;color:var(--muted);line-height:1.6;border-left:3px solid var(--teal);text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 
-.participate-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;align-items:start}
-.participate-stats{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
-.p-stat{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:1rem;text-align:center;transition:transform .2s}
+.participate-wrapper{margin-top:2rem}
+.participate-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem}
+.p-stat{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:1.2rem .8rem;text-align:center;transition:transform .2s;box-shadow:0 2px 6px rgba(0,0,0,.03)}
 .p-stat:hover{transform:translateY(-2px)}
-.p-stat-num{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.4rem;color:var(--navy);line-height:1}
-.p-stat-label{font-size:.68rem;color:var(--muted);margin-top:.15rem;font-weight:400;text-transform:uppercase;letter-spacing:.3px}
-.participate-groups{display:flex;flex-direction:column;gap:.5rem}
-.p-group{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:.8rem 1rem;display:flex;align-items:center;gap:.6rem;transition:transform .2s}
+.p-stat-num{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.35rem;color:var(--navy);line-height:1.1}
+.p-stat-label{font-size:.65rem;color:var(--muted);margin-top:.2rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.participate-groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.6rem;margin-top:1.2rem}
+.p-group{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:.75rem 1rem;display:flex;align-items:center;gap:.6rem;transition:transform .2s;box-shadow:0 2px 6px rgba(0,0,0,.03)}
 .p-group:hover{transform:translateX(3px)}
-.p-group i{color:var(--teal);font-size:.82rem;flex-shrink:0}
-.p-group span{font-family:'Poppins',sans-serif;font-weight:600;font-size:.92rem;color:var(--navy)}
+.p-group i{color:var(--teal);font-size:.5rem;flex-shrink:0}
+.p-group span{font-family:'Poppins',sans-serif;font-weight:600;font-size:.9rem;color:var(--navy)}
 
 .program-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
 .program-day{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:1.6rem;box-shadow:0 2px 8px rgba(0,0,0,.03)}
@@ -185,25 +163,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255
 .program-item i{color:var(--teal);font-size:.5rem;margin-top:.35rem;flex-shrink:0}
 .program-item span{font-size:.92rem;color:var(--muted);font-weight:400}
 
-.roles-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
-.role-block{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:1.6rem;box-shadow:0 2px 8px rgba(0,0,0,.03)}
-.role-block-title{font-family:'Poppins',sans-serif;font-weight:800;font-size:1rem;color:var(--navy);margin-bottom:.15rem;display:flex;align-items:center;gap:.5rem}
-.role-block-title i{color:var(--teal)}
-.role-block-sub{font-size:.96rem;color:var(--teal);font-weight:600;margin-bottom:.8rem;letter-spacing:.3px}
-.role-item{display:flex;align-items:flex-start;gap:.6rem;padding:.45rem 0;border-bottom:1px solid rgba(33,150,243,.08)}
-.role-item:last-child{border-bottom:none}
-.role-item i{color:var(--teal);font-size:.5rem;margin-top:.35rem;flex-shrink:0}
-.role-item span{font-size:.92rem;color:var(--muted);font-weight:400}
-
 .awards-section{margin-top:2rem}
 .award-group{margin-bottom:1.5rem}
+.award-group:last-child{margin-bottom:0}
 .award-group-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:.98rem;color:var(--navy);margin-bottom:.7rem;padding-bottom:.35rem;border-bottom:2px solid rgba(0,137,123,.15);display:flex;align-items:center;gap:.5rem}
 .award-group-title i{color:var(--teal);font-size:.82rem}
-.awards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.9rem}
-.award-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:1.2rem 1.3rem;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 6px rgba(0,0,0,.03)}
-.award-card:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.05)}
-.award-icon{font-size:1rem;color:var(--gold);margin-bottom:.4rem}
-.award-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:.96rem;color:var(--navy)}
+.award-list{list-style:none;padding:0;margin:.3rem 0 0}
+.award-list li{font-size:.94rem;color:var(--muted);line-height:1.7;padding-left:1.3rem;position:relative;margin-bottom:.35rem}
+.award-list li::before{content:'\f111';font-family:'Font Awesome 6 Free';font-weight:900;font-size:.35rem;color:var(--gold);position:absolute;left:0;top:8px}
 
 .scopus-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
 .scopus-block{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:1.6rem;box-shadow:0 2px 8px rgba(0,0,0,.03)}
@@ -213,49 +180,51 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255
 .scopus-block li{font-size:.92rem;color:var(--muted);line-height:1.6;margin-bottom:.4rem;padding-left:1.2rem;position:relative}
 .scopus-block li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--teal);font-size:.65rem;position:absolute;left:0;top:4px}
 
-.outcomes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin-top:2rem}
-.outcome-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:1rem 1.1rem;display:flex;align-items:center;gap:.7rem;transition:transform .2s}
-.outcome-card:hover{transform:translateX(3px)}
-.outcome-card i{color:var(--teal);font-size:.82rem;flex-shrink:0}
-.outcome-card span{font-family:'Poppins',sans-serif;font-weight:600;font-size:.92rem;color:var(--navy)}
-
+.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2rem;align-items:stretch}
 .venue-block{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:1.6rem;box-shadow:0 2px 8px rgba(0,0,0,.03)}
 .venue-block-title{font-family:'Poppins',sans-serif;font-weight:800;font-size:1rem;color:var(--navy);margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem}
 .venue-block-title i{color:var(--teal)}
 .venue-block p{font-size:.96rem;color:var(--muted);line-height:1.7;font-weight:400;margin-bottom:.5rem;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.venue-block p:last-child{margin-bottom:0}
 .venue-block p strong{color:var(--navy);font-weight:600}
-
-.closing-box{max-width:700px;margin:0 auto;text-align:center;padding:2.5rem;background:var(--card-bg);border:1px solid var(--card-border);border-radius:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.closing-quote{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:.7rem;line-height:1.4}
-.closing-text{font-size:.96rem;color:var(--muted);line-height:1.7;font-weight:400;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 
 footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2.5rem;text-align:center}
 .footer-copy{font-size:.8rem;color:rgba(255,255,255,.6);font-weight:500;letter-spacing:.3px}
-
 .scroll-arrow{position:fixed;bottom:2rem;right:2rem;z-index:9998;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 18px rgba(0,137,123,.35);transition:opacity .3s,transform .3s,visibility .3s;opacity:0;visibility:hidden;pointer-events:none}
 .scroll-arrow.visible{opacity:1;visibility:visible;pointer-events:auto}
 .scroll-arrow:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,137,123,.5)}
 
+@media(max-width:960px){
+  .info-grid,.program-grid,.venue-grid,.scopus-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .participate-stats{grid-template-columns:repeat(3,1fr)}
+  .participate-groups{grid-template-columns:1fr 1fr}
+  .topic-card ul{grid-template-columns:1fr}
+}
+
 @media(max-width:600px){
-  .nav-inner{padding:.45rem 1.2rem}.container{padding:0 1.2rem}.sec{padding:3rem 0}.page-banner{padding:6rem 0 2.5rem}.outcomes-grid{grid-template-columns:1fr}
+  .nav-inner{padding:.45rem 1.2rem}.container{padding:0 1.2rem}.sec{padding:3rem 0}.page-banner{padding:6rem 0 2.5rem}.page-banner-inner{padding:0 1.2rem}
+  .why-grid{grid-template-columns:1fr}.participate-stats{grid-template-columns:1fr 1fr}.participate-groups{grid-template-columns:1fr}.themes-grid{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr}.program-grid{grid-template-columns:1fr}.scopus-grid{grid-template-columns:1fr}.venue-grid{grid-template-columns:1fr}
   .scroll-arrow{bottom:1.2rem;right:1.2rem;width:42px;height:42px;font-size:1rem}
-  footer{padding:1rem 1.2rem}
+  .footer-top{grid-template-columns:1fr;gap:.8rem;padding:.9rem 1.2rem .6rem}.footer-logo-wrap img{height:28px;max-width:140px}.footer-bottom{flex-direction:column;align-items:flex-start;gap:.4rem}
 }
 </style>
 </head>
 <body>
 
+<!-- ═══ OVERLAY ═══ -->
 <div class="nav-overlay" id="navOverlay"></div>
 
+<!-- ═══ DESKTOP NAV BAR ═══ -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026"></a>
-    <ul class="nav-links" id="navLinks">
-      <button class="nav-close" id="navClose"><span class="nav-close-text">Close Menu</span></button>
+    <a href="index.html" class="nav-logo">
+      <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026">
+    </a>
+    <ul class="nav-desktop">
       <li class="nav-item"><a href="index.html">Home</a></li>
-      <li class="nav-item has-dropdown">
+      <li class="nav-item">
         <a href="about.html" class="active">About</a>
-        <button class="dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
         <ul class="nav-dropdown">
           <li><a href="about.html#overview">Overview</a></li>
           <li><a href="about.html#themes">Themes</a></li>
@@ -265,14 +234,50 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
           <li><a href="about.html#venue">Venue</a></li>
         </ul>
       </li>
+      <li class="nav-item"><a href="index.html#dates">Important Dates</a></li>
+      <li class="nav-item"><a href="index.html#highlights">Highlights</a></li>
+      <li class="nav-item"><a href="index.html#associates">Associates</a></li>
     </ul>
     <div class="nav-right">
       <a href="register.html" class="btn-reg">Register Now</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
 </nav>
 
+<!-- ═══ MOBILE SIDEBAR ═══ -->
+<aside class="nav-sidebar" id="navSidebar">
+  <div class="nav-sidebar-header">
+    <div class="nav-sidebar-brand">
+      <div class="nav-sidebar-logo-wrap">
+        <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026" class="nav-sidebar-logo">
+      </div>
+      <span class="nav-sidebar-tagline">Blue Intelligence Climate Summit</span>
+    </div>
+    <button class="nav-sidebar-close" id="navSidebarClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <ul class="nav-sidebar-links">
+    <li><a href="index.html"><span class="sb-icon"><i class="fa-solid fa-house"></i></span> Home</a></li>
+    <li class="sb-has-dropdown">
+      <a href="about.html" class="active"><span class="sb-icon"><i class="fa-solid fa-circle-info"></i></span> About</a>
+      <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="about.html#overview"><span class="sb-dd-icon"><i class="fa-solid fa-eye"></i></span> Overview</a></li>
+        <li><a href="about.html#themes"><span class="sb-dd-icon"><i class="fa-solid fa-lightbulb"></i></span> Themes</a></li>
+        <li><a href="about.html#program"><span class="sb-dd-icon"><i class="fa-solid fa-list-check"></i></span> Program</a></li>
+        <li><a href="about.html#whyparticipate"><span class="sb-dd-icon"><i class="fa-solid fa-circle-question"></i></span> Why Participate</a></li>
+        <li><a href="about.html#awards"><span class="sb-dd-icon"><i class="fa-solid fa-trophy"></i></span> Awards</a></li>
+        <li><a href="about.html#venue"><span class="sb-dd-icon"><i class="fa-solid fa-location-dot"></i></span> Venue</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html#dates"><span class="sb-icon"><i class="fa-solid fa-calendar-days"></i></span> Important Dates</a></li>
+    <li><a href="index.html#highlights"><span class="sb-icon"><i class="fa-solid fa-star"></i></span> Highlights</a></li>
+    <li><a href="index.html#associates"><span class="sb-icon"><i class="fa-solid fa-handshake"></i></span> Associates</a></li>
+    <li style="border-bottom:none;padding:.8rem 1.3rem"><a href="register.html" class="sb-register-btn"><i class="fa-solid fa-pen-to-square" style="margin-right:8px"></i> Register Now</a></li>
+  </ul>
+</aside>
+
+<!-- ═══ PAGE BANNER ═══ -->
 <div class="page-banner">
   <div class="page-banner-inner">
     <h1>About BiCS 2026</h1>
@@ -280,7 +285,9 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
   </div>
 </div>
 
-<section class="sec" id="overview"><div class="container">
+<!-- OVERVIEW -->
+<section class="sec" id="overview">
+<div class="container">
   <div class="sec-title">Blue Intelligence Climate Summit 2026</div>
   <div class="text-block" style="margin-top:1.2rem">
     <p>The <strong>Blue Intelligence Climate Summit 2026 (BiCS 2026)</strong> is an international flagship summit designed to bring together global leaders, policymakers, scientists, academicians, innovators, investors, youth leaders, environmentalists, and industry experts to address the most pressing climate and ocean-related challenges of our time.</p>
@@ -298,42 +305,51 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
     <div class="info-card">
       <div class="info-card-title"><i class="fa-solid fa-building"></i> Organized By</div>
       <ul>
-        <li><strong>EventsKart</strong> – Planning & Designing</li>
-        <li>In association with <strong>Global Oceanic Adventures & Environmental Conservation (GOAEC) Foundation</strong></li>
+        <li><strong>Project Planner</strong> – EventsKart</li>
+        <li><strong>Co-Partner</strong> – GOAEC</li>
       </ul>
     </div>
   </div>
-</div></section>
+</div>
+</section>
 
 <div class="divider"></div>
 
-<section class="sec" id="vision"><div class="container">
-  <div class="sec-label">Vision</div>
-  <div class="sec-title">"Smart Oceans. Sustainable Future."</div>
+<!-- VISION -->
+<section class="sec" id="vision">
+<div class="container">
+  <div class="sec-title">Vision</div>
   <div class="vision-box">
     <div class="vision-text">To establish BiCS 2026 as a globally recognized platform driving science-based climate action, ocean stewardship, and sustainable development, while fostering collaboration between governments, academia, private sector, and communities.</div>
   </div>
-</div></section>
+</div>
+</section>
 
 <div class="divider"></div>
 
-<section class="sec" id="mission"><div class="container">
+<!-- MISSION -->
+<section class="sec" id="mission">
+<div class="container">
   <div class="sec-title">Mission Objectives</div>
-  <div class="mission-grid">
-    <div class="mission-card"><div class="mission-icon"><i class="fa-solid fa-ship"></i></div><div><div class="mission-title">Promote Blue Economy & Ocean Sustainability</div><div class="mission-text">Advance sustainable blue economy strategies that support ocean conservation, coastal development, and long-term economic resilience.</div></div></div>
-    <div class="mission-card"><div class="mission-icon"><i class="fa-solid fa-shield-halved"></i></div><div><div class="mission-title">Strengthen Climate Resilience & Adaptation</div><div class="mission-text">Support adaptation and resilience strategies for vulnerable coastal ecosystems and communities affected by climate change.</div></div></div>
-    <div class="mission-card"><div class="mission-icon"><i class="fa-solid fa-flask"></i></div><div><div class="mission-title">Encourage Innovation, Research & Technology Transfer</div><div class="mission-text">Promote research, technological innovation, and knowledge exchange in marine science, fisheries, AI, and maritime technologies.</div></div></div>
-    <div class="mission-card"><div class="mission-icon"><i class="fa-solid fa-graduation-cap"></i></div><div><div class="mission-title">Support Youth & Student Engagement</div><div class="mission-text">Engage students and young innovators in climate leadership, sustainability initiatives, and ocean stewardship.</div></div></div>
-    <div class="mission-card"><div class="mission-icon"><i class="fa-solid fa-handshake"></i></div><div><div class="mission-title">Facilitate Policy Dialogue & Partnerships</div><div class="mission-text">Enable international collaboration and policy dialogue among governments, academia, industries, NGOs, and global institutions.</div></div></div>
-    <div class="mission-card"><div class="mission-icon"><i class="fa-solid fa-chart-line"></i></div><div><div class="mission-title">Showcase Scalable Solutions & Green Investments</div><div class="mission-text">Highlight scalable sustainability solutions, climate technologies, and green investment opportunities for the future blue economy.</div></div></div>
+  <div class="vision-box">
+    <ul class="mission-list">
+      <li><strong>Promote Blue Economy & Ocean Sustainability</strong> — Advance sustainable blue economy strategies that support ocean conservation, coastal development, and long-term economic resilience.</li>
+      <li><strong>Strengthen Climate Resilience & Adaptation</strong> — Support adaptation and resilience strategies for vulnerable coastal ecosystems and communities affected by climate change.</li>
+      <li><strong>Encourage Innovation, Research & Technology Transfer</strong> — Promote research, technological innovation, and knowledge exchange in marine science, fisheries, AI, and maritime technologies.</li>
+      <li><strong>Support Youth & Student Engagement</strong> — Engage students and young innovators in climate leadership, sustainability initiatives, and ocean stewardship.</li>
+      <li><strong>Facilitate Policy Dialogue & Partnerships</strong> — Enable international collaboration and policy dialogue among governments, academia, industries, NGOs, and global institutions.</li>
+      <li><strong>Showcase Scalable Solutions & Green Investments</strong> — Highlight scalable sustainability solutions, climate technologies, and green investment opportunities for the future blue economy.</li>
+    </ul>
   </div>
-</div></section>
+</div>
+</section>
 
 <div class="divider"></div>
 
-<section class="sec" id="themes"><div class="container">
-  <div class="sec-label">Core Themes</div>
-  <div class="sec-title">Thematic Pillars of BiCS 2026</div>
+<!-- THEMES -->
+<section class="sec" id="themes">
+<div class="container">
+  <div class="sec-title">Core Themes</div>
   <div class="themes-grid">
     <div class="theme-card"><div class="theme-icon"><i class="fa-solid fa-ship"></i></div><div class="theme-title">Blue Economy & Ocean Governance</div></div>
     <div class="theme-card"><div class="theme-icon"><i class="fa-solid fa-shield-halved"></i></div><div class="theme-title">Climate Change Adaptation & Resilience</div></div>
@@ -346,12 +362,15 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
     <div class="theme-card"><div class="theme-icon"><i class="fa-solid fa-chart-line"></i></div><div class="theme-title">ESG, Carbon Neutrality & Sustainable Finance</div></div>
     <div class="theme-card"><div class="theme-icon"><i class="fa-solid fa-globe"></i></div><div class="theme-title">Global Partnerships for Sustainable Development Goals</div></div>
   </div>
-</div></section>
+</div>
+</section>
 
 <div class="divider"></div>
 
-<section class="sec" id="whyparticipate"><div class="container">
-  <div class="sec-title">Why Participate?</div>
+<!-- WHY PARTICIPATE -->
+<section class="sec" id="whyparticipate">
+<div class="container">
+  <div class="sec-title">BiCS 2026 - Participants</div>
   <div class="why-grid">
     <div class="why-card">
       <h4><i class="fa-solid fa-microscope" style="color:var(--teal);margin-right:6px"></i> For Researchers</h4>
@@ -376,21 +395,26 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
       </ul>
     </div>
     <div class="why-card">
-      <h4><i class="fa-solid fa-microphone" style="color:var(--teal);margin-right:6px"></i> For Speakers & Delegates</h4>
+      <h4><i class="fa-solid fa-microphone" style="color:var(--teal);margin-right:6px"></i> Others</h4>
       <ul>
-        <li>International speaker recognition</li>
-        <li>Media and institutional visibility</li>
-        <li>Leadership networking</li>
-        <li>Access to policy and research ecosystem</li>
-        <li>Executive summit kit and hospitality support</li>
+        <li>Policy Makers</li>
+        <li>ESG Professionals</li>
+        <li>Industrialists</li>
+        <li>NGOs</li>
+        <li>Recyclers</li>
+        <li>Startups</li>
+        <li>Exhibitors</li>
       </ul>
     </div>
   </div>
-</div></section>
+</div>
+</section>
 
 <div class="divider"></div>
 
-<section class="sec" id="researchtopics"><div class="container">
+<!-- RESEARCH TOPICS -->
+<section class="sec" id="researchtopics">
+<div class="container">
   <div class="sec-title">Top 3 Featured Research Topics</div>
   <div class="topic-card">
     <h3>1. AI & Digital Climate Intelligence for Ocean Sustainability</h3>
@@ -431,34 +455,39 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
     </ul>
     <div class="topic-why"><strong>Why It Matters:</strong> Protecting coastal ecosystems is essential for climate resilience, livelihoods, and global sustainability.</div>
   </div>
-</div></section>
+</div>
+</section>
 
 <div class="divider"></div>
 
-<section class="sec" id="participation"><div class="container">
+<!-- EXPECTED PARTICIPATION -->
+<section class="sec" id="participation">
+<div class="container">
   <div class="sec-title">Expected Participation</div>
-  <div class="participate-grid">
+  <div class="participate-wrapper">
     <div class="participate-stats">
-      <div class="p-stat"><div class="p-stat-num">1000–1400+</div><div class="p-stat-label">Delegates</div></div>
-      <div class="p-stat"><div class="p-stat-num">25+</div><div class="p-stat-label">Participating Countries</div></div>
-      <div class="p-stat"><div class="p-stat-num">30+</div><div class="p-stat-label">Global Speakers & Panelists</div></div>
+      <div class="p-stat"><div class="p-stat-num">1000 to 1400+</div><div class="p-stat-label">Delegates</div></div>
+      <div class="p-stat"><div class="p-stat-num">25+</div><div class="p-stat-label">Countries</div></div>
+      <div class="p-stat"><div class="p-stat-num">30+</div><div class="p-stat-label">Speakers & Panelists</div></div>
       <div class="p-stat"><div class="p-stat-num">60+</div><div class="p-stat-label">Research Presentations</div></div>
       <div class="p-stat"><div class="p-stat-num">30+</div><div class="p-stat-label">Partner Organizations</div></div>
     </div>
     <div class="participate-groups">
-      <div class="p-group"><i class="fa-solid fa-landmark"></i><span>Government Delegations</span></div>
-      <div class="p-group"><i class="fa-solid fa-globe"></i><span>UN-linked Institutions</span></div>
-      <div class="p-group"><i class="fa-solid fa-building-columns"></i><span>Universities & Research Bodies</span></div>
-      <div class="p-group"><i class="fa-solid fa-people-group"></i><span>NGOs & Civil Society Organizations</span></div>
-      <div class="p-group"><i class="fa-solid fa-rocket"></i><span>Startups & Industry Leaders</span></div>
-      <div class="p-group"><i class="fa-solid fa-user-graduate"></i><span>Researchers, Innovators & Students</span></div>
+      <div class="p-group"><i class="fa-solid fa-circle"></i><span>Government delegations</span></div>
+      <div class="p-group"><i class="fa-solid fa-circle"></i><span>UN-linked institutions</span></div>
+      <div class="p-group"><i class="fa-solid fa-circle"></i><span>Universities and research bodies</span></div>
+      <div class="p-group"><i class="fa-solid fa-circle"></i><span>NGOs and civil society</span></div>
+      <div class="p-group"><i class="fa-solid fa-circle"></i><span>Startups and industry leaders</span></div>
     </div>
   </div>
-</div></section>
+</div>
+</section>
 
 <div class="divider"></div>
 
-<section class="sec" id="program"><div class="container">
+<!-- PROGRAM HIGHLIGHTS -->
+<section class="sec" id="program">
+<div class="container">
   <div class="sec-title">Program Highlights</div>
   <div class="program-grid">
     <div class="program-day">
@@ -470,79 +499,61 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
       <div class="program-item"><i class="fa-solid fa-circle"></i><span>Plenary Sessions</span></div>
       <div class="program-item"><i class="fa-solid fa-circle"></i><span>Technical Panel Discussions</span></div>
       <div class="program-item"><i class="fa-solid fa-circle"></i><span>Exhibition & Innovation Showcase</span></div>
-      <div class="program-item"><i class="fa-solid fa-circle"></i><span>Cultural Night & Networking Dinner</span></div>
+      <div class="program-item"><i class="fa-solid fa-circle"></i><span>Cultural Night followed by Networking Dinner</span></div>
     </div>
     <div class="program-day">
       <div class="program-day-title">Day 2</div>
       <div class="program-day-date">3rd October 2026</div>
-      <div class="program-item"><i class="fa-solid fa-circle"></i><span>Beach Clean-Up Activity</span></div>
-      <div class="program-item"><i class="fa-solid fa-circle"></i><span>Scientific & Research Presentations</span></div>
+      <div class="program-item"><i class="fa-solid fa-circle"></i><span>Beach Clean-up Activity</span></div>
+      <div class="program-item"><i class="fa-solid fa-circle"></i><span>Scientific Presentations</span></div>
       <div class="program-item"><i class="fa-solid fa-circle"></i><span>Student & Youth Innovation Forum</span></div>
       <div class="program-item"><i class="fa-solid fa-circle"></i><span>Jury Evaluation Sessions</span></div>
       <div class="program-item"><i class="fa-solid fa-circle"></i><span>Awards & Recognition Ceremony</span></div>
-      <div class="program-item"><i class="fa-solid fa-circle"></i><span>Closing Declaration: "Visakhapatnam Blue Intelligence Declaration 2026"</span></div>
+      <div class="program-item"><i class="fa-solid fa-circle"></i><span>Closing Declaration: <b>"Visakhapatnam Blue Intelligence Declaration 2026"</b></span></div>
     </div>
   </div>
-</div></section>
+</div>
+</section>
 
 <div class="divider"></div>
 
-<section class="sec" id="speakers"><div class="container">
-  <div class="sec-title">Honorable Speakers & Jury Panel</div>
-  <div class="roles-grid">
-    <div class="role-block">
-      <div class="role-block-title"><i class="fa-solid fa-microphone"></i> Role of Honorable Speakers</div>
-      <div class="role-block-sub">Speakers are invited to:</div>
-      <div class="role-item"><i class="fa-solid fa-circle"></i><span>Share global expertise and best practices</span></div>
-      <div class="role-item"><i class="fa-solid fa-circle"></i><span>Deliver keynote and plenary sessions</span></div>
-      <div class="role-item"><i class="fa-solid fa-circle"></i><span>Mentor young researchers and innovators</span></div>
-      <div class="role-item"><i class="fa-solid fa-circle"></i><span>Contribute to policy recommendations and summit declaration</span></div>
-    </div>
-    <div class="role-block">
-      <div class="role-block-title"><i class="fa-solid fa-gavel"></i> Role of the Jury Team</div>
-      <div class="role-block-sub">The distinguished Jury Panel will:</div>
-      <div class="role-item"><i class="fa-solid fa-circle"></i><span>Evaluate abstracts, innovations, and student presentations</span></div>
-      <div class="role-item"><i class="fa-solid fa-circle"></i><span>Assess sustainability impact and scalability</span></div>
-      <div class="role-item"><i class="fa-solid fa-circle"></i><span>Select awardees under various summit categories</span></div>
-      <div class="role-item"><i class="fa-solid fa-circle"></i><span>Provide expert recommendations and mentorship</span></div>
-    </div>
-  </div>
-</div></section>
-
-<div class="divider"></div>
-
-<section class="sec" id="awards"><div class="container">
-  <div class="sec-title">Awards & Recognition</div>
+<!-- AWARDS -->
+<section class="sec" id="awards">
+<div class="container">
+  <div class="sec-title">Awards & Recognition (Surprise Cash Awards/Cash Vouchers)</div>
   <div class="awards-section">
     <div class="award-group">
       <div class="award-group-title"><i class="fa-solid fa-trophy"></i> Research Awards</div>
-      <div class="awards-grid">
-        <div class="award-card"><div class="award-icon"><i class="fa-solid fa-award"></i></div><div class="award-title">Blue Intelligence Leadership Award</div></div>
-        <div class="award-card"><div class="award-icon"><i class="fa-solid fa-award"></i></div><div class="award-title">Ocean Conservation Excellence Award</div></div>
-        <div class="award-card"><div class="award-icon"><i class="fa-solid fa-award"></i></div><div class="award-title">Outstanding Academic Contribution Award</div></div>
-      </div>
+      <ul class="award-list">
+        <li>Blue Intelligence Leadership Award</li>
+        <li>Ocean Conservation Excellence Award</li>
+        <li>Outstanding Academic Contribution Award</li>
+      </ul>
     </div>
     <div class="award-group">
       <div class="award-group-title"><i class="fa-solid fa-star"></i> Student Awards</div>
-      <div class="awards-grid">
-        <div class="award-card"><div class="award-icon"><i class="fa-solid fa-star"></i></div><div class="award-title">Blue Innovator Award</div></div>
-        <div class="award-card"><div class="award-icon"><i class="fa-solid fa-star"></i></div><div class="award-title">Climate Innovation Award</div></div>
-        <div class="award-card"><div class="award-icon"><i class="fa-solid fa-star"></i></div><div class="award-title">Young Researcher Award</div></div>
-      </div>
+      <ul class="award-list">
+        <li>Blue Innovator Award</li>
+        <li>Climate Innovation Award</li>
+        <li>Young Researcher Award</li>
+      </ul>
     </div>
     <div class="award-group">
       <div class="award-group-title"><i class="fa-solid fa-rocket"></i> Startup Recognition</div>
-      <div class="awards-grid">
-        <div class="award-card"><div class="award-icon"><i class="fa-solid fa-rocket"></i></div><div class="award-title">Best Sustainable Startup Award</div></div>
-      </div>
+      <ul class="award-list">
+        <li>Best Sustainable Startup Award</li>
+      </ul>
     </div>
   </div>
-</div></section>
+</div>
+</section>
 
 <div class="divider"></div>
 
-<section class="sec" id="scopus"><div class="container">
-  <div class="sec-title">Scopus Publication Opportunities</div>
+<!-- PUBLICATION -->
+<section class="sec" id="scopus">
+<div class="container">
+  <div class="sec-title">Publication Opportunities</div>
   <div class="scopus-grid">
     <div class="scopus-block">
       <h4><i class="fa-solid fa-book-open"></i> Scopus-Indexed Publication Support</h4>
@@ -568,48 +579,31 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
       </ul>
     </div>
   </div>
-</div></section>
+</div>
+</section>
 
 <div class="divider"></div>
 
-<section class="sec" id="outcomes"><div class="container">
-  <div class="sec-title">Expected Outcomes</div>
-  <div class="outcomes-grid">
-    <div class="outcome-card"><i class="fa-solid fa-globe"></i><span>International collaborations</span></div>
-    <div class="outcome-card"><i class="fa-solid fa-landmark"></i><span>Policy recommendations for climate action</span></div>
-    <div class="outcome-card"><i class="fa-solid fa-flask"></i><span>Research and innovation partnerships</span></div>
-    <div class="outcome-card"><i class="fa-solid fa-coins"></i><span>Funding and investment opportunities</span></div>
-    <div class="outcome-card"><i class="fa-solid fa-seedling"></i><span>Youth-driven sustainability initiatives</span></div>
-    <div class="outcome-card"><i class="fa-solid fa-book"></i><span>Publication of summit proceedings and declaration</span></div>
-  </div>
-</div></section>
-
-<div class="divider"></div>
-
-<section class="sec" id="venue"><div class="container">
+<!-- VENUE -->
+<section class="sec" id="venue">
+<div class="container">
   <div class="sec-title">Host City & Venue</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2rem;align-items:start" class="venue-grid">
+  <div class="venue-grid">
     <div class="venue-block">
       <div class="venue-block-title"><i class="fa-solid fa-location-dot"></i> Why Visakhapatnam?</div>
       <p>Visakhapatnam is India's emerging <strong>coastal innovation hub</strong>, strategically positioned on the Bay of Bengal, making it an ideal venue for a summit centered on ocean sustainability and climate resilience.</p>
       <p>The selected venue offers large-scale convention capacity and beachfront access suitable for international conferences.</p>
     </div>
     <div class="venue-block">
-      <div class="venue-block-title"><i class="fa-solid fa-hotel"></i> Summit Venue</div>
-      <p>The summit venue in Visakhapatnam offers world-class convention capacity and beachfront access suitable for international conferences.</p>
-      <p>The venue aligns with the vision of BiCS 2026, emphasizing sustainable practices and eco-friendly hospitality, ensuring a premium experience for all delegates.</p>
+      <div class="venue-block-title"><i class="fa-solid fa-hotel"></i> Why at Radisson Blue?</div>
+      <p>Radisson Blu and the broader Radisson Hotel Group are highly recognized for their commitment to <strong>sustainable tourism and eco-friendly hospitality</strong>.</p>
+      <p>The brand has championed environmental initiatives for decades and focuses heavily on reducing carbon, energy, and water consumption.</p>
     </div>
   </div>
-</div></section>
+</div>
+</section>
 
 <div class="divider"></div>
-
-<section class="sec" id="closing"><div class="container">
-  <div class="closing-box">
-    <div class="closing-quote">"Together, let us shape the future of our oceans, climate, and humanity."</div>
-    <div class="closing-text">We, the BiCS 2026 organizing committee, are deeply honored to invite our Honorable Speakers and Jury Members to contribute their knowledge, leadership, and vision to make Blue Intelligence Climate Summit 2026 a landmark global movement toward a resilient and sustainable future.</div>
-  </div>
-</div></section>
 
 <footer>
   <div class="footer-copy">&copy; 2026 BiCS Organizing Committee. All rights reserved.</div>
@@ -618,26 +612,58 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
 <button class="scroll-arrow" id="scrollArrow" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script>
-/* Scroll Reveal */
-var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.1});
-document.querySelectorAll('.sec').forEach(function(s){obs.observe(s)});
+/* ── Mobile Sidebar Navigation ── */
+(function(){
+  var hamburger=document.getElementById('navHamburger');
+  var sidebar=document.getElementById('navSidebar');
+  var closeBtn=document.getElementById('navSidebarClose');
+  var overlay=document.getElementById('navOverlay');
 
-/* Mobile Nav & Dropdown */
-document.addEventListener('DOMContentLoaded',function(){
-  var navToggle=document.getElementById('navToggle');
-  var navClose=document.getElementById('navClose');
-  var navLinks=document.getElementById('navLinks');
-  var navOverlay=document.getElementById('navOverlay');
-  function openNav(){navLinks.classList.add('open');navOverlay.classList.add('open');document.body.style.overflow='hidden'}
-  function closeNav(){navLinks.classList.remove('open');navOverlay.classList.remove('open');document.body.style.overflow=''}
-  if(navToggle){navToggle.addEventListener('click',openNav)}
-  if(navClose){navClose.addEventListener('click',closeNav)}
-  if(navOverlay){navOverlay.addEventListener('click',closeNav)}
-  navLinks.querySelectorAll('a').forEach(function(link){link.addEventListener('click',closeNav)});
-  document.querySelectorAll('.dropdown-toggle').forEach(function(btn){btn.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();this.parentElement.classList.toggle('open')})});
-});
+  function openSidebar(){
+    sidebar.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeSidebar(){
+    sidebar.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow='';
+    var openDD=document.querySelectorAll('.sb-has-dropdown.open');
+    for(var i=0;i<openDD.length;i++){openDD[i].classList.remove('open')}
+  }
 
-/* Scroll Arrow */
+  if(hamburger) hamburger.addEventListener('click',openSidebar);
+  if(closeBtn) closeBtn.addEventListener('click',closeSidebar);
+  if(overlay) overlay.addEventListener('click',closeSidebar);
+
+  var links=document.querySelectorAll('.nav-sidebar-links li>a, .sb-submenu a');
+  for(var i=0;i<links.length;i++){
+    links[i].addEventListener('click',function(){
+      /* Don't close if it's the About parent link on the about page - allow dropdown toggle */
+      if(this.classList.contains('active') && this.closest('.sb-has-dropdown')) return;
+      closeSidebar();
+    });
+  }
+
+  var toggles=document.querySelectorAll('.sb-dropdown-toggle');
+  for(var j=0;j<toggles.length;j++){
+    toggles[j].addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      this.closest('.sb-has-dropdown').classList.toggle('open');
+    });
+  }
+})();
+
+/* ── Scroll Reveal ── */
+(function(){
+  var sections=document.querySelectorAll('.sec');
+  if(!sections.length||!('IntersectionObserver' in window)){sections.forEach(function(s){s.classList.add('vis')});return}
+  var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('vis');observer.unobserve(entry.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  sections.forEach(function(s){observer.observe(s)});
+})();
+
+/* ── Scroll Arrow ── */
 (function(){var arrow=document.getElementById('scrollArrow');if(!arrow)return;window.addEventListener('scroll',function(){if(window.scrollY>400){arrow.classList.add('visible');arrow.innerHTML='<i class="fa-solid fa-arrow-up"></i>';arrow.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})}}else{arrow.classList.remove('visible')}})})();
 </script>
 </body>
