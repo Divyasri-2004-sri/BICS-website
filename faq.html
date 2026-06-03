@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs — BiCS 2026 Blue Intelligence Climate Summit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0A1F44;--deep:#0D2B5E;--ocean:#1565C0;--blue:#2196F3;--teal:#00897B;--teal2:#26A69A;--gold:#F9A825;--gold2:#FFD54F;--white:#FFFFFF;--sky:#E3F2FD;--muted:#0A1F44;--text:#0A1F44;--dark-navy:#0A2342;--body-text:#0B1D33;--card-bg:rgba(255,255,255,0.9);--card-border:rgba(33,150,243,0.2)}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);overflow-x:hidden}
+
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shadow:0 2px 20px rgba(10,31,68,.09)}
+.nav-inner{display:flex;align-items:center;justify-content:center;width:100%;max-width:1400px;margin:0 auto;padding:0 2rem;height:70px;position:relative}
+.nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;position:absolute;left:2rem}
+.nav-logo img{height:56px;width:auto;object-fit:contain}
+.nav-desktop{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+.nav-item{position:relative}
+.nav-item>a{font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);text-decoration:none;padding:8px 15px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
+.nav-item>a::after{display:none}
+.nav-item>a:hover{color:var(--teal);background:rgba(0,137,123,.07)}
+.nav-item>a.active{color:var(--teal);background:rgba(0,137,123,.1)}
+.nav-item>a .dd-arrow{font-size:.5rem;opacity:.5;transition:transform .2s,opacity .2s}
+.nav-item:hover>a .dd-arrow{transform:rotate(180deg);opacity:.9}
+.nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;min-width:200px;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.1),0 0 0 1px rgba(10,31,68,.06);padding:6px;opacity:0;visibility:hidden;transition:all .2s ease;z-index:10;list-style:none}
+.nav-item:hover .nav-dropdown{opacity:1;visibility:visible}
+.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:9px 14px;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;border-radius:8px;transition:all .15s}
+.nav-dropdown li a:hover{background:rgba(0,137,123,.07);color:var(--teal)}
+.nav-dropdown li a i{color:var(--teal);font-size:.7rem;width:16px;text-align:center;opacity:.65}
+.nav-dropdown li a:hover i{opacity:1}
+.nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:var(--navy);cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}
+.nav-hamburger:hover{background:rgba(10,31,68,.03);border-color:rgba(10,31,68,.15)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10000;opacity:0;transition:opacity .3s}
+.nav-overlay.open{display:block;opacity:1}
+.nav-sidebar{position:fixed;top:0;right:0;bottom:0;width:min(360px,88vw);height:100vh;background:#fff;z-index:10001;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);box-shadow:-4px 0 24px rgba(0,0,0,.1);display:flex;flex-direction:column;overflow:hidden}
+.nav-sidebar.open{transform:translateX(0)}
+.nav-sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.2rem;border-bottom:1px solid rgba(10,31,68,.06);flex-shrink:0}
+.nav-sidebar-brand{display:flex;align-items:center;gap:.8rem}
+.nav-sidebar-logo-wrap{display:inline-flex;border-radius:6px;padding:3px 8px;line-height:0}
+.nav-sidebar-logo{height:42px;width:auto;object-fit:contain}
+.nav-sidebar-close{width:34px;height:34px;border-radius:8px;background:rgba(10,31,68,.04);border:1px solid rgba(10,31,68,.08);color:var(--navy);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.nav-sidebar-close:hover{background:rgba(10,31,68,.08)}
+.nav-sidebar-links{list-style:none;overflow-y:auto;flex:1;padding:.4rem 0;margin:0}
+.nav-sidebar-links li{border-bottom:1px solid rgba(10,31,68,.04)}
+.nav-sidebar-links li:last-child{border-bottom:none}
+.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);text-decoration:none;transition:all .15s}
+.nav-sidebar-links li>a:hover,.nav-sidebar-links li>a.active{color:var(--teal);background:rgba(0,137,123,.03)}
+.nav-sidebar-links li>a.active .sb-icon{background:var(--teal);color:#fff}
+.sb-icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:7px;background:rgba(0,137,123,.07);color:var(--teal);font-size:.75rem;flex-shrink:0;transition:all .15s}
+.sb-dropdown-toggle{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:none;background:transparent;color:var(--teal);cursor:pointer;font-size:.8rem;transition:transform .2s;flex-shrink:0;opacity:.5}
+.sb-has-dropdown{display:flex;flex-wrap:wrap;align-items:center}
+.sb-has-dropdown>a{flex:1}
+.sb-has-dropdown.open .sb-dropdown-toggle{opacity:1}
+.sb-has-dropdown.open .sb-dropdown-toggle i{transform:rotate(45deg)}
+.sb-submenu{display:none;flex-direction:column;width:100%;background:rgba(0,137,123,.02);list-style:none;padding:.25rem 0;margin:0}
+.sb-has-dropdown.open .sb-submenu{display:flex}
+.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;transition:all .15s}
+.sb-submenu li a:hover{color:var(--teal);background:rgba(0,137,123,.04)}
+.sb-dd-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:rgba(0,137,123,.06);color:var(--teal);font-size:.58rem;flex-shrink:0}
+@media(min-width:961px){.nav-sidebar,.nav-overlay{display:none!important}.nav-hamburger{display:none!important}}
+@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex}.nav-inner{padding:0 1rem;height:58px}.nav-logo{left:1rem}.nav-logo img{height:44px}.nav-hamburger{right:1rem}}
+@media(max-width:600px){.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{padding:.65rem 1rem;font-size:.82rem;gap:.5rem}.sb-submenu li a{padding:.5rem 1rem .5rem 1.8rem;font-size:.78rem}}
+
+/* ═══ PAGE BANNER ═══ */
+.page-banner{padding:7rem 0 3.5rem;background:linear-gradient(160deg,#060E1A 0%,#0D2B5E 50%,#060E1A 100%);position:relative;overflow:hidden}
+.page-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(21,101,192,.12) 0%,transparent 60%);pointer-events:none}
+.page-banner-inner{max-width:1400px;margin:0 auto;padding:0 2.5rem;position:relative;z-index:2}
+.page-banner h1{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--white);margin-bottom:.5rem}
+.page-banner-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,137,123,.18);border:1px solid rgba(0,137,123,.35);border-radius:999px;padding:.3rem .9rem;font-size:.78rem;font-family:'Poppins',sans-serif;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.5px;margin-bottom:1rem}
+.page-banner-badge i{color:var(--teal2);font-size:.7rem}
+.page-banner p{font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.7}
+
+/* ═══ LAYOUT ═══ */
+.sec{padding:4.5rem 0;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.sec.vis{opacity:1;transform:translateY(0)}
+.container{max-width:1400px;margin:0 auto;padding:0 2.5rem}
+.sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2}
+.sec-sub{color:var(--body-text);font-size:.96rem;margin-top:.5rem;line-height:1.75;font-weight:400}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(21,101,243,.15),transparent)}
+
+/* ═══ FAQ TABS ═══ */
+.faq-tabs{display:flex;gap:.6rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.faq-tab{font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;border:2px solid rgba(0,137,123,.25);background:transparent;color:var(--navy);cursor:pointer;transition:all .22s;letter-spacing:.2px}
+.faq-tab:hover{border-color:var(--teal);color:var(--navy);background:rgba(0,137,123,.05)}
+.faq-tab.active{background:var(--teal);border-color:var(--teal);color:#fff;box-shadow:0 3px 14px rgba(0,137,123,.3)}
+
+/* ═══ FAQ PANEL ═══ */
+.faq-panel{display:none}
+.faq-panel.active{display:block}
+
+/* ═══ ACCORDION ═══ */
+.faq-section-label{font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);margin-bottom:1rem;margin-top:2rem;display:flex;align-items:center;gap:.6rem}
+.faq-section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(10,31,68,.25),transparent)}
+.faq-section-label:first-child{margin-top:0}
+.accordion{display:flex;flex-direction:column;gap:.6rem}
+.acc-item{background:#ffffff;border:1px solid rgba(0,137,123,.15);border-radius:14px;overflow:hidden;transition:box-shadow .2s}
+.acc-item:hover{box-shadow:0 4px 18px rgba(0,0,0,.06)}
+.acc-trigger{width:100%;background:transparent;border:none;padding:1.1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;cursor:pointer;text-align:left}
+.acc-q{font-family:'Poppins',sans-serif;font-size:.93rem;font-weight:600;color:var(--navy);line-height:1.4;flex:1}
+.acc-icon{width:26px;height:26px;border-radius:50%;background:rgba(0,137,123,.08);border:1.5px solid rgba(0,137,123,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s}
+.acc-icon i{font-size:.6rem;color:var(--teal);transition:transform .25s}
+.acc-item.open .acc-icon{background:var(--teal);border-color:var(--teal)}
+.acc-item.open .acc-icon i{color:#fff;transform:rotate(45deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.acc-item.open .acc-body{max-height:1200px}
+.acc-content{padding:0 1.4rem 1.2rem;font-size:.9rem;color:var(--body-text);line-height:1.75;border-top:1px solid rgba(10,31,68,.05);padding-top:.9rem}
+.acc-content ul{list-style:none;padding:0;margin-top:.6rem;display:flex;flex-direction:column;gap:.35rem}
+.acc-content ul li{padding-left:1.2rem;position:relative;color:var(--body-text)}
+.acc-content ul li::before{content:'\f0da';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--navy);position:absolute;left:0;top:2px;font-size:.7rem}
+.acc-content strong{color:var(--navy);font-weight:600}
+.acc-note{display:inline-flex;align-items:flex-start;gap:.5rem;background:rgba(249,168,37,.08);border:1px solid rgba(249,168,37,.25);border-radius:8px;padding:.6rem .9rem;font-size:.85rem;color:var(--navy);margin-top:.7rem;line-height:1.6}
+.acc-note i{color:var(--gold);margin-top:2px;flex-shrink:0}
+
+/* ═══ RUBRIC TABLE ═══ */
+.rubric-grid{display:flex;flex-direction:column;gap:.8rem;margin-top:.8rem}
+.rubric-row{border-radius:12px;border:1px solid rgba(0,137,123,.2);overflow:hidden}
+.rubric-header{background:linear-gradient(90deg,rgba(0,137,123,.08),rgba(0,137,123,.05));padding:.75rem 1.1rem;display:flex;align-items:center;gap:.7rem}
+.rubric-num{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;font-family:'Poppins',sans-serif;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rubric-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:.9rem;color:var(--navy);flex:1}
+.rubric-pts{font-family:'Poppins',sans-serif;font-weight:800;font-size:.85rem;color:var(--navy)}
+.rubric-body{padding:.8rem 1.1rem;font-size:.86rem;color:var(--body-text);line-height:1.65;background:var(--card-bg)}
+.rubric-body em{font-style:normal;font-weight:600;color:var(--navy)}
+.score-bands{display:flex;gap:.4rem;margin-top:.55rem;flex-wrap:wrap}
+.score-band{font-size:.76rem;font-weight:600;font-family:'Poppins',sans-serif;padding:.22rem .65rem;border-radius:999px}
+.score-band.high{background:rgba(10,31,68,.08);color:var(--navy)}
+.score-band.mid{background:rgba(10,31,68,.06);color:var(--navy)}
+.score-band.low{background:rgba(249,168,37,.1);color:#7A6200}
+
+/* ═══ POSTER SPECS ═══ */
+.specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.spec-card{background:#ffffff;border:1px solid rgba(0,137,123,.15);border-radius:14px;padding:1.2rem 1.4rem;position:relative;overflow:hidden}
+.spec-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--teal),var(--teal2))}
+.spec-card-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;color:var(--navy);margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem}
+.spec-card-title i{color:var(--navy);font-size:.8rem}
+.spec-card ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:.3rem}
+.spec-card li{font-size:.87rem;color:var(--body-text);line-height:1.55;padding-left:1.1rem;position:relative}
+.spec-card li::before{content:'\f111';font-family:'Font Awesome 6 Free';font-weight:900;font-size:.28rem;color:var(--navy);position:absolute;left:0;top:7px}
+.spec-card li strong{color:var(--navy);font-weight:600}
+
+/* ═══ STEP FLOW ═══ */
+.steps-flow{display:flex;flex-direction:column;gap:.8rem;margin-top:.8rem}
+.step-row{display:flex;align-items:flex-start;gap:1rem;background:#ffffff;border:1px solid rgba(0,137,123,.15);border-radius:12px;padding:1rem 1.2rem;transition:transform .18s,box-shadow .18s}
+.step-row:hover{transform:translateX(4px);box-shadow:0 3px 14px rgba(0,0,0,.06)}
+.step-num{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;font-family:'Poppins',sans-serif;font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+.step-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:.9rem;color:var(--navy);margin-bottom:.2rem}
+.step-desc{font-size:.87rem;color:var(--body-text);line-height:1.6}
+
+/* ═══ ASSOCIATES ═══ */
+.associates-sec{background:#ffffff;padding:2.8rem 0;border-bottom:none}
+.assoc-heading{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:1.5rem}
+.assoc-logos-scroll{overflow:hidden;position:relative;width:100%;padding:.5rem 0}
+.assoc-logos-scroll::before,.assoc-logos-scroll::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.assoc-logos-scroll::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
+.assoc-logos-scroll::after{right:0;background:linear-gradient(90deg,transparent,#fff)}
+.assoc-logos-track{display:flex;gap:2rem;width:max-content;animation:logoScroll 25s linear infinite}
+.assoc-logos-track:hover{animation-play-state:paused}
+@keyframes logoScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.assoc-logo-card{background:transparent;border:none;border-radius:0;padding:0 1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:.6rem;min-width:160px;min-height:130px;box-shadow:none}
+.assoc-logo-card img{max-height:80px;max-width:160px;object-fit:contain;flex:0 0 auto}
+.assoc-logo-title{font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;letter-spacing:.3px;line-height:1.3;min-height:2.2em;display:flex;align-items:flex-end;justify-content:center}
+.assoc-footer-divider{height:4px;background:linear-gradient(90deg,transparent 2%,var(--blue) 30%,var(--ocean) 50%,var(--blue) 70%,transparent 98%);opacity:.5}
+
+/* ═══ FOOTER ═══ */
+footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2.5rem;text-align:center}
+.footer-copy{font-size:.8rem;color:rgba(255,255,255,.6);font-weight:500;letter-spacing:.3px}
+
+/* ═══ SCROLL ARROW ═══ */
+.scroll-arrow{position:fixed;bottom:2rem;right:2rem;z-index:9998;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 18px rgba(0,137,123,.35);transition:opacity .3s,transform .3s,visibility .3s;opacity:0;visibility:hidden;pointer-events:none}
+.scroll-arrow.visible{opacity:1;visibility:visible;pointer-events:auto}
+.scroll-arrow:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,137,123,.5)}
+
+@media(max-width:960px){.specs-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.container{padding:0 1.2rem}.sec{padding:3rem 0}.page-banner{padding:6rem 0 2.5rem}.page-banner-inner{padding:0 1.2rem}.specs-grid{grid-template-columns:1fr}.faq-tabs{gap:.4rem}.scroll-arrow{bottom:1.2rem;right:1.2rem;width:42px;height:42px;font-size:1rem}}
+</style>
+</head>
+<body>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026"></a>
+    <ul class="nav-desktop">
+      <li class="nav-item"><a href="index.html">Home</a></li>
+      <li class="nav-item"><a href="about.html">About <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="team.html"><i class="fa-solid fa-users"></i> BiCS Team</a></li></ul></li>
+      <li class="nav-item"><a href="register.html" class="active">Registrations <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li><li><a href="submissions.html"><i class="fa-solid fa-file-lines"></i> Submissions</a></li><li><a href="faq.html" class="active"><i class="fa-solid fa-circle-question"></i> FAQs</a></li></ul></li>
+      <li class="nav-item"><a href="guests.html">Guests <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="honorable-guests.html"><i class="fa-solid fa-user-tie"></i> Honorable Guests</a></li><li><a href="keynote-speakers.html"><i class="fa-solid fa-microphone"></i> Keynote Speakers</a></li></ul></li>
+      <li class="nav-item"><a href="gallery.html">Gallery <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="press-media.html"><i class="fa-solid fa-newspaper"></i> Press / Media</a></li></ul></li>
+    </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</nav>
+
+<aside class="nav-sidebar" id="navSidebar">
+  <div class="nav-sidebar-header">
+    <div class="nav-sidebar-brand"><div class="nav-sidebar-logo-wrap"><img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026" class="nav-sidebar-logo"></div></div>
+    <button class="nav-sidebar-close" id="navSidebarClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <ul class="nav-sidebar-links">
+    <li><a href="index.html"><span class="sb-icon"><i class="fa-solid fa-house"></i></span> Home</a></li>
+    <li class="sb-has-dropdown"><a href="about.html"><span class="sb-icon"><i class="fa-solid fa-circle-info"></i></span> About</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="team.html"><span class="sb-dd-icon"><i class="fa-solid fa-users"></i></span> BiCS Team</a></li></ul></li>
+    <li class="sb-has-dropdown"><a href="register.html" class="active"><span class="sb-icon"><i class="fa-solid fa-clipboard-list"></i></span> Registrations</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="fee-payment.html"><span class="sb-dd-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span> Fee Payment</a></li><li><a href="submissions.html"><span class="sb-dd-icon"><i class="fa-solid fa-file-lines"></i></span> Submissions</a></li><li><a href="faq.html"><span class="sb-dd-icon"><i class="fa-solid fa-circle-question"></i></span> FAQs</a></li></ul></li>
+    <li class="sb-has-dropdown"><a href="guests.html"><span class="sb-icon"><i class="fa-solid fa-user-tie"></i></span> Guests</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="honorable-guests.html"><span class="sb-dd-icon"><i class="fa-solid fa-user-tie"></i></span> Honorable Guests</a></li><li><a href="keynote-speakers.html"><span class="sb-dd-icon"><i class="fa-solid fa-microphone"></i></span> Keynote Speakers</a></li></ul></li>
+    <li class="sb-has-dropdown"><a href="gallery.html"><span class="sb-icon"><i class="fa-solid fa-images"></i></span> Gallery</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li></ul></li>
+  </ul>
+</aside>
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+  <div class="page-banner-inner">
+    <div class="page-banner-badge"><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</div>
+    <h1>FAQs — BiCS 2026</h1>
+    <p>Everything you need to know about participation, submission, and presentation at the Blue Intelligence Climate Summit 2026.</p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<section class="sec" id="faq-main">
+<div class="container">
+
+  <!-- TABS -->
+  <div class="faq-tabs">
+    <button class="faq-tab active" data-tab="students"><i class="fa-solid fa-graduation-cap" style="margin-right:5px"></i>Students</button>
+    <button class="faq-tab" data-tab="researchers"><i class="fa-solid fa-flask" style="margin-right:5px"></i>Researchers & Academicians</button>
+    <button class="faq-tab" data-tab="specs"><i class="fa-solid fa-ruler" style="margin-right:5px"></i>Poster Specifications</button>
+    <button class="faq-tab" data-tab="rubric"><i class="fa-solid fa-star-half-stroke" style="margin-right:5px"></i>Judging Rubric</button>
+  </div>
+
+  <!-- STUDENTS PANEL -->
+  <div class="faq-panel active" id="tab-students">
+
+    <div class="faq-section-label"><i class="fa-solid fa-list-check"></i> How to Participate — Students (Ages 18–25)</div>
+    <div class="steps-flow">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Form Your Team</div>
+          <div class="step-desc">Gather a team of 2 to 4 eligible students. Cross-disciplinary teams (e.g., Data Science paired with Marine Biology) are highly encouraged.</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Select Your Track</div>
+          <div class="step-desc">Choose from <strong>The Smart Port Blueprint</strong>, <strong>The Eco-Pulse Concept</strong>, or <strong>The Civic Resilience Map</strong>.</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Submit Registration</div>
+          <div class="step-desc">Fill out the student portal form with your abstract concept, design draft link, and college identity proofs as per the registration deadline details.</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Mount Your Poster</div>
+          <div class="step-desc">Arrive on Day 1 at 14:00 to receive your designated exhibition board space, display materials, and mentor feedback.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-section-label" style="margin-top:2.5rem"><i class="fa-solid fa-circle-question"></i> Student Poster Presentation FAQs</div>
+    <div class="accordion">
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-q">Is there a registration fee to participate in the student poster track?</span>
+          <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-content">No, entering the student poster presentation track is <strong>completely free</strong> for all shortlisted student teams.</div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-q">Can individual students present a poster, or do we have to be in a team?</span>
+          <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-content">Registrations are strictly for <strong>teams of 2 to 4 members</strong> to promote collaborative engineering and science.</div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-q">Does our poster concept have to include tech or coding elements?</span>
+          <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-content">Yes. The core theme of the summit is <strong>digital intelligence</strong>. Your poster must showcase how data science, AI, machine learning, or software tools can resolve the chosen marine challenge.</div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-q">Who provides the poster boards and stands?</span>
+          <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-content">The summit management provides standard physical display boards, mounting materials, and lighting at the venue gallery. Teams are only responsible for bringing their printed poster sheets according to the requested size specification.
+            <div class="acc-note"><i class="fa-solid fa-circle-info"></i> Confirmation will be provided before 10th August 2026.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCHERS PANEL -->
+  <div class="faq-panel" id="tab-researchers">
+
+    <div class="faq-section-label"><i class="fa-solid fa-file-lines"></i> Process of Submission & Scope</div>
+    <div class="accordion">
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-q">Can I submit an abstract if my research paper is currently under review elsewhere?</span>
+          <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-content">No. All abstract submissions must represent <strong>original, unpublished work</strong> that is not under consideration by any other conference, summit, or journal.</div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-q">Does my research paper have to involve Artificial Intelligence or Machine Learning?</span>
+          <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-content">Yes. The core mandate of BICS 2026 is digital intelligence. Your methodology must explicitly leverage <strong>machine learning, computer vision, neural networks, big data architectures, or advanced computational modeling</strong> to solve a distinct marine or coastal challenge.</div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-q">Can a researcher submit multiple abstracts as the primary author?</span>
+          <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-content">A researcher can be listed as a <strong>co-author on multiple papers</strong>, but can only act as the primary/corresponding author for <strong>one abstract submission</strong>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-section-label"><i class="fa-solid fa-magnifying-glass"></i> Review Process & Publication</div>
+    <div class="accordion">
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-q">How will the submitted abstracts be evaluated?</span>
+          <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-content">Submissions undergo a <strong>double-blind peer-review process</strong> managed by our academic committee. Grading is based strictly on scientific rigor, methodology validity, data accuracy, and practical environmental impact.</div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-q">How are the winning papers selected for Scopus-indexed journals?</span>
+          <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-content">The top-ranked papers in each track will be directly recommended to our partner journal editors (including <strong>Marine Policy</strong> and <strong>Applied Ocean Research</strong>) for fast-tracked peer review and open-access publication.</div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-q">Are there publication charges if my paper is selected for a partner journal?</span>
+          <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-content">For the <strong>Grand Winner (₹2,00,000 prize)</strong>, BICS 2026 fully funds the open-access publication fee. Other recommended papers may be subject to the standard processing charges of the respective journal.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-section-label"><i class="fa-solid fa-location-dot"></i> Presentation Logistics</div>
+    <div class="accordion">
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-q">If my abstract is accepted, do I have to present physically at the venue?</span>
+          <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-content">Yes. At least <strong>one author</strong> from each accepted paper must register and attend the summit in Visakhapatnam to present their findings during the <strong>Day 2 Technical Sessions</strong>.</div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-q">Is there financial support available for traveling researchers?</span>
+          <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-content">The <strong>Best Paper Award winner</strong> receives a full travel grant. Limited partial travel stipends are available for early-career researchers and PhD candidates on a merit-backed request system.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POSTER SPECS PANEL -->
+  <div class="faq-panel" id="tab-specs">
+
+    <div class="faq-section-label"><i class="fa-solid fa-clock"></i> Time Allocation</div>
+    <div class="acc-note" style="display:inline-flex;margin-bottom:1.5rem">
+      <i class="fa-solid fa-stopwatch"></i>
+      <span><strong>Duration per poster per student: 10 minutes only.</strong> Plan your pitch and Q&A accordingly.</span>
+    </div>
+
+    <div class="faq-section-label"><i class="fa-solid fa-ruler-combined"></i> Dimensions & Materials</div>
+    <div class="specs-grid">
+      <div class="spec-card">
+        <div class="spec-card-title"><i class="fa-solid fa-expand"></i> Standard Dimensions</div>
+        <ul>
+          <li><strong>Size:</strong> A0 Portrait Orientation (strictly)</li>
+          <li><strong>Width:</strong> 841 mm (33.1 inches)</li>
+          <li><strong>Height:</strong> 1189 mm (46.8 inches)</li>
+        </ul>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-title"><i class="fa-solid fa-print"></i> Paper & Mounting</div>
+        <ul>
+          <li><strong>Paper Quality:</strong> Minimum 200 GSM, Matte or Satin finish</li>
+          <li><strong>Glossy finishes:</strong> Heavily discouraged (glare from spot lighting)</li>
+          <li><strong>Mounting:</strong> Venue provides boards & heavy-duty tape — do not frame</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-section-label" style="margin-top:2rem"><i class="fa-solid fa-text-height"></i> Visual Layout & Typography Rules</div>
+    <div class="specs-grid">
+      <div class="spec-card">
+        <div class="spec-card-title"><i class="fa-solid fa-heading"></i> Typography</div>
+        <ul>
+          <li><strong>Title:</strong> Minimum 72 pt Bold — team name, track & institution at 36 pt below</li>
+          <li><strong>Body text:</strong> Minimum 24 pt — readable from 1.5 metres</li>
+          <li><strong>Section headers:</strong> Minimum 40 pt</li>
+        </ul>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-title"><i class="fa-solid fa-chart-pie"></i> Content Balance</div>
+        <ul>
+          <li><strong>60% Visual:</strong> High-res flowcharts, wireframes, maps, graphs</li>
+          <li><strong>40% Text:</strong> Punchy bullet points — avoid dense paragraphs</li>
+          <li><strong>BiCS 2026 Logo:</strong> Top-right corner (mandatory)</li>
+          <li><strong>Bottom-right:</strong> Reserve 10×10 cm for Exhibition Board Number</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- RUBRIC PANEL -->
+  <div class="faq-panel" id="tab-rubric">
+
+    <div class="faq-section-label"><i class="fa-solid fa-trophy"></i> Judging Evaluation Rubric — Day 2 Gallery Review</div>
+    <p style="font-size:.9rem;color:var(--body-text);margin-bottom:1.5rem;line-height:1.7">Judges will score each team out of a maximum of <strong>50 points</strong> across five core metrics on their digital evaluation tablets.</p>
+
+    <div class="rubric-grid">
+      <div class="rubric-row">
+        <div class="rubric-header">
+          <div class="rubric-num">1</div>
+          <div class="rubric-title">Technological Innovation & AI Logic</div>
+          <div class="rubric-pts">10 pts</div>
+        </div>
+        <div class="rubric-body">
+          <em>Criteria:</em> How effectively does the poster deploy digital intelligence (AI, ML, UI/UX, or Data Architecture) to address the track prompt? Is the technical logic sound or just buzzwords?
+          <div class="score-bands">
+            <span class="score-band high">9–10: Exceptional tech model with clear data flows</span>
+            <span class="score-band mid">6–8: Practical application of existing tools</span>
+            <span class="score-band low">1–5: Weak technical depth or purely theoretical</span>
+          </div>
+        </div>
+      </div>
+      <div class="rubric-row">
+        <div class="rubric-header">
+          <div class="rubric-num">2</div>
+          <div class="rubric-title">Practical Feasibility & Scalability</div>
+          <div class="rubric-pts">10 pts</div>
+        </div>
+        <div class="rubric-body">
+          <em>Criteria:</em> Can this blueprint be realistically developed and executed by shipping lines, eco-tourism resorts, or local municipal bodies, or is it too speculative?
+          <div class="score-bands">
+            <span class="score-band high">9–10: Highly viable, immediate deployment potential</span>
+            <span class="score-band mid">6–8: Feasible but requires significant infrastructure changes</span>
+            <span class="score-band low">1–5: Highly unrealistic or cost-prohibitive</span>
+          </div>
+        </div>
+      </div>
+      <div class="rubric-row">
+        <div class="rubric-header">
+          <div class="rubric-num">3</div>
+          <div class="rubric-title">Visual Layout & Data Design</div>
+          <div class="rubric-pts">10 pts</div>
+        </div>
+        <div class="rubric-body">
+          <em>Criteria:</em> Is the poster visually engaging and balanced? Do the charts, system diagrams, and maps accelerate understanding, or is the board cluttered and text-heavy?
+          <div class="score-bands">
+            <span class="score-band high">9–10: Flawless layout, beautiful data graphics</span>
+            <span class="score-band mid">6–8: Clear organisation but slightly text-dense</span>
+            <span class="score-band low">1–5: Messy layout, low-res images, or tiny fonts</span>
+          </div>
+        </div>
+      </div>
+      <div class="rubric-row">
+        <div class="rubric-header">
+          <div class="rubric-num">4</div>
+          <div class="rubric-title">Cross-Disciplinary Alignment</div>
+          <div class="rubric-pts">10 pts</div>
+        </div>
+        <div class="rubric-body">
+          <em>Criteria:</em> How well does the concept bridge the gap between technical data science and core marine/maritime realities? Does it show a deep understanding of ocean constraints?
+          <div class="score-bands">
+            <span class="score-band high">9–10: Perfect blend of data science & ocean climate realities</span>
+            <span class="score-band mid">6–8: Strong solution but slightly disconnected from marine nuances</span>
+            <span class="score-band low">1–5: Fails to address oceanographic or logistical constraints</span>
+          </div>
+        </div>
+      </div>
+      <div class="rubric-row">
+        <div class="rubric-header">
+          <div class="rubric-num">5</div>
+          <div class="rubric-title">Pitch Presentation & Q&A Defensibility</div>
+          <div class="rubric-pts">10 pts</div>
+        </div>
+        <div class="rubric-body">
+          <em>Criteria:</em> How confidently does the team articulate their design to the jury within the strict 3-minute pitch window? How accurately do they answer technical cross-examinations?
+          <div class="score-bands">
+            <span class="score-band high">9–10: Highly articulate, structured pitch & authoritative answers</span>
+            <span class="score-band mid">6–8: Clear presentation but struggles with deep technical counters</span>
+            <span class="score-band low">1–5: Unprepared, reads directly off the poster</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ASSOCIATES -->
+<section class="associates-sec sec" id="associates">
+  <div class="container">
+    <div class="assoc-heading">Associates</div>
+    <div class="assoc-logos-scroll">
+      <div class="assoc-logos-track">
+        <div class="assoc-logo-card"><img src="assets/Goaec.png" alt="Goa Ecology"><div class="assoc-logo-title">Goa Ecology</div></div>
+        <div class="assoc-logo-card"><img src="assets/ICAR CMFRI (1).png" alt="ICAR-CMFRI"><div class="assoc-logo-title">ICAR-CMFRI</div></div>
+        <div class="assoc-logo-card"><img src="assets/RFI.png" alt="RFI"><div class="assoc-logo-title">RFI</div></div>
+        <div class="assoc-logo-card"><img src="assets/MBI.png" alt="Marine Biological Association of India"><div class="assoc-logo-title">MBAI</div></div>
+        <div class="assoc-logo-card"><img src="assets/GLOBAL UNAP LOGO.png" alt="Global UNAP"><div class="assoc-logo-title">Global UNAP</div></div>
+        <div class="assoc-logo-card"><img src="assets/Goaec.png" alt="Goa Ecology"><div class="assoc-logo-title">Goa Ecology</div></div>
+        <div class="assoc-logo-card"><img src="assets/ICAR CMFRI (1).png" alt="ICAR-CMFRI"><div class="assoc-logo-title">ICAR-CMFRI</div></div>
+        <div class="assoc-logo-card"><img src="assets/RFI.png" alt="RFI"><div class="assoc-logo-title">RFI</div></div>
+        <div class="assoc-logo-card"><img src="assets/MBI.png" alt="Marine Biological Association of India"><div class="assoc-logo-title">MBAI</div></div>
+        <div class="assoc-logo-card"><img src="assets/GLOBAL UNAP LOGO.png" alt="Global UNAP"><div class="assoc-logo-title">Global UNAP</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="assoc-footer-divider"></div>
+<footer><div class="footer-copy">&copy; 2026 BiCS Organizing Committee. All rights reserved.</div></footer>
+<button class="scroll-arrow" id="scrollArrow" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+(function(){var h=document.getElementById('navHamburger'),s=document.getElementById('navSidebar'),c=document.getElementById('navSidebarClose'),o=document.getElementById('navOverlay');function openNav(){s.classList.add('open');o.classList.add('open');document.body.style.overflow='hidden'}function closeNav(){s.classList.remove('open');o.classList.remove('open');document.body.style.overflow='';var d=document.querySelectorAll('.sb-has-dropdown.open');for(var i=0;i<d.length;i++)d[i].classList.remove('open')}if(h)h.addEventListener('click',openNav);if(c)c.addEventListener('click',closeNav);if(o)o.addEventListener('click',closeNav);var l=document.querySelectorAll('.nav-sidebar-links li>a,.sb-submenu a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',closeNav);var t=document.querySelectorAll('.sb-dropdown-toggle');for(var j=0;j<t.length;j++)t[j].addEventListener('click',function(e){e.preventDefault();e.stopPropagation();this.closest('.sb-has-dropdown').classList.toggle('open')})})();
+
+// TABS
+(function(){
+  var tabs=document.querySelectorAll('.faq-tab');
+  var panels=document.querySelectorAll('.faq-panel');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click',function(){
+      tabs.forEach(function(t){t.classList.remove('active')});
+      panels.forEach(function(p){p.classList.remove('active')});
+      tab.classList.add('active');
+      var target=document.getElementById('tab-'+tab.dataset.tab);
+      if(target)target.classList.add('active');
+    });
+  });
+})();
+
+// ACCORDION
+(function(){
+  var triggers=document.querySelectorAll('.acc-trigger');
+  triggers.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=this.closest('.acc-item');
+      var wasOpen=item.classList.contains('open');
+      var panel=item.closest('.faq-panel');
+      panel.querySelectorAll('.acc-item.open').forEach(function(el){el.classList.remove('open')});
+      if(!wasOpen)item.classList.add('open');
+    });
+  });
+})();
+
+// SCROLL REVEAL
+(function(){var s=document.querySelectorAll('.sec');if(!s.length||!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('vis')});return}var o=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('vis');o.unobserve(en.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});s.forEach(function(e){o.observe(e)})})();
+
+// SCROLL ARROW
+(function(){var a=document.getElementById('scrollArrow');if(!a)return;window.addEventListener('scroll',function(){if(window.scrollY>400){a.classList.add('visible');a.innerHTML='<i class="fa-solid fa-arrow-up"></i>';a.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})}}else a.classList.remove('visible')})})();
+</script>
+</body>
+</html>

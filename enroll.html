@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enroll — BiCS 2026 Blue Intelligence Climate Summit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0A1F44;--deep:#0D2B5E;--ocean:#1565C0;--blue:#2196F3;--teal:#00897B;--teal2:#26A69A;--teal3:#80CBC4;--green2:#43A047;--gold:#F9A825;--gold2:#FFD54F;--white:#FFFFFF;--sky:#E3F2FD;--muted:#1a2e4a;--text:#0A1F44;--cyan:#00D4FF;--card-bg:rgba(255,255,255,0.75);--card-border:rgba(33,150,243,0.2)}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);overflow-x:clip;font-size:18px}
+
+/* ═══ NAVIGATION ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shadow:0 2px 20px rgba(10,31,68,.09)}
+.nav-inner{display:flex;align-items:center;justify-content:center;width:100%;max-width:1400px;margin:0 auto;padding:0 2rem;height:70px;position:relative}
+.nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;position:absolute;left:2rem}
+.nav-logo img{height:56px;width:auto;object-fit:contain}
+.nav-desktop{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+.nav-item{position:relative}
+.nav-item>a{font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);text-decoration:none;padding:8px 15px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
+.nav-item>a::after{display:none}
+.nav-item>a:hover{color:var(--teal);background:rgba(0,137,123,.07)}
+.nav-item>a.active{color:var(--teal);background:rgba(0,137,123,.1)}
+.nav-item>a .dd-arrow{font-size:.5rem;opacity:.5;transition:transform .2s,opacity .2s}
+.nav-item:hover>a .dd-arrow{transform:rotate(180deg);opacity:.9}
+.nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;min-width:200px;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.1),0 0 0 1px rgba(10,31,68,.06);padding:6px;opacity:0;visibility:hidden;transition:all .2s ease;z-index:10;list-style:none}
+.nav-item:hover .nav-dropdown{opacity:1;visibility:visible}
+.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:9px 14px;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;border-radius:8px;transition:all .15s}
+.nav-dropdown li a:hover{background:rgba(0,137,123,.07);color:var(--teal)}
+.nav-dropdown li a i{color:var(--teal);font-size:.7rem;width:16px;text-align:center;opacity:.65}
+.nav-dropdown li a:hover i{opacity:1}
+.nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:var(--navy);cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}
+.nav-hamburger:hover{background:rgba(10,31,68,.03);border-color:rgba(10,31,68,.15)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10000;opacity:0;transition:opacity .3s}
+.nav-overlay.open{display:block;opacity:1}
+.nav-sidebar{position:fixed;top:0;right:0;bottom:0;width:min(360px,88vw);height:100vh;background:#fff;z-index:10001;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);box-shadow:-4px 0 24px rgba(0,0,0,.1);display:flex;flex-direction:column;overflow:hidden}
+.nav-sidebar.open{transform:translateX(0)}
+.nav-sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.2rem;border-bottom:1px solid rgba(10,31,68,.06);flex-shrink:0}
+.nav-sidebar-brand{display:flex;align-items:center;gap:.8rem}
+.nav-sidebar-logo-wrap{display:inline-flex;border-radius:6px;padding:3px 8px;line-height:0}
+.nav-sidebar-logo{height:42px;width:auto;object-fit:contain}
+.nav-sidebar-close{width:34px;height:34px;border-radius:8px;background:rgba(10,31,68,.04);border:1px solid rgba(10,31,68,.08);color:var(--navy);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.nav-sidebar-close:hover{background:rgba(10,31,68,.08)}
+.nav-sidebar-links{list-style:none;overflow-y:auto;flex:1;padding:.4rem 0;margin:0}
+.nav-sidebar-links li{border-bottom:1px solid rgba(10,31,68,.04)}
+.nav-sidebar-links li:last-child{border-bottom:none}
+.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);text-decoration:none;transition:all .15s}
+.nav-sidebar-links li>a:hover,.nav-sidebar-links li>a.active{color:var(--teal);background:rgba(0,137,123,.03)}
+.nav-sidebar-links li>a.active .sb-icon{background:var(--teal);color:#fff}
+.sb-icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:7px;background:rgba(0,137,123,.07);color:var(--teal);font-size:.75rem;flex-shrink:0;transition:all .15s}
+.sb-dropdown-toggle{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:none;background:transparent;color:var(--teal);cursor:pointer;font-size:.8rem;transition:transform .2s;flex-shrink:0;opacity:.5}
+.sb-has-dropdown{display:flex;flex-wrap:wrap;align-items:center}
+.sb-has-dropdown>a{flex:1}
+.sb-has-dropdown.open .sb-dropdown-toggle{opacity:1}
+.sb-has-dropdown.open .sb-dropdown-toggle i{transform:rotate(45deg)}
+.sb-submenu{display:none;flex-direction:column;width:100%;background:rgba(0,137,123,.02);list-style:none;padding:.25rem 0;margin:0}
+.sb-has-dropdown.open .sb-submenu{display:flex}
+.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;transition:all .15s}
+.sb-submenu li a:hover{color:var(--teal);background:rgba(0,137,123,.04)}
+.sb-dd-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:rgba(0,137,123,.06);color:var(--teal);font-size:.58rem;flex-shrink:0}
+@media(min-width:961px){.nav-sidebar,.nav-overlay{display:none!important}.nav-hamburger{display:none!important}}
+@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex}.nav-inner{padding:0 1rem;height:58px}.nav-logo{left:1rem}.nav-logo img{height:44px}.nav-hamburger{right:1rem}}
+
+/* ═══ PAGE HERO BANNER ═══ */
+.page-hero{background:linear-gradient(160deg,#060E1A 0%,#0D2B5E 55%,#060E1A 100%);padding:7rem 0 3.5rem;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(0,137,123,.15) 0%,transparent 60%);pointer-events:none}
+.page-hero-inner{max-width:1300px;margin:0 auto;padding:0 2.5rem;position:relative;z-index:1}
+.page-hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,137,123,.15);border:1px solid rgba(0,137,123,.3);border-radius:999px;padding:.35rem 1rem;font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:700;color:var(--teal3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1.2rem}
+.page-hero h1{font-family:'Poppins',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:.8rem}
+.page-hero h1 em{color:var(--cyan);font-style:normal}
+.page-hero p{font-size:.98rem;color:rgba(255,255,255,.7);max-width:600px;line-height:1.7}
+
+/* ═══ SECTION / LAYOUT ═══ */
+.sec{padding:2.8rem 0;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.sec.vis{opacity:1;transform:translateY(0)}
+.container{max-width:1300px;margin:0 auto;padding:0 2.5rem}
+.sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2;max-width:700px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(21,101,243,.15),transparent)}
+
+/* ═══ FORM CARD ═══ */
+.enroll-card{background:#fff;border-radius:20px;box-shadow:0 8px 40px rgba(10,31,68,.1),0 0 0 1px rgba(33,150,243,.1);padding:2.8rem;max-width:860px;margin:0 auto}
+.enroll-card-title{font-family:'Poppins',sans-serif;font-size:1.3rem;font-weight:800;color:var(--navy);margin-bottom:.35rem}
+.enroll-card-sub{font-size:.88rem;color:var(--muted);margin-bottom:2rem;opacity:.7}
+
+/* form grid */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.form-grid.three{grid-template-columns:1fr 1fr 1fr}
+.form-full{grid-column:1/-1}
+
+.field-group{display:flex;flex-direction:column;gap:.45rem}
+.field-label{font-family:'Poppins',sans-serif;font-size:.8rem;font-weight:700;color:var(--ocean);letter-spacing:.3px}
+.field-label span.req{color:#e53935;margin-left:2px}
+
+.field-input,
+.field-select,
+.field-textarea{width:100%;border:1.5px solid rgba(10,31,68,.15);border-radius:10px;padding:.7rem 1rem;font-family:'Open Sans',sans-serif;font-size:.88rem;color:var(--navy);background:#fff;transition:border-color .2s,box-shadow .2s;outline:none;appearance:none;-webkit-appearance:none}
+.field-input:focus,.field-select:focus,.field-textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,137,123,.1)}
+.field-input::placeholder{color:rgba(10,31,68,.35)}
+.field-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230A1F44' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;cursor:pointer}
+.field-textarea{resize:vertical;min-height:90px}
+
+/* phone with ISD */
+.phone-wrap{display:flex;gap:.5rem}
+.isd-select{width:105px;flex-shrink:0;border:1.5px solid rgba(10,31,68,.15);border-radius:10px;padding:.7rem .6rem;font-family:'Open Sans',sans-serif;font-size:.82rem;color:var(--navy);background:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%230A1F44' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .5rem center;padding-right:1.6rem;appearance:none;-webkit-appearance:none;outline:none;transition:border-color .2s,box-shadow .2s;cursor:pointer}
+.isd-select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,137,123,.1)}
+.phone-number{flex:1;border:1.5px solid rgba(10,31,68,.15);border-radius:10px;padding:.7rem 1rem;font-family:'Open Sans',sans-serif;font-size:.88rem;color:var(--navy);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.phone-number:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,137,123,.1)}
+.phone-number::placeholder{color:rgba(10,31,68,.35)}
+
+/* others reveal */
+#othersGroup{display:none}
+#othersGroup.visible{display:flex}
+
+/* interest choices */
+.choice-grid{display:flex;gap:.8rem;flex-wrap:wrap}
+.choice-btn{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.1rem;border:1.5px solid rgba(10,31,68,.15);border-radius:8px;font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:600;color:var(--muted);cursor:pointer;background:#fff;transition:all .2s;user-select:none}
+.choice-btn input[type="radio"]{display:none}
+.choice-btn:hover{border-color:var(--teal);color:var(--teal);background:rgba(0,137,123,.04)}
+.choice-btn.selected{border-color:var(--teal);color:#fff;background:var(--teal)}
+.choice-btn.selected .choice-icon{color:#fff}
+.choice-icon{color:var(--teal);font-size:.75rem;transition:color .2s}
+
+/* section separator inside form */
+.form-section-head{font-family:'Poppins',sans-serif;font-size:.75rem;font-weight:800;color:var(--ocean);letter-spacing:2px;text-transform:uppercase;padding:.5rem 0 .2rem;border-bottom:1.5px solid rgba(21,101,192,.15);margin-bottom:.2rem;grid-column:1/-1}
+
+/* submit */
+.btn-submit{font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border:none;padding:.9rem 2.8rem;border-radius:999px;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,137,123,.35);letter-spacing:.3px;display:inline-flex;align-items:center;gap:.6rem;margin-top:.8rem}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,137,123,.5)}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.btn-submit i{font-size:.85rem}
+
+/* privacy note */
+.privacy-note{font-size:.75rem;color:rgba(10,31,68,.5);margin-top:.5rem;display:flex;align-items:center;gap:.4rem}
+.privacy-note i{color:var(--teal);font-size:.7rem}
+
+/* ═══ SUCCESS MESSAGE ═══ */
+.success-box{display:none;background:linear-gradient(160deg,#060E1A 0%,#0D2B5E 55%,#060E1A 100%);border:1px solid rgba(0,137,123,.25);border-radius:20px;padding:3.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.success-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(0,137,123,.12) 0%,transparent 60%);pointer-events:none}
+.success-box.show{display:block}
+.success-icon{width:72px;height:72px;border-radius:50%;background:rgba(0,137,123,.2);border:2px solid rgba(0,137,123,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:1.8rem;color:var(--teal3);position:relative;z-index:1}
+.success-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:#fff;margin-bottom:.8rem;position:relative;z-index:1}
+.success-title em{color:var(--cyan);font-style:normal}
+.success-body{font-size:.95rem;color:rgba(255,255,255,.78);line-height:1.75;position:relative;z-index:1;max-width:560px;margin:0 auto}
+.success-body a{color:var(--cyan);text-decoration:none;font-weight:600}
+.success-body a:hover{text-decoration:underline}
+.success-mail-tag{display:inline-flex;align-items:center;gap:.4rem;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.2);border-radius:999px;padding:.3rem .9rem;font-size:.82rem;color:var(--cyan);font-weight:600;margin-top:.8rem}
+
+/* ═══ ASSOCIATES ═══ */
+.associates-sec{background:#fff;padding:2.8rem 0}
+.assoc-heading{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:1.5rem}
+.assoc-logos-scroll{overflow:hidden;position:relative;width:100%;padding:.5rem 0}
+.assoc-logos-scroll::before,.assoc-logos-scroll::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.assoc-logos-scroll::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
+.assoc-logos-scroll::after{right:0;background:linear-gradient(90deg,transparent,#fff)}
+.assoc-logos-track{display:flex;gap:2rem;width:max-content;animation:logoScroll 25s linear infinite}
+.assoc-logos-track:hover{animation-play-state:paused}
+@keyframes logoScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.assoc-logo-card{background:transparent;border:none;border-radius:0;padding:0 1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:.6rem;min-width:160px;min-height:130px;position:relative;overflow:hidden;box-shadow:none}
+.assoc-logo-card img{max-height:80px;max-width:160px;object-fit:contain;flex:0 0 auto}
+.assoc-logo-title{font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;letter-spacing:.3px;line-height:1.3;min-height:2.2em;display:flex;align-items:flex-end;justify-content:center}
+.assoc-footer-divider{height:4px;background:linear-gradient(90deg,transparent 2%,var(--teal) 30%,var(--ocean) 50%,var(--teal) 70%,transparent 98%);margin:0;opacity:.5}
+
+/* ═══ FOOTER ═══ */
+footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
+.footer-main{max-width:1300px;margin:0 auto;padding:2.8rem 2.5rem 2rem;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem}
+.footer-brand{display:flex;flex-direction:column;gap:.8rem}
+.footer-brand img{height:80px;width:auto;max-width:240px;object-fit:contain;display:block}
+.footer-brand-date{font-family:'Open Sans',sans-serif;font-size:.84rem;color:#000;font-weight:700;margin-top:.3rem}
+.footer-brand-social{display:flex;gap:.75rem;margin-top:.6rem;flex-wrap:wrap}
+.footer-brand-social a{width:42px;height:42px;border-radius:50%;background:rgba(10,31,68,.05);border:1.5px solid rgba(10,31,68,.1);display:flex;align-items:center;justify-content:center;color:#000;font-size:1rem;transition:all .25s;text-decoration:none}
+.footer-brand-social a:hover{background:var(--teal);color:#fff;border-color:var(--teal);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,137,123,.25)}
+.footer-col{display:flex;flex-direction:column}
+.footer-col h4{font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:700;color:var(--teal);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.8rem;padding-bottom:.45rem;position:relative}
+.footer-col h4::after{content:'';position:absolute;bottom:0;left:0;width:20px;height:1.5px;background:linear-gradient(90deg,var(--teal),var(--ocean));border-radius:2px}
+.footer-col a{font-family:'Open Sans',sans-serif;font-size:.84rem;color:#000;text-decoration:none;font-weight:700;transition:color .2s;padding:.28rem 0}
+.footer-col a:hover{color:var(--teal)}
+.footer-contact-list{display:flex;flex-direction:column;gap:.45rem}
+.footer-contact-row{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:#000;font-weight:700}
+.footer-contact-row i{color:var(--teal);font-size:.72rem;flex-shrink:0;width:14px;text-align:center}
+.footer-contact-row a{color:#000;text-decoration:none;font-weight:700;transition:color .2s}
+.footer-contact-row a:hover{color:var(--teal)}
+.footer-divider{height:1px;background:rgba(0,0,0,.08);max-width:1300px;margin:0 auto}
+.footer-bottom{max-width:1300px;margin:0 auto;padding:.8rem 2.5rem;text-align:center}
+.footer-copy{font-size:.78rem;color:#000;font-weight:700;letter-spacing:.3px}
+
+.scroll-arrow{position:fixed;bottom:2rem;right:2rem;z-index:9998;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 18px rgba(0,137,123,.35);transition:opacity .3s,transform .3s,visibility .3s;opacity:0;visibility:hidden;pointer-events:none}
+.scroll-arrow.visible{opacity:1;visibility:visible;pointer-events:auto}
+.scroll-arrow:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,137,123,.5)}
+
+/* spinner */
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btn-submit.loading .spinner{display:inline-block}
+.btn-submit.loading .btn-label{display:none}
+
+/* error */
+.field-error{font-size:.75rem;color:#e53935;margin-top:.2rem;display:none}
+.field-group.has-error .field-input,
+.field-group.has-error .field-select,
+.field-group.has-error .phone-number,
+.field-group.has-error .isd-select{border-color:#e53935}
+.field-group.has-error .field-error{display:block}
+
+@media(max-width:860px){.enroll-card{padding:2rem 1.5rem}.form-grid.three{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){
+  .container{padding:0 1.2rem}.page-hero{padding:5.5rem 0 2rem}.page-hero-inner{padding:0 1.2rem}
+  .enroll-card{padding:1.5rem 1rem;border-radius:14px}.form-grid,.form-grid.three{grid-template-columns:1fr}
+  .footer-main{grid-template-columns:1fr;gap:1.5rem;padding:2rem 1.2rem 1.2rem}.footer-brand img{height:30px;max-width:130px}
+  .footer-bottom{padding:.6rem 1.2rem}.scroll-arrow{bottom:1.2rem;right:1.2rem;width:42px;height:42px;font-size:1rem}
+  .choice-grid{gap:.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026">
+    </a>
+    <ul class="nav-desktop">
+      <li class="nav-item"><a href="index.html">Home</a></li>
+      <li class="nav-item">
+        <a href="about.html">About <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="team.html"><i class="fa-solid fa-users"></i> BiCS Team</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="register.html">Registrations <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li>
+          <li><a href="submissions.html"><i class="fa-solid fa-file-lines"></i> Submissions</a></li>
+          <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQs</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="guests.html">Guests <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="honorable-guests.html"><i class="fa-solid fa-user-tie"></i> Honorable Guests</a></li>
+          <li><a href="keynote-speakers.html"><i class="fa-solid fa-microphone"></i> Keynote Speakers</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="gallery.html">Gallery <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="press-media.html"><i class="fa-solid fa-newspaper"></i> Press / Media</a></li>
+        </ul>
+      </li>
+    </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</nav>
+
+<aside class="nav-sidebar" id="navSidebar">
+  <div class="nav-sidebar-header">
+    <div class="nav-sidebar-brand">
+      <div class="nav-sidebar-logo-wrap">
+        <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026" class="nav-sidebar-logo">
+      </div>
+    </div>
+    <button class="nav-sidebar-close" id="navSidebarClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <ul class="nav-sidebar-links">
+    <li><a href="index.html"><span class="sb-icon"><i class="fa-solid fa-house"></i></span>Home</a></li>
+    <li class="sb-has-dropdown">
+      <a href="about.html"><span class="sb-icon"><i class="fa-solid fa-circle-info"></i></span>About</a>
+      <button class="sb-dropdown-toggle"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="team.html"><span class="sb-dd-icon"><i class="fa-solid fa-users"></i></span>BiCS Team</a></li>
+      </ul>
+    </li>
+    <li class="sb-has-dropdown">
+      <a href="register.html"><span class="sb-icon"><i class="fa-solid fa-pen-to-square"></i></span>Registrations</a>
+      <button class="sb-dropdown-toggle"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="fee-payment.html"><span class="sb-dd-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span>Fee Payment</a></li>
+        <li><a href="submissions.html"><span class="sb-dd-icon"><i class="fa-solid fa-file-lines"></i></span>Submissions</a></li>
+        <li><a href="faq.html"><span class="sb-dd-icon"><i class="fa-solid fa-circle-question"></i></span>FAQs</a></li>
+      </ul>
+    </li>
+    <li class="sb-has-dropdown">
+      <a href="guests.html"><span class="sb-icon"><i class="fa-solid fa-star"></i></span>Guests</a>
+      <button class="sb-dropdown-toggle"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="honorable-guests.html"><span class="sb-dd-icon"><i class="fa-solid fa-user-tie"></i></span>Honorable Guests</a></li>
+        <li><a href="keynote-speakers.html"><span class="sb-dd-icon"><i class="fa-solid fa-microphone"></i></span>Keynote Speakers</a></li>
+      </ul>
+    </li>
+    <li class="sb-has-dropdown">
+      <a href="gallery.html"><span class="sb-icon"><i class="fa-solid fa-images"></i></span>Gallery</a>
+      <button class="sb-dropdown-toggle"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span>Press / Media</a></li>
+      </ul>
+    </li>
+    <li><a href="enroll.html" class="active"><span class="sb-icon"><i class="fa-solid fa-user-plus"></i></span>Enroll</a></li>
+  </ul>
+</aside>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag"><i class="fa-solid fa-user-plus"></i> Enrollment Open</div>
+    <h1>Enroll for <em>BiCS 2026</em></h1>
+    <p>Join the Blue Intelligence Climate Summit — 2nd &amp; 3rd October 2026, Visakhapatnam, India. Complete the form below to register your interest.</p>
+  </div>
+</div>
+
+<!-- ENROLL FORM SECTION -->
+<section class="sec" id="enroll-form">
+  <div class="container">
+    <div class="enroll-card" id="formCard">
+      <div class="enroll-card-title">Enrollment Form</div>
+      <div class="enroll-card-sub">Fields marked <strong>*</strong> are required. Your information is secure and will only be used for summit communications.</div>
+
+      <div class="form-grid">
+        <!-- Personal Details -->
+        <div class="form-section-head"><i class="fa-solid fa-user" style="margin-right:.4rem"></i>Personal Details</div>
+
+        <div class="field-group">
+          <label class="field-label" for="firstName">First Name <span class="req">*</span></label>
+          <input class="field-input" type="text" id="firstName" placeholder="e.g. Ravi" autocomplete="given-name">
+          <div class="field-error">Please enter your first name.</div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="middleName">Middle Name</label>
+          <input class="field-input" type="text" id="middleName" placeholder="e.g. Kumar" autocomplete="additional-name">
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="lastName">Last Name <span class="req">*</span></label>
+          <input class="field-input" type="text" id="lastName" placeholder="e.g. Sharma" autocomplete="family-name">
+          <div class="field-error">Please enter your last name.</div>
+        </div>
+
+        <!-- Contact -->
+        <div class="form-section-head"><i class="fa-solid fa-address-card" style="margin-right:.4rem"></i>Contact Information</div>
+
+        <div class="field-group form-full">
+          <label class="field-label" for="email">Email Address <span class="req">*</span></label>
+          <input class="field-input" type="email" id="email" placeholder="yourname@example.com" autocomplete="email">
+          <div class="field-error">Please enter a valid email address.</div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">WhatsApp Number <span class="req">*</span></label>
+          <div class="phone-wrap">
+            <select class="isd-select" id="whatsappIsd" aria-label="WhatsApp ISD code"></select>
+            <input class="phone-number" type="tel" id="whatsapp" placeholder="WhatsApp number">
+          </div>
+          <div class="field-error" id="whatsappError">Please enter your WhatsApp number.</div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Mobile Number <span class="req">*</span></label>
+          <div class="phone-wrap">
+            <select class="isd-select" id="mobileIsd" aria-label="Mobile ISD code"></select>
+            <input class="phone-number" type="tel" id="mobile" placeholder="Mobile number">
+          </div>
+          <div class="field-error" id="mobileError">Please enter your mobile number.</div>
+        </div>
+
+        <!-- Location -->
+        <div class="form-section-head"><i class="fa-solid fa-location-dot" style="margin-right:.4rem"></i>Location</div>
+
+        <div class="field-group">
+          <label class="field-label" for="country">Country <span class="req">*</span></label>
+          <select class="field-select" id="country">
+            <option value="">Select Country</option>
+          </select>
+          <div class="field-error">Please select your country.</div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="state">State / Province <span class="req">*</span></label>
+          <input class="field-input" type="text" id="state" placeholder="e.g. Andhra Pradesh">
+          <div class="field-error">Please enter your state / province.</div>
+        </div>
+
+        <!-- Profile -->
+        <div class="form-section-head"><i class="fa-solid fa-id-badge" style="margin-right:.4rem"></i>Profile</div>
+
+        <div class="field-group form-full">
+          <label class="field-label">I am a <span class="req">*</span></label>
+          <select class="field-select" id="category">
+            <option value="">Select your category</option>
+            <option value="Student">Student</option>
+            <option value="Researcher">Researcher</option>
+            <option value="NGO">NGO</option>
+            <option value="Policymaker">Policymaker</option>
+            <option value="Others">Others</option>
+          </select>
+          <div class="field-error">Please select your category.</div>
+        </div>
+
+        <div class="field-group form-full" id="othersGroup">
+          <label class="field-label" for="othersText">Please specify <span class="req">*</span></label>
+          <input class="field-input" type="text" id="othersText" placeholder="Describe your profile / role">
+          <div class="field-error">Please specify your profile.</div>
+        </div>
+
+        <div class="field-group form-full">
+          <label class="field-label" for="orgName">Organisation Name <span class="req">*</span></label>
+          <input class="field-input" type="text" id="orgName" placeholder="e.g. IIT Madras / Greenpeace / XYZ Pvt. Ltd.">
+          <div class="field-error">Please enter your organisation name.</div>
+        </div>
+
+        <!-- Interest -->
+        <div class="form-section-head"><i class="fa-solid fa-heart" style="margin-right:.4rem"></i>Participation Preference</div>
+
+        <div class="field-group form-full">
+          <label class="field-label">Are you interested in? <span class="req">*</span></label>
+          <div class="choice-grid" id="interestGrid">
+            <label class="choice-btn" id="choiceOffline">
+              <input type="radio" name="interest" value="Offline">
+              <i class="fa-solid fa-location-dot choice-icon"></i> Offline
+            </label>
+            <label class="choice-btn" id="choiceOnline">
+              <input type="radio" name="interest" value="Online">
+              <i class="fa-solid fa-video choice-icon"></i> Online
+            </label>
+          </div>
+          <div class="field-error" id="interestError" style="display:none">Please select your participation preference.</div>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-full" style="display:flex;flex-direction:column;align-items:flex-start">
+          <button class="btn-submit" id="submitBtn" type="button">
+            <span class="btn-label"><i class="fa-solid fa-paper-plane"></i> Submit Enrollment</span>
+            <span class="spinner"></span>
+          </button>
+          <div class="privacy-note"><i class="fa-solid fa-lock"></i> Your data is encrypted and never shared with third parties.</div>
+        </div>
+      </div><!-- /.form-grid -->
+    </div><!-- /.enroll-card -->
+
+    <!-- SUCCESS BOX -->
+    <div class="success-box" id="successBox">
+      <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <div class="success-title">Congratulations, <em>BiCS 2026!</em></div>
+      <div class="success-body">
+        <p>Thank you for enrolling! Your registration has been received. We will be in touch with further details about the Blue Intelligence Climate Summit.</p>
+        <br>
+        <p>If you have any queries, please feel free to reach us at</p>
+        <div class="success-mail-tag"><i class="fa-solid fa-envelope"></i> <a href="mailto:blueics2026@gmail.com">blueics2026@gmail.com</a></div>
+        <br>
+        <p style="margin-top:.8rem;font-size:.85rem;color:rgba(255,255,255,.5)">A confirmation email has been dispatched to your registered email address.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ASSOCIATES -->
+<section class="associates-sec sec" id="associates">
+  <div class="container">
+    <div class="assoc-heading">Our Associates</div>
+    <div class="assoc-logos-scroll">
+      <div class="assoc-logos-track">
+        <div class="assoc-logo-card"><img src="assets/Goaec.png" alt="Goa Ecology"><div class="assoc-logo-title">Goa Ecology</div></div>
+        <div class="assoc-logo-card"><img src="assets/ICAR CMFRI (1).png" alt="ICAR-CMFRI"><div class="assoc-logo-title">ICAR-CMFRI</div></div>
+        <div class="assoc-logo-card"><img src="assets/RFI.png" alt="RFI"><div class="assoc-logo-title">RFI</div></div>
+        <div class="assoc-logo-card"><img src="assets/MBI.png" alt="Marine Biological Association of India"><div class="assoc-logo-title">MBAI</div></div>
+        <div class="assoc-logo-card"><img src="assets/GLOBAL UNAP LOGO.png" alt="Global UNAP"><div class="assoc-logo-title">Global UNAP</div></div>
+        <div class="assoc-logo-card"><img src="assets/Goaec.png" alt="Goa Ecology"><div class="assoc-logo-title">Goa Ecology</div></div>
+        <div class="assoc-logo-card"><img src="assets/ICAR CMFRI (1).png" alt="ICAR-CMFRI"><div class="assoc-logo-title">ICAR-CMFRI</div></div>
+        <div class="assoc-logo-card"><img src="assets/RFI.png" alt="RFI"><div class="assoc-logo-title">RFI</div></div>
+        <div class="assoc-logo-card"><img src="assets/MBI.png" alt="Marine Biological Association of India"><div class="assoc-logo-title">MBAI</div></div>
+        <div class="assoc-logo-card"><img src="assets/GLOBAL UNAP LOGO.png" alt="Global UNAP"><div class="assoc-logo-title">Global UNAP</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="assoc-footer-divider"></div>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026">
+      <div class="footer-brand-date">2nd &amp; 3rd October 2026 · Visakhapatnam, India</div>
+      <div class="footer-brand-social">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Flickr"><i class="fa-brands fa-flickr"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="register.html">Registrations</a>
+      <a href="guests.html">Guests</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="enroll.html">Enroll</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-list">
+        <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:blueics2026@gmail.com">blueics2026@gmail.com</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:info@globalbics.com">info@globalbics.com</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-globe"></i><a href="#">www.globalblueics.com</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+91xxxxxxxxxx">+91 xxxxxxxxxxx</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom"><span class="footer-copy">&copy; 2026 BiCS Organizing Committee. All rights reserved.</span></div>
+</footer>
+
+<button class="scroll-arrow" id="scrollArrow" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+/* ─── CONFIG ─── */
+// STEP 1: Replace with your Google Apps Script Web App URL after deployment
+var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwrSivkB4wn0kTNwmNJeg9H-HsXsaiG4GSwltmZtPLenvTb44ZrojWMp1nMwxDat4BIeg/exec';
+
+/* ─── ISD CODES ─── */
+var ISD_CODES = [
+  {code:'+91',country:'IN',name:'India'},
+  {code:'+1',country:'US',name:'USA'},
+  {code:'+44',country:'GB',name:'UK'},
+  {code:'+61',country:'AU',name:'Australia'},
+  {code:'+1',country:'CA',name:'Canada'},
+  {code:'+971',country:'AE',name:'UAE'},
+  {code:'+65',country:'SG',name:'Singapore'},
+  {code:'+60',country:'MY',name:'Malaysia'},
+  {code:'+49',country:'DE',name:'Germany'},
+  {code:'+33',country:'FR',name:'France'},
+  {code:'+39',country:'IT',name:'Italy'},
+  {code:'+34',country:'ES',name:'Spain'},
+  {code:'+7',country:'RU',name:'Russia'},
+  {code:'+55',country:'BR',name:'Brazil'},
+  {code:'+86',country:'CN',name:'China'},
+  {code:'+81',country:'JP',name:'Japan'},
+  {code:'+82',country:'KR',name:'South Korea'},
+  {code:'+62',country:'ID',name:'Indonesia'},
+  {code:'+63',country:'PH',name:'Philippines'},
+  {code:'+66',country:'TH',name:'Thailand'},
+  {code:'+84',country:'VN',name:'Vietnam'},
+  {code:'+92',country:'PK',name:'Pakistan'},
+  {code:'+880',country:'BD',name:'Bangladesh'},
+  {code:'+94',country:'LK',name:'Sri Lanka'},
+  {code:'+977',country:'NP',name:'Nepal'},
+  {code:'+20',country:'EG',name:'Egypt'},
+  {code:'+27',country:'ZA',name:'South Africa'},
+  {code:'+234',country:'NG',name:'Nigeria'},
+  {code:'+254',country:'KE',name:'Kenya'},
+  {code:'+966',country:'SA',name:'Saudi Arabia'},
+  {code:'+974',country:'QA',name:'Qatar'},
+  {code:'+973',country:'BH',name:'Bahrain'},
+  {code:'+968',country:'OM',name:'Oman'},
+  {code:'+964',country:'IQ',name:'Iraq'},
+  {code:'+98',country:'IR',name:'Iran'},
+  {code:'+90',country:'TR',name:'Turkey'},
+  {code:'+30',country:'GR',name:'Greece'},
+  {code:'+31',country:'NL',name:'Netherlands'},
+  {code:'+32',country:'BE',name:'Belgium'},
+  {code:'+41',country:'CH',name:'Switzerland'},
+  {code:'+46',country:'SE',name:'Sweden'},
+  {code:'+47',country:'NO',name:'Norway'},
+  {code:'+45',country:'DK',name:'Denmark'},
+  {code:'+358',country:'FI',name:'Finland'},
+  {code:'+64',country:'NZ',name:'New Zealand'},
+  {code:'+52',country:'MX',name:'Mexico'},
+  {code:'+54',country:'AR',name:'Argentina'},
+  {code:'+56',country:'CL',name:'Chile'},
+  {code:'+57',country:'CO',name:'Colombia'},
+  {code:'+58',country:'VE',name:'Venezuela'}
+];
+
+var COUNTRIES = [
+  'Afghanistan','Albania','Algeria','Andorra','Angola','Argentina','Armenia','Australia','Austria','Azerbaijan',
+  'Bahrain','Bangladesh','Belarus','Belgium','Belize','Benin','Bhutan','Bolivia','Bosnia and Herzegovina','Botswana',
+  'Brazil','Brunei','Bulgaria','Burkina Faso','Burundi','Cambodia','Cameroon','Canada','Chile','China',
+  'Colombia','Costa Rica','Croatia','Cuba','Cyprus','Czech Republic','Denmark','DR Congo','Ecuador','Egypt',
+  'El Salvador','Estonia','Ethiopia','Fiji','Finland','France','Gabon','Georgia','Germany','Ghana',
+  'Greece','Guatemala','Guinea','Haiti','Honduras','Hungary','India','Indonesia','Iran','Iraq',
+  'Ireland','Israel','Italy','Ivory Coast','Jamaica','Japan','Jordan','Kazakhstan','Kenya','Kuwait',
+  'Kyrgyzstan','Laos','Latvia','Lebanon','Libya','Lithuania','Luxembourg','Madagascar','Malawi','Malaysia',
+  'Maldives','Mali','Malta','Mauritania','Mauritius','Mexico','Moldova','Monaco','Mongolia','Montenegro',
+  'Morocco','Mozambique','Myanmar','Namibia','Nepal','Netherlands','New Zealand','Nicaragua','Niger','Nigeria',
+  'North Korea','North Macedonia','Norway','Oman','Pakistan','Palestine','Panama','Paraguay','Peru','Philippines',
+  'Poland','Portugal','Qatar','Romania','Russia','Rwanda','Saudi Arabia','Senegal','Serbia','Sierra Leone',
+  'Singapore','Slovakia','Slovenia','Somalia','South Africa','South Korea','Spain','Sri Lanka','Sudan','Sweden',
+  'Switzerland','Syria','Taiwan','Tajikistan','Tanzania','Thailand','Togo','Trinidad and Tobago','Tunisia','Turkey',
+  'Turkmenistan','Uganda','Ukraine','United Arab Emirates','United Kingdom','United States','Uruguay','Uzbekistan',
+  'Venezuela','Vietnam','Yemen','Zambia','Zimbabwe'
+];
+
+/* ─── POPULATE SELECTS ─── */
+(function(){
+  // ISD dropdowns
+  ['whatsappIsd','mobileIsd'].forEach(function(id){
+    var sel = document.getElementById(id);
+    ISD_CODES.forEach(function(d,i){
+      var opt = document.createElement('option');
+      opt.value = d.code + '_' + d.country;
+      opt.textContent = d.code + ' ' + d.country;
+      if(i===0) opt.selected = true;
+      sel.appendChild(opt);
+    });
+  });
+  // Country dropdown
+  var cSel = document.getElementById('country');
+  COUNTRIES.forEach(function(c){
+    var opt = document.createElement('option');
+    opt.value = c; opt.textContent = c;
+    cSel.appendChild(opt);
+  });
+})();
+
+/* ─── CATEGORY — show others field ─── */
+document.getElementById('category').addEventListener('change', function(){
+  var grp = document.getElementById('othersGroup');
+  if(this.value === 'Others'){
+    grp.classList.add('visible');
+    grp.style.display = 'flex';
+    grp.style.flexDirection = 'column';
+    grp.style.gap = '.45rem';
+  } else {
+    grp.classList.remove('visible');
+    grp.style.display = 'none';
+  }
+});
+
+/* ─── INTEREST CHOICE BUTTONS ─── */
+document.querySelectorAll('.choice-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.choice-btn').forEach(function(b){ b.classList.remove('selected'); });
+    this.classList.add('selected');
+    document.getElementById('interestError').style.display = 'none';
+  });
+});
+
+/* ─── VALIDATION ─── */
+function validateField(id, check){
+  var el = document.getElementById(id);
+  if(!el) return true;
+  var grp = el.closest('.field-group');
+  var ok = check(el.value.trim());
+  if(grp){
+    if(ok) grp.classList.remove('has-error');
+    else grp.classList.add('has-error');
+  }
+  return ok;
+}
+
+function validate(){
+  var ok = true;
+  ok = validateField('firstName', function(v){ return v.length > 0; }) && ok;
+  ok = validateField('lastName', function(v){ return v.length > 0; }) && ok;
+  ok = validateField('email', function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }) && ok;
+  ok = validateField('country', function(v){ return v.length > 0; }) && ok;
+  ok = validateField('state', function(v){ return v.length > 0; }) && ok;
+  ok = validateField('category', function(v){ return v.length > 0; }) && ok;
+  ok = validateField('orgName', function(v){ return v.length > 0; }) && ok;
+
+  // others
+  if(document.getElementById('category').value === 'Others'){
+    ok = validateField('othersText', function(v){ return v.length > 0; }) && ok;
+  }
+
+  // phone
+  var wNum = document.getElementById('whatsapp').value.trim();
+  if(!wNum){
+    document.getElementById('whatsappError').style.display = 'block';
+    ok = false;
+  } else { document.getElementById('whatsappError').style.display = 'none'; }
+
+  var mNum = document.getElementById('mobile').value.trim();
+  if(!mNum){
+    document.getElementById('mobileError').style.display = 'block';
+    ok = false;
+  } else { document.getElementById('mobileError').style.display = 'none'; }
+
+  // interest
+  var chosen = document.querySelector('.choice-btn.selected input');
+  if(!chosen){
+    document.getElementById('interestError').style.display = 'block';
+    ok = false;
+  }
+
+  return ok;
+}
+
+/* ─── SUBMIT ─── */
+document.getElementById('submitBtn').addEventListener('click', function(){
+  if(!validate()) return;
+
+  var btn = this;
+  btn.classList.add('loading');
+  btn.disabled = true;
+
+  var whatsappCode = document.getElementById('whatsappIsd').value.split('_')[0];
+  var mobileCode   = document.getElementById('mobileIsd').value.split('_')[0];
+  var interest     = document.querySelector('.choice-btn.selected input').value;
+
+  var payload = {
+    firstName:    document.getElementById('firstName').value.trim(),
+    middleName:   document.getElementById('middleName').value.trim(),
+    lastName:     document.getElementById('lastName').value.trim(),
+    email:        document.getElementById('email').value.trim(),
+    whatsapp:     whatsappCode + ' ' + document.getElementById('whatsapp').value.trim(),
+    mobile:       mobileCode   + ' ' + document.getElementById('mobile').value.trim(),
+    country:      document.getElementById('country').value,
+    state:        document.getElementById('state').value.trim(),
+    category:     document.getElementById('category').value,
+    othersText:   document.getElementById('othersText').value.trim(),
+    organisation: document.getElementById('orgName').value.trim(),
+    interest:     interest,
+    timestamp:    new Date().toISOString()
+  };
+
+  // Submit to Google Apps Script
+  fetch(APPS_SCRIPT_URL, {
+    method: 'POST',
+    mode:   'no-cors',
+    headers:{'Content-Type':'application/json'},
+    body:   JSON.stringify(payload)
+  }).then(function(){
+    showSuccess();
+  }).catch(function(){
+    // Even on network errors with no-cors, we treat it as submitted
+    showSuccess();
+  });
+});
+
+function showSuccess(){
+  document.getElementById('formCard').style.display = 'none';
+  var sb = document.getElementById('successBox');
+  sb.classList.add('show');
+  sb.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+/* ─── NAV ─── */
+(function(){
+  var h=document.getElementById('navHamburger'),s=document.getElementById('navSidebar'),
+      c=document.getElementById('navSidebarClose'),o=document.getElementById('navOverlay');
+  function openNav(){s.classList.add('open');o.classList.add('open');document.body.style.overflow='hidden'}
+  function closeNav(){s.classList.remove('open');o.classList.remove('open');document.body.style.overflow='';
+    document.querySelectorAll('.sb-has-dropdown.open').forEach(function(d){d.classList.remove('open')})}
+  if(h)h.addEventListener('click',openNav);
+  if(c)c.addEventListener('click',closeNav);
+  if(o)o.addEventListener('click',closeNav);
+  document.querySelectorAll('.nav-sidebar-links li>a,.sb-submenu a').forEach(function(l){l.addEventListener('click',closeNav)});
+  document.querySelectorAll('.sb-dropdown-toggle').forEach(function(t){
+    t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();this.closest('.sb-has-dropdown').classList.toggle('open')})
+  });
+})();
+
+/* ─── SCROLL ARROW ─── */
+(function(){
+  var a=document.getElementById('scrollArrow');
+  if(!a)return;
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>400){a.classList.add('visible');a.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})}}
+    else a.classList.remove('visible')
+  });
+})();
+
+/* ─── SECTION REVEAL ─── */
+(function(){
+  var s=document.querySelectorAll('.sec');
+  if(!s.length||!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('vis')});return}
+  var o=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('vis');o.unobserve(en.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  s.forEach(function(e){o.observe(e)});
+})();
+</script>
+
+<!-- 
+═══════════════════════════════════════════════════════════════════
+  GOOGLE APPS SCRIPT — paste this into script.google.com
+  (Tools > Script Editor on your Google Sheet)
+═══════════════════════════════════════════════════════════════════
+
+function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+  // Write header row if empty
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow([
+      'Timestamp','First Name','Middle Name','Last Name','Email',
+      'WhatsApp','Mobile','Country','State','Category','Others',
+      'Organisation','Interest'
+    ]);
+  }
+
+  sheet.appendRow([
+    data.timestamp, data.firstName, data.middleName, data.lastName, data.email,
+    data.whatsapp, data.mobile, data.country, data.state, data.category,
+    data.othersText, data.organisation, data.interest
+  ]);
+
+  // Send confirmation email to user
+  try {
+    GmailApp.sendEmail(
+      data.email,
+      'Thanks for Enrolling! — BiCS 2026',
+      '',
+      {
+        htmlBody:
+          '<div style="font-family:Poppins,Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #e0e0e0;border-radius:12px;overflow:hidden">' +
+          '<div style="background:linear-gradient(135deg,#0A1F44,#0D2B5E);padding:2rem;text-align:center">' +
+          '<img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" style="height:60px;margin-bottom:1rem" alt="BiCS 2026">' +
+          '<h2 style="color:#fff;margin:0;font-size:1.4rem">Blue Intelligence Climate Summit 2026</h2>' +
+          '</div>' +
+          '<div style="padding:2rem">' +
+          '<h3 style="color:#00897B;margin-top:0">Thanks for Enrolling, ' + data.firstName + '!</h3>' +
+          '<p style="color:#333;line-height:1.7">We have successfully received your enrollment for <strong>BiCS 2026</strong> — taking place on <strong>2nd &amp; 3rd October 2026</strong> in Visakhapatnam, India.</p>' +
+          '<p style="color:#333;line-height:1.7">Our team will reach out to you soon with further details regarding your participation as a <strong>' + data.category + '</strong>.</p>' +
+          '<p style="color:#333;line-height:1.7">For any queries, please contact us at <a href="mailto:blueics2026@gmail.com" style="color:#00897B">blueics2026@gmail.com</a>.</p>' +
+          '<div style="background:#E3F2FD;border-radius:8px;padding:1rem;margin-top:1.5rem">' +
+          '<p style="margin:0;color:#0A1F44;font-size:.85rem"><strong>Your Registration Details:</strong><br>' +
+          'Name: ' + data.firstName + ' ' + data.middleName + ' ' + data.lastName + '<br>' +
+          'Email: ' + data.email + '<br>' +
+          'Organisation: ' + data.organisation + '<br>' +
+          'Category: ' + data.category + '<br>' +
+          'Participation: ' + data.interest + '</p>' +
+          '</div>' +
+          '</div>' +
+          '<div style="background:#f5f5f5;padding:1rem;text-align:center;font-size:.8rem;color:#999">' +
+          '&copy; 2026 BiCS Organizing Committee · <a href="mailto:blueics2026@gmail.com" style="color:#00897B">blueics2026@gmail.com</a></div>' +
+          '</div>',
+        from: 'blueics2026@gmail.com',
+        name: 'BiCS 2026'
+      }
+    );
+  } catch(err) {
+    Logger.log('Email error: ' + err.message);
+  }
+
+  return ContentService
+    .createTextOutput(JSON.stringify({status:'ok'}))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+═══════════════════════════════════════════════════════════════════
+  SETUP STEPS:
+  1. Open Google Sheets → Extensions → Apps Script
+  2. Paste the script above (replace everything)
+  3. Save → Deploy → New Deployment → Web App
+  4. Execute as: Me | Who has access: Anyone
+  5. Copy the Web App URL and replace YOUR_DEPLOYMENT_ID above
+═══════════════════════════════════════════════════════════════════
+-->
+
+</body>
+</html>
