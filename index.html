@@ -16,12 +16,12 @@ body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);
 
 /* ═══ NAVIGATION ═══ */
 nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shadow:0 2px 20px rgba(10,31,68,.09)}
-.nav-inner{display:flex;align-items:center;justify-content:center;width:100%;max-width:1400px;margin:0 auto;padding:0 2rem;height:70px;position:relative}
+.nav-inner{display:flex;align-items:center;justify-content:center;width:100%;max-width:1400px;margin:0 auto;padding:0 2rem;height:88px;position:relative}
 .nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;position:absolute;left:2rem}
-.nav-logo img{height:56px;width:auto;object-fit:contain}
+.nav-logo img{height:72px;width:auto;object-fit:contain}
 .nav-desktop{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
 .nav-item{position:relative}
-.nav-item>a{font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);text-decoration:none;padding:8px 15px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
+.nav-item>a{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:600;color:var(--navy);text-decoration:none;padding:10px 18px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
 .nav-item>a::after{display:none}
 .nav-item>a:hover{color:var(--teal);background:rgba(0,137,123,.07)}
 .nav-item>a.active{color:var(--teal);background:rgba(0,137,123,.1)}
@@ -29,7 +29,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-item:hover>a .dd-arrow{transform:rotate(180deg);opacity:.9}
 .nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;min-width:200px;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.1),0 0 0 1px rgba(10,31,68,.06);padding:6px;opacity:0;visibility:hidden;transition:all .2s ease;z-index:10;list-style:none}
 .nav-item:hover .nav-dropdown{opacity:1;visibility:visible}
-.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:9px 14px;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;border-radius:8px;transition:all .15s}
+.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.96rem;font-weight:600;color:var(--navy);text-decoration:none;border-radius:8px;transition:all .15s}
 .nav-dropdown li a:hover{background:rgba(0,137,123,.07);color:var(--teal)}
 .nav-dropdown li a i{color:var(--teal);font-size:.7rem;width:16px;text-align:center;opacity:.65}
 .nav-dropdown li a:hover i{opacity:1}
@@ -63,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .sb-submenu li a:hover{color:var(--teal);background:rgba(0,137,123,.04)}
 .sb-dd-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:rgba(0,137,123,.06);color:var(--teal);font-size:.58rem;flex-shrink:0}
 @media(min-width:961px){.nav-sidebar,.nav-overlay{display:none!important}.nav-hamburger{display:none!important}}
-@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex}.nav-inner{padding:0 1rem;height:58px}.nav-logo{left:1rem}.nav-logo img{height:44px}.nav-hamburger{right:1rem}}
+@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}.nav-hamburger{right:1rem}}
 @media(max-width:600px){.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{padding:.65rem 1rem;font-size:.82rem;gap:.5rem}.sb-submenu li a{padding:.5rem 1rem .5rem 1.8rem;font-size:.78rem}}
 
 #intro{position:fixed;inset:0;z-index:99999;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1s ease,visibility 1s;overflow:hidden}
@@ -109,15 +109,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .no-intro .page{opacity:1;animation:none}
 @keyframes pageFade{to{opacity:1}}
 
-.hero{min-height:82vh;display:flex;align-items:center;padding:5.5rem 0 1rem;position:relative;overflow:visible}
+.hero{min-height:52vh;display:flex;align-items:center;padding:6.5rem 0 1rem;position:relative;overflow:hidden}
 #heroNetCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:0.75}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 40%,rgba(0,180,216,.18) 0%,transparent 60%),radial-gradient(ellipse 50% 50% at 15% 80%,rgba(0,150,199,.12) 0%,transparent 55%),radial-gradient(ellipse 40% 40% at 85% 85%,rgba(0,119,182,.1) 0%,transparent 50%),linear-gradient(160deg,#020C18 0%,#03213A 40%,#041E35 70%,#020C18 100%)}
 .hero-particles{position:absolute;inset:0;overflow:hidden}
 .hero-particle{position:absolute;border-radius:50%;pointer-events:none;opacity:0;animation:pFloat linear infinite}
 @keyframes pFloat{0%{opacity:0;transform:translateY(0) scale(0)}15%{opacity:.7;transform:translateY(-20px) scale(1)}85%{opacity:.3}100%{opacity:0;transform:translateY(-180px) scale(.4)}}
-.hero-inner{max-width:1300px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:1.1fr 0.9fr;gap:2rem;align-items:center;position:relative;z-index:2;overflow:visible}
+.hero-inner{max-width:1300px;margin:0 auto;padding:0 2.5rem;padding-right:370px;display:block;position:relative;z-index:2}
 .hero-content{display:flex;flex-direction:column}
-.hero h1{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1rem,3.6vw,3.6rem);line-height:1.1;color:#FFFFFF;letter-spacing:0.5px;word-spacing:0.35em;margin-bottom:.6rem;white-space:nowrap;word-break:normal;overflow-wrap:normal;text-shadow:0 2px 40px rgba(0,180,216,0.2)}
+.hero h1{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1rem,3.2vw,3.6rem);line-height:1.1;color:#FFFFFF;letter-spacing:0px;word-spacing:0.15em;margin-bottom:.6rem;white-space:nowrap;word-break:normal;overflow-wrap:normal;text-shadow:0 2px 40px rgba(0,180,216,0.2)}
 @media(max-width:960px){.hero h1{font-size:clamp(1rem,4.8vw,3rem)!important;word-spacing:0.1em!important}}
 @media(max-width:600px){.hero h1{font-size:clamp(1rem,5.8vw,2.2rem)!important;word-spacing:0.05em!important}}
 .hero h1 .i-yellow{position:relative;display:inline-block}
@@ -130,8 +130,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .hero-date-loc span{display:flex;align-items:center;gap:.4rem;font-size:.92rem;color:rgba(255,255,255,.85);font-weight:500}
 .hero-sub{font-size:.98rem;color:rgba(255,255,255,.8);line-height:1.8;margin-bottom:1.5rem;font-weight:400;max-width:100%;text-align:justify}
 .hero-ctas{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:1.5rem}
-.btn-primary{font-family:'Poppins',sans-serif;font-weight:600;font-size:.98rem;background:linear-gradient(135deg,#00B4D8,#0096C7);color:#fff;border:none;padding:.85rem 2rem;border-radius:999px;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,180,216,.45);letter-spacing:.3px;text-decoration:none;display:inline-block}
+.btn-primary{font-family:'Poppins',sans-serif;font-weight:600;font-size:.88rem;background:linear-gradient(135deg,#00B4D8,#0096C7);color:#fff;border:none;padding:.7rem 1.6rem;border-radius:999px;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,180,216,.45);letter-spacing:.3px;text-decoration:none;display:inline-block}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,255,.6)}
+.btn-sponsors{font-family:'Poppins',sans-serif;font-weight:600;font-size:1.1rem;background:linear-gradient(135deg,#00B4D8,#0096C7);color:#fff;border:none;padding:1rem 2.4rem;border-radius:999px;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,180,216,.45);letter-spacing:.3px;text-decoration:none;display:inline-block}
+.btn-sponsors:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,255,.6)}
 .hero-stats{display:inline-flex;gap:0;flex-wrap:nowrap;background:linear-gradient(135deg,#081524 0%,#0a1d3a 50%,#061220 100%);border:1px solid rgba(0,180,216,0.2);border-radius:12px;overflow:hidden;margin-top:1.5rem;width:auto;align-self:flex-start}
 .stat-item{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:.55rem 1.2rem;position:relative;flex:0 0 auto;border:none;border-radius:0;background:none;box-shadow:none;transition:background .2s;white-space:nowrap}
 .stat-item::before{content:'';position:absolute;left:0;top:15%;height:70%;width:2px;background:rgba(0,180,216,0.3);pointer-events:none}
@@ -143,9 +145,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .sl{font-size:.55rem;color:rgba(255,255,255,.5);margin-top:.18rem;font-weight:700;letter-spacing:1.6px;text-transform:uppercase}
 .sponsors-cta{margin-top:1.5rem;margin-bottom:0}
 @media(max-width:600px){.hero-stats{flex-wrap:wrap}.stat-item{flex:1 1 45%;padding:.55rem .9rem}.stat-item::before{top:10%;height:80%}}
-.hero-right{display:flex;align-items:center;justify-content:flex-start;position:relative;overflow:visible;padding:24px 0 24px 0;margin-left:-50px}
-#sdgCanvas{width:300px;height:300px;max-width:300px;max-height:300px;aspect-ratio:1/1;display:block}
-@media(max-width:960px){.hero-inner{grid-template-columns:1fr;overflow:visible}#sdgCanvas{width:260px;height:260px;max-width:260px;max-height:260px;margin:0 auto;display:block}}
+.hero-right{position:absolute;right:2.5rem;top:50%;transform:translateY(-50%);width:330px;height:330px;display:flex;align-items:center;justify-content:center;z-index:3}
+#sdgCanvas{width:320px;height:320px;max-width:320px;max-height:320px;aspect-ratio:1/1;display:block}
+@media(max-width:960px){.hero-inner{padding:0 1rem;padding-bottom:300px}.hero-right{position:absolute;right:50%;bottom:1rem;top:auto;transform:translateX(50%);width:220px;height:220px}#sdgCanvas{width:220px;height:220px;max-width:220px;max-height:220px;margin:0 auto;display:block}}
 
 .theme-strip{background:var(--sky);border-top:1px solid rgba(0,137,123,.12);border-bottom:1px solid rgba(0,137,123,.12);padding:1.2rem 0}
 .theme-strip-inner{max-width:1300px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
@@ -203,10 +205,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 @media(max-width:600px){.home-details-grid{grid-template-columns:1fr;padding:1rem}.home-detail-full{grid-column:1}}
 
 /* CALL FOR */
-.callfor-header{margin-bottom:1.8rem}
+.callfor-header{margin-bottom:0}
 .callfor-main-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2}
 .callfor-badge-inline{font-family:'Poppins',sans-serif;font-size:inherit;font-weight:800;color:var(--navy)}
 .callfor-block{padding:1.8rem 0}
+#overview.callfor-block{padding-top:0}
 .callfor-block-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);margin-bottom:1rem}
 .callfor-block-text{font-size:.97rem;color:var(--muted);line-height:1.8;max-width:900px}
 .callfor-sep{height:1px;background:linear-gradient(90deg,transparent,rgba(21,101,192,.12),transparent);margin:0}
@@ -355,7 +358,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
   .sn{font-size:clamp(.85rem,1.5vw,1.35rem)}
   .sl{font-size:clamp(.38rem,.6vw,.55rem)}
   .stat-item{padding:clamp(.3rem,.6vw,.55rem) clamp(.5rem,1.1vw,1.2rem)}
-  .hero-right{margin-left:clamp(-30px,-4vw,-10px)}
+  .hero-right{margin-left:0}
   #sdgCanvas{width:clamp(160px,22vw,300px)!important;height:clamp(160px,22vw,300px)!important;max-width:clamp(160px,22vw,300px)!important;max-height:clamp(160px,22vw,300px)!important}
   .hl-text{white-space:normal}
   .cta-sec h2{white-space:normal;font-size:clamp(.9rem,2.8vw,1.9rem)!important}
@@ -397,14 +400,17 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       <li class="nav-item">
         <a href="about.html">About <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
         <ul class="nav-dropdown">
+<li><a href="takeaway.html"><i class="fa-solid fa-users"></i> Takeaways</a></li>
           <li><a href="team.html"><i class="fa-solid fa-users"></i> BiCS Team</a></li>
-        </ul>
+          <li><a href="sponsors.html"><i class="fa-solid fa-users"></i> Sponsors</a></li>
+                </ul>
       </li>
       <li class="nav-item">
         <a href="register.html">Registrations <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
         <ul class="nav-dropdown">
-          <li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li>
           <li><a href="submissions.html"><i class="fa-solid fa-file-lines"></i> Submissions</a></li>
+                    <li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li>
+
           <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQs</a></li>
         </ul>
       </li>
@@ -421,6 +427,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
           <li><a href="press-media.html"><i class="fa-solid fa-newspaper"></i> Press / Media</a></li>
         </ul>
       </li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
   </div>
@@ -464,6 +471,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
       <ul class="sb-submenu"><li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li></ul>
     </li>
+    <li><a href="contact.html"><span class="sb-icon"><i class="fa-solid fa-address-book"></i></span> Contact</a></li>
   </ul>
 </aside>
 
@@ -473,25 +481,25 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
   <div class="hero-particles" id="heroParticles"></div>
   <div class="hero-inner">
     <div class="hero-content">
-      <h1>BLUE <span class="i-yellow">i<span class="i-dot"></span></span>NTELLIGENCE CLIMATE SUMMIT</h1>
+      <div style="display:flex;align-items:center;gap:1.2rem;flex-wrap:nowrap;margin-bottom:.6rem;overflow:visible">
+        <h1 style="margin-bottom:0;flex-shrink:0">BLUE <span class="i-yellow">i<span class="i-dot"></span></span>NTELLIGENCE CLIMATE SUMMIT</h1>
+        <a href="enroll.html" class="btn-primary" style="flex-shrink:0;white-space:nowrap">Enroll For Free <i class="fa-solid fa-arrow-right" style="font-size:.75rem;margin-left:4px"></i></a>
+      </div>
       <div class="hero-tagline">A High-Tech Horizon for a Healthy Ocean</div>
       <div class="hero-date-loc">
         <span><i class="fa-regular fa-calendar" style="opacity:.6;margin-right:2px"></i> 2nd & 3rd October 2026</span>
         <span><i class="fa-solid fa-location-dot" style="opacity:.6;margin-right:2px"></i> Visakhapatnam</span>
       </div>
       <div class="hero-theme-line">Theme: Blue Intelligence &amp; Sustainable Ocean Economy</div>
-      <p class="hero-sub">BiCS 2026 focuses on integrating Artificial Intelligence, marine science, blue economy strategies, sustainable technologies, climate intelligence, and youth innovation to build scalable solutions for a resilient future.</p>
-      <div class="hero-ctas">
-        <a href="enroll.html" class="btn-primary">Enroll For Free <i class="fa-solid fa-arrow-right" style="font-size:.75rem;margin-left:4px"></i></a>
+      <div class="hero-ctas sponsors-cta" style="margin-top:.6rem;margin-bottom:.8rem">
+        <a href="sponsors.html" class="btn-sponsors">Sponsors <i class="fa-solid fa-handshake" style="font-size:.75rem;margin-left:4px"></i></a>
       </div>
+      <p class="hero-sub"> BiCS 2026 is a premier global platform bringing together researchers, scientists, academicians, policymakers, innovators, startups, industry leaders, and students to collaborate on transformative solutions for ocean sustainability and climate resilience.</p>
       <div class="hero-stats">
         <div class="stat-item"><div class="sn">2<em>-Day</em></div><div class="sl">Summit</div></div>
         <div class="stat-item"><div class="sn"> SDG<em>14</em></div><div class="sl">Life Below Water</div></div>
         <div class="stat-item"><div class="sn">25<em>+</em></div><div class="sl">Countries</div></div>
         <div class="stat-item"><div class="sn">1000<em>+</em></div><div class="sl">Delegates</div></div>
-      </div>
-      <div class="hero-ctas sponsors-cta">
-        <a href="sponsors.html" class="btn-primary">Sponsors <i class="fa-solid fa-handshake" style="font-size:.75rem;margin-left:4px"></i></a>
       </div>
     </div>
     <div class="hero-right"><canvas id="sdgCanvas"></canvas></div>
@@ -516,7 +524,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       <div class="home-detail-item"><span class="home-detail-label"><i class="fa-solid fa-bullseye"></i> Core Focus</span><span class="home-detail-val">Artificial Intelligence, Machine Learning, Marine Science, and Maritime Logistics</span></div>
       <div class="home-detail-item"><span class="home-detail-label"><i class="fa-solid fa-map-pin"></i> Location Strategy</span><span class="home-detail-val">Targeted at coastal innovation hubs to maximize local governance and maritime industry participation</span></div>
     </div>
-    <p class="home-invite">Join us at BiCS 2026, India for a global gathering of minds dedicated to a sustainable future. We are officially inviting <strong>Students (18–25)</strong> and <strong>Researchers</strong> to submit their original work for the Blue Intelligence Climate Summit 2026. By participating in this Global Summit, you need to tackle real-world marine challenges, win cash prizes, and secure corporate internships.</p>
+    <p class="home-invite">BiCS 2026 focuses on integrating Artificial Intelligence, marine science, blue economy strategies, sustainable technologies, climate intelligence, and youth innovation to build scalable solutions for a resilient future.</p>
   </div>
 </div></section>
 
@@ -524,10 +532,6 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 
 <!-- CALL FOR SECTION -->
 <section class="sec" id="call-for"><div class="container">
-  <div class="callfor-header">
-    <div class="callfor-main-title"><span class="callfor-badge-inline">Call For</span> Students &amp; Researchers</div>
-  </div>
-
   <!-- OVERVIEW -->
   <div class="callfor-block" id="overview">
     <div class="callfor-block-title">Overview</div>
@@ -593,6 +597,15 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
     </div>
   </div>
 </div></section>
+<section class="sec"><div class="container">
+  <div class="cta-sec">
+    <h2>Together, Let Us Shape the Future of Our <em>Oceans</em>, Climate, and Humanity</h2>
+    <p>Inviting Honorable Guests & Keynote  Speakers to contribute their knowledge, leadership, and vision to make Blue Intelligence Climate Summit 2026, a landmark global movement toward a resilient and sustainable future.</p>
+  </div>
+</div></section>
+
+<div class="divider"></div>
+
 
 <div class="divider"></div>
 
@@ -613,16 +626,6 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
   </div>
 </div></section>
 
-<div class="divider"></div>
-
-<section class="sec"><div class="container">
-  <div class="cta-sec">
-    <h2>Together, Let Us Shape the Future of Our <em>Oceans</em>, Climate, and Humanity</h2>
-    <a href="register.html" class="btn-cta-join">Join Us <i class="fa-solid fa-arrow-right" style="font-size:.75rem;margin-left:4px"></i></a>
-    <p>Inviting Honorable Guests & Keynote  Speakers to contribute their knowledge, leadership, and vision to make Blue Intelligence Climate Summit 2026, a landmark global movement toward a resilient and sustainable future.</p>
-  </div>
-</div></section>
-
 <section class="associates-sec sec" id="associates">
   <div class="container">
     <div class="assoc-heading">Associates</div>
@@ -632,13 +635,11 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
         <div class="assoc-logo-card"><img src="assets/ICAR CMFRI (1).png" alt="ICAR-CMFRI"><div class="assoc-logo-title">ICAR-CMFRI</div></div>
         <div class="assoc-logo-card"><img src="assets/MBI.png" alt="Marine Biological Association of India"><div class="assoc-logo-title">MBAI</div></div>
         <div class="assoc-logo-card"><img src="assets/RFI.png" alt="RFI"><div class="assoc-logo-title">RFI</div></div>
-        <div class="assoc-logo-card"><img src="assets/GLOBAL UNAP LOGO.png" alt="Global UNAP"><div class="assoc-logo-title">Global UNAP</div></div>
         <div class="assoc-logo-card"><img src="assets/GPF.avif" alt="GPF"><div class="assoc-logo-title">GPF India</div></div>
         <div class="assoc-logo-card"><img src="assets/Goaec.png" alt="Goa Ecology"><div class="assoc-logo-title">GOAEC Foundation</div></div>
         <div class="assoc-logo-card"><img src="assets/ICAR CMFRI (1).png" alt="ICAR-CMFRI"><div class="assoc-logo-title">ICAR-CMFRI</div></div>
         <div class="assoc-logo-card"><img src="assets/MBI.png" alt="Marine Biological Association of India"><div class="assoc-logo-title">MBAI</div></div>
         <div class="assoc-logo-card"><img src="assets/RFI.png" alt="RFI"><div class="assoc-logo-title">RFI</div></div>
-        <div class="assoc-logo-card"><img src="assets/GLOBAL UNAP LOGO.png" alt="Global UNAP"><div class="assoc-logo-title">Global UNAP</div></div>
         <div class="assoc-logo-card"><img src="assets/GPF.avif" alt="GPF"><div class="assoc-logo-title">GPF India</div></div>
 
       </div>
@@ -692,7 +693,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 (function(){var deadline=new Date('2026-08-22T18:30:00Z').getTime();var grid=document.getElementById('countdownGrid');var dE=document.getElementById('cdDays');var hE=document.getElementById('cdHours');var mE=document.getElementById('cdMins');var sE=document.getElementById('cdSecs');function update(){var diff=deadline-Date.now();if(diff<=0){grid.innerHTML='<div class="countdown-expired"><i class="fa-solid fa-circle-xmark" style="margin-right:6px"></i> Registration is now closed.</div>';return}var d=Math.floor(diff/86400000);var h=Math.floor((diff%86400000)/3600000);var m=Math.floor((diff%3600000)/60000);var s=Math.floor((diff%60000)/1000);dE.textContent=d<10?'0'+d:d;hE.textContent=h<10?'0'+h:h;mE.textContent=m<10?'0'+m:m;sE.textContent=s<10?'0'+s:s}update();setInterval(update,1000)})();
 (function(){var counter=document.getElementById('viewsCounter');if(!counter)return;var target=1449;var duration=2000;var started=false;function animateCount(){if(started)return;started=true;var startTime=null;function step(timestamp){if(!startTime)startTime=timestamp;var progress=Math.min((timestamp-startTime)/duration,1);var eased=1-Math.pow(1-progress,3);counter.textContent=Math.floor(eased*target);if(progress<1){requestAnimationFrame(step)}else{counter.textContent=target}}requestAnimationFrame(step)}var observer=new IntersectionObserver(function(entries){if(entries[0].isIntersecting){animateCount();observer.disconnect()}},{threshold:0.3});observer.observe(counter)})();
 (function(){var container=document.getElementById('heroParticles');if(!container)return;var colors=['rgba(38,166,154,0.35)','rgba(33,150,243,0.3)','rgba(100,181,246,0.25)','rgba(0,137,123,0.3)','rgba(255,213,79,0.2)','rgba(128,203,196,0.25)'];for(var i=0;i<28;i++){var p=document.createElement('div');p.className='hero-particle';var size=2+Math.random()*4;p.style.width=size+'px';p.style.height=size+'px';p.style.left=Math.random()*100+'%';p.style.top=40+Math.random()*60+'%';p.style.background=colors[Math.floor(Math.random()*colors.length)];p.style.animationDuration=(5+Math.random()*7)+'s';p.style.animationDelay=(Math.random()*6)+'s';container.appendChild(p)}})();
-(function(){var canvas=document.getElementById('sdgCanvas');if(!canvas)return;var SDG=['#E5243B','#DDA63A','#4C9F38','#C5192D','#FF3A21','#26BDE2','#FCC30B','#A21942','#FD6925','#DD1367','#FD9D24','#BF8B2E','#3F7E44','#0A97D9','#56C02B','#00689D','#19486A'];var GAP=0,OPEN=0,N=SDG.length;var SEG=(360-OPEN-(N-1)*GAP)/N;var START=180+OPEN/2;var rot=0;var dpr=window.devicePixelRatio||1;var sz=0;var pulsePhase=0;function rsz(){var isMobile=window.innerWidth<960;sz=isMobile?260:300;var containerW=canvas.parentElement?canvas.parentElement.offsetWidth:window.innerWidth;var maxSz=isMobile?260:300;sz=Math.min(maxSz,containerW*0.88,window.screen.width<900?Math.min(containerW*0.88,260):300);sz=Math.max(sz,120);canvas.width=sz*dpr;canvas.height=sz*dpr;canvas.style.width=sz+'px';canvas.style.height=sz+'px'}function draw(){var ctx=canvas.getContext('2d');var cx=canvas.width/2;var cy=canvas.height/2;var R=cx*0.76;var r=cx*0.48;var pulse=1+Math.sin(pulsePhase)*0.008;ctx.clearRect(0,0,canvas.width,canvas.height);ctx.save();ctx.translate(cx,cy);var glowGrad=ctx.createRadialGradient(0,0,R*0.8,0,0,R*1.1);glowGrad.addColorStop(0,'rgba(0,137,123,0)');glowGrad.addColorStop(0.7,'rgba(0,137,123,0.06)');glowGrad.addColorStop(1,'rgba(0,137,123,0)');ctx.fillStyle=glowGrad;ctx.beginPath();ctx.arc(0,0,R*1.1,0,Math.PI*2);ctx.fill();ctx.restore();ctx.save();ctx.translate(cx,cy);ctx.scale(pulse,pulse);ctx.rotate(rot*Math.PI/180);for(var i=0;i<N;i++){var sAngle=(START+i*(SEG+GAP))*Math.PI/180;var eAngle=(START+i*(SEG+GAP)+SEG)*Math.PI/180;ctx.beginPath();ctx.arc(0,0,R,sAngle,eAngle);ctx.arc(0,0,r,eAngle,sAngle,true);ctx.closePath();ctx.fillStyle=SDG[i];ctx.fill();ctx.shadowColor=SDG[i];ctx.shadowBlur=8;ctx.fill();ctx.shadowBlur=0}ctx.restore();ctx.save();ctx.translate(cx,cy);ctx.beginPath();ctx.arc(0,0,r*0.88,0,Math.PI*2);ctx.fillStyle='rgba(6,14,26,0.92)';ctx.fill();ctx.beginPath();ctx.arc(0,0,r*0.88,0,Math.PI*2);ctx.strokeStyle='rgba(0,137,123,0.25)';ctx.lineWidth=1.5;ctx.stroke();ctx.textAlign='center';ctx.textBaseline='middle';var bicsSize=Math.round(r*0.44);var yearSize=Math.round(r*0.44);var lineGap=r*0.06;var totalH=bicsSize+lineGap+yearSize;var topY=-totalH/2;var bicsY=topY+bicsSize*0.5;ctx.font='800 '+bicsSize+'px Poppins,sans-serif';var wB=ctx.measureText('B').width;var wBi=ctx.measureText('Bi').width;var wI=ctx.measureText('i').width;var fullW=ctx.measureText('BiCS').width;var leftEdge=-fullW/2;ctx.fillStyle='#FFFFFF';ctx.textAlign='left';ctx.fillText('B',leftEdge,bicsY);ctx.fillText('CS',leftEdge+wBi,bicsY);var iCX=leftEdge+wB+wI*0.5;var dotR=bicsSize*0.115;var iDotY=bicsY-bicsSize*0.41;ctx.fillStyle='#FFFFFF';ctx.fillText('i',leftEdge+wB,bicsY);ctx.beginPath();ctx.arc(iCX,iDotY,dotR*1.6,0,Math.PI*2);ctx.fillStyle='rgba(6,14,26,1)';ctx.fill();ctx.beginPath();ctx.arc(iCX,iDotY,dotR,0,Math.PI*2);ctx.fillStyle='#F9A825';ctx.fill();var yearY=bicsY+bicsSize*0.5+lineGap+yearSize*0.5;ctx.textAlign='center';ctx.font='800 '+yearSize+'px Poppins,sans-serif';ctx.fillStyle='#FFFFFF';ctx.fillText('2026',0,yearY);ctx.restore();ctx.save();ctx.translate(cx,cy);for(var j=0;j<3;j++){var dotAngle=(rot*2.5+j*120)*Math.PI/180;var dotR2=R*0.99;var dx=Math.cos(dotAngle)*dotR2;var dy=Math.sin(dotAngle)*dotR2;ctx.beginPath();ctx.arc(dx,dy,2*dpr,0,Math.PI*2);ctx.fillStyle='rgba(38,166,154,0.5)';ctx.fill()}ctx.restore();rot+=0.1;pulsePhase+=0.02;requestAnimationFrame(draw)}rsz();window.addEventListener('resize',rsz);draw()})();
+(function(){var canvas=document.getElementById('sdgCanvas');if(!canvas)return;var SDG=['#E5243B','#DDA63A','#4C9F38','#C5192D','#FF3A21','#26BDE2','#FCC30B','#A21942','#FD6925','#DD1367','#FD9D24','#BF8B2E','#3F7E44','#0A97D9','#56C02B','#00689D','#19486A'];var GAP=0,OPEN=0,N=SDG.length;var SEG=(360-OPEN-(N-1)*GAP)/N;var START=180+OPEN/2;var rot=0;var dpr=window.devicePixelRatio||1;var sz=0;var pulsePhase=0;function rsz(){sz=window.innerWidth<960?220:320;canvas.width=sz*dpr;canvas.height=sz*dpr;canvas.style.width=sz+'px';canvas.style.height=sz+'px'}function draw(){var ctx=canvas.getContext('2d');var cx=canvas.width/2;var cy=canvas.height/2;var R=cx*0.76;var r=cx*0.48;var pulse=1+Math.sin(pulsePhase)*0.008;ctx.clearRect(0,0,canvas.width,canvas.height);ctx.save();ctx.translate(cx,cy);var glowGrad=ctx.createRadialGradient(0,0,R*0.8,0,0,R*1.1);glowGrad.addColorStop(0,'rgba(0,137,123,0)');glowGrad.addColorStop(0.7,'rgba(0,137,123,0.06)');glowGrad.addColorStop(1,'rgba(0,137,123,0)');ctx.fillStyle=glowGrad;ctx.beginPath();ctx.arc(0,0,R*1.1,0,Math.PI*2);ctx.fill();ctx.restore();ctx.save();ctx.translate(cx,cy);ctx.scale(pulse,pulse);ctx.rotate(rot*Math.PI/180);for(var i=0;i<N;i++){var sAngle=(START+i*(SEG+GAP))*Math.PI/180;var eAngle=(START+i*(SEG+GAP)+SEG)*Math.PI/180;ctx.beginPath();ctx.arc(0,0,R,sAngle,eAngle);ctx.arc(0,0,r,eAngle,sAngle,true);ctx.closePath();ctx.fillStyle=SDG[i];ctx.fill();ctx.shadowColor=SDG[i];ctx.shadowBlur=8;ctx.fill();ctx.shadowBlur=0}ctx.restore();ctx.save();ctx.translate(cx,cy);ctx.beginPath();ctx.arc(0,0,r*0.88,0,Math.PI*2);ctx.fillStyle='rgba(6,14,26,0.92)';ctx.fill();ctx.beginPath();ctx.arc(0,0,r*0.88,0,Math.PI*2);ctx.strokeStyle='rgba(0,137,123,0.25)';ctx.lineWidth=1.5;ctx.stroke();ctx.textAlign='center';ctx.textBaseline='middle';var bicsSize=Math.round(r*0.44);var yearSize=Math.round(r*0.44);var lineGap=r*0.06;var totalH=bicsSize+lineGap+yearSize;var topY=-totalH/2;var bicsY=topY+bicsSize*0.5;ctx.font='800 '+bicsSize+'px Poppins,sans-serif';var wB=ctx.measureText('B').width;var wBi=ctx.measureText('Bi').width;var wI=ctx.measureText('i').width;var fullW=ctx.measureText('BiCS').width;var leftEdge=-fullW/2;ctx.fillStyle='#FFFFFF';ctx.textAlign='left';ctx.fillText('B',leftEdge,bicsY);ctx.fillText('CS',leftEdge+wBi,bicsY);var iCX=leftEdge+wB+wI*0.5;var dotR=bicsSize*0.115;var iDotY=bicsY-bicsSize*0.41;ctx.fillStyle='#FFFFFF';ctx.fillText('i',leftEdge+wB,bicsY);ctx.beginPath();ctx.arc(iCX,iDotY,dotR*1.6,0,Math.PI*2);ctx.fillStyle='rgba(6,14,26,1)';ctx.fill();ctx.beginPath();ctx.arc(iCX,iDotY,dotR,0,Math.PI*2);ctx.fillStyle='#F9A825';ctx.fill();var yearY=bicsY+bicsSize*0.5+lineGap+yearSize*0.5;ctx.textAlign='center';ctx.font='800 '+yearSize+'px Poppins,sans-serif';ctx.fillStyle='#FFFFFF';ctx.fillText('2026',0,yearY);ctx.restore();ctx.save();ctx.translate(cx,cy);for(var j=0;j<3;j++){var dotAngle=(rot*2.5+j*120)*Math.PI/180;var dotR2=R*0.99;var dx=Math.cos(dotAngle)*dotR2;var dy=Math.sin(dotAngle)*dotR2;ctx.beginPath();ctx.arc(dx,dy,2*dpr,0,Math.PI*2);ctx.fillStyle='rgba(38,166,154,0.5)';ctx.fill()}ctx.restore();rot+=0.1;pulsePhase+=0.02;requestAnimationFrame(draw)}rsz();window.addEventListener('resize',rsz);draw()})();
 (function(){var sections=document.querySelectorAll('.sec');if(!sections.length||!('IntersectionObserver' in window)){sections.forEach(function(s){s.classList.add('vis')});return}var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('vis');observer.unobserve(entry.target)}})},{threshold:0.01,rootMargin:'0px 0px 0px 0px'});sections.forEach(function(s){observer.observe(s)})})();
 (function(){var canvas=document.getElementById('heroNetCanvas');if(!canvas)return;var ctx=canvas.getContext('2d');var W,H,nodes=[],time=0,pulses=[];var NODE_COUNT,MAX_DIST;function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;NODE_COUNT=W<600?38:60;MAX_DIST=W<600?120:160;buildNodes()}function buildNodes(){nodes=[];pulses=[];for(var i=0;i<NODE_COUNT;i++){nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.28,vy:(Math.random()-.5)*0.28,r:1.2+Math.random()*2.2,bright:0.3+Math.random()*0.7,phase:Math.random()*Math.PI*2,tier:Math.random()<0.12?'hub':Math.random()<0.3?'mid':'leaf'})}}function spawnPulse(){for(var attempt=0;attempt<20;attempt++){var a=Math.floor(Math.random()*nodes.length);var b=Math.floor(Math.random()*nodes.length);if(a===b)continue;var dx=nodes[b].x-nodes[a].x,dy=nodes[b].y-nodes[a].y;if(Math.sqrt(dx*dx+dy*dy)<MAX_DIST){pulses.push({a:a,b:b,t:0,speed:0.007+Math.random()*0.012});break}}}function draw(){ctx.clearRect(0,0,W,H);time+=0.008;for(var i=0;i<nodes.length;i++){var n=nodes[i];n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>W)n.vx*=-1;if(n.y<0||n.y>H)n.vy*=-1}for(var i=0;i<nodes.length;i++){for(var j=i+1;j<nodes.length;j++){var dx=nodes[j].x-nodes[i].x,dy=nodes[j].y-nodes[i].y;var dist=Math.sqrt(dx*dx+dy*dy);if(dist<MAX_DIST){var fade=1-(dist/MAX_DIST);var alpha=fade*0.18;ctx.beginPath();ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y);ctx.strokeStyle='rgba(0,180,220,'+alpha+')';ctx.lineWidth=0.6+fade*0.6;ctx.stroke()}}}for(var k=pulses.length-1;k>=0;k--){var p=pulses[k];p.t+=p.speed;if(p.t>=1){pulses.splice(k,1);continue}var na=nodes[p.a],nb=nodes[p.b];var px=na.x+(nb.x-na.x)*p.t;var py=na.y+(nb.y-na.y)*p.t;var grd=ctx.createRadialGradient(px,py,0,px,py,7);grd.addColorStop(0,'rgba(200,245,255,0.9)');grd.addColorStop(0.4,'rgba(0,212,255,0.5)');grd.addColorStop(1,'rgba(0,150,210,0)');ctx.beginPath();ctx.arc(px,py,7,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();ctx.beginPath();ctx.arc(px,py,1.8,0,Math.PI*2);ctx.fillStyle='rgba(220,250,255,0.95)';ctx.fill()}for(var i=0;i<nodes.length;i++){var n=nodes[i];var pulse=0.6+0.4*Math.sin(time*1.4+n.phase);var alpha=n.bright*pulse;var r=n.tier==='hub'?3.5:n.tier==='mid'?2.2:1.4;if(n.tier==='hub'){var grd=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,r*5);grd.addColorStop(0,'rgba(0,212,255,'+(alpha*0.9)+')');grd.addColorStop(0.5,'rgba(0,180,220,'+(alpha*0.3)+')');grd.addColorStop(1,'rgba(0,160,200,0)');ctx.beginPath();ctx.arc(n.x,n.y,r*5,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill()}ctx.beginPath();ctx.arc(n.x,n.y,r,0,Math.PI*2);ctx.fillStyle='rgba(0,212,255,'+alpha+')';ctx.fill()}if(Math.random()<0.06&&pulses.length<25)spawnPulse();requestAnimationFrame(draw)}resize();window.addEventListener('resize',function(){resize()});draw()})();
 (function(){var arrow=document.getElementById('scrollArrow');if(!arrow)return;window.addEventListener('scroll',function(){if(window.scrollY>400){arrow.classList.add('visible');arrow.innerHTML='<i class="fa-solid fa-arrow-up"></i>';arrow.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})}}else{arrow.classList.remove('visible')}})})();
