@@ -116,7 +116,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .other-org strong{color:var(--navy);font-weight:600;opacity:1;display:block;margin-bottom:.1rem}
 
 /* ── FOOTER (from index.html) ── */
-.assoc-footer-divider{height:4px;background:linear-gradient(90deg,transparent 2%,var(--teal) 30%,var(--ocean) 50%,var(--teal) 70%,transparent 98%);margin:0;opacity:.5}
+
 footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 .footer-main{max-width:1300px;margin:0 auto;padding:2.8rem 2.5rem 2rem;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem}
 .footer-brand{display:flex;flex-direction:column;gap:.8rem}
@@ -164,53 +164,28 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
   .member-avatar{width:82px;height:82px}
   .member-name{font-size:.9rem}
 }
+
+/* ── ASSOCIATES SCROLL ── */
+@keyframes logoScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.associates-sec{background:#fff;padding:2.8rem 0;border-bottom:none;opacity:1!important;transform:none!important}
+.assoc-heading{font-family:"Poppins",sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:1.5rem}
+.assoc-logos-scroll{overflow:hidden;position:relative;width:100%;height:150px}
+.assoc-logos-scroll::before,.assoc-logos-scroll::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.assoc-logos-scroll::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
+.assoc-logos-scroll::after{right:0;background:linear-gradient(90deg,transparent,#fff)}
+.assoc-logos-track{display:inline-flex;flex-direction:row;flex-wrap:nowrap;gap:0;animation:logoScroll 25s linear infinite;height:150px;align-items:center;white-space:nowrap}
+.assoc-logos-track:hover{animation-play-state:paused}
+.assoc-logo-card{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;width:160px;height:150px;flex:0 0 160px;padding:0 1rem;background:transparent;border:none;box-shadow:none}
+.assoc-logo-card img{height:70px;width:130px;object-fit:contain;display:block;flex-shrink:0}
+.assoc-logo-title{font-family:"Poppins",sans-serif;font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;letter-spacing:.3px;line-height:1.3;white-space:normal;display:block}
+.assoc-footer-divider{height:4px;background:linear-gradient(90deg,transparent 2%,var(--teal) 30%,var(--ocean) 50%,var(--teal) 70%,transparent 98%);margin:0;opacity:.5}
+@media(max-width:960px){.assoc-logos-scroll{height:130px}.assoc-logos-track{height:130px}.assoc-logo-card{width:140px;height:130px;flex:0 0 140px}.assoc-logo-card img{height:58px;width:110px}}
+@media(max-width:600px){.assoc-logos-scroll{height:115px}.assoc-logos-track{height:115px}.assoc-logo-card{width:120px;height:115px;flex:0 0 120px;padding:0 .6rem}.assoc-logo-card img{height:50px;width:95px}.assoc-logo-title{font-size:.68rem}}
 </style>
 </head>
 <body>
 
 <!-- ── NAVIGATION ── -->
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026">
-    </a>
-    <ul class="nav-desktop">
-      <li class="nav-item"><a href="index.html">Home</a></li>
-      <li class="nav-item">
-        <a href="about.html">About <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
-        <ul class="nav-dropdown">
-          <li><a href="takeaway.html"><i class="fa-solid fa-users"></i> Takeaways</a></li>
-          <li><a href="team.html" class="active"><i class="fa-solid fa-users"></i> BiCS Team</a></li>
-          <li><a href="sponsors.html"><i class="fa-solid fa-users"></i> Sponsors</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a href="register.html">Registrations <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
-        <ul class="nav-dropdown">
-          <li><a href="submissions.html"><i class="fa-solid fa-file-lines"></i> Submissions</a></li>
-          <li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li>
-          <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQs</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a href="guests.html">Guests <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
-        <ul class="nav-dropdown">
-          <li><a href="honorable-guests.html"><i class="fa-solid fa-user-tie"></i> Honorable Guests</a></li>
-          <li><a href="keynote-speakers.html"><i class="fa-solid fa-microphone"></i> Keynote Speakers</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a href="gallery.html">Gallery <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
-        <ul class="nav-dropdown">
-          <li><a href="press-media.html"><i class="fa-solid fa-newspaper"></i> Press / Media</a></li>
-        </ul>
-      </li>
-      <li class="nav-item"><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
-  </div>
-</nav>
-
 <div class="nav-overlay" id="navOverlay"></div>
 
 <nav>
@@ -221,11 +196,10 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
     <ul class="nav-desktop">
       <li class="nav-item"><a href="index.html">Home</a></li>
       <li class="nav-item">
-        <a href="about.html" class="active">About <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <a href="about.html" class="active">About Summit <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
         <ul class="nav-dropdown">
-          <li><a href="takeaway.html"><i class="fa-solid fa-list-check"></i> Takeaways</a></li>
+          <li><a href="takeaway.html"><i class="fa-solid fa-users"></i> Takeaways</a></li>
           <li><a href="team.html"><i class="fa-solid fa-users"></i> BiCS Team</a></li>
-          <li><a href="sponsors.html"><i class="fa-solid fa-handshake"></i> Sponsors</a></li>
         </ul>
       </li>
       <li class="nav-item">
@@ -241,14 +215,11 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
         <ul class="nav-dropdown">
           <li><a href="honorable-guests.html"><i class="fa-solid fa-user-tie"></i> Honorable Guests</a></li>
           <li><a href="keynote-speakers.html"><i class="fa-solid fa-microphone"></i> Keynote Speakers</a></li>
+          <li><a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
         </ul>
       </li>
       <li class="nav-item">
-        <a href="gallery.html">Gallery <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
-        <ul class="nav-dropdown">
-          <li><a href="press-media.html"><i class="fa-solid fa-newspaper"></i> Press / Media</a></li>
-        </ul>
-      </li>
+        <a href="sponsors.html">Sponsors</a></li>
       <li class="nav-item"><a href="contact.html">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
@@ -272,15 +243,14 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       <ul class="sb-submenu">
         <li><a href="takeaway.html"><span class="sb-dd-icon"><i class="fa-solid fa-list-check"></i></span> Takeaways</a></li>
         <li><a href="team.html"><span class="sb-dd-icon"><i class="fa-solid fa-users"></i></span> BiCS Team</a></li>
-        <li><a href="sponsors.html"><span class="sb-dd-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a></li>
       </ul>
     </li>
     <li class="sb-has-dropdown">
       <a href="register.html"><span class="sb-icon"><i class="fa-solid fa-clipboard-list"></i></span> Registrations</a>
       <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
       <ul class="sb-submenu">
-        <li><a href="submissions.html"><span class="sb-dd-icon"><i class="fa-solid fa-file-lines"></i></span> Submissions</a></li>
         <li><a href="fee-payment.html"><span class="sb-dd-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span> Fee Payment</a></li>
+        <li><a href="submissions.html"><span class="sb-dd-icon"><i class="fa-solid fa-file-lines"></i></span> Submissions</a></li>
         <li><a href="faq.html"><span class="sb-dd-icon"><i class="fa-solid fa-circle-question"></i></span> FAQs</a></li>
       </ul>
     </li>
@@ -295,10 +265,9 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
     <li class="sb-has-dropdown">
       <a href="gallery.html"><span class="sb-icon"><i class="fa-solid fa-images"></i></span> Gallery</a>
       <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
-      <ul class="sb-submenu">
-        <li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li>
-      </ul>
+      <ul class="sb-submenu"><li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li></ul>
     </li>
+    <li><a href="sponsors.html"><span class="sb-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a></li>
     <li><a href="contact.html"><span class="sb-icon"><i class="fa-solid fa-address-book"></i></span> Contact</a></li>
   </ul>
 </aside>
@@ -326,7 +295,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       </div>
       <div class="member-name">Dr. Kalyani Rao</div>
       <div class="member-role-badge">Convener</div>
-      <div class="member-org">Climate Reality Leader<br><strong>Blue Consultancy</strong></div>
+      <div class="member-org">Climate Reality Leader<br><strong>Blue Consultant</strong></div>
     </div>
 
     <!-- Dr. Manohar Balaga -->
@@ -359,7 +328,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       </div>
       <div class="member-name">K.L.N. Arun</div>
       <div class="member-role-badge">Chief Adviser</div>
-      <div class="member-org"><strong>Advisor - Operations</strong></div>
+      <div class="member-org"><strong>Operations</strong></div>
 
       <div class="member-org">&nbsp;</div>
     </div>
@@ -386,9 +355,10 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
         <div class="other-name">Dr. Ajay Jain</div>
         <div class="other-role-badge">International Convener</div>
         <div class="other-org">
+          <strong>Academic - Researcher & Development</strong>
           <strong>Research Foundation of India (RFI)</strong>
-          Academic Researcher · RFI – India<br>
-          President (R&amp;D) – RFI-Care
+          
+         
         </div>
       </div>
     </div>
@@ -417,6 +387,29 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 
 <!-- ── FOOTER (index.html design) ── -->
 <div class="assoc-footer-divider"></div>
+
+<section class="associates-sec sec" id="associates">
+  <div class="container">
+    <div class="assoc-heading">Associates</div>
+    <div class="assoc-logos-scroll">
+      <div class="assoc-logos-track">
+        <div class="assoc-logo-card"><img src="assets/Goaec.png" alt="Goa Ecology"><div class="assoc-logo-title">GOAEC Foundation</div></div>
+        <div class="assoc-logo-card"><img src="assets/ICAR CMFRI (1).png" alt="ICAR-CMFRI"><div class="assoc-logo-title">ICAR-CMFRI</div></div>
+        <div class="assoc-logo-card"><img src="assets/MBI.png" alt="Marine Biological Association of India"><div class="assoc-logo-title">MBAI</div></div>
+        <div class="assoc-logo-card"><img src="assets/RFI.png" alt="RFI"><div class="assoc-logo-title">RFI</div></div>
+        <div class="assoc-logo-card"><img src="assets/GPF.avif" alt="GPF"><div class="assoc-logo-title">GPF India</div></div>
+        <div class="assoc-logo-card"><img src="assets/Goaec.png" alt="Goa Ecology"><div class="assoc-logo-title">GOAEC Foundation</div></div>
+        <div class="assoc-logo-card"><img src="assets/ICAR CMFRI (1).png" alt="ICAR-CMFRI"><div class="assoc-logo-title">ICAR-CMFRI</div></div>
+        <div class="assoc-logo-card"><img src="assets/MBI.png" alt="Marine Biological Association of India"><div class="assoc-logo-title">MBAI</div></div>
+        <div class="assoc-logo-card"><img src="assets/RFI.png" alt="RFI"><div class="assoc-logo-title">RFI</div></div>
+        <div class="assoc-logo-card"><img src="assets/GPF.avif" alt="GPF"><div class="assoc-logo-title">GPF India</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="assoc-footer-divider"></div>
+
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
