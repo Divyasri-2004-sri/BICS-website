@@ -778,7 +778,7 @@ function submitForm(){
   btn.classList.add('loading');
   btn.disabled = true;
 
-  // --- FILE HANDLING (The new part) ---
+  // --- FILE HANDLING ---
   var file = fileInput.files[0];
   var reader = new FileReader();
 
@@ -814,8 +814,8 @@ function submitForm(){
     };
 
     // 3. Send Data
-    // IMPORTANT: PASTE THE URL FROM STEP 1 BELOW
-    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxu0OosuM8YPnCL-AgOFDkom0OPClQylo1LThF7RYCbDioGjseR1baQwtEK1ZM1eLLr/exec'; 
+    // IMPORTANT: PASTE THE URL FROM GOOGLE SHEETS DEPLOYMENT BELOW
+    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxRzs-kEIYbUuGVZ1rJkOJ8gUO0-8kFCZpa4AOyNimvR6te9gjXqlwER8Vrh38A8z18wg/exec'; 
 
     fetch(SCRIPT_URL, {
       method: 'POST',

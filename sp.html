@@ -12,7 +12,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--navy:#0A1F44;--deep:#0D2B5E;--ocean:#1565C0;--blue:#2196F3;--teal:#00897B;--teal2:#26A69A;--gold:#F9A825;--white:#FFFFFF;--sky:#E3F2FD;--muted:#0A1F44;--text:#0A1F44;--cyan:#00D4FF;--card-bg:rgba(255,255,255,0.75);--card-border:rgba(33,150,243,0.2)}
 html{scroll-behavior:smooth}
-body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);overflow-x:hidden;text-align:justify}
+body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);overflow-x:hidden}
 
 /* ═══ NAV (matched to index.html) ═══ */
 nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shadow:0 2px 20px rgba(10,31,68,.09)}
@@ -28,7 +28,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-item:hover>a .dd-arrow{transform:rotate(180deg);opacity:.9}
 .nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;min-width:200px;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.1),0 0 0 1px rgba(10,31,68,.06);padding:6px;opacity:0;visibility:hidden;transition:all .2s ease;z-index:10;list-style:none}
 .nav-item:hover .nav-dropdown{opacity:1;visibility:visible}
-.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.96rem;font-weight:600;color:var(--navy);text-decoration:none;border-radius:8px;transition:all .15s}
+.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:9px 14px;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;border-radius:8px;transition:all .15s}
 .nav-dropdown li a:hover{background:rgba(0,137,123,.07);color:var(--teal)}
 .nav-dropdown li a i{color:var(--teal);font-size:.7rem;width:16px;text-align:center;opacity:.65}
 .nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:var(--navy);cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}
@@ -135,14 +135,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .matrix-wrap{margin-top:2.5rem;overflow-x:auto;border-radius:16px;border:2px solid rgba(10,31,68,.18);box-shadow:0 2px 12px rgba(0,0,0,.08)}
 .matrix-table{width:100%;border-collapse:collapse;min-width:700px}
 .matrix-table thead tr{background:linear-gradient(135deg,rgba(21,101,192,.15),rgba(0,137,123,.12))}
-.matrix-table th{font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;padding:1rem 1.2rem;text-align:center;color:#0A1F44;letter-spacing:.3px;border-bottom:2px solid rgba(10,31,68,.2);border-right:1px solid rgba(10,31,68,.15)}
+.matrix-table th{font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;padding:1rem 1.2rem;text-align:left;color:#0A1F44;letter-spacing:.3px;border-bottom:2px solid rgba(10,31,68,.2);border-right:1px solid rgba(10,31,68,.15)}
 .matrix-table th:last-child{border-right:none}
-.matrix-table th:first-child{color:var(--teal);text-align:left}
-.matrix-table td{font-size:.9rem;padding:.9rem 1.2rem;color:#0A1F44;border-bottom:1.5px solid rgba(10,31,68,.12);border-right:1px solid rgba(10,31,68,.1);vertical-align:middle;line-height:1.6;background:#fff;font-weight:500;text-align:center}
+.matrix-table th:first-child{color:var(--teal)}
+.matrix-table td{font-size:.9rem;padding:.9rem 1.2rem;color:#0A1F44;border-bottom:1.5px solid rgba(10,31,68,.12);border-right:1px solid rgba(10,31,68,.1);vertical-align:top;line-height:1.6;background:#fff;font-weight:500}
 .matrix-table td:last-child{border-right:none}
 .matrix-table tbody tr:last-child td{border-bottom:none}
 .matrix-table tbody tr:hover td{background:rgba(21,101,192,.04)}
-.matrix-table td:first-child{font-weight:700;color:#0A1F44;font-size:.88rem;background:#f7faff;text-align:left}
+.matrix-table td:first-child{font-weight:700;color:#0A1F44;font-size:.88rem;background:#f7faff}
 
 /* ═══ VENUE STANDEE BOX ═══ */
 .standee-box{margin-top:2.5rem;background:rgba(21,101,192,.06);border:1px solid rgba(21,101,192,.25);border-left:4px solid var(--teal);border-radius:0 16px 16px 0;padding:1.8rem 2rem;display:flex;align-items:flex-start;gap:1.2rem}
@@ -227,6 +227,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 
 <div class="nav-overlay" id="navOverlay"></div>
 
+<!-- NAV (matched to index.html) -->
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
@@ -235,18 +236,16 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
     <ul class="nav-desktop">
       <li class="nav-item"><a href="index.html">Home</a></li>
       <li class="nav-item">
-        <a href="about.html" class="active">About <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <a href="about.html">About <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
         <ul class="nav-dropdown">
-          <li><a href="takeaway.html"><i class="fa-solid fa-list-check"></i> Takeaways</a></li>
           <li><a href="team.html"><i class="fa-solid fa-users"></i> BiCS Team</a></li>
-          <li><a href="sponsors.html"><i class="fa-solid fa-handshake"></i> Sponsors</a></li>
         </ul>
       </li>
       <li class="nav-item">
         <a href="register.html">Registrations <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
         <ul class="nav-dropdown">
-          <li><a href="submissions.html"><i class="fa-solid fa-file-lines"></i> Submissions</a></li>
           <li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li>
+          <li><a href="submissions.html"><i class="fa-solid fa-file-lines"></i> Submissions</a></li>
           <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQs</a></li>
         </ul>
       </li>
@@ -263,12 +262,13 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
           <li><a href="press-media.html"><i class="fa-solid fa-newspaper"></i> Press / Media</a></li>
         </ul>
       </li>
-      <li class="nav-item"><a href="contact.html">Contact</a></li>
+      <li class="nav-item"><a href="sponsors.html" class="active">Sponsors</a></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
   </div>
 </nav>
 
+<!-- MOBILE SIDEBAR -->
 <aside class="nav-sidebar" id="navSidebar">
   <div class="nav-sidebar-header">
     <div class="nav-sidebar-brand">
@@ -281,20 +281,16 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
   <ul class="nav-sidebar-links">
     <li><a href="index.html"><span class="sb-icon"><i class="fa-solid fa-house"></i></span> Home</a></li>
     <li class="sb-has-dropdown">
-      <a href="about.html" class="active"><span class="sb-icon"><i class="fa-solid fa-circle-info"></i></span> About</a>
+      <a href="about.html"><span class="sb-icon"><i class="fa-solid fa-circle-info"></i></span> About</a>
       <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
-      <ul class="sb-submenu">
-        <li><a href="takeaway.html"><span class="sb-dd-icon"><i class="fa-solid fa-list-check"></i></span> Takeaways</a></li>
-        <li><a href="team.html"><span class="sb-dd-icon"><i class="fa-solid fa-users"></i></span> BiCS Team</a></li>
-        <li><a href="sponsors.html"><span class="sb-dd-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a></li>
-      </ul>
+      <ul class="sb-submenu"><li><a href="team.html"><span class="sb-dd-icon"><i class="fa-solid fa-users"></i></span> BiCS Team</a></li></ul>
     </li>
     <li class="sb-has-dropdown">
       <a href="register.html"><span class="sb-icon"><i class="fa-solid fa-clipboard-list"></i></span> Registrations</a>
       <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
       <ul class="sb-submenu">
-        <li><a href="submissions.html"><span class="sb-dd-icon"><i class="fa-solid fa-file-lines"></i></span> Submissions</a></li>
         <li><a href="fee-payment.html"><span class="sb-dd-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span> Fee Payment</a></li>
+        <li><a href="submissions.html"><span class="sb-dd-icon"><i class="fa-solid fa-file-lines"></i></span> Submissions</a></li>
         <li><a href="faq.html"><span class="sb-dd-icon"><i class="fa-solid fa-circle-question"></i></span> FAQs</a></li>
       </ul>
     </li>
@@ -309,11 +305,9 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
     <li class="sb-has-dropdown">
       <a href="gallery.html"><span class="sb-icon"><i class="fa-solid fa-images"></i></span> Gallery</a>
       <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
-      <ul class="sb-submenu">
-        <li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li>
-      </ul>
+      <ul class="sb-submenu"><li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li></ul>
     </li>
-    <li><a href="contact.html"><span class="sb-icon"><i class="fa-solid fa-address-book"></i></span> Contact</a></li>
+    <li><a href="sponsors.html" class="active"><span class="sb-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a></li>
   </ul>
 </aside>
 
@@ -329,7 +323,9 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 <!-- WHY SPONSOR -->
 <section class="sec" id="why">
   <div class="container">
-    <h2 class="section-title">Why to Sponsor ?  </h2>
+    <div class="section-label">Why Partner With Us</div>
+    <h2 class="section-title">Why Sponsor the <span>Summit?</span></h2>
+    <p class="section-sub">Establish your organization at the forefront of the global climate movement through unparalleled visibility and strategic access.</p>
     <div class="why-grid">
       <div class="why-card fade-up">
         <div class="why-icon">🌐</div>
@@ -384,10 +380,91 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
   </div>
 </section>
 
+<div class="sec-divider"></div>
+
+<!-- SPONSORSHIP TIERS CARDS -->
+<section class="sec" id="tiers">
+  <div class="container">
+    <div class="section-label">Sponsorship Tiers</div>
+    <h2 class="section-title">Choose Your <span>Partnership Level</span></h2>
+    <p class="section-sub">Packages are limited to maximize visibility and prevent brand dilution. Secure your tier early.</p>
+    <div class="tiers-grid">
+      <div class="tier-card whale fade-up">
+        <div class="tier-card-icon">🐋</div>
+        <div class="tier-card-name">Blue Whale</div>
+        <div class="tier-card-focus">Premier Title Partner</div>
+        <div class="tier-card-price">₹10,00,000</div>
+        <div class="tier-card-divider"></div>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> 15 VIP + 5 Speaker Passes</li>
+          <li><i class="fa-solid fa-circle-check"></i> Opening Keynote Address (15 min)</li>
+          <li><i class="fa-solid fa-circle-check"></i> Co-branded Event Logo on all social media</li>
+          <li><i class="fa-solid fa-circle-check"></i> Premium 6×6 ft Stall (choice of location)</li>
+          <li><i class="fa-solid fa-circle-check"></i> Named Hackathon Track Sponsor</li>
+          <li><i class="fa-solid fa-circle-check"></i> Full Resume Database Access</li>
+          <li><i class="fa-solid fa-circle-check"></i> Video Bite of top management on theme</li>
+          <li><i class="fa-solid fa-circle-check"></i> Post-event website publications</li>
+        </ul>
+      </div>
+      <div class="tier-card gold fade-up">
+        <div class="tier-card-icon">🦈</div>
+        <div class="tier-card-name">Blue Shark</div>
+        <div class="tier-card-focus">Ocean Intelligence (Gold)</div>
+        <div class="tier-card-price">₹5,00,000</div>
+        <div class="tier-card-divider"></div>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> 10 VIP + 2 Speaker Passes</li>
+          <li><i class="fa-solid fa-circle-check"></i> 1 Mainstage Panel Seat</li>
+          <li><i class="fa-solid fa-circle-check"></i> Logo on Main Stage Backdrop (Large)</li>
+          <li><i class="fa-solid fa-circle-check"></i> Standard 6×6 ft Stall + Standee at Cafeteria</li>
+          <li><i class="fa-solid fa-circle-check"></i> One Felicitation (Hackathon)</li>
+          <li><i class="fa-solid fa-circle-check"></i> Media Bite shared</li>
+          <li><i class="fa-solid fa-circle-check"></i> Session Chair Branding</li>
+        </ul>
+      </div>
+      <div class="tier-card silver fade-up">
+        <div class="tier-card-icon">🐬</div>
+        <div class="tier-card-name">Blue Dolphin</div>
+        <div class="tier-card-focus">Coastal Catalyst (Silver)</div>
+        <div class="tier-card-price">₹2,50,000</div>
+        <div class="tier-card-divider"></div>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> 5 VIP Passes</li>
+          <li><i class="fa-solid fa-circle-check"></i> 1 Technical Track Seat</li>
+          <li><i class="fa-solid fa-circle-check"></i> Website Logo (Medium)</li>
+          <li><i class="fa-solid fa-circle-check"></i> Shared Demo Table at Exhibition</li>
+          <li><i class="fa-solid fa-circle-check"></i> Roll-up Banner Display</li>
+          <li><i class="fa-solid fa-circle-check"></i> Panel Recognition</li>
+          <li><i class="fa-solid fa-circle-check"></i> 1 Mentor Slot (Hackathon)</li>
+        </ul>
+      </div>
+      <div class="tier-card startup fade-up">
+        <div class="tier-card-icon">🚀</div>
+        <div class="tier-card-name">Innovation Track</div>
+        <div class="tier-card-focus">Startup &amp; Grassroots</div>
+        <div class="tier-card-price">Custom</div>
+        <div class="tier-card-divider"></div>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> 3 General Admission Passes</li>
+          <li><i class="fa-solid fa-circle-check"></i> Dedicated Pitch Track</li>
+          <li><i class="fa-solid fa-circle-check"></i> Kiosk / Shared Exhibition Space</li>
+          <li><i class="fa-solid fa-circle-check"></i> Program Guide Mention</li>
+          <li><i class="fa-solid fa-circle-check"></i> Access to Startup Pavilion</li>
+          <li><i class="fa-solid fa-circle-check"></i> B2B Matchmaking Lounge</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
 <!-- TARGETED NETWORKING OPPORTUNITIES -->
 <section class="sec" id="networking">
   <div class="container">
-    <h2 class="section-title">Networking Opportunities</h2>
+    <div class="section-label">Targeted Engagement</div>
+    <h2 class="section-title">Targeted Networking <span>Opportunities</span></h2>
+    <p class="section-sub">Strategic touchpoints designed for meaningful connections across the summit programme.</p>
     <div class="network-grid">
       <div class="network-card fade-up">
         <div class="network-card-icon">🌊</div>
@@ -413,15 +490,17 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 <!-- SPONSORSHIP DELIVERABLES MATRIX -->
 <section class="sec" id="matrix">
   <div class="container">
+    <div class="section-label">Detailed Breakdown</div>
     <h2 class="section-title">Sponsorship <span>Deliverables Matrix</span></h2>
+    <p class="section-sub">A complete comparison of benefits and deliverables across our three primary corporate-backed tiers.</p>
     <div class="matrix-wrap">
       <table class="matrix-table">
         <thead>
           <tr>
             <th>Benefits &amp; Deliverables</th>
-            <th><span class="tier-badge tier-whale">🐋 Blue Whale (Platinum)</span><br><span style="font-size:.78rem;font-weight:600;color:#0A1F44">₹10,00,000</span></th>
-            <th><span class="tier-badge tier-shark">🦈 Blue Shark (Gold)</span><br><span style="font-size:.78rem;font-weight:600;color:#0A1F44">₹5,00,000</span></th>
-            <th><span class="tier-badge tier-dolphin">🐬 Blue Dolphin (Silver)</span><br><span style="font-size:.78rem;font-weight:600;color:#0A1F44">₹2,50,000</span></th>
+            <th><span class="tier-badge tier-whale">🐋 Blue Whale (Title Sponsor)</span><br><span style="font-size:.78rem;font-weight:600;color:#0A1F44">₹10,00,000</span></th>
+            <th><span class="tier-badge tier-shark">🦈 Blue Shark (Platinum)</span><br><span style="font-size:.78rem;font-weight:600;color:#0A1F44">₹5,00,000</span></th>
+            <th><span class="tier-badge tier-dolphin">🐬 Blue Dolphin (Gold)</span><br><span style="font-size:.78rem;font-weight:600;color:#0A1F44">₹2,50,000</span></th>
           </tr>
         </thead>
         <tbody>
@@ -478,109 +557,31 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 
 <div class="sec-divider"></div>
 
-<!-- SPONSORSHIP TIERS TABLE -->
-<section class="sec" id="tiers">
-  <div class="container">
-    <div class="section-label">Sponsorship Tiers</div>
-    <h2 class="section-title">Choose Your <span>Partnership Level</span></h2>
-    <p class="section-sub">Packages are limited to maximize visibility and prevent brand dilution. Secure your tier early.</p>
-    <div class="matrix-wrap">
-      <table class="matrix-table">
-        <thead>
-          <tr>
-            <th>Benefit</th>
-            <th>🐋 Blue Whale<br><span style="font-size:.78rem;font-weight:600;color:#0A1F44">Premier Title Partner · ₹10,00,000</span></th>
-            <th>🦈 Blue Shark<br><span style="font-size:.78rem;font-weight:600;color:#0A1F44">Ocean Intelligence (Gold) · ₹5,00,000</span></th>
-            <th>🐬 Blue Dolphin<br><span style="font-size:.78rem;font-weight:600;color:#0A1F44">Coastal Catalyst (Silver) · ₹2,50,000</span></th>
-            <th>🚀 Innovation Track<br><span style="font-size:.78rem;font-weight:600;color:#0A1F44">Startup &amp; Grassroots · Custom</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Key Focus Area</td>
-            <td>Ultimate Summit Integration</td>
-            <td>Data, Forecasting &amp; AI</td>
-            <td>Coastal &amp; Marine Economy</td>
-            <td>Grassroots &amp; Startups</td>
-          </tr>
-          <tr>
-            <td>Passes Included</td>
-            <td>15 VIP + 5 Speaker Passes</td>
-            <td>10 VIP + 2 Speaker Passes</td>
-            <td>5 VIP Passes</td>
-            <td>3 General Admission Passes</td>
-          </tr>
-          <tr>
-            <td>Keynote / Stage</td>
-            <td>Opening Keynote Address (15 min)</td>
-            <td>1 Mainstage Panel Seat</td>
-            <td>1 Technical Track Seat</td>
-            <td>Dedicated Pitch Track</td>
-          </tr>
-          <tr>
-            <td>Hackathon Role</td>
-            <td>Named Track Sponsor + Judging Panel Seat</td>
-            <td>One Felicitation</td>
-            <td>1 Mentor Slot</td>
-            <td>Access to Startup Pavilion</td>
-          </tr>
-          <tr>
-            <td>Exhibition Space</td>
-            <td>Premium 6×6 ft Stall (choice of location)</td>
-            <td>Standard 6×6 ft Stall + Standee at Cafeteria</td>
-            <td>Shared Demo Table at Exhibition</td>
-            <td>Kiosk / Shared Exhibition Space</td>
-          </tr>
-          <tr>
-            <td>Branding</td>
-            <td>Co-branded Event Logo · All social media · Video Bite · Post-event publications</td>
-            <td>Logo on Main Stage Backdrop (Large) · Website Logo</td>
-            <td>Website Logo (Medium) · Roll-up Banner</td>
-            <td>Program Guide Mention</td>
-          </tr>
-          <tr>
-            <td>Talent Acquisition</td>
-            <td>Full Resume Database Access + Private Interview / Media Bite</td>
-            <td>Media Bite Shared</td>
-            <td>N/A</td>
-            <td>N/A</td>
-          </tr>
-          <tr>
-            <td>Networking</td>
-            <td>B2B Matchmaking Lounge + All Sessions</td>
-            <td>B2B Matchmaking Lounge</td>
-            <td>Panel Recognition + Networking Sessions</td>
-            <td>B2B Matchmaking Lounge</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<div class="sec-divider"></div>
-
 <!-- CONTACT / CTA -->
 <section class="sec" id="contact">
   <div class="container">
     <div class="contact-sec">
-      <h2>Contact For Sponsorship</h2>
+      <h2>Secure Your Sponsorship</h2>
+      <p>Packages are limited to maximize visibility and prevent brand dilution. Reach out today to customize your package with our Strategic Partnerships team.</p>
       <div class="contact-items">
-        <a href="https://wa.me/916304951896" target="_blank" class="contact-item">
-          <i class="fa-brands fa-whatsapp"></i>
-          <span>+91 6304951896</span>
-        </a>
         <a href="mailto:info@globalbics.org" class="contact-item">
           <i class="fa-solid fa-envelope"></i>
-          <span>eventskart2020@gmail.com</span>
+          <span>info@globalbics.org</span>
         </a>
         <a href="mailto:blueics2026@gmail.com" class="contact-item">
           <i class="fa-solid fa-envelope"></i>
           <span>blueics2026@gmail.com</span>
         </a>
-        
-       
+        <a href="https://wa.me/916304951896" target="_blank" class="contact-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>+91 6304951896</span>
+        </a>
+        <a href="#" class="contact-item">
+          <i class="fa-solid fa-file-arrow-down"></i>
+          <span>Download Full Brochure</span>
+        </a>
       </div>
+      <div class="contact-note">WhatsApp available 11 AM – 9 PM IST &nbsp;·&nbsp; <a href="#">Download Full Sponsorship Brochure</a></div>
     </div>
   </div>
 </section>
@@ -590,7 +591,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
   <div class="footer-main">
     <div class="footer-brand">
       <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026">
-      <div class="footer-brand-date">2nd &amp; 3rd October 2026 &middot; Visakhapatnam, India</div>
+      <div class="footer-brand-date">2nd &amp; 3rd October 2026 · Visakhapatnam, India</div>
       <div class="footer-brand-social">
         <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -604,16 +605,16 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="register.html">Registrations</a>
-      <a href="guests.html">Guests</a>
+      <a href="sponsors.html">Sponsorships</a>
       <a href="gallery.html">Gallery</a>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
       <div class="footer-contact-list">
         <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:blueics2026@gmail.com">blueics2026@gmail.com</a></div>
-        <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:info@globalbics.com">info@globalbics.com</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:info@globalbics.org">info@globalbics.org</a></div>
         <div class="footer-contact-row"><i class="fa-solid fa-globe"></i><a href="#">www.globalblueics.com</a></div>
-        <div class="footer-contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+91xxxxxxxxxx">+91 xxxxxxxxxxx</a></div>
+        <div class="footer-contact-row"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/916304951896">+91 6304951896</a></div>
       </div>
     </div>
   </div>

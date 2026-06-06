@@ -158,20 +158,40 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026"></a>
+    <a href="index.html" class="nav-logo">
+      <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026">
+    </a>
     <ul class="nav-desktop">
       <li class="nav-item"><a href="index.html">Home</a></li>
       <li class="nav-item">
         <a href="about.html" class="active">About <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
         <ul class="nav-dropdown">
-          <li><a href="takeaway.html" class="active"><i class="fa-solid fa-gift"></i> Takeaways</a></li>
+          <li><a href="takeaway.html"><i class="fa-solid fa-list-check"></i> Takeaways</a></li>
           <li><a href="team.html"><i class="fa-solid fa-users"></i> BiCS Team</a></li>
           <li><a href="sponsors.html"><i class="fa-solid fa-handshake"></i> Sponsors</a></li>
         </ul>
       </li>
-      <li class="nav-item"><a href="register.html">Registrations <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li><li><a href="submissions.html"><i class="fa-solid fa-file-lines"></i> Submissions</a></li><li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQs</a></li></ul></li>
-      <li class="nav-item"><a href="guests.html">Guests <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="honorable-guests.html"><i class="fa-solid fa-user-tie"></i> Honorable Guests</a></li><li><a href="keynote-speakers.html"><i class="fa-solid fa-microphone"></i> Keynote Speakers</a></li></ul></li>
-      <li class="nav-item"><a href="gallery.html">Gallery <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="press-media.html"><i class="fa-solid fa-newspaper"></i> Press / Media</a></li></ul></li>
+      <li class="nav-item">
+        <a href="register.html">Registrations <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="submissions.html"><i class="fa-solid fa-file-lines"></i> Submissions</a></li>
+          <li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li>
+          <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQs</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="guests.html">Guests <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="honorable-guests.html"><i class="fa-solid fa-user-tie"></i> Honorable Guests</a></li>
+          <li><a href="keynote-speakers.html"><i class="fa-solid fa-microphone"></i> Keynote Speakers</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="gallery.html">Gallery <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="press-media.html"><i class="fa-solid fa-newspaper"></i> Press / Media</a></li>
+        </ul>
+      </li>
       <li class="nav-item"><a href="contact.html">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
@@ -180,15 +200,48 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 
 <aside class="nav-sidebar" id="navSidebar">
   <div class="nav-sidebar-header">
-    <div class="nav-sidebar-brand"><div class="nav-sidebar-logo-wrap"><img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026" class="nav-sidebar-logo"></div></div>
+    <div class="nav-sidebar-brand">
+      <div class="nav-sidebar-logo-wrap">
+        <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026" class="nav-sidebar-logo">
+      </div>
+    </div>
     <button class="nav-sidebar-close" id="navSidebarClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
   </div>
   <ul class="nav-sidebar-links">
     <li><a href="index.html"><span class="sb-icon"><i class="fa-solid fa-house"></i></span> Home</a></li>
-    <li class="sb-has-dropdown"><a href="about.html" class="active"><span class="sb-icon"><i class="fa-solid fa-circle-info"></i></span> About</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="takeaway.html" class="active"><span class="sb-dd-icon"><i class="fa-solid fa-gift"></i></span> Takeaways</a></li><li><a href="team.html"><span class="sb-dd-icon"><i class="fa-solid fa-users"></i></span> BiCS Team</a></li><li><a href="sponsors.html"><span class="sb-dd-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a></li></ul></li>
-    <li class="sb-has-dropdown"><a href="register.html"><span class="sb-icon"><i class="fa-solid fa-clipboard-list"></i></span> Registrations</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="fee-payment.html"><span class="sb-dd-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span> Fee Payment</a></li><li><a href="submissions.html"><span class="sb-dd-icon"><i class="fa-solid fa-file-lines"></i></span> Submissions</a></li><li><a href="faq.html"><span class="sb-dd-icon"><i class="fa-solid fa-circle-question"></i></span> FAQs</a></li></ul></li>
-    <li class="sb-has-dropdown"><a href="guests.html"><span class="sb-icon"><i class="fa-solid fa-user-tie"></i></span> Guests</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="honorable-guests.html"><span class="sb-dd-icon"><i class="fa-solid fa-user-tie"></i></span> Honorable Guests</a></li><li><a href="keynote-speakers.html"><span class="sb-dd-icon"><i class="fa-solid fa-microphone"></i></span> Keynote Speakers</a></li></ul></li>
-    <li class="sb-has-dropdown"><a href="gallery.html"><span class="sb-icon"><i class="fa-solid fa-images"></i></span> Gallery</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li></ul></li>
+    <li class="sb-has-dropdown">
+      <a href="about.html" class="active"><span class="sb-icon"><i class="fa-solid fa-circle-info"></i></span> About</a>
+      <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="takeaway.html"><span class="sb-dd-icon"><i class="fa-solid fa-list-check"></i></span> Takeaways</a></li>
+        <li><a href="team.html"><span class="sb-dd-icon"><i class="fa-solid fa-users"></i></span> BiCS Team</a></li>
+        <li><a href="sponsors.html"><span class="sb-dd-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a></li>
+      </ul>
+    </li>
+    <li class="sb-has-dropdown">
+      <a href="register.html"><span class="sb-icon"><i class="fa-solid fa-clipboard-list"></i></span> Registrations</a>
+      <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="submissions.html"><span class="sb-dd-icon"><i class="fa-solid fa-file-lines"></i></span> Submissions</a></li>
+        <li><a href="fee-payment.html"><span class="sb-dd-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span> Fee Payment</a></li>
+        <li><a href="faq.html"><span class="sb-dd-icon"><i class="fa-solid fa-circle-question"></i></span> FAQs</a></li>
+      </ul>
+    </li>
+    <li class="sb-has-dropdown">
+      <a href="guests.html"><span class="sb-icon"><i class="fa-solid fa-user-tie"></i></span> Guests</a>
+      <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="honorable-guests.html"><span class="sb-dd-icon"><i class="fa-solid fa-user-tie"></i></span> Honorable Guests</a></li>
+        <li><a href="keynote-speakers.html"><span class="sb-dd-icon"><i class="fa-solid fa-microphone"></i></span> Keynote Speakers</a></li>
+      </ul>
+    </li>
+    <li class="sb-has-dropdown">
+      <a href="gallery.html"><span class="sb-icon"><i class="fa-solid fa-images"></i></span> Gallery</a>
+      <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li>
+      </ul>
+    </li>
     <li><a href="contact.html"><span class="sb-icon"><i class="fa-solid fa-address-book"></i></span> Contact</a></li>
   </ul>
 </aside>
@@ -321,7 +374,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
   <div class="footer-main">
     <div class="footer-brand">
       <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026">
-      <div class="footer-brand-date">2nd &amp; 3rd October 2026 · Visakhapatnam, India</div>
+      <div class="footer-brand-date">2nd &amp; 3rd October 2026 &middot; Visakhapatnam, India</div>
       <div class="footer-brand-social">
         <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -334,9 +387,8 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       <h4>Quick Links</h4>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="team.html">Team</a>
       <a href="register.html">Registrations</a>
-      <a href="guests.html">Sponsorships</a>
+      <a href="guests.html">Guests</a>
       <a href="gallery.html">Gallery</a>
     </div>
     <div class="footer-col">

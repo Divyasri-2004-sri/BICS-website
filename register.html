@@ -16,20 +16,19 @@ body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);
 
 /* ═══ NAV ═══ */
 nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shadow:0 2px 20px rgba(10,31,68,.09)}
-.nav-inner{display:flex;align-items:center;justify-content:center;width:100%;max-width:1400px;margin:0 auto;padding:0 2rem;height:70px;position:relative}
+.nav-inner{display:flex;align-items:center;justify-content:center;width:100%;max-width:1400px;margin:0 auto;padding:0 2rem;height:88px;position:relative}
 .nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;position:absolute;left:2rem}
-.nav-logo img{height:56px;width:auto;object-fit:contain}
+.nav-logo img{height:72px;width:auto;object-fit:contain}
 .nav-desktop{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
 .nav-item{position:relative}
-.nav-item>a{font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);text-decoration:none;padding:8px 15px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
-.nav-item>a::after{display:none}
+.nav-item>a{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:600;color:var(--navy);text-decoration:none;padding:10px 18px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
 .nav-item>a:hover{color:var(--teal);background:rgba(0,137,123,.07)}
 .nav-item>a.active{color:var(--teal);background:rgba(0,137,123,.1)}
 .nav-item>a .dd-arrow{font-size:.5rem;opacity:.5;transition:transform .2s,opacity .2s}
 .nav-item:hover>a .dd-arrow{transform:rotate(180deg);opacity:.9}
 .nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;min-width:200px;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.1),0 0 0 1px rgba(10,31,68,.06);padding:6px;opacity:0;visibility:hidden;transition:all .2s ease;z-index:10;list-style:none}
 .nav-item:hover .nav-dropdown{opacity:1;visibility:visible}
-.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:9px 14px;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;border-radius:8px;transition:all .15s}
+.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.96rem;font-weight:600;color:var(--navy);text-decoration:none;border-radius:8px;transition:all .15s}
 .nav-dropdown li a:hover{background:rgba(0,137,123,.07);color:var(--teal)}
 .nav-dropdown li a i{color:var(--teal);font-size:.7rem;width:16px;text-align:center;opacity:.65}
 .nav-dropdown li a:hover i{opacity:1}
@@ -63,26 +62,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .sb-submenu li a:hover{color:var(--teal);background:rgba(0,137,123,.04)}
 .sb-dd-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:rgba(0,137,123,.06);color:var(--teal);font-size:.58rem;flex-shrink:0}
 @media(min-width:961px){.nav-sidebar,.nav-overlay{display:none!important}.nav-hamburger{display:none!important}}
-@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex}.nav-inner{padding:0 1rem;height:58px}.nav-logo{left:1rem}.nav-logo img{height:44px}.nav-hamburger{right:1rem}}
+@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}.nav-hamburger{right:1rem}}
 @media(max-width:600px){.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{padding:.65rem 1rem;font-size:.82rem;gap:.5rem}.sb-submenu li a{padding:.5rem 1rem .5rem 1.8rem;font-size:.78rem}}
 
 /* ═══ PAGE BANNER ═══ */
-.page-banner{padding:7rem 0 3.5rem;background:linear-gradient(160deg,#060E1A 0%,#0D2B5E 50%,#060E1A 100%);position:relative;overflow:hidden}
+.page-banner{padding:8rem 0 3.5rem;background:linear-gradient(160deg,#060E1A 0%,#0D2B5E 50%,#060E1A 100%);position:relative;overflow:hidden}
 .page-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(21,101,192,.12) 0%,transparent 65%),radial-gradient(ellipse at 20% 70%,rgba(21,101,192,.08) 0%,transparent 55%);pointer-events:none}
 .banner-wave{position:absolute;bottom:0;left:0;right:0;height:60px;opacity:.06;pointer-events:none}
 .page-banner-inner{max-width:1400px;margin:0 auto;padding:0 2.5rem;position:relative;z-index:2}
 .page-banner-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(21,101,192,.18);border:1px solid rgba(21,101,192,.35);border-radius:999px;padding:.3rem .9rem;font-size:.78rem;font-family:'Poppins',sans-serif;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.5px;margin-bottom:1rem}
 .page-banner-badge i{color:var(--blue);font-size:.7rem}
 .page-banner h1{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--white);margin-bottom:.5rem}
-.page-banner p{font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.7;max-width:680px}
+.page-banner p{font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.7;max-width:100%}
 @media(max-width:600px){.page-banner{padding:5.5rem 0 2.5rem}.page-banner-inner{padding:0 1.2rem}.page-banner h1{font-size:clamp(1.4rem,6vw,2rem)}.page-banner p{font-size:.88rem}}
-.banner-stats{display:flex;gap:2rem;margin-top:1.5rem;flex-wrap:wrap}
-.banner-stat{display:flex;flex-direction:column}
-.banner-stat-val{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.35rem;color:var(--ocean);line-height:1}
-.banner-stat-lbl{font-size:.72rem;font-weight:600;color:rgba(21,101,192,.6);letter-spacing:1px;text-transform:uppercase;margin-top:.2rem}
 
 /* ═══ LAYOUT ═══ */
-.sec{padding:3rem 0;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.sec{padding:2rem 0;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .sec.vis{opacity:1;transform:translateY(0)}
 .container{max-width:1400px;margin:0 auto;padding:0 2.5rem}
 .sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2}
@@ -131,6 +126,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .pricing-footer-note{background:rgba(249,168,37,.07);border:1px solid rgba(249,168,37,.2);border-radius:12px;padding:.85rem 1.2rem;margin-top:1rem;font-size:.85rem;color:var(--navy);display:flex;align-items:flex-start;gap:.6rem;line-height:1.65}
 .pricing-footer-note i{color:var(--gold);margin-top:2px;flex-shrink:0}
 
+/* Highlighted Big Note */
+.highlighted-big-note {
+    background-color: rgba(249, 168, 37, 0.15);
+    border-left: 6px solid var(--gold);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 1.15rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.5;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.highlighted-big-note span {
+    color: #8a6000;
+}
+
 /* ═══ DATES TIMELINE ═══ */
 .timeline-wrap{margin-top:1.5rem}
 .timeline-group{margin-bottom:2.8rem}
@@ -178,35 +191,110 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .assoc-logo-title{font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;letter-spacing:.3px;line-height:1.3;min-height:2.2em;display:flex;align-items:flex-end;justify-content:center}
 .assoc-footer-divider{height:4px;background:linear-gradient(90deg,transparent 2%,var(--blue) 30%,var(--ocean) 50%,var(--blue) 70%,transparent 98%);opacity:.5}
 
-/* ═══ FOOTER ═══ */
-footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2.5rem;text-align:center}
-.footer-copy{font-size:.8rem;color:rgba(255,255,255,.6);font-weight:500;letter-spacing:.3px}
+/* Reg forms heading */
+.reg-forms-heading{font-family:'Poppins',sans-serif;font-size:clamp(1.3rem,2.2vw,1.8rem);font-weight:800;color:var(--navy);margin-bottom:1rem;line-height:1.2}
+
+/* Why You Should Apply - Yellow Bullet Points */
+.wya-bullet-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.wya-bullet-list li {
+    position: relative;
+    padding-left: 2rem;
+    font-size: 1.05rem;
+    color: var(--navy);
+    line-height: 1.6;
+    font-weight: 500;
+}
+.wya-bullet-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(249, 168, 37, 0.2);
+}
+
+/* Fee section headers */
+.fee-section-header{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;padding:.7rem 1.4rem;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:.6rem;margin-bottom:0}
+.online-header{background:linear-gradient(135deg,var(--teal),var(--teal2))}
+.offline-header{background:linear-gradient(135deg,var(--ocean),var(--deep))}
+.fee-sub-header{font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem;color:var(--navy);background:rgba(10,31,68,.06);border:1px solid rgba(10,31,68,.1);border-radius:8px;padding:.6rem 1.1rem;margin:.8rem 0 .5rem;display:inline-block}
+
+/* Offline table extras */
+.offline-table th,.offline-table td{font-size:.85rem;padding:.75rem 1rem;vertical-align:top; color: var(--navy);}
+.offline-table th { color: #fff; }
+.offline-table .sno-cell{font-family:'Poppins',sans-serif;font-weight:800;color:var(--navy);text-align:center;width:40px;vertical-align:middle}
+.benefits-cell{display:flex;flex-direction:column;gap:.35rem}
+.benefit-tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:600;color:var(--navy);background:rgba(0,137,123,.08);border:1px solid rgba(0,137,123,.18);border-radius:6px;padding:.2rem .55rem;white-space:nowrap;width:fit-content}
+.benefit-tag i{color:var(--teal);font-size:.65rem}
+.muted-tag{background:rgba(10,31,68,.04);border-color:rgba(10,31,68,.1);color:rgba(10,31,68,.55)}
+.muted-tag i{color:rgba(10,31,68,.4)}
+.coming-soon-badge{display:inline-flex;align-items:center;gap:.35rem;background:rgba(249,168,37,.12);border:1px solid rgba(249,168,37,.3);color:#8a6000;font-family:'Poppins',sans-serif;font-size:.76rem;font-weight:700;padding:.25rem .65rem;border-radius:6px}
+.early-bird-note{display:block;font-size:.74rem;color:var(--teal);font-weight:600;margin-top:4px}
+.accom-cell{font-size:.8rem; color: var(--navy);}
+.accom-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:700;color:var(--navy);background:rgba(21,101,192,.08);border:1px solid rgba(21,101,192,.2);border-radius:6px;padding:.2rem .55rem; margin-bottom: 4px;}
+.link-cell{text-align:center;vertical-align:middle}
+
+/* Dark Navy Button */
+.btn-navy-dark {
+    background-color: var(--navy);
+    color: #ffffff;
+    border: 2px solid var(--navy);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+.btn-navy-dark:hover {
+    background-color: #0d2b5e;
+    border-color: #0d2b5e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(10,31,68,0.3);
+}
+
+/* ═══ FOOTER (index-style) ═══ */
+footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
+.footer-main{max-width:1300px;margin:0 auto;padding:2.8rem 2.5rem 2rem;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem}
+.footer-brand{display:flex;flex-direction:column;gap:.8rem}
+.footer-brand img{height:80px;width:auto;max-width:240px;object-fit:contain;display:block}
+.footer-brand-date{font-family:'Open Sans',sans-serif;font-size:.84rem;color:#000;font-weight:700;margin-top:.3rem}
+.footer-brand-social{display:flex;gap:.75rem;margin-top:.6rem;flex-wrap:wrap}
+.footer-brand-social a{width:42px;height:42px;border-radius:50%;background:rgba(10,31,68,.05);border:1.5px solid rgba(10,31,68,.1);display:flex;align-items:center;justify-content:center;color:#000;font-size:1rem;transition:all .25s;text-decoration:none}
+.footer-brand-social a:hover{background:var(--teal);color:#fff;border-color:var(--teal);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,137,123,.25)}
+.footer-col{display:flex;flex-direction:column}
+.footer-col h4{font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:700;color:var(--teal);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.8rem;padding-bottom:.45rem;position:relative}
+.footer-col h4::after{content:'';position:absolute;bottom:0;left:0;width:20px;height:1.5px;background:linear-gradient(90deg,var(--teal),var(--ocean));border-radius:2px}
+.footer-col a{font-family:'Open Sans',sans-serif;font-size:.84rem;color:#000;text-decoration:none;font-weight:700;transition:color .2s;padding:.28rem 0;display:block}
+.footer-col a:hover{color:var(--teal)}
+.footer-contact-list{display:flex;flex-direction:column;gap:.45rem}
+.footer-contact-row{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:#000;font-weight:700}
+.footer-contact-row i{color:var(--teal);font-size:.72rem;flex-shrink:0;width:14px;text-align:center}
+.footer-contact-row a{color:#000;text-decoration:none;font-weight:700;transition:color .2s;padding:0}
+.footer-contact-row a:hover{color:var(--teal)}
+.footer-divider{height:1px;background:rgba(0,0,0,.08);max-width:1300px;margin:0 auto}
+.footer-bottom{max-width:1300px;margin:0 auto;padding:.8rem 2.5rem;text-align:center}
+.footer-copy{font-size:.78rem;color:#000;font-weight:700;letter-spacing:.3px}
+@media(max-width:960px){.footer-main{grid-template-columns:1fr;gap:1.5rem;padding:2rem 1.5rem 1rem}}
+@media(max-width:600px){.footer-main{grid-template-columns:1fr;gap:1.5rem;padding:2rem 1rem 1rem}.footer-brand img{height:30px;max-width:130px}.footer-bottom{padding:.6rem 1rem}}
 
 /* ═══ SCROLL ARROW ═══ */
 .scroll-arrow{position:fixed;bottom:2rem;right:2rem;z-index:9998;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 18px rgba(0,137,123,.35);transition:opacity .3s,transform .3s,visibility .3s;opacity:0;visibility:hidden;pointer-events:none}
 .scroll-arrow.visible{opacity:1;visibility:visible;pointer-events:auto}
 .scroll-arrow:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,137,123,.5)}
 
-/* Why Participate */
-.why-participate-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1.5rem}
-.wp-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:1.3rem 1.5rem;border-top:3px solid var(--teal)}
-.wp-card-header{font-family:'Poppins',sans-serif;font-weight:700;font-size:.97rem;color:var(--navy);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem}
-.wp-card-header i{color:var(--teal)}
-.wp-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.4rem}
-.wp-list li{font-size:.88rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.5}
-.wp-list li::before{content:'\f0da';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--teal);position:absolute;left:0;top:2px;font-size:.7rem}
-/* Key Highlights */
-.hl-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1.5rem}
-.hl-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:1.4rem;text-align:center}
-.hl-card-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--teal),var(--ocean));border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;margin:0 auto .8rem}
-.hl-card-title{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);font-size:.95rem;margin-bottom:.5rem}
-.hl-card p{font-size:.85rem;color:var(--muted);line-height:1.55}
-/* Takeaways */
-.takeaway-list{display:flex;flex-direction:column;gap:.8rem;margin-top:1.5rem}
-.tkw-item{display:flex;gap:1rem;align-items:flex-start;background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:1rem 1.3rem}
-.tkw-num{flex-shrink:0;width:32px;height:32px;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border-radius:50%;font-family:'Poppins',sans-serif;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center}
-.tkw-title{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);font-size:.93rem;margin-bottom:.2rem}
-.tkw-item p{font-size:.88rem;color:var(--muted);line-height:1.55;margin:0}
 /* Sub topics */
 .sub-topics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .sub-topic-card{background:linear-gradient(135deg,rgba(0,137,123,.07),rgba(21,101,192,.06));border:1px solid rgba(0,137,123,.18);border-radius:12px;padding:1.1rem 1.2rem;display:flex;align-items:center;gap:.8rem;font-family:'Poppins',sans-serif;font-weight:600;color:var(--navy);font-size:.9rem}
@@ -224,11 +312,6 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
 .steps-list{display:flex;flex-direction:column;gap:.8rem}
 .step-item{display:flex;gap:.9rem;align-items:flex-start;font-size:.9rem;color:var(--muted);line-height:1.6;background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:.9rem 1.2rem}
 .step-num{flex-shrink:0;width:28px;height:28px;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border-radius:50%;font-family:'Poppins',sans-serif;font-weight:800;font-size:.78rem;display:flex;align-items:center;justify-content:center}
-/* Why apply box */
-.why-apply-box{background:rgba(0,137,123,.05);border:1px solid rgba(0,137,123,.18);border-radius:14px;padding:1.3rem 1.5rem}
-.why-apply-list{display:flex;flex-direction:column;gap:.5rem}
-.wa-item{display:flex;align-items:flex-start;gap:.6rem;font-size:.9rem;color:var(--muted);line-height:1.5}
-.wa-item i{color:var(--teal);font-size:.7rem;margin-top:.25rem;flex-shrink:0}
 /* Pricing notes */
 .pricing-note-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:1rem 1.2rem;display:flex;align-items:flex-start;gap:.8rem;font-size:.88rem}
 .pricing-note-card i{color:var(--teal);font-size:1rem;margin-top:.1rem;flex-shrink:0}
@@ -243,14 +326,20 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
 .pay-gateway-link{color:var(--teal);text-decoration:none;font-weight:700;word-break:break-all}
 .pay-gateway-link:hover{text-decoration:underline}
 /* Reg links */
-.reg-links-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.8rem}
-.reg-link-card{background:var(--card-bg);border:1.5px solid rgba(0,137,123,.25);border-radius:14px;padding:1.1rem 1.3rem;display:flex;align-items:center;gap:.9rem;text-decoration:none;transition:box-shadow .2s,transform .2s}
-.reg-link-card:hover{box-shadow:0 6px 20px rgba(0,137,123,.12);transform:translateY(-2px)}
-.reg-link-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--teal),var(--ocean));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.95rem;flex-shrink:0}
-.reg-link-title{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);font-size:.92rem;margin-bottom:.15rem}
-.reg-link-url{font-size:.78rem;color:var(--teal);word-break:break-all}
-@media(max-width:960px){.why-participate-grid{grid-template-columns:1fr}.hl-cards-grid{grid-template-columns:1fr 1fr}.sub-topics-grid{grid-template-columns:1fr}.reg-blocks-grid{grid-template-columns:1fr}.pay-modes-grid{grid-template-columns:1fr}.reg-links-grid{grid-template-columns:1fr}.pricing-notes-grid{grid-template-columns:1fr}}
-@media(max-width:600px){.hl-cards-grid{grid-template-columns:1fr}}
+.reg-links-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:.8rem}
+.reg-link-card{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,var(--deep) 100%);border:none;border-radius:16px;padding:1.5rem 1.8rem;display:flex;align-items:center;gap:1.1rem;text-decoration:none;transition:transform .25s,box-shadow .25s;box-shadow:0 6px 24px rgba(10,31,68,.25)}
+.reg-link-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,137,123,.18),rgba(33,150,243,.1));opacity:0;transition:opacity .25s}
+.reg-link-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(10,31,68,.35)}
+.reg-link-card:hover::before{opacity:1}
+.reg-link-icon{width:52px;height:52px;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;flex-shrink:0;transition:background .25s,transform .25s;position:relative;z-index:1}
+.reg-link-card:hover .reg-link-icon{background:rgba(0,137,123,.35);transform:scale(1.08)}
+.reg-link-title{font-family:'Poppins',sans-serif;font-weight:700;color:#fff;font-size:1rem;position:relative;z-index:1;line-height:1.3}
+.reg-link-sub{font-size:.76rem;color:rgba(255,255,255,.6);font-weight:500;display:block;margin-top:.15rem}
+.reg-link-arrow{margin-left:auto;color:rgba(255,255,255,.45);font-size:.85rem;flex-shrink:0;position:relative;z-index:1;transition:color .2s,transform .2s}
+.reg-link-card:hover .reg-link-arrow{color:rgba(255,255,255,.9);transform:translateX(3px)}
+.reg-link-url{font-size:.78rem;color:rgba(255,255,255,.5);word-break:break-all}
+@media(max-width:960px){.sub-topics-grid{grid-template-columns:1fr}.reg-blocks-grid{grid-template-columns:1fr}.pay-modes-grid{grid-template-columns:1fr}.reg-links-grid{grid-template-columns:1fr}.pricing-notes-grid{grid-template-columns:1fr}}
+@media(max-width:600px){}
 </style>
 </head>
 <body>
@@ -259,13 +348,41 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026"></a>
+    <a href="index.html" class="nav-logo">
+      <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026">
+    </a>
     <ul class="nav-desktop">
       <li class="nav-item"><a href="index.html">Home</a></li>
-      <li class="nav-item"><a href="about.html">About <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="team.html"><i class="fa-solid fa-users"></i> BiCS Team</a></li></ul></li>
-      <li class="nav-item"><a href="register.html" class="active">Registrations <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li><li><a href="submissions.html"><i class="fa-solid fa-file-lines"></i> Submissions</a></li><li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQs</a></li></ul></li>
-      <li class="nav-item"><a href="guests.html">Guests <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="honorable-guests.html"><i class="fa-solid fa-user-tie"></i> Honorable Guests</a></li><li><a href="keynote-speakers.html"><i class="fa-solid fa-microphone"></i> Keynote Speakers</a></li></ul></li>
-      <li class="nav-item"><a href="gallery.html">Gallery <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="press-media.html"><i class="fa-solid fa-newspaper"></i> Press / Media</a></li></ul></li>
+      <li class="nav-item">
+        <a href="about.html">About <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="takeaway.html"><i class="fa-solid fa-list-check"></i> Takeaways</a></li>
+          <li><a href="team.html"><i class="fa-solid fa-users"></i> BiCS Team</a></li>
+          <li><a href="sponsors.html"><i class="fa-solid fa-handshake"></i> Sponsors</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="register.html" class="active">Registrations <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="submissions.html"><i class="fa-solid fa-file-lines"></i> Submissions</a></li>
+          <li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li>
+          <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQs</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="guests.html">Guests <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="honorable-guests.html"><i class="fa-solid fa-user-tie"></i> Honorable Guests</a></li>
+          <li><a href="keynote-speakers.html"><i class="fa-solid fa-microphone"></i> Keynote Speakers</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="gallery.html">Gallery <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="press-media.html"><i class="fa-solid fa-newspaper"></i> Press / Media</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
   </div>
@@ -273,15 +390,49 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
 
 <aside class="nav-sidebar" id="navSidebar">
   <div class="nav-sidebar-header">
-    <div class="nav-sidebar-brand"><div class="nav-sidebar-logo-wrap"><img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026" class="nav-sidebar-logo"></div></div>
+    <div class="nav-sidebar-brand">
+      <div class="nav-sidebar-logo-wrap">
+        <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026" class="nav-sidebar-logo">
+      </div>
+    </div>
     <button class="nav-sidebar-close" id="navSidebarClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
   </div>
   <ul class="nav-sidebar-links">
     <li><a href="index.html"><span class="sb-icon"><i class="fa-solid fa-house"></i></span> Home</a></li>
-    <li class="sb-has-dropdown"><a href="about.html"><span class="sb-icon"><i class="fa-solid fa-circle-info"></i></span> About</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="team.html"><span class="sb-dd-icon"><i class="fa-solid fa-users"></i></span> BiCS Team</a></li></ul></li>
-    <li class="sb-has-dropdown"><a href="register.html" class="active"><span class="sb-icon"><i class="fa-solid fa-clipboard-list"></i></span> Registrations</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="fee-payment.html"><span class="sb-dd-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span> Fee Payment</a></li><li><a href="submissions.html"><span class="sb-dd-icon"><i class="fa-solid fa-file-lines"></i></span> Submissions</a></li><li><a href="faq.html"><span class="sb-dd-icon"><i class="fa-solid fa-circle-question"></i></span> FAQs</a></li></ul></li>
-    <li class="sb-has-dropdown"><a href="guests.html"><span class="sb-icon"><i class="fa-solid fa-user-tie"></i></span> Guests</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="honorable-guests.html"><span class="sb-dd-icon"><i class="fa-solid fa-user-tie"></i></span> Honorable Guests</a></li><li><a href="keynote-speakers.html"><span class="sb-dd-icon"><i class="fa-solid fa-microphone"></i></span> Keynote Speakers</a></li></ul></li>
-    <li class="sb-has-dropdown"><a href="gallery.html"><span class="sb-icon"><i class="fa-solid fa-images"></i></span> Gallery</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li></ul></li>
+    <li class="sb-has-dropdown">
+      <a href="about.html"><span class="sb-icon"><i class="fa-solid fa-circle-info"></i></span> About</a>
+      <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="takeaway.html"><span class="sb-dd-icon"><i class="fa-solid fa-list-check"></i></span> Takeaways</a></li>
+        <li><a href="team.html"><span class="sb-dd-icon"><i class="fa-solid fa-users"></i></span> BiCS Team</a></li>
+        <li><a href="sponsors.html"><span class="sb-dd-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a></li>
+      </ul>
+    </li>
+    <li class="sb-has-dropdown">
+      <a href="register.html" class="active"><span class="sb-icon"><i class="fa-solid fa-clipboard-list"></i></span> Registrations</a>
+      <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="submissions.html"><span class="sb-dd-icon"><i class="fa-solid fa-file-lines"></i></span> Submissions</a></li>
+        <li><a href="fee-payment.html"><span class="sb-dd-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span> Fee Payment</a></li>
+        <li><a href="faq.html"><span class="sb-dd-icon"><i class="fa-solid fa-circle-question"></i></span> FAQs</a></li>
+      </ul>
+    </li>
+    <li class="sb-has-dropdown">
+      <a href="guests.html"><span class="sb-icon"><i class="fa-solid fa-user-tie"></i></span> Guests</a>
+      <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="honorable-guests.html"><span class="sb-dd-icon"><i class="fa-solid fa-user-tie"></i></span> Honorable Guests</a></li>
+        <li><a href="keynote-speakers.html"><span class="sb-dd-icon"><i class="fa-solid fa-microphone"></i></span> Keynote Speakers</a></li>
+      </ul>
+    </li>
+    <li class="sb-has-dropdown">
+      <a href="gallery.html"><span class="sb-icon"><i class="fa-solid fa-images"></i></span> Gallery</a>
+      <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html"><span class="sb-icon"><i class="fa-solid fa-address-book"></i></span> Contact</a></li>
   </ul>
 </aside>
 
@@ -291,9 +442,359 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
     <div class="page-banner-badge"><i class="fa-solid fa-bullhorn"></i> Call for Papers & Posters</div>
     <h1>Register for BiCS 2026</h1>
     <p>We are pleased to announce the <strong style="color:#fff">Call for Papers and Posters</strong> for the Blue Intelligence Climate Summit 2026, scheduled for 2nd &amp; 3rd October 2026. The summit explores the intersection of Blue Intelligence &amp; Economy, focusing on SDGs 4, 7, 9, 13, 14, and 17.</p>
-
   </div>
 </div>
+
+<!-- WHY YOU SHOULD APPLY — after hero -->
+<section class="sec" id="why">
+<div class="container">
+  <div class="sec-title">Why You Should Apply</div>
+  <p class="sec-sub">Join the Blue Intelligence Climate Summit 2026 and be part of a transformative global conversation on ocean sustainability, technology, and policy.</p>
+
+  <!-- Updated to yellow bullet points -->
+  <ul class="wya-bullet-list">
+    <li>Pitch your ideas to <strong>UNEP, UNDP, UNGC &amp; UNESCO</strong> delegates</li>
+    <li>Win the <strong>"Blue Innovator Award 2026"</strong> for top poster at the Valedictory Ceremony</li>
+    <li>Network at the heart of <strong>India's Innovation Ecosystem</strong></li>
+    <li><strong>Cash Awards</strong> and International Valid Certificates</li>
+    <li>3-minute <strong>"Flash Pitch"</strong> to judges including the UN Delegation during Tea Breaks</li>
+  </ul>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- IMPORTANT DATES -->
+<section class="sec" id="dates">
+<div class="container">
+  <div class="sec-title">Registration Dates</div>
+
+  <div class="dates-table-wrap" style="margin-top:1.5rem;overflow-x:auto;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.08);border:1px solid rgba(0,137,123,.2)">
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th style="width:45%"><i class="fa-solid fa-list-check" style="margin-right:6px"></i>Event / Milestone</th>
+          <th style="width:30%"><i class="fa-solid fa-calendar-days" style="margin-right:6px"></i>Date</th>
+          <th><i class="fa-solid fa-tag" style="margin-right:6px"></i>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-door-open"></i></span><span>Offline Participation Applications Starts <small style="display:block;font-weight:400;color:rgba(10,31,68,.5)">(Presenters)</small></span></div></td>
+          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">11th June 2026</span></td>
+          <td><span class="tl-badge offline-badge"><i class="fa-solid fa-circle"></i> Offline</span></td>
+        </tr>
+        <tr>
+          <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-bolt"></i></span><span> Early Birds Last Date <small style="display:block;font-weight:400;color:rgba(10,31,68,.5)">(Presenters)</small></span></div></td>
+          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">25th June 2026</span></td>
+          <td><span class="tl-badge online-badge"><i class="fa-solid fa-circle"></i> Early Bird</span></td>
+        </tr>
+        <tr>
+          <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-location-dot"></i></span><span>Applications Offline Participation <small style="display:block;font-weight:400;color:rgba(10,31,68,.5)">(Presenters)</small></span></div></td>
+          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">31st July 2026</span></td>
+          <td><span class="tl-badge offline-badge"><i class="fa-solid fa-circle"></i> Final</span></td>
+        </tr>
+        <tr style="background:rgba(249,168,37,.04)">
+          <td><div class="cat-cell"><span class="cat-icon" style="background:rgba(249,168,37,.15);color:#8a6000"><i class="fa-solid fa-file-pen"></i></span><span>Abstract Submissions Dates</span></div></td>
+          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:#8a6000">2nd – 31st July 2026</span></td>
+          <td><span class="tl-badge abstract-badge"><i class="fa-solid fa-file-lines"></i> Abstract</span></td>
+        </tr>
+        <tr style="background:rgba(220,53,69,.03)">
+          <td><div class="cat-cell"><span class="cat-icon" style="background:rgba(220,53,69,.1);color:#C0392B"><i class="fa-solid fa-clock"></i></span><span>Late Submissions <small style="display:block;font-weight:400;color:rgba(10,31,68,.5)">+₹500 INR / +$8 USD per abstract</small></span></div></td>
+          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:#C0392B">10th August 2026</span></td>
+          <td><span class="tl-badge late-badge"><i class="fa-solid fa-clock"></i> Late Fee</span></td>
+        </tr>
+        <tr>
+          <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-laptop"></i></span><span>Online Participation fee Last date</span></div></td>
+          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">22nd September 2026</span></td>
+          <td><span class="tl-badge online-badge"><i class="fa-solid fa-circle"></i> Online</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Highlighted Big Note -->
+  <div class="highlighted-big-note">
+    <i class="fa-solid fa-circle-exclamation" style="margin-right: 10px;"></i> 
+    Note: Late Fee Submissions include an additional <span>₹500 INR & $8 USD</span> per abstract. Abstract submission opens from 2nd July 2026.
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRICING -->
+<section class="sec" id="pricing">
+<div class="container">
+  <div class="sec-title">Fee Structure To Register</div>
+
+  <!-- ONLINE FEES — Indian & International combined table with 3 cols -->
+  <div style="margin-top:1.5rem">
+    <div class="fee-section-header online-header"><i class="fa-solid fa-video"></i> Online Registrations</div>
+
+    <!-- Indian Nationals -->
+    <div class="fee-sub-header">🇮🇳 Indian Nationals</div>
+    <div class="pricing-table-wrap" style="margin-bottom:1.5rem">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th style="width:38%"><i class="fa-solid fa-user" style="margin-right:5px"></i>Category / Name</th>
+            <th style="width:32%"><i class="fa-solid fa-indian-rupee-sign" style="margin-right:5px"></i>Fee (Per Head)</th>
+            <th><i class="fa-solid fa-calendar-days" style="margin-right:5px"></i>Last Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></span><span>Students<br><small style="font-weight:400;color:rgba(10,31,68,.5)">(UG, PG &amp; University)</small></span></div></td>
+            <td><span class="price-indian">₹ 99</span><span class="price-note">+ 18% GST</span></td>
+            <td><span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;color:var(--navy)">22nd Sept 2026</span></td>
+          </tr>
+          <tr>
+            <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-flask"></i></span><span>Researchers &amp; Academicians</span></div></td>
+            <td><span class="price-indian">₹ 199</span><span class="price-note">+ 18% GST</span></td>
+            <td><span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;color:var(--navy)">22nd Sept 2026</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- International -->
+    <div class="fee-sub-header">🌐 International Participants</div>
+    <div class="pricing-table-wrap" style="margin-bottom:1.5rem">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th style="width:38%"><i class="fa-solid fa-user" style="margin-right:5px"></i>Category / Name</th>
+            <th style="width:32%"><i class="fa-solid fa-dollar-sign" style="margin-right:5px"></i>Fee (Per Head)</th>
+            <th><i class="fa-solid fa-calendar-days" style="margin-right:5px"></i>Last Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></span><span>Students &amp; Researchers</span></div></td>
+            <td><span class="price-intl">$ 6</span><span class="price-note"></span></td>
+            <td><span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;color:var(--navy)">22nd Sept 2026</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Removed "Includes access to all four thematic tracks..." text -->
+
+  <div class="pay-gateway-box" style="margin-top:1.2rem">
+    <span><i class="fa-solid fa-link"></i> <strong>Payment Gateway:</strong></span>
+    <a href="https://rzp.io/rzp/eqYGP8gs" target="_blank" class="pay-gateway-link">https://rzp.io/rzp/eqYGP8gs</a>
+  </div>
+
+  <!-- ══════════ OFFLINE FEES ══════════ -->
+  <div style="margin-top:3rem">
+    <div class="fee-section-header offline-header"><i class="fa-solid fa-location-dot"></i> Offline Registrations (In-Person)</div>
+
+    <!-- Indian Nationals Offline -->
+    <div class="fee-sub-header">🇮🇳 Indian Nationals</div>
+    <div class="pricing-table-wrap" style="margin-bottom:.5rem;overflow-x:auto">
+      <table class="pricing-table offline-table">
+        <thead>
+          <tr>
+            <th style="min-width:30px">S.No</th>
+            <th style="min-width:200px">Category</th>
+            <th style="min-width:160px">Fee (Per Head)</th>
+            <th style="min-width:220px">Benefits</th>
+            <th style="min-width:130px">Payment Link</th>
+            <th style="min-width:200px">Accommodation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Students Day 1&2 -->
+          <tr>
+            <td class="sno-cell">1</td>
+            <td>
+              <div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+              <span><strong>Students</strong><br><small style="color:rgba(10,31,68,.5)">(UG, PG &amp; University)</small><br><small style="color:var(--ocean);font-weight:600">Day 1 &amp; 2 Participation Only</small></span></div>
+            </td>
+            <td>
+              <span class="price-indian">₹ 999</span>
+              <span class="price-note">+ 18% GST</span>
+              <span class="early-bird-note"><i class="fa-solid fa-bolt"></i> Early Birds ends by 30th June - Presentation</span>
+            </td>
+            <td class="benefits-cell">
+              <span class="benefit-tag"><i class="fa-solid fa-certificate"></i> Participation E-Certificate</span>
+              <span class="benefit-tag"><i class="fa-solid fa-mug-hot"></i> Hi Tea</span>
+              <span class="benefit-tag muted-tag"><i class="fa-solid fa-info-circle"></i> Lunch purchased separately</span>
+            </td>
+            <td class="link-cell">
+              <span class="coming-soon-badge">Coming Soon</span>
+              <small style="display:block;color:rgba(10,31,68,.5);margin-top:3px">Opens 11th June</small>
+            </td>
+            <td class="accom-cell">
+              <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
+              <small style="display:block;color:rgba(10,31,68,.5);margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
+              <small style="color:rgba(10,31,68,.4)">Details shared soon</small>
+            </td>
+          </tr>
+          <!-- Students Hackathon -->
+          <tr>
+            <td class="sno-cell">2</td>
+            <td>
+              <div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-lightbulb"></i></span>
+              <span><strong>Students</strong><br><small style="color:rgba(10,31,68,.5)">(UG, PG &amp; University)</small><br><small style="color:var(--ocean);font-weight:600">Hackathon / Poster Participants</small></span></div>
+            </td>
+            <td>
+              <span class="price-indian">₹ 1,299</span>
+              <span class="price-note">+ 18% GST</span>
+              <span class="early-bird-note"><i class="fa-solid fa-file-pen"></i> Last date for abstract submission: 31st July</span>
+              <span class="early-bird-note" style="color:#C0392B"><i class="fa-solid fa-clock"></i> Late fee submission: 10th Aug</span>
+            </td>
+            <td class="benefits-cell">
+              <span class="benefit-tag"><i class="fa-solid fa-certificate"></i> Participation E-Certificate</span>
+              <span class="benefit-tag"><i class="fa-solid fa-mug-hot"></i> Hi Tea</span>
+              <span class="benefit-tag"><i class="fa-solid fa-trophy"></i> Awards for winners + Winner titles</span>
+              <span class="benefit-tag"><i class="fa-solid fa-bullhorn"></i> Media coverage</span>
+              <span class="benefit-tag muted-tag"><i class="fa-solid fa-info-circle"></i> Lunch purchased separately</span>
+            </td>
+            <td class="link-cell">
+              <span class="coming-soon-badge">Coming Soon</span>
+              <small style="display:block;color:rgba(10,31,68,.5);margin-top:3px">Opens 11th June</small>
+            </td>
+            <td class="accom-cell">
+              <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
+              <small style="display:block;color:rgba(10,31,68,.5);margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
+              <small style="color:rgba(10,31,68,.4)">Details shared soon</small>
+            </td>
+          </tr>
+          <!-- Researchers -->
+          <tr>
+            <td class="sno-cell">3</td>
+            <td>
+              <div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-microscope"></i></span>
+              <span><strong>Researchers</strong><br><small style="color:var(--ocean);font-weight:600">Presenters</small></span></div>
+            </td>
+            <td>
+              <span class="price-indian">₹ 3,599</span>
+              <span class="price-note">+ 18% GST</span>
+              <span class="early-bird-note"><i class="fa-solid fa-file-pen"></i> Abstract by 31st July</span>
+              <span class="early-bird-note" style="color:#C0392B"><i class="fa-solid fa-clock"></i> Late fee by 10th Aug</span>
+            </td>
+            <td class="benefits-cell">
+              <span class="benefit-tag"><i class="fa-solid fa-certificate"></i> Participation Certificate</span>
+              <span class="benefit-tag"><i class="fa-solid fa-book-open"></i> Abstract Publication</span>
+              <span class="benefit-tag"><i class="fa-solid fa-utensils"></i> Food 3× for 2 days</span>
+            </td>
+            <td class="link-cell">
+              <span class="coming-soon-badge">Coming Soon</span>
+              <small style="display:block;color:rgba(10,31,68,.5);margin-top:3px">Opens 11th June</small>
+            </td>
+            <td class="accom-cell">
+              <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
+              <small style="display:block;color:rgba(10,31,68,.5);margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
+              <small style="color:rgba(10,31,68,.4)">Details shared soon</small>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- International Offline -->
+    <div class="fee-sub-header" style="margin-top:1.8rem">🌐 International Participants</div>
+    <div class="pricing-table-wrap" style="overflow-x:auto">
+      <table class="pricing-table offline-table">
+        <thead>
+          <tr>
+            <th style="min-width:30px">S.No</th>
+            <th style="min-width:200px">Category</th>
+            <th style="min-width:160px">Fee (Per Head)</th>
+            <th style="min-width:260px">Benefits</th>
+            <th style="min-width:130px">Payment Link</th>
+            <th style="min-width:200px">Accommodation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sno-cell">1</td>
+            <td>
+              <div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+              <span><strong>Students</strong><br><small style="color:rgba(10,31,68,.5)">(UG, PG &amp; University)</small></span></div>
+            </td>
+            <td>
+              <span class="price-intl">$ 20</span>
+              <span class="price-note"></span>
+            </td>
+            <td class="benefits-cell">
+              <span class="benefit-tag"><i class="fa-solid fa-certificate"></i> Participation Certificate</span>
+              <span class="benefit-tag"><i class="fa-solid fa-utensils"></i> Food 3× for 2 days</span>
+              <span class="benefit-tag"><i class="fa-solid fa-bullhorn"></i> Media coverage</span>
+              <span class="benefit-tag"><i class="fa-solid fa-trophy"></i> Cash awards for winners + winner titles</span>
+              <span class="benefit-tag"><i class="fa-solid fa-lightbulb"></i> Hackathon + Poster Presentation</span>
+              <span class="benefit-tag"><i class="fa-solid fa-water"></i> Beach Clean-up Participation &amp; Certificate</span>
+            </td>
+            <td class="link-cell">
+              <span class="coming-soon-badge">Coming Soon</span>
+              <small style="display:block;color:rgba(10,31,68,.5);margin-top:3px">1st Oct 12PM – 4th Oct 12PM</small>
+            </td>
+            <td class="accom-cell">
+              <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
+              <small style="display:block;color:rgba(10,31,68,.5);margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
+              <small style="color:rgba(10,31,68,.4)">Details shared soon</small>
+            </td>
+          </tr>
+          <tr>
+            <td class="sno-cell">2</td>
+            <td>
+              <div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-microscope"></i></span>
+              <span><strong>Researchers</strong><br><small style="color:var(--ocean);font-weight:600">Presenters</small></span></div>
+            </td>
+            <td>
+              <span class="price-intl">$ 50</span>
+              <span class="price-note"></span>
+            </td>
+            <td class="benefits-cell">
+              <span class="benefit-tag"><i class="fa-solid fa-certificate"></i> Participation Certificate</span>
+              <span class="benefit-tag"><i class="fa-solid fa-microphone"></i> Abstract Presentation (if selected)</span>
+              <span class="benefit-tag"><i class="fa-solid fa-book-open"></i> Abstract Publication</span>
+              <span class="benefit-tag"><i class="fa-solid fa-utensils"></i> Food 3× for 2 days</span>
+              <span class="benefit-tag"><i class="fa-solid fa-water"></i> Beach Clean-up + Certificate</span>
+            </td>
+            <td class="link-cell">
+              <span class="coming-soon-badge">Coming Soon</span>
+              <small style="display:block;color:rgba(10,31,68,.5);margin-top:3px">1st Oct 12PM – 4th Oct 12PM</small>
+            </td>
+            <td class="accom-cell">
+              <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
+              <small style="display:block;color:rgba(10,31,68,.5);margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
+              <small style="color:rgba(10,31,68,.4)">Details shared soon</small>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem">
+    <div class="reg-forms-heading">Registration Forms</div>
+    <div class="reg-links-grid">
+      <a href="student register.html" target="_blank" class="reg-link-card">
+        <div class="reg-link-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div>
+          <div class="reg-link-title">Category 1 — Students</div>
+          <span class="reg-link-sub">UG, PG &amp; University</span>
+        </div>
+        <i class="fa-solid fa-arrow-right reg-link-arrow"></i>
+      </a>
+      <a href="research  register.html" target="_blank" class="reg-link-card">
+        <div class="reg-link-icon"><i class="fa-solid fa-microscope"></i></div>
+        <div>
+          <div class="reg-link-title">Category 2 — Researchers</div>
+          <span class="reg-link-sub">Presenters &amp; Academics</span>
+        </div>
+        <i class="fa-solid fa-arrow-right reg-link-arrow"></i>
+      </a>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
 
 <!-- PARTICIPATION MODES -->
 <section class="sec" id="modes">
@@ -317,242 +818,12 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
 </div>
 </section>
 
-<!-- IMPORTANT DATES -->
-<section class="sec" id="dates">
-<div class="container">
-  <div class="section-label"><i class="fa-solid fa-calendar-check"></i> Key Dates</div>
-  <div class="sec-title">Registration Dates</div>
-
-  <div class="timeline-wrap">
-    <div class="timeline-group">
-      <div class="tl-group-label"><i class="fa-solid fa-door-open"></i> Applications</div>
-      <div class="tl-items">
-        <div class="tl-item">
-          <span class="tl-label">Applications Available From</span>
-          <span class="tl-badge online-badge"><i class="fa-solid fa-circle"></i> Open</span>
-          <span class="tl-date">27th May 2026</span>
-        </div>
-        <div class="tl-item">
-          <span class="tl-label">Early Bird Registration Last Date</span>
-          <span class="tl-badge online-badge"><i class="fa-solid fa-circle"></i> Early Bird</span>
-          <span class="tl-date">19th June 2026</span>
-          <span style="grid-column:1/-1;font-size:.82rem;color:rgba(10,31,68,.6);font-family:'Open Sans',sans-serif;line-height:1.55">9:00 PM IST &nbsp;/&nbsp; 11:30 AM NYT</span>
-        </div>
-        <div class="tl-item">
-          <span class="tl-label">Final Registration Last Date</span>
-          <span class="tl-badge offline-badge"><i class="fa-solid fa-circle"></i> Final</span>
-          <span class="tl-date">10th July 2026</span>
-          <span style="grid-column:1/-1;font-size:.82rem;color:rgba(10,31,68,.6);font-family:'Open Sans',sans-serif;line-height:1.55">9:00 PM IST &nbsp;/&nbsp; 11:30 AM NYT</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-group">
-      <div class="tl-group-label"><i class="fa-solid fa-file-pen"></i> Abstract Submission</div>
-      <div class="tl-items">
-        <div class="tl-item highlight" style="grid-template-columns:1fr auto auto;row-gap:.5rem">
-          <span class="tl-label" style="grid-column:1/2">Abstract Submission Last Date</span>
-          <span class="tl-badge abstract-badge" style="grid-column:2/3"><i class="fa-solid fa-file-lines"></i> Abstract</span>
-          <span class="tl-date" style="grid-column:3/4">3rd August 2026</span>
-          <span style="grid-column:1/-1;font-size:.82rem;color:rgba(10,31,68,.6);font-family:'Open Sans',sans-serif;line-height:1.55">9:00 PM IST &nbsp;/&nbsp; 11:30 AM NYT</span>
-        </div>
-        <div class="tl-item highlight" style="grid-template-columns:1fr auto auto;row-gap:.5rem">
-          <span class="tl-label" style="grid-column:1/2">Late Fee Abstract Submission</span>
-          <span class="tl-badge late-badge" style="grid-column:2/3"><i class="fa-solid fa-clock"></i> Late Fee</span>
-          <span class="tl-date" style="grid-column:3/4">22nd August 2026</span>
-          <span style="grid-column:1/-1;font-size:.82rem;color:rgba(10,31,68,.6);font-family:'Open Sans',sans-serif;line-height:1.55">9:00 PM IST &nbsp;/&nbsp; 11:30 AM NYT</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PRICING -->
-<section class="sec" id="pricing">
-<div class="container">
-  <div class="section-label"><i class="fa-solid fa-tags"></i> Registration Fees</div>
-  <div class="sec-title">Fee Structure To Register</div>
-  <p class="sec-sub">All registered delegates receive a <strong>Global Leadership &amp; Sustainability Certificate</strong> co-signed by global and national UN Delegations and marine organization heads.</p>
-
-  <div class="pricing-notes-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin:1.5rem 0">
-    <div class="pricing-note-card"><i class="fa-solid fa-percent"></i><div><strong>Indian Payments</strong><p>Subject to additional 18% GST processing tax</p></div></div>
-    <div class="pricing-note-card"><i class="fa-solid fa-globe"></i><div><strong>International Payments</strong><p>No additional fee applied</p></div></div>
-    <div class="pricing-note-card"><i class="fa-solid fa-circle-xmark"></i><div><strong>Exclusions</strong><p>Travel, lodging, and visa costs not covered</p></div></div>
-  </div>
-
-  <div class="pricing-table-wrap">
-    <table class="pricing-table">
-      <thead>
-        <tr>
-          <th style="width:40%">Category</th>
-          <th><i class="fa-solid fa-indian-rupee-sign" style="margin-right:4px"></i>Online Registrations (Indians Only)</th>
-          <th><i class="fa-solid fa-globe" style="margin-right:4px"></i>International</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="cat-cell">
-              <span class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></span>
-              <span>Students<br><span style="font-size:.78rem;font-weight:400;color:rgba(10,31,68,.5)">(13 to 25 years)</span></span>
-            </div>
-          </td>
-          <td>
-            <span class="price-indian">₹ 99</span>
-            <span class="price-note">+ 18% GST (per head)</span>
-          </td>
-          <td>
-            <span class="price-intl">$ 6</span>
-            <span class="price-note">+ 5% Tax (per head)</span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="cat-cell">
-              <span class="cat-icon"><i class="fa-solid fa-flask"></i></span>
-              <span>Researchers &amp; Academicians</span>
-            </div>
-          </td>
-          <td>
-            <span class="price-indian">₹ 99</span>
-            <span class="price-note">+ 18% GST (per head)</span>
-          </td>
-          <td>
-            <span class="price-intl">$ 6</span>
-            <span class="price-note">+ 5% Tax (per head)</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="pricing-footer-note"><i class="fa-solid fa-circle-info"></i> Includes access to all four thematic tracks, abstract evaluation, and the official co-signed Global Leadership &amp; Sustainability Certificate.</div>
-
-  <div class="pay-section" style="margin-top:2rem">
-    <div class="section-label"><i class="fa-solid fa-credit-card"></i> Approved Indian Payment Modes</div>
-    <p style="font-size:.9rem;color:var(--muted);margin-bottom:1rem;line-height:1.7">Domestic payments can be processed instantly through the local gateway using:</p>
-    <div class="pay-modes-grid">
-      <div class="pay-mode-item"><i class="fa-solid fa-mobile-screen"></i><span>UPI Apps<br><small>Google Pay, PhonePe, Paytm, BHIM</small></span></div>
-      <div class="pay-mode-item"><i class="fa-solid fa-building-columns"></i><span>Net Banking<br><small>All major public &amp; private Indian banks</small></span></div>
-      <div class="pay-mode-item"><i class="fa-solid fa-credit-card"></i><span>Cards<br><small>RuPay, Visa &amp; Mastercard debit/credit</small></span></div>
-    </div>
-    <div class="pay-gateway-box">
-      <span><i class="fa-solid fa-link"></i> <strong>Payment Gateway:</strong></span>
-      <a href="https://rzp.io/rzp/eqYGP8gs" target="_blank" class="pay-gateway-link">https://rzp.io/rzp/eqYGP8gs</a>
-    </div>
-  </div>
-
-  <div style="margin-top:2rem">
-    <div class="section-label"><i class="fa-solid fa-file-pen"></i> Registration Form Links</div>
-    <div class="reg-links-grid">
-      <a href="student register.html" target="_blank" class="reg-link-card">
-        <div class="reg-link-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        <div><div class="reg-link-title">Category 1 — Students</div><div class="reg-link-url"></div></div>
-        <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left:auto;opacity:.5;font-size:.8rem"></i>
-      </a>
-      <a href="research  register.html" target="_blank" class="reg-link-card">
-        <div class="reg-link-icon"><i class="fa-solid fa-microscope"></i></div>
-        <div><div class="reg-link-title">Category 2 — Researchers</div><div class="reg-link-url"></div></div>
-        <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left:auto;opacity:.5;font-size:.8rem"></i>
-      </a>
-    </div>
-  </div>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- WHY PARTICIPATE -->
-<section class="sec" id="why">
-<div class="container">
-  <div class="section-label"><i class="fa-solid fa-star"></i> Why Attend</div>
-  <div class="sec-title">Why To Participate?</div>
-  <p class="sec-sub">The Blue Intelligence Climate Summit 2026 serves as a critical convergence point where academic theory meets commercial scale — offering distinct, high-utility advantages for different stakeholder groups.</p>
-
-  <div class="why-participate-grid">
-    <div class="wp-card">
-      <div class="wp-card-header"><i class="fa-solid fa-graduation-cap"></i> Students &amp; Early-Career Researchers</div>
-      <ul class="wp-list">
-        <li>Present to U.N. Delegations and prominent Indian climate experts</li>
-        <li>Contribute to "Blue Economy Solutions" for the United Nations</li>
-        <li>Direct Career Pipelines &amp; Academic-to-Commercial Transition</li>
-        <li>Peer Validation &amp; Mentorship from leading global marine scientists</li>
-        <li>Identify technical gaps and data models demanded by the maritime industry</li>
-      </ul>
-    </div>
-    <div class="wp-card">
-      <div class="wp-card-header"><i class="fa-solid fa-microscope"></i> Established Researchers &amp; Academics</div>
-      <ul class="wp-list">
-        <li>Access to Proprietary Industry Data</li>
-        <li>Interdisciplinary Grant Collaboration</li>
-        <li>Technology Transfer Opportunities</li>
-        <li>Real-World Impact Validation</li>
-      </ul>
-    </div>
-    <div class="wp-card">
-      <div class="wp-card-header"><i class="fa-solid fa-industry"></i> Maritime, Energy &amp; Tech Industries</div>
-      <ul class="wp-list">
-        <li>De-Risking R&amp;D Pipelines</li>
-        <li>Regulatory Compliance &amp; Future-Proofing</li>
-        <li>Strategic B2B Networking</li>
-        <li>Corporate Venture Capital (CVC) Scouting</li>
-      </ul>
-    </div>
-    <div class="wp-card">
-      <div class="wp-card-header"><i class="fa-solid fa-landmark"></i> NGOs, Policy Makers &amp; Coastal Communities</div>
-      <ul class="wp-list">
-        <li>Actionable Framework Implementation</li>
-        <li>Evidence-Based Policy Making</li>
-        <li>Funding and Resource Allocation</li>
-        <li>Cash Awards — Students &amp; Researchers</li>
-      </ul>
-    </div>
-  </div>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- KEY HIGHLIGHTS -->
-<section class="sec" id="highlights">
-<div class="container">
-  <div class="section-label"><i class="fa-solid fa-bolt"></i> Highlights</div>
-  <div class="sec-title">Key Highlights</div>
-  <div class="hl-cards-grid">
-    <div class="hl-card"><div class="hl-card-icon"><i class="fa-solid fa-trophy"></i></div><div class="hl-card-title">Cash Prize for Student Innovators</div><p>Multiple technical tracks challenging students to solve real-world industrial and civic problems.</p></div>
-    <div class="hl-card"><div class="hl-card-icon"><i class="fa-solid fa-book-open"></i></div><div class="hl-card-title">Cash Prize for Publications</div><p>Top research papers fast-tracked into prestigious journals like Marine Policy and Applied Ocean Research.</p></div>
-    <div class="hl-card"><div class="hl-card-icon"><i class="fa-solid fa-handshake"></i></div><div class="hl-card-title">High-Value Sponsorships</div><p>Corporate-backed tiers — Blue Whale, Blue Shark, Blue Dolphin, Blue Reefs — driving direct industry alignment and recruitment pipelines.</p></div>
-  </div>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- TAKEAWAYS -->
-<section class="sec" id="takeaways">
-<div class="container">
-  <div class="section-label"><i class="fa-solid fa-gift"></i> Takeaways</div>
-  <div class="sec-title">Takeaways For Participants</div>
-  <div class="takeaway-list">
-    <div class="tkw-item"><div class="tkw-num">1</div><div><div class="tkw-title">Campus to Coast</div><p>Activating young minds and researchers to transition theoretical marine science and data prototypes into actionable real-world applications.</p></div></div>
-    <div class="tkw-item"><div class="tkw-num">2</div><div><div class="tkw-title">Industrial Transition (Shipping &amp; Industrialists)</div><p>Deploying AI-driven logistics and route optimization tools to rapidly lower emissions and support cleaner maritime supply chains.</p></div></div>
-    <div class="tkw-item"><div class="tkw-num">3</div><div><div class="tkw-title">Resilient Economies (Local Govt &amp; Eco-Tourism)</div><p>Empowering public officials and local hospitality businesses with data to build policies that safeguard fragile coastal ecosystems while driving sustainable local tourism.</p></div></div>
-    <div class="tkw-item"><div class="tkw-num">4</div><div><div class="tkw-title">Awards</div><p>Top 1 poster of one Student will receive the Cash Award 2026. Top 1 paper presentation of one Researcher will receive the Cash Award 2026. Surprise "Cash Awards" or "Cash Vouchers" from various industries.</p></div></div>
-    <div class="tkw-item"><div class="tkw-num">5</div><div><div class="tkw-title">Student Track Winners</div><p>Multiple technical tracks challenging students to solve real-world industrial and civic problems. Top 3 will be awarded as Title Winners.</p></div></div>
-    <div class="tkw-item"><div class="tkw-num">6</div><div><div class="tkw-title">Research Publication Winners</div><p>Top research papers fast-tracked into prestigious journals like Marine Policy and Applied Ocean Research. Top 3 will be awarded as Title Winners.</p></div></div>
-  </div>
-</div>
-</section>
+<!-- Highlights and Takeaways sections removed as requested -->
 
 <div class="divider"></div>
 
 <!-- STUDENT SECTION -->
-<section class="sec" id="students">
 <div class="container">
-  <div class="section-label"><i class="fa-solid fa-graduation-cap"></i> Students</div>
   <div class="sec-title">For Students (18–25 years) — Poster Presentation</div>
   <p class="sec-sub" style="margin-bottom:1.5rem">Theme: <strong>Blue Intelligence For A Sustainable Ocean</strong></p>
 
@@ -584,30 +855,6 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
     </div>
   </div>
 
-  <div class="steps-list" style="margin-top:1.8rem">
-    <div class="reg-block-title" style="margin-bottom:1rem"><i class="fa-solid fa-shoe-prints"></i> Steps to Create a Submission (Student Team of 2)</div>
-    <div class="step-item"><div class="step-num">1</div><div><strong>Form Your Team</strong> — Gather a team of 2 eligible students. Cross-disciplinary teams (e.g., Data Science + Marine Biology) are highly encouraged.</div></div>
-    <div class="step-item"><div class="step-num">2</div><div><strong>Select Your Track</strong> — Smart Port Challenge, co-Pulse Track, or The Civic Blueprint.</div></div>
-    <div class="step-item"><div class="step-num">3</div><div><strong>Submit Registration</strong> — Fill out the student portal form with team details, GitHub profile links, and college identity proofs before 10th July 2026 (without late fee). Late fee deadline: 3rd August 2026.</div></div>
-    <div class="step-item"><div class="step-num">4</div><div><strong>Attend the Launch</strong> — Register between 14:00–17:00 hrs to receive registration kits and poster presentation timelines.</div></div>
-  </div>
-
-  <div class="why-apply-box" style="margin-top:1.8rem">
-    <div class="reg-block-title" style="margin-bottom:.8rem"><i class="fa-solid fa-circle-question"></i> Why You Should Apply</div>
-    <div class="why-apply-list">
-      <div class="wa-item"><i class="fa-solid fa-check"></i> Pitch your ideas to UNEP, UNDP, UNGC &amp; UNESCO delegates</div>
-      <div class="wa-item"><i class="fa-solid fa-check"></i> Win the "Blue Innovator Award 2026" for top poster at the Valedictory Ceremony</div>
-      <div class="wa-item"><i class="fa-solid fa-check"></i> Network at the heart of India's Innovation Ecosystem</div>
-      <div class="wa-item"><i class="fa-solid fa-check"></i> Cash Awards and International Valid Certificates</div>
-      <div class="wa-item"><i class="fa-solid fa-check"></i> 3-minute "Flash Pitch" to judges including the UN Delegation during Tea Breaks</div>
-    </div>
-  </div>
-
-  <div class="cta-strip" style="margin-top:2rem">
-    <h3>Ready to Apply as a Student?</h3>
-    <p>Last date: 3rd August 2026 &nbsp;·&nbsp; 9:00 PM IST / 11:30 AM NYT</p>
-    <a href="student register.html" target="_blank" class="btn-register">Apply Now — Category 1 <i class="fa-solid fa-arrow-right" style="font-size:.8rem;margin-left:6px"></i></a>
-  </div>
 </div>
 </section>
 
@@ -616,7 +863,6 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
 <!-- RESEARCHER SECTION -->
 <section class="sec" id="researchers">
 <div class="container">
-  <div class="section-label"><i class="fa-solid fa-microscope"></i> Researchers</div>
   <div class="sec-title">Researchers — Paper Abstract Details</div>
 
   <div class="reg-blocks-grid" style="margin-top:1.5rem">
@@ -629,22 +875,8 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
         <li><strong>Late Fee Abstract Submission:</strong> 22nd August 2026, 9:00 PM IST / 11:30 AM NYT</li>
       </ul>
     </div>
-    <div class="reg-block">
-      <div class="reg-block-title"><i class="fa-solid fa-circle-question"></i> Why You Should Apply</div>
-      <ul class="reg-block-list">
-        <li>Pitch your ideas to UNEP, UNDP, UNGC &amp; UNESCO delegates</li>
-        <li>Win the "Blue Economy Researcher Award 2026" at the Valedictory Ceremony</li>
-        <li>Network at the heart of India's Innovation Ecosystem</li>
-        <li>Cash Awards and International Valid Certificates</li>
-      </ul>
-    </div>
-  </div>
+    
 
-  <div class="cta-strip" style="margin-top:2rem">
-    <h3>Ready to Apply as a Researcher?</h3>
-    <p>Last date: 3rd August 2026 &nbsp;·&nbsp; 9:00 PM IST / 11:30 AM NYT</p>
-    <a href="research  register.html" target="_blank" class="btn-register">Apply Now — Category 2 <i class="fa-solid fa-arrow-right" style="font-size:.8rem;margin-left:6px"></i></a>
-  </div>
 </div>
 </section>
 <section class="associates-sec sec" id="associates">
@@ -670,7 +902,40 @@ footer{background:linear-gradient(135deg,var(--navy),var(--deep));padding:1rem 2
 </section>
 
 <div class="assoc-footer-divider"></div>
-<footer><div class="footer-copy">&copy; 2026 BiCS Organizing Committee. All rights reserved.</div></footer>
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026">
+      <div class="footer-brand-date">2nd &amp; 3rd October 2026 &middot; Visakhapatnam, India</div>
+      <div class="footer-brand-social">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Flickr"><i class="fa-brands fa-flickr"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="register.html">Registrations</a>
+      <a href="guests.html">Guests</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-list">
+        <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:blueics2026@gmail.com">blueics2026@gmail.com</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:info@globalbics.com">info@globalbics.com</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-globe"></i><a href="#">www.globalblueics.com</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+91xxxxxxxxxx">+91 xxxxxxxxxxx</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom"><span class="footer-copy">&copy; 2026 BiCS Organizing Committee. All rights reserved.</span></div>
+</footer>
 <button class="scroll-arrow" id="scrollArrow" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script>
