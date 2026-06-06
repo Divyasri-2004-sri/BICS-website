@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Takeaways — BiCS 2026 Blue Intelligence Climate Summit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0A1F44;--deep:#0D2B5E;--ocean:#1565C0;--blue:#2196F3;--teal:#00897B;--teal2:#26A69A;--gold:#F9A825;--gold2:#FFD54F;--white:#FFFFFF;--sky:#E3F2FD;--muted:#0A1F44;--text:#0A1F44;--card-bg:rgba(255,255,255,0.75);--card-border:rgba(33,150,243,0.2)}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);overflow-x:hidden}
+
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shadow:0 2px 20px rgba(10,31,68,.09)}
+.nav-inner{display:flex;align-items:center;justify-content:center;width:100%;max-width:1400px;margin:0 auto;padding:0 2rem;height:88px;position:relative}
+.nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;position:absolute;left:2rem}
+.nav-logo img{height:72px;width:auto;object-fit:contain}
+.nav-desktop{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+.nav-item{position:relative}
+.nav-item>a{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:600;color:var(--navy);text-decoration:none;padding:10px 18px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
+.nav-item>a::after{display:none}
+.nav-item>a:hover{color:var(--teal);background:rgba(0,137,123,.07)}
+.nav-item>a.active{color:var(--teal);background:rgba(0,137,123,.1)}
+.nav-item>a .dd-arrow{font-size:.5rem;opacity:.5;transition:transform .2s,opacity .2s}
+.nav-item:hover>a .dd-arrow{transform:rotate(180deg);opacity:.9}
+.nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;min-width:200px;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.1),0 0 0 1px rgba(10,31,68,.06);padding:6px;opacity:0;visibility:hidden;transition:all .2s ease;z-index:10;list-style:none}
+.nav-item:hover .nav-dropdown{opacity:1;visibility:visible}
+.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.96rem;font-weight:600;color:var(--muted);text-decoration:none;border-radius:8px;transition:all .15s}
+.nav-dropdown li a:hover{background:rgba(0,137,123,.07);color:var(--teal)}
+.nav-dropdown li a.active{color:var(--teal);background:rgba(0,137,123,.1)}
+.nav-dropdown li a i{color:var(--teal);font-size:.7rem;width:16px;text-align:center;opacity:.65}
+.nav-dropdown li a:hover i{opacity:1}
+.nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:var(--navy);cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}
+.nav-hamburger:hover{background:rgba(10,31,68,.03);border-color:rgba(10,31,68,.15)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10000;opacity:0;transition:opacity .3s}
+.nav-overlay.open{display:block;opacity:1}
+.nav-sidebar{position:fixed;top:0;right:0;bottom:0;width:min(360px,88vw);height:100vh;background:#fff;z-index:10001;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);box-shadow:-4px 0 24px rgba(0,0,0,.1);display:flex;flex-direction:column;overflow:hidden}
+.nav-sidebar.open{transform:translateX(0)}
+.nav-sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.2rem;border-bottom:1px solid rgba(10,31,68,.06);flex-shrink:0}
+.nav-sidebar-brand{display:flex;align-items:center;gap:.8rem}
+.nav-sidebar-logo-wrap{display:inline-flex;border-radius:6px;padding:3px 8px;line-height:0}
+.nav-sidebar-logo{height:42px;width:auto;object-fit:contain}
+.nav-sidebar-close{width:34px;height:34px;border-radius:8px;background:rgba(10,31,68,.04);border:1px solid rgba(10,31,68,.08);color:var(--navy);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.nav-sidebar-close:hover{background:rgba(10,31,68,.08)}
+.nav-sidebar-links{list-style:none;overflow-y:auto;flex:1;padding:.4rem 0;margin:0}
+.nav-sidebar-links li{border-bottom:1px solid rgba(10,31,68,.04)}
+.nav-sidebar-links li:last-child{border-bottom:none}
+.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);text-decoration:none;transition:all .15s}
+.nav-sidebar-links li>a:hover,.nav-sidebar-links li>a.active{color:var(--teal);background:rgba(0,137,123,.03)}
+.nav-sidebar-links li>a.active .sb-icon{background:var(--teal);color:#fff}
+.sb-icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:7px;background:rgba(0,137,123,.07);color:var(--teal);font-size:.75rem;flex-shrink:0;transition:all .15s}
+.sb-dropdown-toggle{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:none;background:transparent;color:var(--teal);cursor:pointer;font-size:.8rem;transition:transform .2s;flex-shrink:0;opacity:.5}
+.sb-has-dropdown{display:flex;flex-wrap:wrap;align-items:center}
+.sb-has-dropdown>a{flex:1}
+.sb-has-dropdown.open .sb-dropdown-toggle{opacity:1}
+.sb-has-dropdown.open .sb-dropdown-toggle i{transform:rotate(45deg)}
+.sb-submenu{display:none;flex-direction:column;width:100%;background:rgba(0,137,123,.02);list-style:none;padding:.25rem 0;margin:0}
+.sb-has-dropdown.open .sb-submenu{display:flex}
+.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;transition:all .15s}
+.sb-submenu li a.active{color:var(--teal);background:rgba(0,137,123,.03)}
+.sb-submenu li a:hover{color:var(--teal);background:rgba(0,137,123,.04)}
+.sb-dd-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:rgba(0,137,123,.06);color:var(--teal);font-size:.58rem;flex-shrink:0}
+@media(min-width:961px){.nav-sidebar,.nav-overlay{display:none!important}.nav-hamburger{display:none!important}}
+@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}.nav-hamburger{right:1rem}}
+@media(max-width:600px){.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{padding:.65rem 1rem;font-size:.82rem;gap:.5rem}.sb-submenu li a{padding:.5rem 1rem .5rem 1.8rem;font-size:.78rem}}
+
+/* ═══ HERO ═══ */
+.page-banner{padding:8rem 0 3rem;background:linear-gradient(160deg,#060E1A 0%,#0D2B5E 50%,#060E1A 100%);position:relative;overflow:hidden}
+.page-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(21,101,192,.12) 0%,transparent 60%);pointer-events:none}
+.page-banner-inner{max-width:1400px;margin:0 auto;padding:0 2.5rem;position:relative;z-index:2}
+.page-banner h1{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--white);margin-bottom:.5rem}
+.page-banner p{font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.7;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+
+/* ═══ LAYOUTS ═══ */
+.sec{padding:4.5rem 0;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.sec.vis{opacity:1;transform:translateY(0)}
+.container{max-width:1400px;margin:0 auto;padding:0 2.5rem}
+.sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(21,101,243,.15),transparent)}
+.text-block{font-size:1rem;color:var(--muted);line-height:1.85;font-weight:400;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.text-block p{margin-bottom:1rem}.text-block p:last-child{margin-bottom:0}
+.text-block strong{color:var(--navy);font-weight:600}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
+.why-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,.03);border-top:3px solid var(--teal);transition:transform .2s, box-shadow .2s}
+.why-card:hover{transform:translateY(-5px); box-shadow: 0 8px 20px rgba(0,137,123,0.1);}
+.why-card h4{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);margin-bottom:.7rem;font-size:1.05rem;display:flex;align-items:center;gap:.5rem}
+.why-card p{font-size:.9rem;color:var(--muted);line-height:1.6}
+
+/* Core objectives / Takeaways List Style */
+.objectives-list{display:flex;flex-direction:column;gap:1rem}
+.obj-item{display:flex;gap:1.1rem;align-items:flex-start;background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:1.5rem;transition:transform .15s, box-shadow .15s}
+.obj-item:hover{transform:translateX(5px); box-shadow: 0 4px 15px rgba(0,0,0,0.05);}
+.obj-num{flex-shrink:0;width:40px;height:40px;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border-radius:50%;font-family:'Poppins',sans-serif;font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center}
+.obj-title{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);font-size:1.05rem;margin-bottom:.4rem}
+.obj-content p{font-size:.95rem;color:var(--muted);line-height:1.7}
+
+/* Associates & Footer */
+.associates-sec{background:#fff;padding:2.8rem 0;border-bottom:none;opacity:1!important;transform:none!important}
+.assoc-heading{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:1.5rem}
+.assoc-logos-scroll{overflow:hidden;position:relative;width:100%;height:150px}
+.assoc-logos-scroll::before,.assoc-logos-scroll::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.assoc-logos-scroll::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
+.assoc-logos-scroll::after{right:0;background:linear-gradient(90deg,transparent,#fff)}
+.assoc-logos-track{display:inline-flex;flex-direction:row;flex-wrap:nowrap;gap:0;animation:logoScroll 25s linear infinite;height:150px;align-items:center;white-space:nowrap}
+.assoc-logos-track:hover{animation-play-state:paused}
+@keyframes logoScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.assoc-logo-card{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;width:160px;height:150px;flex:0 0 160px;padding:0 1rem;background:transparent;border:none;box-shadow:none}
+.assoc-logo-card img{height:70px;width:130px;object-fit:contain;display:block;flex-shrink:0}
+.assoc-logo-title{font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;letter-spacing:.3px;line-height:1.3;white-space:normal;display:block}
+.assoc-footer-divider{height:4px;background:linear-gradient(90deg,transparent 2%,var(--teal) 30%,var(--ocean) 50%,var(--teal) 70%,transparent 98%);margin:0;opacity:.5}
+footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
+.footer-main{max-width:1300px;margin:0 auto;padding:2.8rem 2.5rem 2rem;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem}
+.footer-brand{display:flex;flex-direction:column;gap:.8rem}
+.footer-brand img{height:80px;width:auto;max-width:240px;object-fit:contain;display:block}
+.footer-brand-date{font-family:'Open Sans',sans-serif;font-size:.84rem;color:#000;font-weight:700;margin-top:.3rem}
+.footer-brand-social{display:flex;gap:.75rem;margin-top:.6rem;flex-wrap:wrap}
+.footer-brand-social a{width:42px;height:42px;border-radius:50%;background:rgba(10,31,68,.05);border:1.5px solid rgba(10,31,68,.1);display:flex;align-items:center;justify-content:center;color:#000;font-size:1rem;transition:all .25s;text-decoration:none}
+.footer-brand-social a:hover{background:var(--teal);color:#fff;border-color:var(--teal);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,137,123,.25)}
+.footer-col{display:flex;flex-direction:column}
+.footer-col h4{font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:700;color:var(--teal);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.8rem;padding-bottom:.45rem;position:relative}
+.footer-col h4::after{content:'';position:absolute;bottom:0;left:0;width:20px;height:1.5px;background:linear-gradient(90deg,var(--teal),var(--ocean));border-radius:2px}
+.footer-col a{font-family:'Open Sans',sans-serif;font-size:.84rem;color:#000;text-decoration:none;font-weight:700;transition:color .2s;padding:.28rem 0}
+.footer-col a:hover{color:var(--teal)}
+.footer-contact-list{display:flex;flex-direction:column;gap:.45rem}
+.footer-contact-row{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:#000;font-weight:700}
+.footer-contact-row i{color:var(--teal);font-size:.72rem;flex-shrink:0;width:14px;text-align:center}
+.footer-contact-row a{color:#000;text-decoration:none;font-weight:700;transition:color .2s}
+.footer-contact-row a:hover{color:var(--teal)}
+.footer-divider{height:1px;background:rgba(0,0,0,.08);max-width:1300px;margin:0 auto}
+.footer-bottom{max-width:1300px;margin:0 auto;padding:.8rem 2.5rem;text-align:center}
+.footer-copy{font-size:.78rem;color:#000;font-weight:700;letter-spacing:.3px}
+.scroll-arrow{position:fixed;bottom:2rem;right:2rem;z-index:9998;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 18px rgba(0,137,123,.35);transition:opacity .3s,transform .3s,visibility .3s;opacity:0;visibility:hidden;pointer-events:none}
+.scroll-arrow.visible{opacity:1;visibility:visible;pointer-events:auto}
+.scroll-arrow:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,137,123,.5)}
+@media(max-width:960px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){
+  .container{padding:0 1.2rem}.sec{padding:3rem 0}
+  .page-banner{padding:6rem 0 2.5rem}.page-banner-inner{padding:0 1.2rem}
+  .page-banner h1{font-size:clamp(1.3rem,5.5vw,2rem)}
+  .sec-title{font-size:clamp(1.1rem,5vw,1.6rem)}
+  .why-grid{grid-template-columns:1fr!important}
+  .obj-item{flex-direction:column;gap:.8rem;padding:1.2rem}
+  .obj-num{width:36px;height:36px;font-size:1rem}
+  .obj-title{font-size:1rem}.obj-content p{font-size:.9rem}
+  .assoc-logos-scroll{height:130px}.assoc-logos-track{height:130px}.assoc-logo-card{width:140px;height:130px;flex:0 0 140px}.assoc-logo-card img{height:58px;width:110px}
+  .footer-main{grid-template-columns:1fr;gap:1.5rem;padding:2rem 1rem 1rem}
+  .scroll-arrow{bottom:1.2rem;right:1.2rem;width:42px;height:42px;font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026"></a>
+    <ul class="nav-desktop">
+      <li class="nav-item"><a href="index.html">Home</a></li>
+      <li class="nav-item">
+        <a href="about.html" class="active">About <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="takeaway.html" class="active"><i class="fa-solid fa-gift"></i> Takeaways</a></li>
+          <li><a href="team.html"><i class="fa-solid fa-users"></i> BiCS Team</a></li>
+          <li><a href="sponsors.html"><i class="fa-solid fa-handshake"></i> Sponsors</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="register.html">Registrations <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li><li><a href="submissions.html"><i class="fa-solid fa-file-lines"></i> Submissions</a></li><li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQs</a></li></ul></li>
+      <li class="nav-item"><a href="guests.html">Guests <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="honorable-guests.html"><i class="fa-solid fa-user-tie"></i> Honorable Guests</a></li><li><a href="keynote-speakers.html"><i class="fa-solid fa-microphone"></i> Keynote Speakers</a></li></ul></li>
+      <li class="nav-item"><a href="gallery.html">Gallery <i class="fa-solid fa-chevron-down dd-arrow"></i></a><ul class="nav-dropdown"><li><a href="press-media.html"><i class="fa-solid fa-newspaper"></i> Press / Media</a></li></ul></li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</nav>
+
+<aside class="nav-sidebar" id="navSidebar">
+  <div class="nav-sidebar-header">
+    <div class="nav-sidebar-brand"><div class="nav-sidebar-logo-wrap"><img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026" class="nav-sidebar-logo"></div></div>
+    <button class="nav-sidebar-close" id="navSidebarClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <ul class="nav-sidebar-links">
+    <li><a href="index.html"><span class="sb-icon"><i class="fa-solid fa-house"></i></span> Home</a></li>
+    <li class="sb-has-dropdown"><a href="about.html" class="active"><span class="sb-icon"><i class="fa-solid fa-circle-info"></i></span> About</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="takeaway.html" class="active"><span class="sb-dd-icon"><i class="fa-solid fa-gift"></i></span> Takeaways</a></li><li><a href="team.html"><span class="sb-dd-icon"><i class="fa-solid fa-users"></i></span> BiCS Team</a></li><li><a href="sponsors.html"><span class="sb-dd-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a></li></ul></li>
+    <li class="sb-has-dropdown"><a href="register.html"><span class="sb-icon"><i class="fa-solid fa-clipboard-list"></i></span> Registrations</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="fee-payment.html"><span class="sb-dd-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span> Fee Payment</a></li><li><a href="submissions.html"><span class="sb-dd-icon"><i class="fa-solid fa-file-lines"></i></span> Submissions</a></li><li><a href="faq.html"><span class="sb-dd-icon"><i class="fa-solid fa-circle-question"></i></span> FAQs</a></li></ul></li>
+    <li class="sb-has-dropdown"><a href="guests.html"><span class="sb-icon"><i class="fa-solid fa-user-tie"></i></span> Guests</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="honorable-guests.html"><span class="sb-dd-icon"><i class="fa-solid fa-user-tie"></i></span> Honorable Guests</a></li><li><a href="keynote-speakers.html"><span class="sb-dd-icon"><i class="fa-solid fa-microphone"></i></span> Keynote Speakers</a></li></ul></li>
+    <li class="sb-has-dropdown"><a href="gallery.html"><span class="sb-icon"><i class="fa-solid fa-images"></i></span> Gallery</a><button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button><ul class="sb-submenu"><li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li></ul></li>
+    <li><a href="contact.html"><span class="sb-icon"><i class="fa-solid fa-address-book"></i></span> Contact</a></li>
+  </ul>
+</aside>
+
+<!-- HERO -->
+<div class="page-banner">
+  <div class="page-banner-inner">
+    <h1>Summit Takeaways</h1>
+    <p>Discover the key benefits, awards, and transformative opportunities available to every participant at the Blue Intelligence Climate Summit 2026.</p>
+  </div>
+</div>
+
+<!-- KEY HIGHLIGHTS -->
+<section class="sec" id="highlights">
+  <div class="container">
+    <div class="sec-title">Awards</div>
+    <div class="why-grid">
+      <div class="why-card">
+        <h4><i class="fa-solid fa-trophy" style="color:var(--teal); margin-right: 8px;"></i> Cash Prize for Student Innovators</h4>
+        <p>Multiple technical tracks challenging students to solve real-world industrial and civic problems.</p>
+      </div>
+      <div class="why-card">
+        <h4><i class="fa-solid fa-book-open" style="color:var(--teal); margin-right: 8px;"></i> Cash Prize for Publications</h4>
+        <p>Top research papers fast-tracked into prestigious journals like Marine Policy and Applied Ocean Research.</p>
+      </div>
+      <div class="why-card">
+        <h4><i class="fa-solid fa-handshake" style="color:var(--teal); margin-right: 8px;"></i> High-Value Sponsorships</h4>
+        <p>Corporate-backed tiers — Blue Whale, Blue Shark, Blue Dolphin, Blue Reefs — driving direct industry alignment and recruitment pipelines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TAKEAWAYS LIST -->
+<section class="sec" id="takeaways">
+  <div class="container">
+    <div class="sec-title">Takeaways For Participants</div>
+    <div class="objectives-list" style="margin-top:2rem;">
+      
+      <!-- 1 -->
+      <div class="obj-item">
+        <div class="obj-num">1</div>
+        <div class="obj-content">
+          <div class="obj-title">Campus to Coast</div>
+          <p>Activating young minds and researchers to transition theoretical marine science and data prototypes into actionable real-world applications.</p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="obj-item">
+        <div class="obj-num">2</div>
+        <div class="obj-content">
+          <div class="obj-title">Industrial Transition (Shipping & Industrialists)</div>
+          <p>Deploying AI-driven logistics and route optimization tools to rapidly lower emissions and support cleaner maritime supply chains.</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="obj-item">
+        <div class="obj-num">3</div>
+        <div class="obj-content">
+          <div class="obj-title">Resilient Economies (Local Govt & Eco-Tourism)</div>
+          <p>Empowering public officials and local hospitality businesses with data to build policies that safeguard fragile coastal ecosystems while driving sustainable local tourism.</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="obj-item">
+        <div class="obj-num">4</div>
+        <div class="obj-content">
+          <div class="obj-title">Awards</div>
+          <p>Top 1 poster of one Student will receive the Cash Award 2026. Top 1 paper presentation of one Researcher will receive the Cash Award 2026. Surprise "Cash Awards" or "Cash Vouchers" from various industries.</p>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="obj-item">
+        <div class="obj-num">5</div>
+        <div class="obj-content">
+          <div class="obj-title">Student Track Winners</div>
+          <p>Multiple technical tracks challenging students to solve real-world industrial and civic problems. Top 3 will be awarded as Title Winners.</p>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="obj-item">
+        <div class="obj-num">6</div>
+        <div class="obj-content">
+          <div class="obj-title">Research Publication Winners</div>
+          <p>Top research papers fast-tracked into prestigious journals like Marine Policy and Applied Ocean Research. Top 3 will be awarded as Title Winners.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ASSOCIATES -->
+<section class="associates-sec sec" id="associates">
+  <div class="container">
+    <div class="assoc-heading">Our Associates</div>
+    <div class="assoc-logos-scroll">
+      <div class="assoc-logos-track">
+        <div class="assoc-logo-card"><img src="assets/Goaec.png" alt="Goa Ecology"><div class="assoc-logo-title">GOAEC Foundation</div></div>
+        <div class="assoc-logo-card"><img src="assets/ICAR CMFRI (1).png" alt="ICAR-CMFRI"><div class="assoc-logo-title">ICAR-CMFRI</div></div>
+        <div class="assoc-logo-card"><img src="assets/MBI.png" alt="Marine Biological Association of India"><div class="assoc-logo-title">MBAI</div></div>
+        <div class="assoc-logo-card"><img src="assets/RFI.png" alt="RFI"><div class="assoc-logo-title">RFI</div></div>
+        <div class="assoc-logo-card"><img src="assets/GLOBAL UNAP LOGO.png" alt="Global UNAP"><div class="assoc-logo-title">Global UNAP</div></div>
+        <div class="assoc-logo-card"><img src="assets/GPF.avif" alt="GPF"><div class="assoc-logo-title">GPF India</div></div>
+        <div class="assoc-logo-card"><img src="assets/Goaec.png" alt="Goa Ecology"><div class="assoc-logo-title">GOAEC Foundation</div></div>
+        <div class="assoc-logo-card"><img src="assets/ICAR CMFRI (1).png" alt="ICAR-CMFRI"><div class="assoc-logo-title">ICAR-CMFRI</div></div>
+        <div class="assoc-logo-card"><img src="assets/MBI.png" alt="Marine Biological Association of India"><div class="assoc-logo-title">MBAI</div></div>
+        <div class="assoc-logo-card"><img src="assets/RFI.png" alt="RFI"><div class="assoc-logo-title">RFI</div></div>
+        <div class="assoc-logo-card"><img src="assets/GLOBAL UNAP LOGO.png" alt="Global UNAP"><div class="assoc-logo-title">Global UNAP</div></div>
+        <div class="assoc-logo-card"><img src="assets/GPF.avif" alt="GPF"><div class="assoc-logo-title">GPF India</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<div class="assoc-footer-divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img src="https://z-cdn-media.chatglm.cn/files/4de345d4-d3bf-4fc0-b390-19e077d44579.png?auth_key=1879795856-e296022af4254890ab1227299b08d53a-0-686b56b3fd58a84e71b75a6ecf1e0dbc" alt="BiCS 2026">
+      <div class="footer-brand-date">2nd &amp; 3rd October 2026 · Visakhapatnam, India</div>
+      <div class="footer-brand-social">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Flickr"><i class="fa-brands fa-flickr"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="register.html">Registrations</a>
+      <a href="guests.html">Sponsorships</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-list">
+        <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:blueics2026@gmail.com">blueics2026@gmail.com</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:info@globalbics.com">info@globalbics.com</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-globe"></i><a href="#">www.globalblueics.com</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+91xxxxxxxxxx">+91 xxxxxxxxxxx</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom"><span class="footer-copy">&copy; 2026 BiCS Organizing Committee. All rights reserved.</span></div>
+</footer>
+
+<button class="scroll-arrow" id="scrollArrow" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+(function(){var h=document.getElementById('navHamburger'),s=document.getElementById('navSidebar'),c=document.getElementById('navSidebarClose'),o=document.getElementById('navOverlay');function open(){s.classList.add('open');o.classList.add('open');document.body.style.overflow='hidden'}function close(){s.classList.remove('open');o.classList.remove('open');document.body.style.overflow='';var d=document.querySelectorAll('.sb-has-dropdown.open');for(var i=0;i<d.length;i++)d[i].classList.remove('open')}if(h)h.addEventListener('click',open);if(c)c.addEventListener('click',close);if(o)o.addEventListener('click',close);var l=document.querySelectorAll('.nav-sidebar-links li>a,.sb-submenu a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){if(this.classList.contains('active')&&this.closest('.sb-has-dropdown'))return;close()});var t=document.querySelectorAll('.sb-dropdown-toggle');for(var j=0;j<t.length;j++)t[j].addEventListener('click',function(e){e.preventDefault();e.stopPropagation();this.closest('.sb-has-dropdown').classList.toggle('open')})})();
+
+(function(){var s=document.querySelectorAll('.sec');if(!s.length||!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('vis')});return}var o=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('vis');o.unobserve(en.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});s.forEach(function(e){o.observe(e)})})();
+
+(function(){var a=document.getElementById('scrollArrow');if(!a)return;window.addEventListener('scroll',function(){if(window.scrollY>400){a.classList.add('visible');a.innerHTML='<i class="fa-solid fa-arrow-up"></i>';a.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})}}else a.classList.remove('visible')})})();
+</script>
+</body>
+</html>
