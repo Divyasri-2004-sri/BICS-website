@@ -15,7 +15,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-logo img{height:72px;width:auto;object-fit:contain}
 .nav-desktop{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
 .nav-item{position:relative}
-.nav-item>a{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:600;color:var(--navy);text-decoration:none;padding:10px 18px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
+.nav-item>a{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:#0A1F44;text-decoration:none;padding:10px 18px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
 .nav-item>a::after{display:none}
 .nav-item>a:hover{color:var(--teal);background:rgba(0,137,123,.07)}
 .nav-item>a.active{color:var(--teal);background:rgba(0,137,123,.1)}
@@ -23,12 +23,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-item:hover>a .dd-arrow{transform:rotate(180deg);opacity:.9}
 .nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;min-width:200px;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.1),0 0 0 1px rgba(10,31,68,.06);padding:6px;opacity:0;visibility:hidden;transition:all .2s ease;z-index:10;list-style:none}
 .nav-item:hover .nav-dropdown{opacity:1;visibility:visible}
-.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.96rem;font-weight:600;color:var(--navy);text-decoration:none;border-radius:8px;transition:all .15s}
+.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.96rem;font-weight:700;color:#0A1F44;text-decoration:none;border-radius:8px;transition:all .15s}
 .nav-dropdown li a:hover{background:rgba(0,137,123,.07);color:var(--teal)}
 .nav-dropdown li a i{color:var(--teal);font-size:.7rem;width:16px;text-align:center;opacity:.65}
 .nav-dropdown li a:hover i{opacity:1}
-.nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:var(--navy);cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}
-.nav-hamburger:hover{background:rgba(10,31,68,.03);border-color:rgba(10,31,68,.15)}
+.nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}
+.nav-hamburger:hover{background:rgba(10,31,68,.03);border-color:#0A1F44}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10000;opacity:0;transition:opacity .3s}
 .nav-overlay.open{display:block;opacity:1}
 .nav-sidebar{position:fixed;top:0;right:0;bottom:0;width:min(360px,88vw);height:100vh;background:#fff;z-index:10001;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);box-shadow:-4px 0 24px rgba(0,0,0,.1);display:flex;flex-direction:column;overflow:hidden}
@@ -37,12 +37,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-sidebar-brand{display:flex;align-items:center;gap:.8rem}
 .nav-sidebar-logo-wrap{display:inline-flex;border-radius:6px;padding:3px 8px;line-height:0}
 .nav-sidebar-logo{height:42px;width:auto;object-fit:contain}
-.nav-sidebar-close{width:34px;height:34px;border-radius:8px;background:rgba(10,31,68,.04);border:1px solid rgba(10,31,68,.08);color:var(--navy);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.nav-sidebar-close{width:34px;height:34px;border-radius:8px;background:rgba(10,31,68,.04);border:1px solid rgba(10,31,68,.08);color:#0A1F44;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
 .nav-sidebar-close:hover{background:rgba(10,31,68,.08)}
 .nav-sidebar-links{list-style:none;overflow-y:auto;flex:1;padding:.4rem 0;margin:0}
 .nav-sidebar-links li{border-bottom:1px solid rgba(10,31,68,.04)}
 .nav-sidebar-links li:last-child{border-bottom:none}
-.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);text-decoration:none;transition:all .15s}
+.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}
 .nav-sidebar-links li>a:hover,.nav-sidebar-links li>a.active{color:var(--teal);background:rgba(0,137,123,.03)}
 .nav-sidebar-links li>a.active .sb-icon{background:var(--teal);color:#fff}
 .sb-icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:7px;background:rgba(0,137,123,.07);color:var(--teal);font-size:.75rem;flex-shrink:0;transition:all .15s}
@@ -53,20 +53,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .sb-has-dropdown.open .sb-dropdown-toggle i{transform:rotate(45deg)}
 .sb-submenu{display:none;flex-direction:column;width:100%;background:rgba(0,137,123,.02);list-style:none;padding:.25rem 0;margin:0}
 .sb-has-dropdown.open .sb-submenu{display:flex}
-.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;transition:all .15s}
+.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}
 .sb-submenu li a:hover{color:var(--teal);background:rgba(0,137,123,.04)}
 .sb-dd-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:rgba(0,137,123,.06);color:var(--teal);font-size:.58rem;flex-shrink:0}
 @media(min-width:961px){.nav-sidebar,.nav-overlay{display:none!important}.nav-hamburger{display:none!important}}
-@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}.nav-hamburger{right:1rem}}
+@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}.nav-hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}}
 @media(max-width:600px){
-.footer-main{grid-template-columns:1fr;gap:1.5rem;padding:2rem 1.5rem 1rem}
+.footer-main{grid-template-columns:1fr;gap:1.5rem}
   .footer-bottom{padding:.6rem 1.5rem}
   .scroll-arrow{bottom:1.2rem;right:1.2rem;width:42px;height:42px;font-size:1rem}
-.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{padding:.65rem 1rem;font-size:.82rem;gap:.5rem}.sb-submenu li a{padding:.5rem 1rem .5rem 1.8rem;font-size:.78rem}}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#0A1F44;--deep:#0D2B5E;--ocean:#1565C0;--blue:#2196F3;--teal:#00897B;--teal2:#26A69A;--gold:#F9A825;--gold2:#FFD54F;--white:#FFFFFF;--sky:#E3F2FD;--muted:#0A1F44;--text:#0A1F44;--card-bg:rgba(255,255,255,0.75);--card-border:rgba(33,150,243,0.2)}
+.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}img{max-width:100%;height:auto}
+:root{--navy:#0A1F44;--deep:#0D2B5E;--ocean:#1565C0;--blue:#2196F3;--teal:#00897B;--teal2:#26A69A;--gold:#F9A825;--gold2:#FFD54F;--white:#FFFFFF;--sky:#E3F2FD;--muted:#0A1F44;--text:#0A1F44;--card-bg:rgba(255,255,255,0.9);--card-border:rgba(33,150,243,0.2)}
 html{scroll-behavior:smooth}
-body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);overflow-x:hidden}
+body{font-family:'Poppins',sans-serif;background:var(--sky);color:#0A1F44;overflow-x:hidden}
 
 
 
@@ -126,16 +126,16 @@ body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);
 .page-banner p{font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.7}
 .page-banner-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,137,123,.18);border:1px solid rgba(0,137,123,.35);border-radius:999px;padding:.3rem .9rem;font-size:.78rem;font-family:'Poppins',sans-serif;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.5px;margin-bottom:1rem}
 .page-banner-badge i{color:var(--teal2);font-size:.7rem}
-.sec{padding:4.5rem 0;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.sec{padding:2.5rem 0;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .sec.vis{opacity:1;transform:translateY(0)}
 .container{max-width:1400px;margin:0 auto;padding:0 2.5rem}
-.sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2}
-.sec-sub{color:var(--muted);font-size:1rem;margin-top:.5rem;max-width:700px;line-height:1.75;font-weight:400;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:#0A1F44;line-height:1.2}
+.sec-sub{color:#0A1F44;font-size:1rem;margin-top:.4rem;max-width:100%;line-height:1.75;font-weight:700;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(21,101,243,.15),transparent)}
 .bullet-list{display:flex;flex-direction:column;gap:.5rem;margin-top:1.5rem;max-width:800px}
 .bullet-item{display:flex;align-items:flex-start;gap:.7rem;padding:.2rem 0}
 .bullet-dot{width:10px;height:10px;min-width:10px;background:var(--gold);border-radius:50%;margin-top:7px;flex-shrink:0;box-shadow:0 0 6px rgba(249,168,37,.4)}
-.bullet-text{font-size:.95rem;color:var(--muted);line-height:1.6;font-weight:400}
+.bullet-text{font-size:.95rem;color:#0A1F44;font-weight:700;line-height:1.6;font-weight:400}
 .bullet-text strong{color:var(--navy);font-weight:600}
 .bullet-list-2col{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 2rem;margin-top:1.5rem}
 .bullet-list-2col .bullet-item{padding:.15rem 0}
@@ -149,10 +149,10 @@ body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);
 .topic-card ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.35rem 1.5rem}
 .topic-card li{font-size:.9rem;color:var(--muted);line-height:1.5;padding-left:1rem;position:relative}
 .topic-card li::before{content:'\f111';font-family:'Font Awesome 6 Free';font-weight:900;font-size:.35rem;color:var(--teal);position:absolute;left:0;top:8px}
-.topic-why{background:rgba(0,137,123,.06);padding:.9rem 1.1rem;border-radius:10px;margin-top:1rem;font-size:.92rem;color:var(--muted);line-height:1.65;border-left:3px solid var(--teal);text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.topic-why{background:rgba(0,137,123,.06);padding:.9rem 1.1rem;border-radius:10px;margin-top:1rem;font-size:.92rem;color:#0A1F44;font-weight:700;line-height:1.65;border-left:3px solid var(--teal);text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 .topic-why strong{color:var(--navy)}
 .submission-cta{margin-top:2.5rem;text-align:center;padding:2rem;background:linear-gradient(135deg,rgba(0,137,123,.06),rgba(21,101,192,.06));border:1px solid var(--card-border);border-radius:16px}
-.submission-cta p{font-size:1rem;color:var(--muted);line-height:1.7;margin-bottom:1.2rem}
+.submission-cta p{font-size:1rem;color:#0A1F44;font-weight:700;line-height:1.7;margin-bottom:1.2rem}
 .btn-cta{font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border:none;padding:.75rem 2.2rem;border-radius:999px;cursor:pointer;transition:opacity .2s,transform .15s,box-shadow .2s;letter-spacing:.3px;box-shadow:0 3px 14px rgba(0,137,123,.3);text-decoration:none;display:inline-block}
 .btn-cta:hover{opacity:.9;transform:scale(1.03);box-shadow:0 5px 20px rgba(0,137,123,.45)}
 .associates-sec{background:#fff;padding:2.8rem 0;border-bottom:none}
@@ -176,7 +176,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);
 
 @media(max-width:960px){.topic-card ul{grid-template-columns:1fr}}
 @media(max-width:860px){.track-grid{grid-template-columns:1fr!important}}
-@media(max-width:600px){.container{padding:0 1.2rem}.sec{padding:3rem 0}.page-banner{padding:6rem 0 2.5rem}.page-banner-inner{padding:0 1.2rem}.topic-card{padding:1.4rem}.topic-card-header{gap:.7rem}.topic-card-number{width:40px;height:40px;font-size:1rem;border-radius:10px}}footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
+@media(max-width:600px){.container{padding:0 1.2rem}.sec{padding:2rem 0}.page-banner{padding:6rem 0 2rem}.page-banner-inner{padding:0 1.2rem}.topic-card{padding:1.4rem}.topic-card-header{gap:.7rem}.topic-card-number{width:40px;height:40px;font-size:1rem;border-radius:10px}}footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 .footer-main{max-width:1300px;margin:0 auto;padding:2.8rem 2.5rem 2rem;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem}
 .footer-brand{display:flex;flex-direction:column;gap:.8rem}
 .footer-brand img{height:80px;width:auto;max-width:240px;object-fit:contain;display:block}
@@ -216,7 +216,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);
       <li class="nav-item">
         <a href="about.html">About Summit <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
         <ul class="nav-dropdown">
-          <li><a href="takeaway.html"><i class="fa-solid fa-users"></i> Takeaways</a></li>
+          <li><a href="takeaway.html"><i class="fa-solid fa-list-check"></i> Takeaways</a></li>
           <li><a href="team.html"><i class="fa-solid fa-users"></i> BiCS Team</a></li>
         </ul>
       </li>
@@ -237,7 +237,11 @@ body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);
         </ul>
       </li>
       <li class="nav-item">
-        <a href="sponsors.html">Sponsors</a></li>
+        <a href="sponsors.html">Sponsors <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="exhibitions.html"><i class="fa-solid fa-store"></i> Exhibitions</a></li>
+        </ul>
+      </li>
       <li class="nav-item"><a href="contact.html">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
@@ -285,15 +289,22 @@ body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);
       <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
       <ul class="sb-submenu"><li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li></ul>
     </li>
-    <li><a href="sponsors.html"><span class="sb-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a></li>
+    <li class="sb-has-dropdown">
+      <a href="sponsors.html"><span class="sb-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a>
+      <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="exhibitions.html"><span class="sb-dd-icon"><i class="fa-solid fa-store"></i></span> Exhibitions</a></li>
+      </ul>
+    </li>
     <li><a href="contact.html"><span class="sb-icon"><i class="fa-solid fa-address-book"></i></span> Contact</a></li>
   </ul>
 </aside>
 
 <div class="page-banner">
   <div class="page-banner-inner">
-    <h1>Submissions</h1>
-    <p>Explore the Core Themes, Program Highlights, and Featured Research Topics for BiCS 2026.</p>
+    <div class="page-banner-badge"><i class="fa-solid fa-wave-square"></i> BiCS 2026 — Visakhapatnam, India</div>
+    <h1 style="font-size:clamp(2.2rem,5vw,3.8rem);margin-bottom:.8rem">Call for Submissions</h1>
+    <p style="font-size:1.05rem;color:rgba(255,255,255,.95);line-height:1.8;max-width:100%;text-align:justify;hyphens:auto;-webkit-hyphens:auto">BiCS 2026 is a premier global platform bringing together researchers, scientists, academicians, policymakers, innovators, startups, industry leaders, and students to collaborate on transformative solutions for ocean sustainability and climate resilience.</p>
   </div>
 </div>
 
@@ -302,124 +313,133 @@ body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);
 <div class="container">
 
   <div class="sec-title"><i class="fa-solid fa-graduation-cap" style="color:var(--teal);margin-right:.6rem"></i>Topics for Students</div>
-  <p class="sec-sub" style="margin-bottom:1.8rem">Student teams of 2 are eligible. Cross-disciplinary teams are highly encouraged.</p>
+  
+  <p class="sec-sub" style="margin-bottom:.4rem"> Team = 2 Students</p>
+  <p class="sec-sub" style="margin-bottom:.4rem"> Who can apply = 1 or 2 Teams are eligible</p>
+  <p class="sec-sub" style="margin-bottom:1.2rem"> Cross-disciplinary teams are highly encouraged.</p>
 
   <!-- Track Cards -->
-  <div class="track-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2.5rem">
+  <div class="track-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:1.5rem">
     <div class="topic-card" style="margin-top:0">
       <div class="topic-card-header">
         <div class="topic-card-number">1</div>
         <h3>The Smart Port Challenge</h3>
       </div>
-      <p style="font-size:.9rem;color:var(--muted);line-height:1.6">Shipping Logistics — tackle real-world port efficiency and emissions challenges using AI and data.</p>
+      <p style="font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6">Shipping Logistics — tackle real-world port efficiency and emissions challenges using AI and data.</p>
     </div>
     <div class="topic-card" style="margin-top:0">
       <div class="topic-card-header">
         <div class="topic-card-number">2</div>
         <h3>The co-Pulse Track</h3>
       </div>
-      <p style="font-size:.9rem;color:var(--muted);line-height:1.6">Eco-Tourism App — design tech-driven solutions to promote sustainable coastal tourism.</p>
+      <p style="font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6">Eco-Tourism App — design tech-driven solutions to promote sustainable coastal tourism.</p>
     </div>
     <div class="topic-card" style="margin-top:0">
       <div class="topic-card-header">
         <div class="topic-card-number">3</div>
         <h3>The Civic Blueprint</h3>
       </div>
-      <p style="font-size:.9rem;color:var(--muted);line-height:1.6">Coastal Policy — develop community-centered frameworks that protect fragile coastal ecosystems.</p>
+      <p style="font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6">Coastal Policy — develop community-centered frameworks that protect fragile coastal ecosystems.</p>
     </div>
   </div>
 
   <!-- Steps -->
   <div class="sec-title" style="font-size:1.3rem;margin-bottom:1.2rem"><i class="fa-solid fa-list-ol" style="color:var(--teal);margin-right:.6rem"></i>Steps to Create a Submission</div>
 
-  <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem">
+  <div style="display:flex;flex-direction:column;gap:.8rem;margin-bottom:1.5rem">
     <div style="display:flex;gap:1.2rem;align-items:flex-start;background:#fff;border:1px solid var(--card-border);border-radius:14px;padding:1.3rem 1.5rem">
       <div style="min-width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;font-family:'Poppins',sans-serif;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div>
-      <div><strong style="font-family:'Poppins',sans-serif;color:var(--navy);font-size:.95rem">Form Your Team</strong><p style="font-size:.88rem;color:var(--muted);line-height:1.65;margin-top:.3rem">Gather a team of 2 eligible students. Cross-disciplinary teams (e.g., Data Science paired with Marine Biology) are highly encouraged.</p></div>
+      <div><strong style="font-family:'Poppins',sans-serif;color:var(--navy);font-size:.95rem">Form Your Team</strong><p style="font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.65;margin-top:.3rem">Gather a team of 2 eligible students. Cross-disciplinary teams (e.g., Data Science paired with Marine Biology) are highly encouraged.</p></div>
     </div>
     <div style="display:flex;gap:1.2rem;align-items:flex-start;background:#fff;border:1px solid var(--card-border);border-radius:14px;padding:1.3rem 1.5rem">
       <div style="min-width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;font-family:'Poppins',sans-serif;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div>
-      <div><strong style="font-family:'Poppins',sans-serif;color:var(--navy);font-size:.95rem">Select Your Track</strong><p style="font-size:.88rem;color:var(--muted);line-height:1.65;margin-top:.3rem">Choose from The Smart Port Challenge (Shipping Logistics), The co-Pulse Track (Eco-Tourism App), or The Civic Blueprint (Coastal Policy).</p></div>
+      <div><strong style="font-family:'Poppins',sans-serif;color:var(--navy);font-size:.95rem">Select Your Track</strong><p style="font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.65;margin-top:.3rem">Choose from The Smart Port Challenge (Shipping Logistics), The co-Pulse Track (Eco-Tourism App), or The Civic Blueprint (Coastal Policy).</p></div>
     </div>
     <div style="display:flex;gap:1.2rem;align-items:flex-start;background:#fff;border:1px solid var(--card-border);border-radius:14px;padding:1.3rem 1.5rem">
       <div style="min-width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;font-family:'Poppins',sans-serif;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div>
-      <div><strong style="font-family:'Poppins',sans-serif;color:var(--navy);font-size:.95rem">Submit Registration</strong><p style="font-size:.88rem;color:var(--muted);line-height:1.65;margin-top:.3rem">Fill out the student portal form with your team details, active GitHub profile links, and college identity proofs before <strong>10th July 2026</strong> (without late fee). If late fee, before <strong>3rd Aug 2026</strong>.</p></div>
+      <div><strong style="font-family:'Poppins',sans-serif;color:var(--navy);font-size:.95rem">Submit Registration</strong><p style="font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.65;margin-top:.3rem">Fill out the student portal form with your team details, active GitHub profile links, and college identity proofs before <strong>10th July 2026</strong> (without late fee). If late fee, before <strong>3rd Aug 2026</strong>.</p></div>
     </div>
     <div style="display:flex;gap:1.2rem;align-items:flex-start;background:#fff;border:1px solid var(--card-border);border-radius:14px;padding:1.3rem 1.5rem">
       <div style="min-width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;font-family:'Poppins',sans-serif;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">4</div>
-      <div><strong style="font-family:'Poppins',sans-serif;color:var(--navy);font-size:.95rem">Attend the Launch</strong><p style="font-size:.88rem;color:var(--muted);line-height:1.65;margin-top:.3rem">Register between <strong>14:00–17:00 hrs</strong> to receive your registration kit and poster presentation timelines, if selected for the summit. Once registered with fee details, you will receive an email with poster and paper submission details within 2 service days.</p></div>
+      <div><strong style="font-family:'Poppins',sans-serif;color:var(--navy);font-size:.95rem">Attend the Launch</strong><p style="font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.65;margin-top:.3rem">Register between <strong>14:00–17:00 hrs</strong> to receive your registration kit and poster presentation timelines, if selected for the summit. Once registered with fee details, you will receive an email with poster and paper submission details within 2 service days.</p></div>
     </div>
   </div>
 
   <!-- Poster Guidelines -->
-  <div class="sec-title" style="font-size:1.3rem;margin-bottom:1.2rem"><i class="fa-solid fa-image" style="color:var(--teal);margin-right:.6rem"></i>Poster Presentation Guidelines <span style="font-size:.9rem;font-weight:500;color:var(--muted)">(Students 18–25 years)</span></div>
+  <div class="sec-title" style="font-size:1.3rem;margin-bottom:1.2rem"><i class="fa-solid fa-image" style="color:var(--teal);margin-right:.6rem"></i>Poster Presentation Guidelines <span style="font-size:.9rem;font-weight:500;color:var(--muted)">(Students 18–25 years)</span> <span style="font-size:.85rem;font-weight:700;color:#c0392b;background:rgba(192,57,43,.08);border:1px solid rgba(192,57,43,.2);border-radius:6px;padding:.15rem .6rem;margin-left:.4rem"><i class="fa-solid fa-users" style="margin-right:.3rem"></i>Only 300 seats allowed</span></div>
   <div style="background:rgba(0,137,123,.04);border:1px solid rgba(0,137,123,.15);border-radius:14px;padding:1.6rem 2rem;margin-bottom:1.2rem">
     <p style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--teal);font-size:.82rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem">Theme: Blue Intelligence For A Sustainable Ocean</p>
 
-    <p style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);margin-bottom:.6rem">A. Technical Specifications</p>
+    <p style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);margin-bottom:.6rem">A. Hackathon Selection Process</p>
     <ul class="info-list" style="margin-bottom:1.2rem">
-      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--muted);line-height:1.6;margin-bottom:.4rem"><i class="fa-solid fa-circle-check" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Size:</strong> Standard A0 (841 × 1189 mm) — Vertical/Portrait orientation</span></li>
-      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--muted);line-height:1.6;margin-bottom:.4rem"><i class="fa-solid fa-circle-check" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Format:</strong> PDF / High-Res JPEG (min 300 DPI)</span></li>
-      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--muted);line-height:1.6"><i class="fa-solid fa-circle-check" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Language:</strong> English</span></li>
+      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6;margin-bottom:.4rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span>Once an abstract has been selected, the student will present during the summit.</span></li>
+      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6;margin-bottom:.4rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span>Results will be announced by <strong style="color:var(--navy)">1st September 2026</strong>.</span></li>
+      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6;margin-bottom:.4rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Student:</strong> Max 300 words</span></li>
+      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6;margin-bottom:.4rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Abstract Submission Last Date:</strong> 31st July 2026, 9 PM IST / 11:30 AM NYT</span></li>
+      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6;margin-bottom:.4rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Late Fee Abstract Submission:</strong> 10th August 2026, 9 PM IST / 11:30 AM NYT</span></li>
+      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Select a Summit Track from:</strong> AI &amp; Ocean Intelligence | Decarbonization | Offshore Energy | Resilience &amp; Just Transition</span></li>
     </ul>
 
-    <p style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);margin-bottom:.6rem">B. Content Requirements</p>
+    <p style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);margin-bottom:.6rem">B. Technical Specifications</p>
+    <ul class="info-list" style="margin-bottom:1.2rem">
+      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6;margin-bottom:.4rem"><i class="fa-solid fa-circle-check" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Size:</strong> Standard A0 (841 × 1189 mm) — Vertical/Portrait orientation</span></li>
+      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6;margin-bottom:.4rem"><i class="fa-solid fa-circle-check" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Format:</strong> PDF / High-Res JPEG (min 300 DPI)</span></li>
+      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6"><i class="fa-solid fa-circle-check" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Language:</strong> English</span></li>
+    </ul>
+
+    <p style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);margin-bottom:.6rem">C. Content Requirements</p>
     <p style="font-size:.88rem;color:var(--muted);margin-bottom:.7rem">Every poster must include the following sections:</p>
     <div style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem">
-      <div style="display:flex;gap:.8rem;font-size:.88rem;color:var(--muted);line-height:1.6"><span style="min-width:22px;height:22px;background:var(--teal);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;margin-top:1px">1</span><span><strong style="color:var(--navy)">Title &amp; Team:</strong> Name of the project, participant names, and institution.</span></div>
-      <div style="display:flex;gap:.8rem;font-size:.88rem;color:var(--muted);line-height:1.6"><span style="min-width:22px;height:22px;background:var(--teal);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;margin-top:1px">2</span><span><strong style="color:var(--navy)">The Challenge:</strong> What specific problem related to the Blue Economy/Climate are you solving?</span></div>
-      <div style="display:flex;gap:.8rem;font-size:.88rem;color:var(--muted);line-height:1.6"><span style="min-width:22px;height:22px;background:var(--teal);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;margin-top:1px">3</span><span><strong style="color:var(--navy)">The Solution:</strong> Describe your "Intelligence" based approach (Tech, Policy, or Community action).</span></div>
-      <div style="display:flex;gap:.8rem;font-size:.88rem;color:var(--muted);line-height:1.6"><span style="min-width:22px;height:22px;background:var(--teal);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;margin-top:1px">4</span><span><strong style="color:var(--navy)">SDG Alignment:</strong> Explicitly mention which SDG (4, 7, 9, 13, 14, or 17) your project supports.</span></div>
-      <div style="display:flex;gap:.8rem;font-size:.88rem;color:var(--muted);line-height:1.6"><span style="min-width:22px;height:22px;background:var(--teal);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;margin-top:1px">5</span><span><strong style="color:var(--navy)">Visuals:</strong> Use charts, maps, or infographics. Minimize long paragraphs of text.</span></div>
+      <div style="display:flex;gap:.8rem;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6"><span style="min-width:22px;height:22px;background:var(--teal);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;margin-top:1px">1</span><span><strong style="color:var(--navy)">Title &amp; Team:</strong> Name of the project, participant names, and institution.</span></div>
+      <div style="display:flex;gap:.8rem;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6"><span style="min-width:22px;height:22px;background:var(--teal);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;margin-top:1px">2</span><span><strong style="color:var(--navy)">The Challenge:</strong> What specific problem related to the Blue Economy/Climate are you solving?</span></div>
+      <div style="display:flex;gap:.8rem;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6"><span style="min-width:22px;height:22px;background:var(--teal);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;margin-top:1px">3</span><span><strong style="color:var(--navy)">The Solution:</strong> Describe your "Intelligence" based approach (Tech, Policy, or Community action).</span></div>
+      <div style="display:flex;gap:.8rem;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6"><span style="min-width:22px;height:22px;background:var(--teal);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;margin-top:1px">4</span><span><strong style="color:var(--navy)">SDG Alignment:</strong> Explicitly mention which SDG (4, 7, 9, 13, 14, or 17) your project supports.</span></div>
+      <div style="display:flex;gap:.8rem;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6"><span style="min-width:22px;height:22px;background:var(--teal);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;margin-top:1px">5</span><span><strong style="color:var(--navy)">Visuals:</strong> Use charts, maps, or infographics. Minimize long paragraphs of text.</span></div>
     </div>
-
-    <p style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);margin-bottom:.6rem">C. Hackathon Selection Process</p>
-    <ul class="info-list" style="margin-bottom:.8rem">
-      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:.4rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Student:</strong> Max 300 words</span></li>
-      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:.4rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Abstract Submission Last Date:</strong> 31st July 2026, 9 PM IST / 11:30 AM NYT</span></li>
-      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:.4rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Late Fee Abstract Submission:</strong> 10th August 2026, 9 PM IST / 11:30 AM NYT</span></li>
-      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:var(--muted);line-height:1.6"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Select a Summit Track from:</strong> AI &amp; Ocean Intelligence | Decarbonization | Offshore Energy | Resilience &amp; Just Transition</span></li>
-    </ul>
   </div>
 
   <!-- Why Apply — Students -->
   <div style="background:linear-gradient(135deg,rgba(0,137,123,.06),rgba(21,101,192,.06));border:1px solid var(--card-border);border-radius:14px;padding:1.6rem 2rem;margin-bottom:2rem">
-    <p style="font-family:'Poppins',sans-serif;font-weight:800;color:var(--navy);font-size:1rem;margin-bottom:1rem">Why You Should Apply?</p>
+    <p style="font-family:'Poppins',sans-serif;font-weight:800;color:var(--navy);font-size:1rem;margin-bottom:1rem">Student - Awards</p>
     <div style="display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.4rem">
-      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--muted);line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Win the title award — <strong style="color:var(--navy)">"Blue Innovator Award 2026"</strong> for top 1 poster during the Valedictory Ceremony.</span></div>
-      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--muted);line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Network at the heart of India's Innovation Ecosystem.</span></div>
-      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--muted);line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Cash Awards and International Valid Certificates.</span></div>
-      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--muted);line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Flash Pitch:</strong> Participants must be prepared for a 3-minute pitch to judges (including UN Delegation) during Tea Breaks.</span></div>
+      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Win the title award — <strong style="color:var(--navy)">"Blue Innovator Award 2026"</strong> for top 1 poster during the Valedictory Ceremony.</span></div>
+      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Cash award is applicable for the title winner.</span></div>
+      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Paricipation certifcate + Title Winner Certificate.</span></div>
+      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Network at the heart of India's Innovation Ecosystem.</span></div>
+      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Flash Pitch:</strong> Participants must be prepared for a 3-minute pitch to jury team, Interantional Deligations, Keynote Speakers and other guest.(During Break).</span></div>
     </div>
 
-    <!-- CTA Button — Student -->
-    <div style="text-align:center;padding-top:.5rem">
-      <a href="https://forms.gle/BKL7tL8c3u13oNFg9" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.7rem;font-family:'Poppins',sans-serif;font-weight:700;font-size:1.15rem;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;text-decoration:none;padding:1rem 2.8rem;border-radius:999px;box-shadow:0 6px 24px rgba(0,137,123,.4);transition:all .2s;letter-spacing:.3px">
-        <i class="fa-solid fa-link"></i> OFFLINE ATTENDANCE APPLICATION FORM – BiCS 2026
+    <!-- CTA Buttons — Student -->
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;padding-top:.5rem">
+      <a href="https://forms.gle/BKL7tL8c3u13oNFg9" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;font-family:'Poppins',sans-serif;font-weight:700;font-size:.98rem;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;text-decoration:none;padding:.85rem 1.8rem;border-radius:999px;box-shadow:0 6px 24px rgba(0,137,123,.4);transition:all .2s;letter-spacing:.3px">
+        <i class="fa-solid fa-file-lines"></i> Offline Attendance — Indian Nationals
       </a>
-      <p style="margin-top:.8rem;font-family:'Poppins',sans-serif;font-size:.85rem;color:var(--muted)"><i class="fa-regular fa-clock" style="color:var(--gold);margin-right:.3rem"></i> Last Date: <strong style="color:var(--navy)">10th July 2026</strong></p>
+      <a href="https://forms.gle/BKL7tL8c3u13oNFg9" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;font-family:'Poppins',sans-serif;font-weight:700;font-size:.98rem;background:linear-gradient(135deg,var(--ocean),var(--teal));color:#fff;text-decoration:none;padding:.85rem 1.8rem;border-radius:999px;box-shadow:0 6px 24px rgba(21,101,192,.4);transition:all .2s;letter-spacing:.3px">
+        <i class="fa-solid fa-globe"></i> Offline Attendance — Other Nationals
+      </a>
     </div>
+      <p style="margin-top:.8rem;font-family:'Poppins',sans-serif;font-size:.85rem;color:#0A1F44;font-weight:700;text-align:center"><i class="fa-regular fa-clock" style="color:var(--gold);margin-right:.3rem"></i> Last Date: <strong style="color:var(--navy)">10th July 2026</strong></p>
   </div>
 
 </div>
 </section>
 
-<div class="divider"></div>
+<div class="divider" style="margin:0"></div>
 
 <!-- ═══ RESEARCHER SECTION ═══ -->
 <section class="sec" id="researchers">
 <div class="container">
 
   <div class="sec-title"><i class="fa-solid fa-microscope" style="color:var(--teal);margin-right:.6rem"></i>Researchers — Paper Abstract Details</div>
-  <p class="sec-sub" style="margin-bottom:1.8rem">Topic details will be shared via email within 3–4 service days once registration is completed.</p>
+  <p class="sec-sub" style="margin-bottom:1rem">Topic details will be shared via email within 3–4 service days once registration is completed.</p>
 
   <div style="background:rgba(0,137,123,.04);border:1px solid rgba(0,137,123,.15);border-radius:14px;padding:1.6rem 2rem;margin-bottom:1.2rem">
     <p style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);margin-bottom:.8rem">Submission Requirements</p>
     <ul class="info-list" style="margin-bottom:0">
-      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:.5rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Professional Researcher:</strong> Max 500 words</span></li>
-      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:.5rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Last Date of Submission:</strong> 31st July 2026</span></li>
-      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:.5rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Abstract Submission Last Date:</strong> 31st July 2026, 9 PM IST / 11:30 AM NYT</span></li>
-      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:var(--muted);line-height:1.6"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Late Fee Abstract Submission:</strong> 10th August 2026, 9 PM IST / 11:30 AM NYT</span></li>
+      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6;margin-bottom:.5rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Professional Researcher:</strong> Max 500 words</span></li>
+      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6;margin-bottom:.5rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Last Date of Submission:</strong> 31st July 2026</span></li>
+      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6;margin-bottom:.5rem"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Abstract Submission Last Date:</strong> 31st July 2026, 9 PM IST / 11:30 AM NYT</span></li>
+      <li style="display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:#0A1F44;font-weight:700;line-height:1.6"><i class="fa-solid fa-angle-right" style="color:var(--teal);margin-top:4px;flex-shrink:0"></i><span><strong style="color:var(--navy)">Late Fee Abstract Submission:</strong> 10th August 2026, 9 PM IST / 11:30 AM NYT</span></li>
     </ul>
   </div>
 
@@ -427,9 +447,11 @@ body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);
   <div style="background:linear-gradient(135deg,rgba(21,101,192,.06),rgba(0,137,123,.06));border:1px solid var(--card-border);border-radius:14px;padding:1.6rem 2rem;margin-bottom:2rem">
     <p style="font-family:'Poppins',sans-serif;font-weight:800;color:var(--navy);font-size:1rem;margin-bottom:1rem">Why You Should Apply?</p>
     <div style="display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.4rem">
-      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--muted);line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Win the title award — <strong style="color:var(--navy)">"Blue Economy Researcher Award 2026"</strong> during the Valedictory Ceremony.</span></div>
-      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--muted);line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Network at the heart of India's Innovation Ecosystem.</span></div>
-      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--muted);line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Cash Awards and International Valid Certificates.</span></div>
+      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Win the title award — <strong style="color:var(--navy)">"Blue Economy Researcher Award 2026"</strong> during the Valedictory Ceremony.</span></div>
+      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Cash award is applicable for the title winner.</span></div>
+<div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Paricipation certifcate + Title Winner Certificate.</span></div>    
+      <div style="display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:#0A1F44;font-weight:700;line-height:1.6"><i class="fa-solid fa-check-circle" style="color:var(--teal);margin-top:3px;flex-shrink:0"></i><span>Network at the heart of India's Innovation Ecosystem.</span></div>
+
     </div>
 
     <!-- CTA Button — Researcher -->
@@ -437,14 +459,14 @@ body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);
       <a href="https://forms.gle/6sqKEDQNVZ4hf9ma9" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.7rem;font-family:'Poppins',sans-serif;font-weight:700;font-size:1.15rem;background:linear-gradient(135deg,var(--ocean),var(--teal));color:#fff;text-decoration:none;padding:1rem 2.8rem;border-radius:999px;box-shadow:0 6px 24px rgba(21,101,192,.4);transition:all .2s;letter-spacing:.3px">
         <i class="fa-solid fa-link"></i> HACKATHON & POSTER PRESENTATION -PARTICIPATION APPLICATION - BiCS 2026
       </a>
-      <p style="margin-top:.8rem;font-family:'Poppins',sans-serif;font-size:.85rem;color:var(--muted)"><i class="fa-regular fa-clock" style="color:var(--gold);margin-right:.3rem"></i> Last Date: <strong style="color:var(--navy)">31st July 2026</strong></p>
+      <p style="margin-top:.8rem;font-family:'Poppins',sans-serif;font-size:.85rem;color:#0A1F44;font-weight:700"><i class="fa-regular fa-clock" style="color:var(--gold);margin-right:.3rem"></i> Last Date: <strong style="color:var(--navy)">31st July 2026</strong></p>
     </div>
   </div>
 
 </div>
 </section>
 
-<div class="divider"></div>
+<div class="divider" style="margin:0"></div>
 
 <section class="associates-sec sec" id="associates">
   <div class="container">
@@ -495,7 +517,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);
         <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:blueics2026@gmail.com">blueics2026@gmail.com</a></div>
         <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:info@globalbics.com">info@globalbics.com</a></div>
         <div class="footer-contact-row"><i class="fa-solid fa-globe"></i><a href="#">www.globalblueics.com</a></div>
-        <div class="footer-contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+91xxxxxxxxxx">+91 6304951896</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+916304951896">+91 63049 51896</a></div>
       </div>
     </div>
   </div>

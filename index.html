@@ -9,10 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#0A1F44;--deep:#0D2B5E;--ocean:#1565C0;--blue:#2196F3;--teal:#00897B;--teal2:#26A69A;--teal3:#80CBC4;--green2:#43A047;--gold:#F9A825;--gold2:#FFD54F;--white:#FFFFFF;--sky:#E3F2FD;--muted:#1a2e4a;--text:#0A1F44;--cyan:#00D4FF}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}img{max-width:100%;height:auto}
+:root{--navy:#0A1F44;--deep:#0D2B5E;--ocean:#1565C0;--blue:#2196F3;--teal:#00897B;--teal2:#26A69A;--teal3:#80CBC4;--green2:#43A047;--gold:#F9A825;--gold2:#FFD54F;--white:#FFFFFF;--sky:#E3F2FD;--muted:#0A1F44;--text:#0A1F44;--cyan:#00D4FF}
 html{scroll-behavior:smooth}
-body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);overflow-x:clip;font-size:18px}
+body{font-family:'Open Sans',sans-serif;background:var(--sky);color:#0A1F44;overflow-x:clip;font-size:18px}
 
 /* ═══ NAVIGATION ═══ */
 nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shadow:0 2px 20px rgba(10,31,68,.09)}
@@ -21,7 +21,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-logo img{height:72px;width:auto;object-fit:contain}
 .nav-desktop{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
 .nav-item{position:relative}
-.nav-item>a{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:600;color:var(--navy);text-decoration:none;padding:10px 18px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
+.nav-item>a{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:#0A1F44;text-decoration:none;padding:10px 18px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
 .nav-item>a::after{display:none}
 .nav-item>a:hover{color:var(--teal);background:rgba(0,137,123,.07)}
 .nav-item>a.active{color:var(--teal);background:rgba(0,137,123,.1)}
@@ -29,12 +29,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-item:hover>a .dd-arrow{transform:rotate(180deg);opacity:.9}
 .nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;min-width:200px;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.1),0 0 0 1px rgba(10,31,68,.06);padding:6px;opacity:0;visibility:hidden;transition:all .2s ease;z-index:10;list-style:none}
 .nav-item:hover .nav-dropdown{opacity:1;visibility:visible}
-.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.96rem;font-weight:600;color:var(--navy);text-decoration:none;border-radius:8px;transition:all .15s}
+.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.96rem;font-weight:700;color:#0A1F44;text-decoration:none;border-radius:8px;transition:all .15s}
 .nav-dropdown li a:hover{background:rgba(0,137,123,.07);color:var(--teal)}
 .nav-dropdown li a i{color:var(--teal);font-size:.7rem;width:16px;text-align:center;opacity:.65}
 .nav-dropdown li a:hover i{opacity:1}
-.nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:var(--navy);cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}
-.nav-hamburger:hover{background:rgba(10,31,68,.03);border-color:rgba(10,31,68,.15)}
+.nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}
+.nav-hamburger:hover{background:rgba(10,31,68,.03);border-color:#0A1F44}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10000;opacity:0;transition:opacity .3s}
 .nav-overlay.open{display:block;opacity:1}
 .nav-sidebar{position:fixed;top:0;right:0;bottom:0;width:min(360px,88vw);height:100vh;background:#fff;z-index:10001;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);box-shadow:-4px 0 24px rgba(0,0,0,.1);display:flex;flex-direction:column;overflow:hidden}
@@ -43,12 +43,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-sidebar-brand{display:flex;align-items:center;gap:.8rem}
 .nav-sidebar-logo-wrap{display:inline-flex;border-radius:6px;padding:3px 8px;line-height:0}
 .nav-sidebar-logo{height:42px;width:auto;object-fit:contain}
-.nav-sidebar-close{width:34px;height:34px;border-radius:8px;background:rgba(10,31,68,.04);border:1px solid rgba(10,31,68,.08);color:var(--navy);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.nav-sidebar-close{width:34px;height:34px;border-radius:8px;background:rgba(10,31,68,.04);border:1px solid rgba(10,31,68,.08);color:#0A1F44;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
 .nav-sidebar-close:hover{background:rgba(10,31,68,.08)}
 .nav-sidebar-links{list-style:none;overflow-y:auto;flex:1;padding:.4rem 0;margin:0}
 .nav-sidebar-links li{border-bottom:1px solid rgba(10,31,68,.04)}
 .nav-sidebar-links li:last-child{border-bottom:none}
-.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);text-decoration:none;transition:all .15s}
+.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}
 .nav-sidebar-links li>a:hover,.nav-sidebar-links li>a.active{color:var(--teal);background:rgba(0,137,123,.03)}
 .nav-sidebar-links li>a.active .sb-icon{background:var(--teal);color:#fff}
 .sb-icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:7px;background:rgba(0,137,123,.07);color:var(--teal);font-size:.75rem;flex-shrink:0;transition:all .15s}
@@ -59,12 +59,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .sb-has-dropdown.open .sb-dropdown-toggle i{transform:rotate(45deg)}
 .sb-submenu{display:none;flex-direction:column;width:100%;background:rgba(0,137,123,.02);list-style:none;padding:.25rem 0;margin:0}
 .sb-has-dropdown.open .sb-submenu{display:flex}
-.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;transition:all .15s}
+.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}
 .sb-submenu li a:hover{color:var(--teal);background:rgba(0,137,123,.04)}
 .sb-dd-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:rgba(0,137,123,.06);color:var(--teal);font-size:.58rem;flex-shrink:0}
 @media(min-width:961px){.nav-sidebar,.nav-overlay{display:none!important}.nav-hamburger{display:none!important}}
-@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}.nav-hamburger{right:1rem}}
-@media(max-width:600px){.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{padding:.65rem 1rem;font-size:.82rem;gap:.5rem}.sb-submenu li a{padding:.5rem 1rem .5rem 1.8rem;font-size:.78rem}}
+@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}.nav-hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}}
+@media(max-width:600px){.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}}
 
 #intro{position:fixed;inset:0;z-index:99999;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1s ease,visibility 1s;overflow:hidden}
 #intro.hide{opacity:0;visibility:hidden;pointer-events:none}
@@ -400,16 +400,15 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       <li class="nav-item">
         <a href="about.html">About Summit <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
         <ul class="nav-dropdown">
-<li><a href="takeaway.html"><i class="fa-solid fa-users"></i> Takeaways</a></li>
+          <li><a href="takeaway.html"><i class="fa-solid fa-list-check"></i> Takeaways</a></li>
           <li><a href="team.html"><i class="fa-solid fa-users"></i> BiCS Team</a></li>
-                </ul>
+        </ul>
       </li>
       <li class="nav-item">
         <a href="register.html">Registrations <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
         <ul class="nav-dropdown">
           <li><a href="submissions.html"><i class="fa-solid fa-file-lines"></i> Submissions</a></li>
-                    <li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li>
-
+          <li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li>
           <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQs</a></li>
         </ul>
       </li>
@@ -419,14 +418,14 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
           <li><a href="honorable-guests.html"><i class="fa-solid fa-user-tie"></i> Honorable Guests</a></li>
           <li><a href="keynote-speakers.html"><i class="fa-solid fa-microphone"></i> Keynote Speakers</a></li>
           <li><a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
-
-          
         </ul>
-      
+      </li>
       <li class="nav-item">
-        <a href="sponsors.html">Sponsors</a></li>
-        
-      
+        <a href="sponsors.html">Sponsors <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="exhibitions.html"><i class="fa-solid fa-store"></i> Exhibitions</a></li>
+        </ul>
+      </li>
       <li class="nav-item"><a href="contact.html">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
@@ -443,11 +442,14 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
     <button class="nav-sidebar-close" id="navSidebarClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
   </div>
   <ul class="nav-sidebar-links">
-    <li><a href="index.html" class="active"><span class="sb-icon"><i class="fa-solid fa-house"></i></span> Home</a></li>
+    <li><a href="index.html"><span class="sb-icon"><i class="fa-solid fa-house"></i></span> Home</a></li>
     <li class="sb-has-dropdown">
       <a href="about.html"><span class="sb-icon"><i class="fa-solid fa-circle-info"></i></span> About</a>
       <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
-      <ul class="sb-submenu"><li><a href="team.html"><span class="sb-dd-icon"><i class="fa-solid fa-users"></i></span> BiCS Team</a></li></ul>
+      <ul class="sb-submenu">
+        <li><a href="takeaway.html"><span class="sb-dd-icon"><i class="fa-solid fa-list-check"></i></span> Takeaways</a></li>
+        <li><a href="team.html"><span class="sb-dd-icon"><i class="fa-solid fa-users"></i></span> BiCS Team</a></li>
+      </ul>
     </li>
     <li class="sb-has-dropdown">
       <a href="register.html"><span class="sb-icon"><i class="fa-solid fa-clipboard-list"></i></span> Registrations</a>
@@ -470,6 +472,13 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       <a href="gallery.html"><span class="sb-icon"><i class="fa-solid fa-images"></i></span> Gallery</a>
       <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
       <ul class="sb-submenu"><li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li></ul>
+    </li>
+    <li class="sb-has-dropdown">
+      <a href="sponsors.html"><span class="sb-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a>
+      <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="exhibitions.html"><span class="sb-dd-icon"><i class="fa-solid fa-store"></i></span> Exhibitions</a></li>
+      </ul>
     </li>
     <li><a href="contact.html"><span class="sb-icon"><i class="fa-solid fa-address-book"></i></span> Contact</a></li>
   </ul>
@@ -495,9 +504,9 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       <p class="hero-sub"> BiCS 2026 is a premier global platform bringing together researchers, scientists, academicians, policymakers, innovators, startups, industry leaders, and students to collaborate on transformative solutions for ocean sustainability and climate resilience.</p>
       <div class="hero-stats">
         <div class="stat-item"><div class="sn">2<em>-Day</em></div><div class="sl">Summit</div></div>
-        <div class="stat-item"><div class="sn"> SDG<em>14</em></div><div class="sl">Life Below Water</div></div>
+        <div class="stat-item"><div class="sn"> Target Goal : SDG<em> 14</em></div><div class="sl">Life Below Water</div></div>
         <div class="stat-item"><div class="sn">25<em>+</em></div><div class="sl">Countries</div></div>
-        <div class="stat-item"><div class="sn">1000<em>+</em></div><div class="sl">Delegates</div></div>
+        <div class="stat-item"><div class="sn">1400<em>+</em></div><div class="sl">Delegates</div></div>
       </div>
     </div>
     <div class="hero-right"><canvas id="sdgCanvas"></canvas></div>
@@ -524,7 +533,6 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
     </div>
     <p class="home-invite">BiCS 2026 focuses on integrating Artificial Intelligence, marine science, blue economy strategies, sustainable technologies, climate intelligence, and youth innovation to build scalable solutions for a resilient future.</p>
     <div style="text-align:center;margin-top:1.5rem">
-      <a href="sponsors.html" class="btn-sponsors">Sponsors <i class="fa-solid fa-handshake" style="font-size:.75rem;margin-left:4px"></i></a>
     </div>
   </div>
 </div></section>
@@ -677,7 +685,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
         <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:blueics2026@gmail.com">blueics2026@gmail.com</a></div>
         <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:info@globalbics.com">info@globalbics.com</a></div>
         <div class="footer-contact-row"><i class="fa-solid fa-globe"></i><a href="#">www.globalblueics.com</a></div>
-        <div class="footer-contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+91xxxxxxxxxx">+91 6304951896</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+916304951896">+91 63049 51896</a></div>
       </div>
     </div>
   </div>

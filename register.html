@@ -9,10 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}img{max-width:100%;height:auto}
 :root{--navy:#0A1F44;--deep:#0D2B5E;--ocean:#1565C0;--blue:#2196F3;--teal:#00897B;--teal2:#26A69A;--gold:#F9A825;--gold2:#FFD54F;--white:#FFFFFF;--sky:#E3F2FD;--muted:#0A1F44;--text:#0A1F44;--card-bg:rgba(255,255,255,0.9);--card-border:rgba(33,150,243,0.18)}
 html{scroll-behavior:smooth}
-body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);overflow-x:hidden}
+body{font-family:'Open Sans',sans-serif;background:var(--sky);color:#0A1F44;overflow-x:hidden}
 
 /* ═══ NAV ═══ */
 nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shadow:0 2px 20px rgba(10,31,68,.09)}
@@ -21,19 +21,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-logo img{height:72px;width:auto;object-fit:contain}
 .nav-desktop{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
 .nav-item{position:relative}
-.nav-item>a{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:600;color:var(--navy);text-decoration:none;padding:10px 18px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
+.nav-item>a{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:#0A1F44;text-decoration:none;padding:10px 18px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
 .nav-item>a:hover{color:var(--teal);background:rgba(0,137,123,.07)}
 .nav-item>a.active{color:var(--teal);background:rgba(0,137,123,.1)}
 .nav-item>a .dd-arrow{font-size:.5rem;opacity:.5;transition:transform .2s,opacity .2s}
 .nav-item:hover>a .dd-arrow{transform:rotate(180deg);opacity:.9}
 .nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;min-width:200px;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.1),0 0 0 1px rgba(10,31,68,.06);padding:6px;opacity:0;visibility:hidden;transition:all .2s ease;z-index:10;list-style:none}
 .nav-item:hover .nav-dropdown{opacity:1;visibility:visible}
-.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.96rem;font-weight:600;color:var(--navy);text-decoration:none;border-radius:8px;transition:all .15s}
+.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.96rem;font-weight:700;color:#0A1F44;text-decoration:none;border-radius:8px;transition:all .15s}
 .nav-dropdown li a:hover{background:rgba(0,137,123,.07);color:var(--teal)}
 .nav-dropdown li a i{color:var(--teal);font-size:.7rem;width:16px;text-align:center;opacity:.65}
 .nav-dropdown li a:hover i{opacity:1}
-.nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:var(--navy);cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}
-.nav-hamburger:hover{background:rgba(10,31,68,.03);border-color:rgba(10,31,68,.15)}
+.nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}
+.nav-hamburger:hover{background:rgba(10,31,68,.03);border-color:#0A1F44}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10000;opacity:0;transition:opacity .3s}
 .nav-overlay.open{display:block;opacity:1}
 .nav-sidebar{position:fixed;top:0;right:0;bottom:0;width:min(360px,88vw);height:100vh;background:#fff;z-index:10001;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);box-shadow:-4px 0 24px rgba(0,0,0,.1);display:flex;flex-direction:column;overflow:hidden}
@@ -42,12 +42,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-sidebar-brand{display:flex;align-items:center;gap:.8rem}
 .nav-sidebar-logo-wrap{display:inline-flex;border-radius:6px;padding:3px 8px;line-height:0}
 .nav-sidebar-logo{height:42px;width:auto;object-fit:contain}
-.nav-sidebar-close{width:34px;height:34px;border-radius:8px;background:rgba(10,31,68,.04);border:1px solid rgba(10,31,68,.08);color:var(--navy);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.nav-sidebar-close{width:34px;height:34px;border-radius:8px;background:rgba(10,31,68,.04);border:1px solid rgba(10,31,68,.08);color:#0A1F44;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
 .nav-sidebar-close:hover{background:rgba(10,31,68,.08)}
 .nav-sidebar-links{list-style:none;overflow-y:auto;flex:1;padding:.4rem 0;margin:0}
 .nav-sidebar-links li{border-bottom:1px solid rgba(10,31,68,.04)}
 .nav-sidebar-links li:last-child{border-bottom:none}
-.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);text-decoration:none;transition:all .15s}
+.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}
 .nav-sidebar-links li>a:hover,.nav-sidebar-links li>a.active{color:var(--teal);background:rgba(0,137,123,.03)}
 .nav-sidebar-links li>a.active .sb-icon{background:var(--teal);color:#fff}
 .sb-icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:7px;background:rgba(0,137,123,.07);color:var(--teal);font-size:.75rem;flex-shrink:0;transition:all .15s}
@@ -58,12 +58,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .sb-has-dropdown.open .sb-dropdown-toggle i{transform:rotate(45deg)}
 .sb-submenu{display:none;flex-direction:column;width:100%;background:rgba(0,137,123,.02);list-style:none;padding:.25rem 0;margin:0}
 .sb-has-dropdown.open .sb-submenu{display:flex}
-.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;transition:all .15s}
+.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}
 .sb-submenu li a:hover{color:var(--teal);background:rgba(0,137,123,.04)}
 .sb-dd-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:rgba(0,137,123,.06);color:var(--teal);font-size:.58rem;flex-shrink:0}
 @media(min-width:961px){.nav-sidebar,.nav-overlay{display:none!important}.nav-hamburger{display:none!important}}
-@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}.nav-hamburger{right:1rem}}
-@media(max-width:600px){.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{padding:.65rem 1rem;font-size:.82rem;gap:.5rem}.sb-submenu li a{padding:.5rem 1rem .5rem 1.8rem;font-size:.78rem}}
+@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}.nav-hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}}
+@media(max-width:600px){.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}}
 
 /* ═══ PAGE BANNER ═══ */
 .page-banner{padding:8rem 0 3.5rem;background:linear-gradient(160deg,#060E1A 0%,#0D2B5E 50%,#060E1A 100%);position:relative;overflow:hidden}
@@ -122,7 +122,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .pricing-table .cat-icon{width:28px;height:28px;border-radius:8px;background:rgba(0,137,123,.1);color:var(--teal);display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;flex-shrink:0}
 .price-indian{color:var(--navy)}
 .price-intl{color:var(--navy)}
-.price-note{font-size:.75rem;font-weight:500;color:rgba(10,31,68,.5);display:block;margin-top:2px}
+.price-note{font-size:.75rem;font-weight:500;color:#0A1F44;display:block;margin-top:2px}
 .pricing-footer-note{background:rgba(249,168,37,.07);border:1px solid rgba(249,168,37,.2);border-radius:12px;padding:.85rem 1.2rem;margin-top:1rem;font-size:.85rem;color:var(--navy);display:flex;align-items:flex-start;gap:.6rem;line-height:1.65}
 .pricing-footer-note i{color:var(--gold);margin-top:2px;flex-shrink:0}
 
@@ -141,7 +141,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 .highlighted-big-note span {
-    color: #8a6000;
+    color:#0A1F44;
 }
 
 /* ═══ DATES TIMELINE ═══ */
@@ -158,12 +158,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .tl-item.highlight::before{background:var(--gold);box-shadow:0 0 0 2.5px rgba(249,168,37,.4)}
 .tl-label{font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);line-height:1.4}
 .tl-date{font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;white-space:nowrap;color:var(--navy)}
-.tl-item.highlight .tl-date{color:#8a6000}
+.tl-item.highlight .tl-date{color:#0A1F44}
 .tl-badge{display:inline-flex;align-items:center;gap:.35rem;font-family:'Poppins',sans-serif;font-size:.68rem;font-weight:700;padding:.2rem .65rem;border-radius:999px;text-transform:uppercase;letter-spacing:.5px;flex-shrink:0;white-space:nowrap}
 .tl-badge i{font-size:.45rem}
 .tl-badge.online-badge{background:rgba(10,31,68,.08);color:var(--navy);border:1px solid rgba(10,31,68,.15)}
 .tl-badge.offline-badge{background:rgba(10,31,68,.08);color:var(--navy);border:1px solid rgba(10,31,68,.15)}
-.tl-badge.abstract-badge{background:rgba(249,168,37,.15);color:#8a6000;border:1px solid rgba(249,168,37,.35)}
+.tl-badge.abstract-badge{background:rgba(249,168,37,.15);color:#0A1F44;border:1px solid rgba(249,168,37,.35)}
 .tl-badge.late-badge{background:rgba(220,53,69,.1);color:#C0392B;border:1px solid rgba(220,53,69,.25)}
 
 /* ═══ CTA STRIP ═══ */
@@ -236,9 +236,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .benefits-cell{display:flex;flex-direction:column;gap:.35rem}
 .benefit-tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:600;color:var(--navy);background:rgba(0,137,123,.08);border:1px solid rgba(0,137,123,.18);border-radius:6px;padding:.2rem .55rem;white-space:nowrap;width:fit-content}
 .benefit-tag i{color:var(--teal);font-size:.65rem}
-.muted-tag{background:rgba(10,31,68,.04);border-color:rgba(10,31,68,.1);color:rgba(10,31,68,.55)}
-.muted-tag i{color:rgba(10,31,68,.4)}
-.coming-soon-badge{display:inline-flex;align-items:center;gap:.35rem;background:rgba(249,168,37,.12);border:1px solid rgba(249,168,37,.3);color:#8a6000;font-family:'Poppins',sans-serif;font-size:.76rem;font-weight:700;padding:.25rem .65rem;border-radius:6px}
+.muted-tag{background:rgba(10,31,68,.04);border-color:#0A1F44;color:#0A1F44}
+.muted-tag i{color:#0A1F44}
+.coming-soon-badge{display:inline-flex;align-items:center;gap:.35rem;background:rgba(249,168,37,.12);border:1px solid rgba(249,168,37,.3);color:#0A1F44;font-family:'Poppins',sans-serif;font-size:.76rem;font-weight:700;padding:.25rem .65rem;border-radius:6px}
 .early-bird-note{display:block;font-size:.74rem;color:var(--teal);font-weight:600;margin-top:4px}
 .accom-cell{font-size:.8rem; color: var(--navy);}
 .accom-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:700;color:var(--navy);background:rgba(21,101,192,.08);border:1px solid rgba(21,101,192,.2);border-radius:6px;padding:.2rem .55rem; margin-bottom: 4px;}
@@ -259,8 +259,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
     text-align: center;
 }
 .btn-navy-dark:hover {
-    background-color: #0d2b5e;
-    border-color: #0d2b5e;
+    background-color:#0A1F44;
+    border-color:#0A1F44;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(10,31,68,0.3);
 }
@@ -288,7 +288,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 .footer-bottom{max-width:1300px;margin:0 auto;padding:.8rem 2.5rem;text-align:center}
 .footer-copy{font-size:.78rem;color:#000;font-weight:700;letter-spacing:.3px}
 @media(max-width:960px){.footer-main{grid-template-columns:1fr;gap:1.5rem;padding:2rem 1.5rem 1rem}}
-@media(max-width:600px){.footer-main{grid-template-columns:1fr;gap:1.5rem;padding:2rem 1rem 1rem}.footer-brand img{height:30px;max-width:130px}.footer-bottom{padding:.6rem 1rem}}
+@media(max-width:600px){.footer-main{grid-template-columns:1fr;gap:1.5rem}.footer-brand img{height:30px;max-width:130px}.footer-bottom{padding:.6rem 1rem}}
 
 /* ═══ SCROLL ARROW ═══ */
 .scroll-arrow{position:fixed;bottom:2rem;right:2rem;z-index:9998;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 18px rgba(0,137,123,.35);transition:opacity .3s,transform .3s,visibility .3s;opacity:0;visibility:hidden;pointer-events:none}
@@ -299,7 +299,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 .sub-topics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .sub-topic-card{background:linear-gradient(135deg,rgba(0,137,123,.07),rgba(21,101,192,.06));border:1px solid rgba(0,137,123,.18);border-radius:12px;padding:1.1rem 1.2rem;display:flex;align-items:center;gap:.8rem;font-family:'Poppins',sans-serif;font-weight:600;color:var(--navy);font-size:.9rem}
 .sub-topic-card i{color:var(--teal);font-size:1.1rem;flex-shrink:0}
-.sub-topic-card small{display:block;font-weight:400;font-size:.78rem;color:rgba(10,31,68,.5);margin-top:.1rem}
+.sub-topic-card small{display:block;font-weight:400;font-size:.78rem;color:#0A1F44;margin-top:.1rem}
 /* Registration blocks */
 .reg-blocks-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 .reg-block{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:1.3rem 1.5rem}
@@ -321,7 +321,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 .pay-modes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1rem}
 .pay-mode-item{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:.7rem;font-family:'Poppins',sans-serif;font-weight:600;font-size:.88rem;color:var(--navy)}
 .pay-mode-item i{color:var(--teal);font-size:1.1rem;flex-shrink:0}
-.pay-mode-item small{display:block;font-weight:400;font-size:.76rem;color:rgba(10,31,68,.5);margin-top:.1rem}
+.pay-mode-item small{display:block;font-weight:400;font-size:.76rem;color:#0A1F44;margin-top:.1rem}
 .pay-gateway-box{background:linear-gradient(135deg,rgba(0,137,123,.07),rgba(21,101,192,.06));border:1px solid rgba(0,137,123,.2);border-radius:12px;padding:.9rem 1.2rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;font-size:.9rem;color:var(--navy);font-family:'Poppins',sans-serif;font-weight:600}
 .pay-gateway-link{color:var(--teal);text-decoration:none;font-weight:700;word-break:break-all}
 .pay-gateway-link:hover{text-decoration:underline}
@@ -356,7 +356,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       <li class="nav-item">
         <a href="about.html">About Summit <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
         <ul class="nav-dropdown">
-          <li><a href="takeaway.html"><i class="fa-solid fa-users"></i> Takeaways</a></li>
+          <li><a href="takeaway.html"><i class="fa-solid fa-list-check"></i> Takeaways</a></li>
           <li><a href="team.html"><i class="fa-solid fa-users"></i> BiCS Team</a></li>
         </ul>
       </li>
@@ -377,7 +377,11 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
         </ul>
       </li>
       <li class="nav-item">
-        <a href="sponsors.html">Sponsors</a></li>
+        <a href="sponsors.html">Sponsors <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="exhibitions.html"><i class="fa-solid fa-store"></i> Exhibitions</a></li>
+        </ul>
+      </li>
       <li class="nav-item"><a href="contact.html">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
@@ -425,7 +429,13 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
       <ul class="sb-submenu"><li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li></ul>
     </li>
-    <li><a href="sponsors.html"><span class="sb-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a></li>
+    <li class="sb-has-dropdown">
+      <a href="sponsors.html"><span class="sb-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a>
+      <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="exhibitions.html"><span class="sb-dd-icon"><i class="fa-solid fa-store"></i></span> Exhibitions</a></li>
+      </ul>
+    </li>
     <li><a href="contact.html"><span class="sb-icon"><i class="fa-solid fa-address-book"></i></span> Contact</a></li>
   </ul>
 </aside>
@@ -474,27 +484,27 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       </thead>
       <tbody>
         <tr>
-          <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-door-open"></i></span><span>Offline Participation Applications Starts <small style="display:block;font-weight:400;color:rgba(10,31,68,.5)">(Presenters)</small></span></div></td>
+          <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-door-open"></i></span><span>Offline Participation Applications Starts <small style="display:block;font-weight:400;color:#0A1F44">(Presenters)</small></span></div></td>
           <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">11th June 2026</span></td>
           <td><span class="tl-badge offline-badge"><i class="fa-solid fa-circle"></i> Offline</span></td>
         </tr>
         <tr>
-          <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-bolt"></i></span><span> Early Birds Last Date <small style="display:block;font-weight:400;color:rgba(10,31,68,.5)">(Presenters)</small></span></div></td>
+          <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-bolt"></i></span><span> Early Birds Last Date <small style="display:block;font-weight:400;color:#0A1F44">(Presenters)</small></span></div></td>
           <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">25th June 2026</span></td>
           <td><span class="tl-badge online-badge"><i class="fa-solid fa-circle"></i> Early Bird</span></td>
         </tr>
         <tr>
-          <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-location-dot"></i></span><span>Applications Offline Participation <small style="display:block;font-weight:400;color:rgba(10,31,68,.5)">(Presenters)</small></span></div></td>
+          <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-location-dot"></i></span><span>Applications Offline Participation <small style="display:block;font-weight:400;color:#0A1F44">(Presenters)</small></span></div></td>
           <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">31st July 2026</span></td>
           <td><span class="tl-badge offline-badge"><i class="fa-solid fa-circle"></i> Final</span></td>
         </tr>
         <tr style="background:rgba(249,168,37,.04)">
-          <td><div class="cat-cell"><span class="cat-icon" style="background:rgba(249,168,37,.15);color:#8a6000"><i class="fa-solid fa-file-pen"></i></span><span>Abstract Submissions Dates</span></div></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:#8a6000">2nd – 31st July 2026</span></td>
+          <td><div class="cat-cell"><span class="cat-icon" style="background:rgba(249,168,37,.15);color:#0A1F44"><i class="fa-solid fa-file-pen"></i></span><span>Abstract Submissions Dates</span></div></td>
+          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:#0A1F44">2nd – 31st July 2026</span></td>
           <td><span class="tl-badge abstract-badge"><i class="fa-solid fa-file-lines"></i> Abstract</span></td>
         </tr>
         <tr style="background:rgba(220,53,69,.03)">
-          <td><div class="cat-cell"><span class="cat-icon" style="background:rgba(220,53,69,.1);color:#C0392B"><i class="fa-solid fa-clock"></i></span><span>Late Submissions <small style="display:block;font-weight:400;color:rgba(10,31,68,.5)">+₹500 INR / +$8 USD per abstract</small></span></div></td>
+          <td><div class="cat-cell"><span class="cat-icon" style="background:rgba(220,53,69,.1);color:#C0392B"><i class="fa-solid fa-clock"></i></span><span>Late Submissions <small style="display:block;font-weight:400;color:#0A1F44">+₹500 INR / +$8 USD per abstract</small></span></div></td>
           <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:#C0392B">10th August 2026</span></td>
           <td><span class="tl-badge late-badge"><i class="fa-solid fa-clock"></i> Late Fee</span></td>
         </tr>
@@ -539,7 +549,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
         </thead>
         <tbody>
           <tr>
-            <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></span><span>Students<br><small style="font-weight:400;color:rgba(10,31,68,.5)">(UG, PG &amp; University)</small></span></div></td>
+            <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></span><span>Students<br><small style="font-weight:400;color:#0A1F44">(UG, PG &amp; University)</small></span></div></td>
             <td><span class="price-indian">₹ 99</span><span class="price-note">+ 18% GST</span></td>
             <td><span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;color:var(--navy)">22nd Sept 2026</span></td>
           </tr>
@@ -605,7 +615,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
             <td class="sno-cell">1</td>
             <td>
               <div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></span>
-              <span><strong>Students</strong><br><small style="color:rgba(10,31,68,.5)">(UG, PG &amp; University)</small><br><small style="color:var(--ocean);font-weight:600">Day 1 &amp; 2 Participation Only</small></span></div>
+              <span><strong>Students</strong><br><small style="color:#0A1F44">(UG, PG &amp; University)</small><br><small style="color:var(--ocean);font-weight:600">Day 1 &amp; 2 Participation Only</small></span></div>
             </td>
             <td>
               <span class="price-indian">₹ 999</span>
@@ -619,12 +629,12 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
             </td>
             <td class="link-cell">
               <span class="coming-soon-badge">Coming Soon</span>
-              <small style="display:block;color:rgba(10,31,68,.5);margin-top:3px">Opens 11th June</small>
+              <small style="display:block;color:#0A1F44;margin-top:3px">Opens 11th June</small>
             </td>
             <td class="accom-cell">
               <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
-              <small style="display:block;color:rgba(10,31,68,.5);margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
-              <small style="color:rgba(10,31,68,.4)">Details shared soon</small>
+              <small style="display:block;color:#0A1F44;margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
+              <small style="color:#0A1F44">Details shared soon</small>
             </td>
           </tr>
           <!-- Students Hackathon -->
@@ -632,7 +642,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
             <td class="sno-cell">2</td>
             <td>
               <div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-lightbulb"></i></span>
-              <span><strong>Students</strong><br><small style="color:rgba(10,31,68,.5)">(UG, PG &amp; University)</small><br><small style="color:var(--ocean);font-weight:600">Hackathon / Poster Participants</small></span></div>
+              <span><strong>Students</strong><br><small style="color:#0A1F44">(UG, PG &amp; University)</small><br><small style="color:var(--ocean);font-weight:600">Hackathon / Poster Participants</small></span></div>
             </td>
             <td>
               <span class="price-indian">₹ 1,299</span>
@@ -649,12 +659,12 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
             </td>
             <td class="link-cell">
               <span class="coming-soon-badge">Coming Soon</span>
-              <small style="display:block;color:rgba(10,31,68,.5);margin-top:3px">Opens 11th June</small>
+              <small style="display:block;color:#0A1F44;margin-top:3px">Opens 11th June</small>
             </td>
             <td class="accom-cell">
               <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
-              <small style="display:block;color:rgba(10,31,68,.5);margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
-              <small style="color:rgba(10,31,68,.4)">Details shared soon</small>
+              <small style="display:block;color:#0A1F44;margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
+              <small style="color:#0A1F44">Details shared soon</small>
             </td>
           </tr>
           <!-- Researchers -->
@@ -677,12 +687,12 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
             </td>
             <td class="link-cell">
               <span class="coming-soon-badge">Coming Soon</span>
-              <small style="display:block;color:rgba(10,31,68,.5);margin-top:3px">Opens 11th June</small>
+              <small style="display:block;color:#0A1F44;margin-top:3px">Opens 11th June</small>
             </td>
             <td class="accom-cell">
               <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
-              <small style="display:block;color:rgba(10,31,68,.5);margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
-              <small style="color:rgba(10,31,68,.4)">Details shared soon</small>
+              <small style="display:block;color:#0A1F44;margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
+              <small style="color:#0A1F44">Details shared soon</small>
             </td>
           </tr>
         </tbody>
@@ -708,7 +718,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
             <td class="sno-cell">1</td>
             <td>
               <div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></span>
-              <span><strong>Students</strong><br><small style="color:rgba(10,31,68,.5)">(UG, PG &amp; University)</small></span></div>
+              <span><strong>Students</strong><br><small style="color:#0A1F44">(UG, PG &amp; University)</small></span></div>
             </td>
             <td>
               <span class="price-intl">$ 20</span>
@@ -724,12 +734,12 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
             </td>
             <td class="link-cell">
               <span class="coming-soon-badge">Coming Soon</span>
-              <small style="display:block;color:rgba(10,31,68,.5);margin-top:3px">1st Oct 12PM – 4th Oct 12PM</small>
+              <small style="display:block;color:#0A1F44;margin-top:3px">1st Oct 12PM – 4th Oct 12PM</small>
             </td>
             <td class="accom-cell">
               <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
-              <small style="display:block;color:rgba(10,31,68,.5);margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
-              <small style="color:rgba(10,31,68,.4)">Details shared soon</small>
+              <small style="display:block;color:#0A1F44;margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
+              <small style="color:#0A1F44">Details shared soon</small>
             </td>
           </tr>
           <tr>
@@ -751,12 +761,12 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
             </td>
             <td class="link-cell">
               <span class="coming-soon-badge">Coming Soon</span>
-              <small style="display:block;color:rgba(10,31,68,.5);margin-top:3px">1st Oct 12PM – 4th Oct 12PM</small>
+              <small style="display:block;color:#0A1F44;margin-top:3px">1st Oct 12PM – 4th Oct 12PM</small>
             </td>
             <td class="accom-cell">
               <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
-              <small style="display:block;color:rgba(10,31,68,.5);margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
-              <small style="color:rgba(10,31,68,.4)">Details shared soon</small>
+              <small style="display:block;color:#0A1F44;margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
+              <small style="color:#0A1F44">Details shared soon</small>
             </td>
           </tr>
         </tbody>
@@ -921,7 +931,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
         <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:blueics2026@gmail.com">blueics2026@gmail.com</a></div>
         <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:info@globalbics.com">info@globalbics.com</a></div>
         <div class="footer-contact-row"><i class="fa-solid fa-globe"></i><a href="#">www.globalblueics.com</a></div>
-        <div class="footer-contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+91xxxxxxxxxx">+91 6304951896</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+916304951896">+91 63049 51896</a></div>
       </div>
     </div>
   </div>

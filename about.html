@@ -10,10 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}img{max-width:100%;height:auto}
 :root{--navy:#0A1F44;--deep:#0D2B5E;--ocean:#1565C0;--blue:#2196F3;--teal:#00897B;--teal2:#26A69A;--gold:#F9A825;--gold2:#FFD54F;--white:#FFFFFF;--sky:#E3F2FD;--muted:#0A1F44;--text:#0A1F44;--card-bg:rgba(255,255,255,0.75);--card-border:rgba(33,150,243,0.2)}
 html{scroll-behavior:smooth}
-body{font-family:'Open Sans',sans-serif;background:var(--sky);color:var(--text);overflow-x:hidden}
+body{font-family:'Open Sans',sans-serif;background:var(--sky);color:#0A1F44;overflow-x:hidden}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shadow:0 2px 20px rgba(10,31,68,.09)}
 .nav-inner{display:flex;align-items:center;justify-content:center;width:100%;max-width:1400px;margin:0 auto;padding:0 2rem;height:88px;position:relative}
@@ -21,7 +21,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-logo img{height:72px;width:auto;object-fit:contain}
 .nav-desktop{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
 .nav-item{position:relative}
-.nav-item>a{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:600;color:var(--navy);text-decoration:none;padding:10px 18px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
+.nav-item>a{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:#0A1F44;text-decoration:none;padding:10px 18px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
 .nav-item>a::after{display:none}
 .nav-item>a:hover{color:var(--teal);background:rgba(0,137,123,.07)}
 .nav-item>a.active{color:var(--teal);background:rgba(0,137,123,.1)}
@@ -29,12 +29,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-item:hover>a .dd-arrow{transform:rotate(180deg);opacity:.9}
 .nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;min-width:200px;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.1),0 0 0 1px rgba(10,31,68,.06);padding:6px;opacity:0;visibility:hidden;transition:all .2s ease;z-index:10;list-style:none}
 .nav-item:hover .nav-dropdown{opacity:1;visibility:visible}
-.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.96rem;font-weight:600;color:var(--muted);text-decoration:none;border-radius:8px;transition:all .15s}
+.nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.96rem;font-weight:700;color:#0A1F44;text-decoration:none;border-radius:8px;transition:all .15s}
 .nav-dropdown li a:hover{background:rgba(0,137,123,.07);color:var(--teal)}
 .nav-dropdown li a i{color:var(--teal);font-size:.7rem;width:16px;text-align:center;opacity:.65}
 .nav-dropdown li a:hover i{opacity:1}
-.nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:var(--navy);cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}
-.nav-hamburger:hover{background:rgba(10,31,68,.03);border-color:rgba(10,31,68,.15)}
+.nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}
+.nav-hamburger:hover{background:rgba(10,31,68,.03);border-color:#0A1F44}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10000;opacity:0;transition:opacity .3s}
 .nav-overlay.open{display:block;opacity:1}
 .nav-sidebar{position:fixed;top:0;right:0;bottom:0;width:min(360px,88vw);height:100vh;background:#fff;z-index:10001;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);box-shadow:-4px 0 24px rgba(0,0,0,.1);display:flex;flex-direction:column;overflow:hidden}
@@ -43,12 +43,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-sidebar-brand{display:flex;align-items:center;gap:.8rem}
 .nav-sidebar-logo-wrap{display:inline-flex;border-radius:6px;padding:3px 8px;line-height:0}
 .nav-sidebar-logo{height:42px;width:auto;object-fit:contain}
-.nav-sidebar-close{width:34px;height:34px;border-radius:8px;background:rgba(10,31,68,.04);border:1px solid rgba(10,31,68,.08);color:var(--navy);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.nav-sidebar-close{width:34px;height:34px;border-radius:8px;background:rgba(10,31,68,.04);border:1px solid rgba(10,31,68,.08);color:#0A1F44;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
 .nav-sidebar-close:hover{background:rgba(10,31,68,.08)}
 .nav-sidebar-links{list-style:none;overflow-y:auto;flex:1;padding:.4rem 0;margin:0}
 .nav-sidebar-links li{border-bottom:1px solid rgba(10,31,68,.04)}
 .nav-sidebar-links li:last-child{border-bottom:none}
-.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);text-decoration:none;transition:all .15s}
+.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}
 .nav-sidebar-links li>a:hover,.nav-sidebar-links li>a.active{color:var(--teal);background:rgba(0,137,123,.03)}
 .nav-sidebar-links li>a.active .sb-icon{background:var(--teal);color:#fff}
 .sb-icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:7px;background:rgba(0,137,123,.07);color:var(--teal);font-size:.75rem;flex-shrink:0;transition:all .15s}
@@ -59,12 +59,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .sb-has-dropdown.open .sb-dropdown-toggle i{transform:rotate(45deg)}
 .sb-submenu{display:none;flex-direction:column;width:100%;background:rgba(0,137,123,.02);list-style:none;padding:.25rem 0;margin:0}
 .sb-has-dropdown.open .sb-submenu{display:flex}
-.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;transition:all .15s}
+.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}
 .sb-submenu li a:hover{color:var(--teal);background:rgba(0,137,123,.04)}
 .sb-dd-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:rgba(0,137,123,.06);color:var(--teal);font-size:.58rem;flex-shrink:0}
 @media(min-width:961px){.nav-sidebar,.nav-overlay{display:none!important}.nav-hamburger{display:none!important}}
-@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}.nav-hamburger{right:1rem}}
-@media(max-width:600px){.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{padding:.65rem 1rem;font-size:.82rem;gap:.5rem}.sb-submenu li a{padding:.5rem 1rem .5rem 1.8rem;font-size:.78rem}}
+@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}.nav-hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}}
+@media(max-width:600px){.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}}
 
 .page-banner{padding:8rem 0 3rem;background:linear-gradient(160deg,#060E1A 0%,#0D2B5E 50%,#060E1A 100%);position:relative;overflow:hidden}
 .page-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(21,101,192,.12) 0%,transparent 60%);pointer-events:none}
@@ -72,7 +72,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .page-banner h1{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--white);margin-bottom:.5rem}
 .page-banner p{font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.7;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 
-.sec{padding:4.5rem 0;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.sec{padding:2.5rem 0;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .sec.vis{opacity:1;transform:translateY(0)}
 .container{max-width:1400px;margin:0 auto;padding:0 2.5rem}
 .sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2}
@@ -182,7 +182,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 .scroll-arrow:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,137,123,.5)}
 @media(max-width:960px){.info-grid,.venue-grid,.scopus-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr 1fr}.participate-stats{grid-template-columns:repeat(2,1fr)}.participate-groups{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){
-  .container{padding:0 1.2rem}.sec{padding:3rem 0}
+  .container{padding:0 1.2rem}.sec{padding:1.8rem 0}
   .page-banner{padding:6rem 0 2.5rem}.page-banner-inner{padding:0 1.2rem}
   .page-banner h1{font-size:clamp(1.3rem,5.5vw,2rem)}
   .sec-title{font-size:clamp(1.1rem,5vw,1.6rem)}
@@ -221,7 +221,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 .obj-content p{font-size:.9rem;color:var(--muted);line-height:1.65}
 
 @media(max-width:960px){.footer-main{grid-template-columns:1fr;gap:1.5rem;padding:2rem 1.5rem 1rem}}
-@media(max-width:600px){.footer-main{grid-template-columns:1fr;gap:1.5rem;padding:2rem 1rem 1rem}.footer-brand img{height:30px;max-width:130px}.footer-bottom{padding:.6rem 1rem}}
+@media(max-width:600px){.footer-main{grid-template-columns:1fr;gap:1.5rem}.footer-brand img{height:30px;max-width:130px}.footer-bottom{padding:.6rem 1rem}}
 </style>
 </head>
 <body>
@@ -238,7 +238,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       <li class="nav-item">
         <a href="about.html" class="active">About Summit <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
         <ul class="nav-dropdown">
-          <li><a href="takeaway.html"><i class="fa-solid fa-users"></i> Takeaways</a></li>
+          <li><a href="takeaway.html"><i class="fa-solid fa-list-check"></i> Takeaways</a></li>
           <li><a href="team.html"><i class="fa-solid fa-users"></i> BiCS Team</a></li>
         </ul>
       </li>
@@ -259,7 +259,11 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
         </ul>
       </li>
       <li class="nav-item">
-        <a href="sponsors.html">Sponsors</a></li>
+        <a href="sponsors.html">Sponsors <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
+        <ul class="nav-dropdown">
+          <li><a href="exhibitions.html"><i class="fa-solid fa-store"></i> Exhibitions</a></li>
+        </ul>
+      </li>
       <li class="nav-item"><a href="contact.html">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
@@ -307,7 +311,13 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
       <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
       <ul class="sb-submenu"><li><a href="press-media.html"><span class="sb-dd-icon"><i class="fa-solid fa-newspaper"></i></span> Press / Media</a></li></ul>
     </li>
-    <li><a href="sponsors.html"><span class="sb-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a></li>
+    <li class="sb-has-dropdown">
+      <a href="sponsors.html"><span class="sb-icon"><i class="fa-solid fa-handshake"></i></span> Sponsors</a>
+      <button class="sb-dropdown-toggle" aria-label="Toggle submenu"><i class="fa-solid fa-plus"></i></button>
+      <ul class="sb-submenu">
+        <li><a href="exhibitions.html"><span class="sb-dd-icon"><i class="fa-solid fa-store"></i></span> Exhibitions</a></li>
+      </ul>
+    </li>
     <li><a href="contact.html"><span class="sb-icon"><i class="fa-solid fa-address-book"></i></span> Contact</a></li>
   </ul>
 </aside>
@@ -316,7 +326,33 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 
 
 <section class="sec" id="about-summit"><div class="container"><div class="sec-title"></div><div class="text-block" style="margin-top:1.2rem"><p>The summit will be serving as a global platform to discuss innovation, maritime safety, deep-sea fishing technologies, ocean governance, and blue growth opportunities. The event is organized by <strong>EventsKart</strong>, an Edu Consultancy (<a href="http://www.eventskart.org" target="_blank" style="color:var(--teal)">www.eventskart.org</a>) in association with the <strong>Global Oceanic Adventures &amp; Environmental Conservation (GOAEC) Foundation</strong> (<a href="http://www.goaec.org" target="_blank" style="color:var(--teal)">www.goaec.org</a>), an NGO focusing on high-impact knowledge exchange, technology showcase, and policy dialogue. This global event has been planned and executed under the leadership of an expert organizing team.</p></div>
-<div class="sec-title" style="margin-top:2rem">Core Themes</div>
+</div></section>
+<div class="divider"></div>
+
+<!-- 1. VISION & MISSION -->
+<section class="sec" id="vision"><div class="container"><div class="sec-title">Vision &amp; Mission</div>
+<div class="info-grid" style="margin-top:1.5rem">
+  <div class="info-card"><div class="info-card-title"><i class="fa-solid fa-eye"></i> Vision</div><p style="font-size:.95rem;color:var(--muted);line-height:1.75">To forge a multi-generational, cross-sector ecosystem where digital intelligence powers sustainable maritime economies, pioneering a resilient path forward for global oceans and coastal communities.</p></div>
+  <div class="info-card"><div class="info-card-title"><i class="fa-solid fa-bullseye"></i> Mission</div><p style="font-size:.95rem;color:var(--muted);line-height:1.75">The Blue Intelligence Climate Summit (BiCS) 2026 accelerates ocean climate action by bridging the gap between advanced technology and marine conservation, aligning youthful innovation with industrial and governance frameworks. We unite students, research scientists, blue economists, maritime conservation organizations, ship building industries, AI tech corporates, and local policy leaders to co-create scalable AI solutions, decarbonize global shipping, advance sustainable eco-tourism, and secure eco-conscious economic growth.</p></div>
+</div>
+</div></section>
+<div class="divider"></div>
+
+<!-- 2. CORE OBJECTIVES -->
+<section class="sec" id="mission"><div class="container"><div class="sec-title">Core Objectives of the Summit</div>
+<div class="text-block" style="margin-top:.8rem"><p>The Blue Intelligence Climate Summit 2026 is designed to achieve four core objectives, bridging the gap between cutting-edge technology and immediate marine conservation needs.</p></div>
+<div class="objectives-list" style="margin-top:1.5rem">
+  <div class="obj-item"><div class="obj-num">1</div><div class="obj-content"><div class="obj-title">Accelerate Maritime Decarbonisation</div><p>Enable real-time route optimization and smart port management to cut global commercial vessel fuel consumption and maritime emissions.</p></div></div>
+  <div class="obj-item"><div class="obj-num">2</div><div class="obj-content"><div class="obj-title">Democratize Marine Data Science</div><p>Empower student innovators and independent research scientists to turn theoretical code into practical, deployable marine protection tools.</p></div></div>
+  <div class="obj-item"><div class="obj-num">3</div><div class="obj-content"><div class="obj-title">Standardize Data-Driven Coastal Governance</div><p>Create municipal policies that actively prevent coastal erosion and illegal fishing while maintaining sustainable hospitality revenue.</p></div></div>
+  <div class="obj-item"><div class="obj-num">4</div><div class="obj-content"><div class="obj-title">Cultivate Next-Gen Climate Tech Talent</div><p>Build a permanent, cross-sector recruitment pipeline that places skilled data scientists directly into the blue economy.</p></div></div>
+</div>
+</div></section>
+<div class="divider"></div>
+
+<!-- 3. CORE THEMES -->
+<section class="sec" id="about-themes"><div class="container">
+<div class="sec-title">Core Themes</div>
 <div class="why-grid" style="margin-top:1.2rem;grid-template-columns:repeat(3,1fr)">
   <div class="why-card"><h4><i class="fa-solid fa-water" style="color:var(--teal);margin-right:.4rem"></i>Blue Economy &amp; Ocean Governance</h4></div>
   <div class="why-card"><h4><i class="fa-solid fa-satellite" style="color:var(--teal);margin-right:.4rem"></i>AI, Satellites &amp; Digital Climate Intelligence</h4></div>
@@ -328,7 +364,8 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 </div></section>
 <div class="divider"></div>
 
-<section class="sec" id="sdgs"><div class="container"><div class="sec-title">Specification of the SDGs</div>
+<!-- 4. TARGET SDG COURSE -->
+<section class="sec" id="sdgs"><div class="container"><div class="sec-title">Target Goals of SDGs</div>
 <div class="text-block" style="margin-top:1rem"><p>The Blue Intelligence Climate Summit 2026 is anchored by <strong>SDG 14 (Life Below Water)</strong>, serving as the central framework that unites all other Sustainable Development Goals. Because marine ecosystems regulate the global climate, protecting the ocean is impossible without simultaneously driving clean energy, industrial innovation, and global partnerships.</p></div>
 <div class="vision-box" style="margin-top:1.2rem"><div class="vision-text"><strong>Target Goal: SDG 14 (Life Below Water)</strong><br><br>SDG 14 is the baseline requirement for all four tracks of the summit. Every technology pitched — whether a satellite mapping tool or a wave energy converter — is evaluated on its capacity to prevent marine pollution, end overfishing, and sustainably manage coastal ecosystems.</div></div>
 <div class="sdg-list" style="margin-top:1.5rem">
@@ -342,41 +379,15 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 </div></section>
 <div class="divider"></div>
 
-<section class="sec" id="vision"><div class="container"><div class="sec-title">Vision &amp; Mission</div>
-<div class="info-grid" style="margin-top:1.5rem">
-  <div class="info-card"><div class="info-card-title"><i class="fa-solid fa-eye"></i> Vision</div><p style="font-size:.95rem;color:var(--muted);line-height:1.75">To forge a multi-generational, cross-sector ecosystem where digital intelligence powers sustainable maritime economies, pioneering a resilient path forward for global oceans and coastal communities.</p></div>
-  <div class="info-card"><div class="info-card-title"><i class="fa-solid fa-bullseye"></i> Mission</div><p style="font-size:.95rem;color:var(--muted);line-height:1.75">The Blue Intelligence Climate Summit (BiCS) 2026 accelerates ocean climate action by bridging the gap between advanced technology and marine conservation, aligning youthful innovation with industrial and governance frameworks. We unite students, research scientists, blue economists, maritime conservation organizations, ship building industries, AI tech corporates, and local policy leaders to co-create scalable AI solutions, decarbonize global shipping, advance sustainable eco-tourism, and secure eco-conscious economic growth.</p></div>
-</div>
-</div></section>
+<!-- 5. WHO CAN PARTICIPATE -->
+<section class="sec" id="whyparticipate"><div class="container"><div class="sec-title">Who Can Participate ?</div><div class="why-grid"><div class="why-card"><h4>Researchers</h4><ul><li>Present research before global experts and policymakers</li><li>Opportunity for Scopus-indexed publication support</li><li>International networking and collaborations</li><li>Research awards and recognition</li><li>Exposure to industry and funding opportunities</li><li>Participation certificate and summit proceedings</li></ul></div><div class="why-card"><h4>Students</h4><ul><li>Innovation and startup exposure</li><li>AI &amp; Climate Hackathon participation</li><li>Interaction with global researchers and mentors</li><li>Awards, internships, and collaboration opportunities</li><li>Youth leadership engagement</li><li>Global networking opportunities</li></ul></div><div class="why-card"><h4>Others</h4><ul><li>Policy Makers</li><li>ESG Professionals</li><li>Industrialists</li><li>NGOs</li><li>Recyclers</li><li>Startups</li><li>Exhibitors</li></ul></div></div></div></section>
 <div class="divider"></div>
 
-<section class="sec" id="mission"><div class="container"><div class="sec-title">Core Objectives of the Summit</div>
-<div class="text-block" style="margin-top:.8rem"><p>The Blue Intelligence Climate Summit 2026 is designed to achieve four core objectives, bridging the gap between cutting-edge technology and immediate marine conservation needs.</p></div>
-<div class="objectives-list" style="margin-top:1.5rem">
-  <div class="obj-item"><div class="obj-num">1</div><div class="obj-content"><div class="obj-title">Accelerate Maritime Decarbonisation</div><p>Enable real-time route optimization and smart port management to cut global commercial vessel fuel consumption and maritime emissions.</p></div></div>
-  <div class="obj-item"><div class="obj-num">2</div><div class="obj-content"><div class="obj-title">Democratize Marine Data Science</div><p>Empower student innovators and independent research scientists to turn theoretical code into practical, deployable marine protection tools.</p></div></div>
-  <div class="obj-item"><div class="obj-num">3</div><div class="obj-content"><div class="obj-title">Standardize Data-Driven Coastal Governance</div><p>Create municipal policies that actively prevent coastal erosion and illegal fishing while maintaining sustainable hospitality revenue.</p></div></div>
-  <div class="obj-item"><div class="obj-num">4</div><div class="obj-content"><div class="obj-title">Cultivate Next-Gen Climate Tech Talent</div><p>Build a permanent, cross-sector recruitment pipeline that places skilled data scientists directly into the blue economy.</p></div></div>
-</div>
-</div></section>
-<div class="divider"></div>
-<section class="sec" id="whyparticipate"><div class="container"><div class="sec-title">Participants</div><div class="why-grid"><div class="why-card"><h4>Researchers</h4><ul><li>Present research before global experts and policymakers</li><li>Opportunity for Scopus-indexed publication support</li><li>International networking and collaborations</li><li>Research awards and recognition</li><li>Exposure to industry and funding opportunities</li><li>Participation certificate and summit proceedings</li></ul></div><div class="why-card"><h4>Students</h4><ul><li>Innovation and startup exposure</li><li>AI &amp; Climate Hackathon participation</li><li>Interaction with global researchers and mentors</li><li>Awards, internships, and collaboration opportunities</li><li>Youth leadership engagement</li><li>Global networking opportunities</li></ul></div><div class="why-card"><h4>Others</h4><ul><li>Policy Makers</li><li>ESG Professionals</li><li>Industrialists</li><li>NGOs</li><li>Recyclers</li><li>Startups</li><li>Exhibitors</li></ul></div></div></div></section>
-<div class="divider"></div>
-<section class="sec" id="target-solutions"><div class="container"><div class="sec-title">Target Solutions</div>
-<div class="text-block" style="margin-top:.8rem"><p>The target solutions for the Blue Intelligence Climate Summit 2026, scheduled for October 2nd to 3rd 2026, are organized across four core thematic tracks designed to integrate advanced technology with ocean conservation and marine sustainability. BiCS 2026 directly bridges the gap between high-level marine science and scalable, market-ready technology.</p></div>
-<div class="why-grid" style="margin-top:1.5rem;grid-template-columns:repeat(2,1fr)">
-  <div class="why-card"><h4><i class="fa-solid fa-brain" style="color:var(--teal);margin-right:.5rem"></i>AI &amp; Ocean Intelligence</h4></div>
-  <div class="why-card"><h4><i class="fa-solid fa-recycle" style="color:var(--teal);margin-right:.5rem"></i>Decarbonization &amp; Circular Economy</h4></div>
-  <div class="why-card"><h4><i class="fa-solid fa-wind" style="color:var(--teal);margin-right:.5rem"></i>Offshore Renewable Energy</h4></div>
-  <div class="why-card"><h4><i class="fa-solid fa-shield-halved" style="color:var(--teal);margin-right:.5rem"></i>Resilience &amp; Just Transition</h4></div>
-</div>
-</div></section>
-<div class="divider"></div>
-<!-- PROGRAM HIGHLIGHTS -->
+<!-- 6. SUMMIT HIGHLIGHTS -->
 <section class="sec" id="program">
 <div class="container">
-  <div class="sec-title">Summit - Highlights</div>
-  <p style="font-family:'Poppins',sans-serif;font-weight:600;color:var(--teal);margin-top:.5rem;font-size:1.05rem">2nd & 3rd October 2026</p>
+  <div class="sec-title">Summit Highlights</div>
+  <p style="font-family:'Poppins',sans-serif;font-weight:600;color:var(--teal);margin-top:.5rem;font-size:1.05rem">2nd &amp; 3rd October 2026</p>
   <div class="bullet-list-2col">
     <div class="bullet-item"><span class="bullet-dot"></span><div class="bullet-text">Inaugural Ceremony</div></div>
     <div class="bullet-item"><span class="bullet-dot"></span><div class="bullet-text">Keynote Sessions</div></div>
@@ -399,8 +410,11 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 </section>
 <div class="divider"></div>
 
-<section class="sec" id="participation"><div class="container"><div class="sec-title">Expected Participation</div><div class="participate-wrapper"><div class="participate-stats"><div class="p-stat"><div class="p-stat-num">1000–1400+</div><div class="p-stat-label">Delegates</div></div><div class="p-stat"><div class="p-stat-num">25+</div><div class="p-stat-label">Countries</div></div><div class="p-stat"><div class="p-stat-num">120+</div><div class="p-stat-label">Presenters</div></div><div class="p-stat"><div class="p-stat-num">12</div><div class="p-stat-label">Keynote Speakers</div></div></div><div class="participate-groups"><div class="p-group-item"><span class="p-group-dot"></span><span class="p-group-text">U.N. &amp; Indian Govt. Delegations</span></div><div class="p-group-item"><span class="p-group-dot"></span><span class="p-group-text">Ocean Centers</span></div><div class="p-group-item"><span class="p-group-dot"></span><span class="p-group-text">Educational Institutions</span></div><div class="p-group-item"><span class="p-group-dot"></span><span class="p-group-text">Marine Research Organizations</span></div><div class="p-group-item"><span class="p-group-dot"></span><span class="p-group-text">Ports</span></div><div class="p-group-item"><span class="p-group-dot"></span><span class="p-group-text">Green Energy Companies</span></div><div class="p-group-item"><span class="p-group-dot"></span><span class="p-group-text">Tech Corporates</span></div><div class="p-group-item"><span class="p-group-dot"></span><span class="p-group-text">NGOs and Civil Society</span></div><div class="p-group-item"><span class="p-group-dot"></span><span class="p-group-text">Industry Leaders &amp; Policy Makers</span></div><div class="p-group-item"><span class="p-group-dot"></span><span class="p-group-text">Startups</span></div></div></div></div></section>
+<!-- 7. EXPECTED PARTICIPATION -->
+<section class="sec" id="participation"><div class="container"><div class="sec-title">Expected Participation</div><div class="participate-wrapper"><div class="participate-stats" style="grid-template-columns:repeat(4,1fr)"><div class="p-stat"><div class="p-stat-num">1400+</div><div class="p-stat-label">Delegates</div></div><div class="p-stat"><div class="p-stat-num">300+</div><div class="p-stat-label">Researchers</div></div><div class="p-stat"><div class="p-stat-num">100+</div><div class="p-stat-label">Industry Leaders</div></div><div class="p-stat"><div class="p-stat-num">50+</div><div class="p-stat-label">Startups</div></div><div class="p-stat"><div class="p-stat-num">25+</div><div class="p-stat-label">Countries</div></div><div class="p-stat"><div class="p-stat-num">50+</div><div class="p-stat-label">Sponsors &amp; Partners</div></div><div class="p-stat"><div class="p-stat-num">20+</div><div class="p-stat-label">Govt. Representatives</div></div></div></div></div></section>
 <div class="divider"></div>
+
+<!-- 9. AWARDS -->
 <section class="sec" id="awards"><div class="container"><div class="sec-title">Awards & Recognition</div><p style="font-size:.92rem;color:var(--muted);margin-top:.3rem;margin-bottom:1rem">Surprise Cash Awards / Cash Vouchers</p><div class="awards-section"><div class="award-group"><div class="award-group-title"><i class="fa-solid fa-trophy"></i> Research Awards</div><ul class="award-list"><li>Blue Intelligence Leadership Award</li><li>Ocean Conservation Excellence Award</li><li>Outstanding Academic Contribution Award</li></ul></div><div class="award-group"><div class="award-group-title"><i class="fa-solid fa-star"></i> Student Awards</div><ul class="award-list"><li>Blue Innovator Award</li><li>Climate Innovation Award</li><li>Young Researcher Award</li></ul></div><div class="award-group"><div class="award-group-title"><i class="fa-solid fa-rocket"></i> Startup Recognition</div><ul class="award-list"><li>Best Sustainable Startup Award</li></ul></div></div></div></section>
 <div class="divider"></div>
 <section class="sec" id="scopus"><div class="container"><div class="sec-title">Publication Opportunities</div><div class="scopus-grid"><div class="scopus-block"><h4><i class="fa-solid fa-book-open"></i> Scopus-Indexed Publication Support</h4><p style="font-size:.92rem;color:var(--muted);margin-bottom:.5rem">Selected high-quality papers will receive:</p><ul><li>Peer-review guidance</li><li>Publication support in reputed journals</li><li>Conference proceedings publication</li><li>ISBN-certified abstract book inclusion</li><li>Recommendation for Scopus-indexed journals</li><li>Best Paper Awards</li></ul></div><div class="scopus-block"><h4><i class="fa-solid fa-flask"></i> Suggested Publication Domains</h4><ul><li>Marine Policy</li><li>Applied Ocean Research</li><li>Climate Technology & Sustainability</li><li>Blue Economy Research</li><li>Coastal Engineering & Conservation</li><li>AI & Environmental Intelligence</li></ul></div></div></div></section>
@@ -458,7 +472,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
         <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:blueics2026@gmail.com">blueics2026@gmail.com</a></div>
         <div class="footer-contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:info@globalbics.com">info@globalbics.com</a></div>
         <div class="footer-contact-row"><i class="fa-solid fa-globe"></i><a href="#">www.globalblueics.com</a></div>
-        <div class="footer-contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+91xxxxxxxxxx">+91 xxxxxxxxxxx</a></div>
+        <div class="footer-contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+916304951896">+91 63049 51896</a></div>
       </div>
     </div>
   </div>
