@@ -62,8 +62,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}
 .sb-submenu li a:hover{color:var(--teal);background:rgba(0,137,123,.04)}
 .sb-dd-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:rgba(0,137,123,.06);color:var(--teal);font-size:.58rem;flex-shrink:0}
+/* Desktop: hide sidebar/hamburger, show full nav */
 @media(min-width:961px){.nav-sidebar,.nav-overlay{display:none!important}.nav-hamburger{display:none!important}}
-@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}.nav-hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}}
+/* Mobile/tablet ≤960px: hide desktop nav, show hamburger */
+@media(max-width:960px){
+  .nav-desktop{display:none!important}
+  .nav-hamburger{display:flex!important;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:1rem}
+  .nav-inner{padding:0 1rem;height:68px}
+  .nav-logo{left:1rem}
+  .nav-logo img{height:52px}
+}
+/* Force hamburger on physical mobile device even in "Request Desktop Site" mode */
+nav.nav-force-mobile .nav-desktop{display:none!important}
+nav.nav-force-mobile .nav-hamburger{display:flex!important;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:1rem}
+nav.nav-force-mobile .nav-inner{padding:0 1rem;height:68px}
+nav.nav-force-mobile .nav-logo{left:1rem}
+nav.nav-force-mobile .nav-logo img{height:52px}
+nav.nav-force-mobile~.nav-sidebar{display:flex!important;flex-direction:column}
+nav.nav-force-mobile~.nav-overlay{display:block}
 @media(max-width:600px){.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}}
 
 #intro{position:fixed;inset:0;z-index:99999;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1s ease,visibility 1s;overflow:hidden}
@@ -746,6 +762,29 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 </div>
 
 <button class="scroll-arrow" id="scrollArrow" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+<script>
+// Force hamburger nav on physical mobile devices even in "Request Desktop Site" mode.
+(function(){
+  var BREAKPOINT = 960;
+  var navEl = document.querySelector('nav');
+  var sidebarEl = document.getElementById('navSidebar');
+  var overlayEl = document.getElementById('navOverlay');
+  function checkNav(){
+    var isMobile = window.screen.width <= BREAKPOINT || window.innerWidth <= BREAKPOINT;
+    if(navEl) navEl.classList.toggle('nav-force-mobile', isMobile);
+    // Restore sidebar/overlay display when forced mobile (overrides the !important display:none from min-width:961px)
+    if(isMobile){
+      if(sidebarEl) sidebarEl.style.setProperty('display','flex','important');
+      if(overlayEl) overlayEl.style.removeProperty('display'); // let JS open/close handle it
+    } else {
+      if(sidebarEl) sidebarEl.style.removeProperty('display');
+      if(overlayEl) overlayEl.style.removeProperty('display');
+    }
+  }
+  checkNav();
+  window.addEventListener('resize', checkNav);
+})();
+</script>
 <script>
 (function(){var h=document.getElementById('navHamburger'),s=document.getElementById('navSidebar'),c=document.getElementById('navSidebarClose'),o=document.getElementById('navOverlay');function open(){s.classList.add('open');o.classList.add('open');document.body.style.overflow='hidden'}function close(){s.classList.remove('open');o.classList.remove('open');document.body.style.overflow='';var d=document.querySelectorAll('.sb-has-dropdown.open');for(var i=0;i<d.length;i++)d[i].classList.remove('open')}if(h)h.addEventListener('click',open);if(c)c.addEventListener('click',close);if(o)o.addEventListener('click',close);var l=document.querySelectorAll('.nav-sidebar-links li>a,.sb-submenu a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',close);var t=document.querySelectorAll('.sb-dropdown-toggle');for(var j=0;j<t.length;j++)t[j].addEventListener('click',function(e){e.preventDefault();e.stopPropagation();this.closest('.sb-has-dropdown').classList.toggle('open')})})();
 (function(){var introEl=document.getElementById('intro');if(!introEl)return;if(sessionStorage.getItem('bicsIntroShown')){introEl.classList.add('skip');document.body.classList.add('no-intro')}else{setTimeout(function(){document.getElementById('introLogo').classList.add('landed')},800);setTimeout(function(){introEl.classList.add('hide');sessionStorage.setItem('bicsIntroShown','true')},3000)}})();
