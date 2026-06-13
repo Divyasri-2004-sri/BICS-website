@@ -10,42 +10,28 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}img{max-width:100%;height:auto}
-
-/* ─── ORIGINAL COLOR PALETTE ─── */
-:root{
-  --navy:#0A1F44;
-  --deep:#0D2B5E;
-  --ocean:#1565C0;
-  --blue:#2196F3;
-  --teal:#00897B;
-  --teal2:#26A69A;
-  --gold:#F9A825;
-  --gold2:#FFD54F;
-  --white:#FFFFFF;
-  --sky:#E3F2FD;
-  --muted:#0A1F44;
-  --text:#0A1F44;
-  --card-bg:rgba(255,255,255,0.9);
-  --card-border:rgba(33,150,243,0.18)
-}
-
+:root{--navy:#0A1F44;--deep:#0D2B5E;--ocean:#1565C0;--blue:#2196F3;--teal:#00897B;--teal2:#26A69A;--gold:#F9A825;--gold2:#FFD54F;--white:#FFFFFF;--sky:#E3F2FD;--muted:#0A1F44;--text:#0A1F44;--card-bg:rgba(255,255,255,0.75);--card-border:rgba(33,150,243,0.2)}
 html{scroll-behavior:smooth}
 body{font-family:'Open Sans',sans-serif;background:var(--sky);color:#0A1F44;overflow-x:hidden}
 
-/* ═══ NAVIGATION ═══ */
 nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shadow:0 2px 20px rgba(10,31,68,.09)}
 .nav-inner{display:flex;align-items:center;justify-content:center;width:100%;max-width:1400px;margin:0 auto;padding:0 2rem;height:88px;position:relative}
 .nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;position:absolute;left:2rem}
 .nav-logo img{height:72px;width:auto;object-fit:contain}
 .nav-desktop{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+.nav-item{position:relative}
 .nav-item>a{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:#0A1F44;text-decoration:none;padding:10px 18px;display:flex;align-items:center;gap:5px;transition:all .22s;letter-spacing:.2px;border-radius:8px;white-space:nowrap;line-height:1}
+.nav-item>a::after{display:none}
 .nav-item>a:hover{color:var(--teal);background:rgba(0,137,123,.07)}
 .nav-item>a.active{color:var(--teal);background:rgba(0,137,123,.1)}
+.nav-item>a .dd-arrow{font-size:.5rem;opacity:.5;transition:transform .2s,opacity .2s}
+.nav-item:hover>a .dd-arrow{transform:rotate(180deg);opacity:.9}
 .nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;min-width:200px;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.1),0 0 0 1px rgba(10,31,68,.06);padding:6px;opacity:0;visibility:hidden;transition:all .2s ease;z-index:10;list-style:none}
 .nav-item:hover .nav-dropdown{opacity:1;visibility:visible}
 .nav-dropdown li a{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.96rem;font-weight:700;color:#0A1F44;text-decoration:none;border-radius:8px;transition:all .15s}
 .nav-dropdown li a:hover{background:rgba(0,137,123,.07);color:var(--teal)}
 .nav-dropdown li a i{color:var(--teal);font-size:.7rem;width:16px;text-align:center;opacity:.65}
+.nav-dropdown li a:hover i{opacity:1}
 .nav-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}
 .nav-hamburger:hover{background:rgba(10,31,68,.03);border-color:#0A1F44}
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10000;opacity:0;transition:opacity .3s}
@@ -60,6 +46,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .nav-sidebar-close:hover{background:rgba(10,31,68,.08)}
 .nav-sidebar-links{list-style:none;overflow-y:auto;flex:1;padding:.4rem 0;margin:0}
 .nav-sidebar-links li{border-bottom:1px solid rgba(10,31,68,.04)}
+.nav-sidebar-links li:last-child{border-bottom:none}
 .nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}
 .nav-sidebar-links li>a:hover,.nav-sidebar-links li>a.active{color:var(--teal);background:rgba(0,137,123,.03)}
 .nav-sidebar-links li>a.active .sb-icon{background:var(--teal);color:#fff}
@@ -75,28 +62,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .sb-submenu li a:hover{color:var(--teal);background:rgba(0,137,123,.04)}
 .sb-dd-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:rgba(0,137,123,.06);color:var(--teal);font-size:.58rem;flex-shrink:0}
 @media(min-width:961px){.nav-sidebar,.nav-overlay{display:none!important}.nav-hamburger{display:none!important}}
-@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}}
-@media(max-width:600px){.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}}
+@media(max-width:960px){.nav-desktop{display:none!important}.nav-hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}.nav-inner{padding:0 1rem;height:68px}.nav-logo{left:1rem}.nav-logo img{height:52px}.nav-hamburger{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1.5px solid rgba(10,31,68,.1);font-size:1.1rem;color:#0A1F44;cursor:pointer;flex-shrink:0;transition:all .2s;position:absolute;right:2rem}}
+@media(max-width:600px){.nav-sidebar{width:min(290px,92vw)}.nav-sidebar-header{padding:.8rem 1rem}.nav-sidebar-logo{height:38px}.sb-icon{width:28px;height:28px;font-size:.68rem;border-radius:6px}.nav-sidebar-links li>a{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}.sb-submenu li a{display:flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem .55rem 2rem;font-size:.82rem;font-weight:700;color:#0A1F44;text-decoration:none;transition:all .15s}}
 
-/* ═══ PAGE BANNER ═══ */
-.page-banner{padding:8rem 0 3.5rem;background:linear-gradient(160deg,#060E1A 0%,#0D2B5E 50%,#060E1A 100%);position:relative;overflow:hidden}
-.page-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(21,101,192,.12) 0%,transparent 65%),radial-gradient(ellipse at 20% 70%,rgba(21,101,192,.08) 0%,transparent 55%);pointer-events:none}
+.page-banner{padding:8rem 0 3rem;background:linear-gradient(160deg,#060E1A 0%,#0D2B5E 50%,#060E1A 100%);position:relative;overflow:hidden}
+.page-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(21,101,192,.12) 0%,transparent 60%);pointer-events:none}
 .page-banner-inner{max-width:1400px;margin:0 auto;padding:0 2.5rem;position:relative;z-index:2}
-.page-banner-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(21,101,192,.18);border:1px solid rgba(21,101,192,.35);border-radius:999px;padding:.3rem .9rem;font-size:.78rem;font-family:'Poppins',sans-serif;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.5px;margin-bottom:1rem}
-.page-banner-badge i{color:var(--blue);font-size:.7rem}
 .page-banner h1{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--white);margin-bottom:.5rem}
-.page-banner p{font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.7;max-width:100%}
-@media(max-width:600px){.page-banner{padding:5.5rem 0 2.5rem}.page-banner-inner{padding:0 1.2rem}.page-banner h1{font-size:clamp(1.4rem,6vw,2rem)}.page-banner p{font-size:.88rem}}
+.page-banner p{font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.7;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 
-/* ═══ LAYOUT ═══ */
 .sec{padding:2.5rem 0;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .sec.vis{opacity:1;transform:translateY(0)}
-.container{max-width:1200px;margin:0 auto;padding:0 2.5rem}
-.sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:.4rem}
+.container{max-width:1400px;margin:0 auto;padding:0 2.5rem}
+.sec-title{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2}
 .sec-sub{color:var(--muted);font-size:.96rem;margin-top:.4rem;margin-bottom:1.6rem;line-height:1.75}
 .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(21,101,243,.15),transparent);margin:0}
 
-/* ═══ INFO CARDS ═══ */
+/* INFO CARDS */
 .info-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-bottom:2rem}
 .info-card{background:#fff;border:1px solid rgba(0,137,123,.15);border-radius:14px;padding:1.2rem 1.3rem;display:flex;align-items:flex-start;gap:.85rem;box-shadow:0 2px 10px rgba(0,137,123,.05)}
 .info-card .ic-icon{width:40px;height:40px;min-width:40px;background:linear-gradient(135deg,var(--teal),var(--ocean));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;flex-shrink:0}
@@ -104,95 +86,52 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .info-card .ic-val{font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:700;color:var(--navy);line-height:1.4}
 @media(max-width:768px){.info-cards{grid-template-columns:1fr}}
 
-/* ═══ TABLE SECTION (As per Figure) ═══ */
+/* FEE TABLE */
 .fee-table-wrap{overflow-x:auto;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.05);margin-bottom:2rem;background:#fff}
-.fee-table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:700px}
-
-/* Top Header */
-.fee-table .tbl-main-header th{
-  background:linear-gradient(90deg,var(--deep),var(--navy));
-  color:#fff;
-  font-family:'Poppins',sans-serif;
-  font-weight:800;
-  font-size:1rem;
-  padding:1rem;
-  text-align:center;
-  border-bottom: 2px solid var(--teal);
-}
-
-/* Category Headers (Online / Offline) */
-.fee-table .tbl-section-header td{
-  background:linear-gradient(90deg,var(--ocean),var(--teal));
-  color:#fff;
-  font-family:'Poppins',sans-serif;
-  font-weight:700;
-  font-size:.9rem;
-  padding:1rem;
-  text-align:left;
-  padding-left: 1.5rem;
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-
-/* Column Headers */
-.fee-table .tbl-col-header th{
-  background:#f0f7ff; /* Very light blue */
-  color:var(--navy);
-  font-family:'Poppins',sans-serif;
-  font-weight:700;
-  font-size:.75rem;
-  padding:1rem;
-  text-align:left;
-  border-bottom:2px solid #e0e0e0;
-  text-transform:uppercase;
-  letter-spacing: 0.5px;
-}
+.fee-table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:900px}
+.fee-table .tbl-section-header td{background:linear-gradient(90deg,var(--ocean),var(--teal));color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:.9rem;padding:1rem;text-align:left;padding-left:1.5rem;letter-spacing:1px;text-transform:uppercase}
+.fee-table .tbl-col-header th{background:#f0f7ff;color:var(--navy);font-family:'Poppins',sans-serif;font-weight:700;font-size:.75rem;padding:1rem;text-align:left;border-bottom:2px solid #e0e0e0;text-transform:uppercase;letter-spacing:.5px}
 .fee-table .tbl-col-header th:not(:first-child):not(:nth-child(2)){text-align:center}
-
-/* Table Body */
 .fee-table tbody tr{border-bottom:1px solid #eee;transition:background .2s}
 .fee-table tbody tr:last-child{border-bottom:none}
 .fee-table tbody tr:hover{background:#f9fcff}
 .fee-table td{padding:1rem;color:#444;vertical-align:middle;font-size:.88rem}
-.fee-table td.sno{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);text-align:center;width:60px}
+.fee-table td.sno{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);text-align:center;width:55px}
 .fee-table td.participant{font-family:'Poppins',sans-serif;font-weight:600;color:var(--navy)}
 .fee-table td.price{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);text-align:center;font-size:.95rem}
-.fee-table td.include{font-family:'Poppins',sans-serif;font-weight:500;color:var(--teal);text-align:center;white-space:pre-line}
 .fee-table td.na{font-family:'Poppins',sans-serif;font-weight:600;color:#999;text-align:center;font-size:.8rem}
 .fee-table td.pay-link{text-align:center}
+.fee-table td.active-dates{font-family:'Poppins',sans-serif;font-weight:600;color:var(--navy);text-align:center;font-size:.85rem;line-height:1.5}
+.fee-table td.late-fee{font-family:'Poppins',sans-serif;font-weight:600;color:var(--navy);text-align:center;font-size:.85rem;line-height:1.5}
+.late-na{color:#999;font-size:.8rem;font-weight:600}
+.late-amount{color:#c62828;font-weight:700}
+.pay-btn{display:inline-block;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:.78rem;padding:.4rem .9rem;border-radius:6px;text-decoration:none;transition:opacity .2s}
+.pay-btn:hover{opacity:.88}
 .pay-link-soon{font-size:.75rem;color:#888;background:#f4f4f4;padding:4px 12px;border-radius:4px;border:1px solid #ddd}
 
-/* ═══ ACCOMMODATION & LOGISTICS (As per Figure) ═══ */
+/* LOGISTICS */
 .logistics-section{background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.05);border:1px solid #e0e0e0;overflow:hidden}
 .logistics-header{background:var(--navy);color:#fff;padding:1.2rem 2rem;font-family:'Poppins',sans-serif;font-weight:700;font-size:1.1rem;display:flex;align-items:center;gap:10px}
 .logistics-body{padding:2.5rem}
-
-/* Hotel Card */
 .hotel-card{display:flex;gap:2rem;align-items:flex-start;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid #eee}
-.hotel-img-placeholder{width:120px;height:120px;background:#e0e0e0;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#888;font-size:2rem}
 .hotel-details{flex:1}
 .hotel-details h3{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.3rem;color:var(--navy);margin-bottom:.8rem}
 .hotel-details p{font-size:.95rem;color:var(--muted);line-height:1.6;margin-bottom:.8rem}
 .hotel-details strong{color:var(--navy)}
 
-/* Note & Transport Grid */
-.logistics-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-@media(max-width:768px){.logistics-grid{grid-template-columns:1fr}.hotel-card{flex-direction:column;align-items:center;text-align:center}.hotel-img-placeholder{width:100%;height:200px}}
-
-/* Note Box */
-.note-box{background:#fffdf5;border-left:4px solid var(--gold);padding:1.2rem;border-radius:0 8px 8px 0}
+/* Full-width note and transport */
+.logistics-full{display:flex;flex-direction:column;gap:1.5rem}
+.note-box{background:#fffdf5;border-left:4px solid var(--gold);padding:1.4rem 1.6rem;border-radius:0 8px 8px 0;width:100%}
 .note-box h4{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);margin-bottom:.8rem;display:flex;align-items:center;gap:8px}
 .note-box ul{padding-left:1.2rem;color:var(--muted);line-height:1.6}
 .note-box li{margin-bottom:8px;font-size:.9rem}
-
-/* Transport Box */
-.transport-box{background:#f0f7ff;border:1px solid #d0e1f5;border-radius:8px;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start}
+.transport-box{background:#f0f7ff;border:1px solid #d0e1f5;border-radius:8px;padding:1.5rem 2rem;display:flex;gap:1rem;align-items:flex-start;width:100%}
 .transport-box i{color:var(--ocean);font-size:1.5rem;margin-top:2px}
 .transport-box h4{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);margin-bottom:.5rem}
 .transport-box p{font-size:.9rem;color:var(--muted);line-height:1.5}
 
-/* ═══ ASSOCIATES ═══ */
-.associates-sec{background:#fff;padding:2.8rem 0;opacity:1!important;transform:none!important}
+/* ASSOCIATES */
+.associates-sec{background:#fff;padding:2.8rem 0;border-bottom:none;opacity:1!important;transform:none!important}
 .assoc-heading{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:1.5rem}
 .assoc-logos-scroll{overflow:hidden;position:relative;width:100%;height:150px}
 .assoc-logos-scroll::before,.assoc-logos-scroll::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
@@ -201,12 +140,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#FFFFFF;box-shad
 .assoc-logos-track{display:inline-flex;flex-direction:row;flex-wrap:nowrap;gap:0;animation:logoScroll 25s linear infinite;height:150px;align-items:center;white-space:nowrap}
 .assoc-logos-track:hover{animation-play-state:paused}
 @keyframes logoScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.assoc-logo-card{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;width:160px;height:150px;flex:0 0 160px;padding:0 1rem}
-.assoc-logo-card img{height:70px;width:130px;object-fit:contain;display:block}
+.assoc-logo-card{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;width:160px;height:150px;flex:0 0 160px;padding:0 1rem;background:transparent;border:none;box-shadow:none}
+.assoc-logo-card img{height:70px;width:130px;object-fit:contain;display:block;flex-shrink:0}
 .assoc-logo-title{font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;letter-spacing:.3px;line-height:1.3;white-space:normal;display:block}
 .assoc-footer-divider{height:4px;background:linear-gradient(90deg,transparent 2%,var(--teal) 30%,var(--ocean) 50%,var(--teal) 70%,transparent 98%);margin:0;opacity:.5}
+@media(max-width:960px){.assoc-logos-scroll{height:130px}.assoc-logos-track{height:130px}.assoc-logo-card{width:140px;height:130px;flex:0 0 140px}.assoc-logo-card img{height:58px;width:110px}}
+@media(max-width:600px){.assoc-logos-scroll{height:115px}.assoc-logos-track{height:115px}.assoc-logo-card{width:120px;height:115px;flex:0 0 120px;padding:0 .6rem}.assoc-logo-card img{height:50px;width:95px}.assoc-logo-title{font-size:.68rem}}
 
-/* ═══ FOOTER ═══ */
+/* FOOTER */
 footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 .footer-main{max-width:1300px;margin:0 auto;padding:2.8rem 2.5rem 2rem;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem}
 .footer-brand{display:flex;flex-direction:column;gap:.8rem}
@@ -214,7 +155,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 .footer-brand-date{font-family:'Open Sans',sans-serif;font-size:.84rem;color:#000;font-weight:700;margin-top:.3rem}
 .footer-brand-social{display:flex;gap:.75rem;margin-top:.6rem;flex-wrap:wrap}
 .footer-brand-social a{width:42px;height:42px;border-radius:50%;background:rgba(10,31,68,.05);border:1.5px solid rgba(10,31,68,.1);display:flex;align-items:center;justify-content:center;color:#000;font-size:1rem;transition:all .25s;text-decoration:none}
-.footer-brand-social a:hover{background:var(--teal);color:#fff;border-color:var(--teal);transform:translateY(-2px)}
+.footer-brand-social a:hover{background:var(--teal);color:#fff;border-color:var(--teal);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,137,123,.25)}
 .footer-col{display:flex;flex-direction:column}
 .footer-col h4{font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:700;color:var(--teal);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.8rem;padding-bottom:.45rem;position:relative}
 .footer-col h4::after{content:'';position:absolute;bottom:0;left:0;width:20px;height:1.5px;background:linear-gradient(90deg,var(--teal),var(--ocean));border-radius:2px}
@@ -228,14 +169,11 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 .footer-divider{height:1px;background:rgba(0,0,0,.08);max-width:1300px;margin:0 auto}
 .footer-bottom{max-width:1300px;margin:0 auto;padding:.8rem 2.5rem;text-align:center}
 .footer-copy{font-size:.78rem;color:#000;font-weight:700;letter-spacing:.3px}
-@media(max-width:960px){.footer-main{grid-template-columns:1fr;gap:1.5rem;padding:2rem 1.5rem 1rem}}
-
-/* ═══ SCROLL ARROW ═══ */
 .scroll-arrow{position:fixed;bottom:2rem;right:2rem;z-index:9998;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--ocean));color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 18px rgba(0,137,123,.35);transition:opacity .3s,transform .3s,visibility .3s;opacity:0;visibility:hidden;pointer-events:none}
 .scroll-arrow.visible{opacity:1;visibility:visible;pointer-events:auto}
-.scroll-arrow:hover{transform:translateY(-3px)}
-
-@media(max-width:600px){.container{padding:0 1.2rem}.logistics-body{padding:1.5rem}.hotel-card{flex-direction:column;text-align:center}.hotel-img-placeholder{width:100%}}
+.scroll-arrow:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,137,123,.5)}
+@media(max-width:960px){.footer-main{grid-template-columns:1fr;gap:1.5rem;padding:2rem 1.5rem 1rem}}
+@media(max-width:600px){.footer-main{grid-template-columns:1fr;gap:1.5rem}.footer-brand img{height:30px;max-width:130px}.footer-bottom{padding:.6rem 1rem}.container{padding:0 1.2rem}.sec{padding:1.8rem 0}.page-banner{padding:6rem 0 2.5rem}.page-banner-inner{padding:0 1.2rem}.page-banner h1{font-size:clamp(1.3rem,5.5vw,2rem)}.logistics-body{padding:1.5rem}}
 </style>
 </head>
 <body>
@@ -260,7 +198,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
         <a href="register.html" class="active">Registrations <i class="fa-solid fa-chevron-down dd-arrow"></i></a>
         <ul class="nav-dropdown">
           <li><a href="submissions.html"><i class="fa-solid fa-file-lines"></i> Submissions</a></li>
-          <li><a href="fee-payment.html" style="color:var(--teal)"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li>
+          <li><a href="fee-payment.html"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Payment</a></li>
           <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQs</a></li>
         </ul>
       </li>
@@ -339,7 +277,6 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 <!-- PAGE BANNER -->
 <div class="page-banner">
   <div class="page-banner-inner">
-    <div class="page-banner-badge"><i class="fa-solid fa-indian-rupee-sign"></i> Fee Structure 2026</div>
     <h1>Fee Payment — BiCS 2026</h1>
     <p>Complete fee structure for <strong style="color:#fff">Students, Researchers &amp; Academicians</strong> participating in the Blue Intelligence Climate Summit 2026 — 2nd &amp; 3rd October 2026, Visakhapatnam, India.</p>
   </div>
@@ -373,12 +310,11 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 
   <div class="fee-table-wrap">
     <table class="fee-table">
-      <!-- MAIN TITLE ROW -->
-      
       <tbody>
+
         <!-- ONLINE PARTICIPATION -->
         <tr class="tbl-section-header">
-          <td colspan="6"><i class="fa-solid fa-wifi" style="margin-right:.5rem"></i>Online Participation</td>
+          <td colspan="7"><i class="fa-solid fa-wifi" style="margin-right:.5rem"></i>Online Participation</td>
         </tr>
         <tr class="tbl-col-header">
           <th>S.No</th>
@@ -386,36 +322,49 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
           <th>Indians</th>
           <th>Foreign Nationals</th>
           <th>Payment Link</th>
-          <th>Includes</th>
+          <th>Active From - To</th>
+          <th>Late Fee Payment</th>
         </tr>
+        <!-- Online Row 1: Students -->
         <tr>
           <td class="sno">1</td>
-          <td class="participant"><i class="fa-solid fa-graduation-cap" style="color:var(--teal);margin-right:.45rem;font-size:.75rem"></i>Students</td>
-          <td class="price">99 INR <br><span style="font-size:.7em;font-weight:400;color:#777">+ GST 18%</span></td>
-          <td class="price">2 USD <br><span style="font-size:.7em;font-weight:400;color:#777">(Incl. tax)</span></td>
-          <td class="pay-link"><span class="pay-link-soon">To be updated</span></td>
-          <td class="na">NOT APPLICABLE</td>
+          <td class="participant"><i class="fa-solid fa-graduation-cap" style="color:var(--teal);margin-right:.45rem;font-size:.75rem"></i>Students<br><span style="font-size:.78rem;font-weight:400;color:#666">(Indians &amp; International)</span></td>
+          <td class="price">99 INR<br><span style="font-size:.7em;font-weight:400;color:#777">+ GST 18%</span></td>
+          <td class="price">2 USD<br><span style="font-size:.7em;font-weight:400;color:#777">(Incl. tax)</span></td>
+          <td class="pay-link">
+            <a href="https://razorpay.me/@globalbics2026" target="_blank" class="pay-btn"><i class="fa-solid fa-link" style="margin-right:.3rem;font-size:.7rem"></i>Razor Pay Link</a>
+          </td>
+          <td class="active-dates">22nd Aug – 22nd Sept<br><span style="font-size:.78rem;font-weight:600;color:var(--navy)">(Live Streaming 9 a.m to 5 p.m)</span></td>
+          <td class="late-fee"><span class="late-na">Not Applicable</span></td>
         </tr>
+        <!-- Online Row 2: Researchers -->
         <tr>
           <td class="sno">2</td>
-          <td class="participant"><i class="fa-solid fa-microscope" style="color:var(--teal);margin-right:.45rem;font-size:.75rem"></i>Academicians &amp; Researchers</td>
-          <td class="price">99 INR <br><span style="font-size:.7em;font-weight:400;color:#777">+ GST 18%</span></td>
-          <td class="price">2 USD <br><span style="font-size:.7em;font-weight:400;color:#777">(Incl. tax)</span></td>
-          <td class="pay-link"><span class="pay-link-soon">To be updated</span></td>
-          <td class="na">NOT APPLICABLE</td>
+          <td class="participant"><i class="fa-solid fa-microscope" style="color:var(--teal);margin-right:.45rem;font-size:.75rem"></i>Academicians &amp; Researchers<br><span style="font-size:.78rem;font-weight:400;color:#666">(Indians &amp; International)</span></td>
+          <td class="price">99 INR<br><span style="font-size:.7em;font-weight:400;color:#777">+ GST 18%</span></td>
+          <td class="price">2 USD<br><span style="font-size:.7em;font-weight:400;color:#777">(Incl. tax)</span></td>
+          <td class="pay-link">
+            <a href="https://razorpay.me/@globalbics2026" target="_blank" class="pay-btn"><i class="fa-solid fa-link" style="margin-right:.3rem;font-size:.7rem"></i>Razor Pay Link</a>
+          </td>
+          <td class="active-dates">22nd Aug – 22nd Sept<br><span style="font-size:.78rem;font-weight:600;color:var(--navy)">(Live Streaming 9 a.m to 5 p.m)</span></td>
+          <td class="late-fee"><span class="late-na">Not Applicable</span></td>
         </tr>
+        <!-- Online Row 3: Others -->
         <tr>
           <td class="sno">3</td>
           <td class="participant"><i class="fa-solid fa-user" style="color:var(--teal);margin-right:.45rem;font-size:.75rem"></i>Others</td>
-          <td class="price">99 INR <br><span style="font-size:.7em;font-weight:400;color:#777">+ GST 18%</span></td>
-          <td class="price">2 USD <br><span style="font-size:.7em;font-weight:400;color:#777">(Incl. tax)</span></td>
-          <td class="pay-link"><span class="pay-link-soon">To be updated</span></td>
-          <td class="na">NOT APPLICABLE</td>
+          <td class="price">99 INR<br><span style="font-size:.7em;font-weight:400;color:#777">+ GST 18%</span></td>
+          <td class="price">2 USD<br><span style="font-size:.7em;font-weight:400;color:#777">(Incl. tax)</span></td>
+          <td class="pay-link">
+            <a href="https://razorpay.me/@globalbics2026" target="_blank" class="pay-btn"><i class="fa-solid fa-link" style="margin-right:.3rem;font-size:.7rem"></i>Razor Pay Link</a>
+          </td>
+          <td class="active-dates">22nd Aug – 22nd Sept<br><span style="font-size:.78rem;font-weight:600;color:var(--navy)">(Live Streaming 9 a.m to 5 p.m)</span></td>
+          <td class="late-fee"><span class="late-na">Not Applicable</span></td>
         </tr>
 
         <!-- OFFLINE PARTICIPATION -->
         <tr class="tbl-section-header">
-          <td colspan="6"><i class="fa-solid fa-building-columns" style="margin-right:.5rem"></i>Offline Participation (In-Person)</td>
+          <td colspan="7"><i class="fa-solid fa-building-columns" style="margin-right:.5rem"></i>Offline Participation (In-Person)</td>
         </tr>
         <tr class="tbl-col-header">
           <th>S.No</th>
@@ -423,32 +372,49 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
           <th>Indians</th>
           <th>Foreign Nationals</th>
           <th>Payment Link</th>
-          <th>Includes</th>
+          <th>Active From - To</th>
+          <th>Late Fee Payment</th>
         </tr>
+        <!-- Offline Row 1: Students -->
         <tr>
           <td class="sno">1</td>
-          <td class="participant"><i class="fa-solid fa-graduation-cap" style="color:var(--teal);margin-right:.45rem;font-size:.75rem"></i>Students</td>
-          <td class="price">999 INR <br><span style="font-size:.7em;font-weight:400;color:#777">+ GST 18%</span></td>
-          <td class="price">16 USD <br><span style="font-size:.7em;font-weight:400;color:#777">(Incl. tax)</span></td>
-          <td class="pay-link"><span class="pay-link-soon">To be updated</span></td>
-          <td class="include">Executive<br>Lunch Box</td>
+          <td class="participant"><i class="fa-solid fa-graduation-cap" style="color:var(--teal);margin-right:.45rem;font-size:.75rem"></i>Students<br><span style="font-size:.78rem;font-weight:400;color:#666">(Indians &amp; International)</span></td>
+          <td class="price">999 INR<br><span style="font-size:.7em;font-weight:400;color:#777">+ GST 18%</span></td>
+          <td class="price">16 USD<br><span style="font-size:.7em;font-weight:400;color:#777">(Incl. tax)</span></td>
+          <td class="pay-link">
+            <a href="https://razorpay.me/@globalbics2026" target="_blank" class="pay-btn"><i class="fa-solid fa-link" style="margin-right:.3rem;font-size:.7rem"></i>Razor Pay Link</a>
+          </td>
+          <td class="active-dates">10th July to 10th August</td>
+          <td class="late-fee"><span class="late-na">Not Applicable</span></td>
         </tr>
+        <!-- Offline Row 2: Researchers -->
         <tr>
           <td class="sno">2</td>
-          <td class="participant"><i class="fa-solid fa-microscope" style="color:var(--teal);margin-right:.45rem;font-size:.75rem"></i>Academicians &amp; Researchers</td>
-          <td class="price">4500 INR <br><span style="font-size:.7em;font-weight:400;color:#777">+ GST 18%</span></td>
-          <td class="price">56 USD <br><span style="font-size:.7em;font-weight:400;color:#777">(Incl. tax)</span></td>
-          <td class="pay-link"><span class="pay-link-soon">To be updated</span></td>
-          <td class="include">2 Hi Tea +<br>2 Lunches</td>
+          <td class="participant"><i class="fa-solid fa-microscope" style="color:var(--teal);margin-right:.45rem;font-size:.75rem"></i>Academicians &amp; Researchers<br><span style="font-size:.78rem;font-weight:400;color:#666">(Indians &amp; International)</span></td>
+          <td class="price">4500 INR<br><span style="font-size:.7em;font-weight:400;color:#777">+ GST 18%</span></td>
+          <td class="price">56 USD<br><span style="font-size:.7em;font-weight:400;color:#777">(Incl. tax)</span></td>
+          <td class="pay-link">
+            <a href="https://razorpay.me/@globalbics2026" target="_blank" class="pay-btn"><i class="fa-solid fa-link" style="margin-right:.3rem;font-size:.7rem"></i>Razor Pay Link</a>
+          </td>
+          <td class="active-dates">17th June to 10th July</td>
+          <td class="late-fee">
+            <div style="margin-bottom:.3rem">11th July to 10th August</div>
+            <div class="late-amount">Extra 1000 INR<br><span style="font-size:.78rem;font-weight:400">(including 4500 INR) + 18% GST</span></div>
+          </td>
         </tr>
+        <!-- Offline Row 3: Others -->
         <tr>
           <td class="sno">3</td>
           <td class="participant"><i class="fa-solid fa-user" style="color:var(--teal);margin-right:.45rem;font-size:.75rem"></i>Others</td>
-          <td class="price">4500 INR <br><span style="font-size:.7em;font-weight:400;color:#777">+ GST 18%</span></td>
-          <td class="price">56 USD <br><span style="font-size:.7em;font-weight:400;color:#777">(Incl. tax)</span></td>
-          <td class="pay-link"><span class="pay-link-soon">To be updated</span></td>
-          <td class="include">2 Hi Tea +<br>2 Lunches</td>
+          <td class="price">4500 INR<br><span style="font-size:.7em;font-weight:400;color:#777">+ GST 18%</span></td>
+          <td class="price">56 USD<br><span style="font-size:.7em;font-weight:400;color:#777">(Incl. tax)</span></td>
+          <td class="pay-link">
+            <a href="https://razorpay.me/@globalbics2026" target="_blank" class="pay-btn"><i class="fa-solid fa-link" style="margin-right:.3rem;font-size:.7rem"></i>Razor Pay Link</a>
+          </td>
+          <td class="active-dates">—</td>
+          <td class="late-fee"><span class="late-na">Not Applicable</span></td>
         </tr>
+
       </tbody>
     </table>
   </div>
@@ -460,13 +426,12 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 <div class="container">
   <div class="logistics-section">
     <div class="logistics-header">
-      <i class="fa-solid fa-hotel"></i> Accommodation & Logistics
+      <i class="fa-solid fa-hotel"></i> Accommodation &amp; Logistics
     </div>
     <div class="logistics-body">
-      
+
       <!-- Hotel Info -->
       <div class="hotel-card">
-        
         <div class="hotel-details">
           <h3>Blue Radisson Hotel, Visakhapatnam</h3>
           <p>We can try to help the participant with a comfortable accommodation package at the venue — by <strong>Blue Radisson Hotel</strong> by the end of June 2026.</p>
@@ -474,10 +439,9 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
         </div>
       </div>
 
-      <!-- Grid for Notes and Transport -->
-      <div class="logistics-grid">
-        
-        <!-- Note Block -->
+      <!-- Full-width Note and Transport stacked -->
+      <div class="logistics-full">
+
         <div class="note-box">
           <h4><i class="fa-solid fa-triangle-exclamation" style="color:var(--gold)"></i> Important Note</h4>
           <ul>
@@ -486,12 +450,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
             <li>We can also share a <strong>low budget accommodation package</strong> nearby the summit venue by the end of June 2026.</li>
           </ul>
         </div>
-        <div>
-            <h4>Local Transport</h4>
-            <p>Local transportation to and from the summit venue should be arranged and taken care of by the participant individually.</p>
-          </div>
 
-        <!-- Transport Box -->
         <div class="transport-box">
           <i class="fa-solid fa-bus"></i>
           <div>
@@ -512,7 +471,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 <!-- ASSOCIATES -->
 <section class="associates-sec sec" id="associates">
   <div class="container">
-    <div class="assoc-heading">Associates</div>
+    <div class="assoc-heading">Our Associates</div>
     <div class="assoc-logos-scroll">
       <div class="assoc-logos-track">
         <div class="assoc-logo-card"><img src="assets/Goaec.png" alt="GOAEC Foundation"><div class="assoc-logo-title">GOAEC Foundation</div></div>
@@ -530,6 +489,7 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
   </div>
 </section>
 
+<div class="divider"></div>
 <div class="assoc-footer-divider"></div>
 
 <footer>
@@ -570,8 +530,8 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 <button class="scroll-arrow" id="scrollArrow" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script>
-(function(){var h=document.getElementById('navHamburger'),s=document.getElementById('navSidebar'),c=document.getElementById('navSidebarClose'),o=document.getElementById('navOverlay');function openNav(){s.classList.add('open');o.classList.add('open');document.body.style.overflow='hidden'}function closeNav(){s.classList.remove('open');o.classList.remove('open');document.body.style.overflow='';var d=document.querySelectorAll('.sb-has-dropdown.open');for(var i=0;i<d.length;i++)d[i].classList.remove('open')}if(h)h.addEventListener('click',openNav);if(c)c.addEventListener('click',closeNav);if(o)o.addEventListener('click',closeNav);var l=document.querySelectorAll('.nav-sidebar-links li>a,.sb-submenu a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',closeNav);var t=document.querySelectorAll('.sb-dropdown-toggle');for(var j=0;j<t.length;j++)t[j].addEventListener('click',function(e){e.preventDefault();e.stopPropagation();this.closest('.sb-has-dropdown').classList.toggle('open')})})();
-(function(){var s=document.querySelectorAll('.sec');if(!s.length||!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('vis')});return}var o=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('vis');o.unobserve(en.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});s.forEach(function(e){o.observe(e)})})();
+(function(){var h=document.getElementById('navHamburger'),s=document.getElementById('navSidebar'),c=document.getElementById('navSidebarClose'),o=document.getElementById('navOverlay');function open(){s.classList.add('open');o.classList.add('open');document.body.style.overflow='hidden'}function close(){s.classList.remove('open');o.classList.remove('open');document.body.style.overflow='';var d=document.querySelectorAll('.sb-has-dropdown.open');for(var i=0;i<d.length;i++)d[i].classList.remove('open')}if(h)h.addEventListener('click',open);if(c)c.addEventListener('click',close);if(o)o.addEventListener('click',close);var l=document.querySelectorAll('.nav-sidebar-links li>a,.sb-submenu a');for(var i=0;i<l.length;i++)l[i].addEventListener('click',function(){if(this.classList.contains('active')&&this.closest('.sb-has-dropdown'))return;close()});var t=document.querySelectorAll('.sb-dropdown-toggle');for(var j=0;j<t.length;j++)t[j].addEventListener('click',function(e){e.preventDefault();e.stopPropagation();this.closest('.sb-has-dropdown').classList.toggle('open')})})();
+(function(){var s=document.querySelectorAll('.sec');if(!s.length||!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('vis')});return}var o=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('vis');o.unobserve(en.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});s.forEach(function(e){o.observe(e)})})();
 (function(){var a=document.getElementById('scrollArrow');if(!a)return;window.addEventListener('scroll',function(){if(window.scrollY>400){a.classList.add('visible');a.innerHTML='<i class="fa-solid fa-arrow-up"></i>';a.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})}}else a.classList.remove('visible')})})();
 </script>
 </body>

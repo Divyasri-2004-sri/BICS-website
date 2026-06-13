@@ -340,6 +340,14 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 .reg-link-url{font-size:.78rem;color:rgba(255,255,255,.5);word-break:break-all}
 @media(max-width:960px){.sub-topics-grid{grid-template-columns:1fr}.reg-blocks-grid{grid-template-columns:1fr}.pay-modes-grid{grid-template-columns:1fr}.reg-links-grid{grid-template-columns:1fr}.pricing-notes-grid{grid-template-columns:1fr}}
 @media(max-width:600px){}
+
+/* ═══ 6-TOPIC GRID ═══ */
+.topics-6-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:1.8rem}
+.topic-card{background:#ffffff;border:1px solid rgba(0,137,123,.18);border-left:4px solid var(--teal);border-radius:12px;padding:1.2rem 1.4rem;display:flex;align-items:center;gap:1rem;font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);font-size:.95rem;line-height:1.4;transition:transform .18s,box-shadow .18s}
+.topic-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,137,123,.12)}
+.topic-icon-wrap{flex-shrink:0;width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--ocean));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem}
+@media(max-width:960px){.topics-6-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.topics-6-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -468,372 +476,10 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 
 <div class="divider"></div>
 
-<!-- IMPORTANT DATES -->
-<section class="sec" id="dates">
-<div class="container">
-  <div class="sec-title">Registration Dates</div>
-
-  <!-- Online Note -->
-  <div class="highlighted-big-note" style="margin-bottom:1.2rem;font-size:.98rem">
-    <i class="fa-solid fa-circle-info" style="margin-right:8px;color:var(--ocean)"></i>
-    <strong>Note:</strong> Only Online Participation E-Certificate is provided. Summit timings: <strong>9:00 AM – 5:00 PM</strong>. Live stream provided via <strong>YouTube or Google Meet</strong>.
-  </div>
-
-  <div class="dates-table-wrap" style="margin-top:.5rem;overflow-x:auto;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.08);border:1px solid rgba(0,137,123,.2)">
-    <table class="pricing-table" style="min-width:900px">
-      <thead>
-        <tr>
-          <th style="min-width:200px"><i class="fa-solid fa-list-check" style="margin-right:6px"></i>Specifications &amp; Categories</th>
-          <th style="min-width:110px"><i class="fa-solid fa-calendar-check" style="margin-right:6px"></i>Start Date</th>
-          <th style="min-width:140px"><i class="fa-solid fa-calendar-xmark" style="margin-right:6px"></i>Last Date</th>
-          <th style="min-width:160px"><i class="fa-solid fa-users" style="margin-right:6px"></i>Age Group</th>
-          <th style="min-width:130px"><i class="fa-solid fa-indian-rupee-sign" style="margin-right:6px"></i>Indians — Fee</th>
-          <th style="min-width:160px"><i class="fa-solid fa-globe" style="margin-right:6px"></i>Non-Indians — Fee</th>
-          <th style="min-width:140px"><i class="fa-solid fa-link" style="margin-right:6px"></i>Payment Link</th>
-          <th style="min-width:180px"><i class="fa-solid fa-file-lines" style="margin-right:6px"></i>Publication Process</th>
-          <th style="min-width:160px"><i class="fa-solid fa-hotel" style="margin-right:6px"></i>Accommodation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Row 1: Online Registration Students -->
-        <tr>
-          <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-laptop"></i></span><span><strong>Online Registration — Students</strong><small style="display:block;font-weight:400;color:#0A1F44">Only as an online participant. Avail a participation certificate.</small></span></div></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">11th June 2026</span></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">22nd Sept 2026</span></td>
-          <td><small style="color:#0A1F44">Any Nationality<br>Students (13–25 yrs) + Teachers</small></td>
-          <td><span class="tl-badge online-badge" style="cursor:pointer"><i class="fa-solid fa-link"></i> Payment link</span></td>
-          <td><small style="color:#0A1F44">Students (13–25 yrs) + Teachers + Researchers + Policy Makers + Recyclers</small><br><span class="tl-badge online-badge" style="margin-top:4px;cursor:pointer"><i class="fa-solid fa-link"></i> Payment link</span></td>
-          <td class="link-cell"><span class="coming-soon-badge"><i class="fa-solid fa-clock"></i> Coming Soon</span></td>
-          <td><small style="color:#0A1F44">NO SUBMISSIONS OR POSTER PRESENTATIONS</small></td>
-          <td><small class="accom-cell">Accommodation package is separate from Summit Fee</small></td>
-        </tr>
-        <!-- Row 2: Offline Registration Students -->
-        <tr style="background:rgba(0,137,123,.02)">
-          <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-door-open"></i></span><span><strong>Offline Registration — Students</strong><small style="display:block;font-weight:400;color:#0A1F44">Only as an Attendee — No Presentations</small></span></div></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">11th June 2026</span></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">31st July 2026</span><small style="display:block;color:var(--teal);font-weight:600">(Only 200 seats)</small></td>
-          <td><small style="color:#0A1F44">Only Indians<br>Students (18–25 yrs) + Teachers</small></td>
-          <td><span class="tl-badge online-badge" style="cursor:pointer"><i class="fa-solid fa-link"></i> Payment link</span></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:#C0392B;font-size:.82rem">NOT APPLICABLE</span></td>
-          <td class="link-cell"><span class="coming-soon-badge"><i class="fa-solid fa-clock"></i> Coming Soon</span></td>
-          <td><small style="color:#0A1F44">NO SUBMISSIONS OR POSTER PRESENTATIONS</small></td>
-          <td><small class="accom-cell">Accommodation package is separate from Summit Fee</small></td>
-        </tr>
-        <!-- Row 3: Hackathon Participants -->
-        <tr>
-          <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-lightbulb"></i></span><span><strong>Hackathon Participants (18–25 yrs)</strong><small style="display:block;font-weight:400;color:#0A1F44">Including poster presentations</small></span></div></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">11th June 2026</span></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">31st July 2026</span><small style="display:block;color:var(--teal);font-weight:600">(Only 300 seats)</small></td>
-          <td><small style="color:#0A1F44">Indians &amp; International students (18–25 yrs)</small></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">₹1,200 + 18% GST</span><br><span class="tl-badge online-badge" style="margin-top:4px;cursor:pointer"><i class="fa-solid fa-link"></i> Payment link</span></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">14 USD + 5% Tax</span><br><span class="tl-badge online-badge" style="margin-top:4px;cursor:pointer"><i class="fa-solid fa-link"></i> Payment link</span></td>
-          <td class="link-cell"><span class="coming-soon-badge"><i class="fa-solid fa-clock"></i> Coming Soon</span></td>
-          <td><small style="color:#0A1F44">Publication charges: ₹1,500 + 18% GST per head</small></td>
-          <td><small class="accom-cell">Accommodation package is separate from Summit Fee</small></td>
-        </tr>
-        <!-- Row 4: Abstract Submissions Researchers -->
-        <tr style="background:rgba(249,168,37,.04)">
-          <td><div class="cat-cell"><span class="cat-icon" style="background:rgba(249,168,37,.15);color:#0A1F44"><i class="fa-solid fa-file-pen"></i></span><span><strong>Abstract Submissions — RESEARCHERS</strong></span></div></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">11th June 2026</span></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">31st July 2026</span><small style="display:block;color:var(--teal);font-weight:600">(Only 200 seats)</small></td>
-          <td><small style="color:#0A1F44">Researchers</small></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">₹4,599 + 18% GST</span><br><span class="tl-badge abstract-badge" style="margin-top:4px;cursor:pointer"><i class="fa-solid fa-link"></i> Payment link</span></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">50 USD + 5% Tax</span><br><span class="tl-badge abstract-badge" style="margin-top:4px;cursor:pointer"><i class="fa-solid fa-link"></i> Payment link</span></td>
-          <td class="link-cell"><span class="coming-soon-badge"><i class="fa-solid fa-clock"></i> Coming Soon</span></td>
-          <td><small style="color:#0A1F44">Publication charges: ₹1,500 + 18% GST per head (Indians)</small></td>
-          <td><small class="accom-cell">Accommodation package is separate from Summit Fee</small></td>
-        </tr>
-        <!-- Late Fee header row -->
-        <tr style="background:rgba(220,53,69,.07)">
-          <td colspan="9" style="text-align:center;padding:.5rem 1rem">
-            <span style="font-family:'Poppins',sans-serif;font-weight:800;font-size:.82rem;color:#C0392B;letter-spacing:1.5px;text-transform:uppercase"><i class="fa-solid fa-clock" style="margin-right:6px"></i>Late Fee</span>
-          </td>
-        </tr>
-        <!-- Row 5: Late Abstract Submissions Researchers -->
-        <tr style="background:rgba(220,53,69,.03)">
-          <td><div class="cat-cell"><span class="cat-icon" style="background:rgba(220,53,69,.1);color:#C0392B"><i class="fa-solid fa-clock"></i></span><span><strong>Late Abstract Submissions — Researchers</strong></span></div></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy)">11th June 2026</span></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:#C0392B">31st July 2026</span><small style="display:block;color:#C0392B;font-weight:600">(Only 300 seats)</small></td>
-          <td><small style="color:#0A1F44">Researchers</small></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:#C0392B">₹4,599 + ₹1,500 Late Fee + 18% GST</span><br><span class="tl-badge late-badge" style="margin-top:4px;cursor:pointer"><i class="fa-solid fa-link"></i> Payment link</span></td>
-          <td><span style="font-family:'Poppins',sans-serif;font-weight:700;color:#C0392B">50 USD + 16 USD Late Fee + 5% Tax</span><br><span class="tl-badge late-badge" style="margin-top:4px;cursor:pointer"><i class="fa-solid fa-link"></i> Payment link</span></td>
-          <td class="link-cell"><span class="coming-soon-badge"><i class="fa-solid fa-clock"></i> Coming Soon</span></td>
-          <td><small style="color:#0A1F44">Publication charges: ₹1,500 + 18% GST per head (Indians)</small></td>
-          <td><small class="accom-cell">Accommodation package is separate from Summit Fee</small></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
-  <!-- Highlighted Big Note -->
-  <div class="highlighted-big-note" style="margin-top:1.2rem">
-    <i class="fa-solid fa-circle-exclamation" style="margin-right: 10px;"></i> 
-    Note: Late Fee Submissions include an additional <span>₹500 INR (Indians) or $8 USD (International Nationalities)</span> per abstract.<br> This late submission link will be active from <strong>2nd Aug to 10th Aug 2026</strong>.
-  </div>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PRICING -->
+<!-- REGISTRATION FORMS -->
 <section class="sec" id="pricing">
 <div class="container">
-  <div class="sec-title">Fee Structure To Register</div>
-
-  <!-- ONLINE FEES — Indian & International combined table with 3 cols -->
-  <div style="margin-top:1.5rem">
-    <div class="fee-section-header online-header"><i class="fa-solid fa-video"></i> Online Registrations</div>
-
-    <!-- Online Note -->
-    <div class="highlighted-big-note" style="margin-bottom:1.2rem;font-size:.92rem">
-      <i class="fa-solid fa-circle-info" style="margin-right:8px;color:var(--ocean)"></i>
-      <strong>Note:</strong> Only Online Participation E-Certificate is provided. Summit timings: <strong>9:00 AM – 5:00 PM</strong>. Live stream provided via <strong>YouTube or Google Meet</strong>.
-    </div>
-
-    <!-- Indian Nationals -->
-    <div class="fee-sub-header">Indian Nationals</div>
-    <div class="pricing-table-wrap" style="margin-bottom:1.5rem">
-      <table class="pricing-table">
-        <thead>
-          <tr>
-            <th style="width:34%"><i class="fa-solid fa-user" style="margin-right:5px"></i>Category / Name</th>
-            <th style="width:24%"><i class="fa-solid fa-indian-rupee-sign" style="margin-right:5px"></i>Fee (Per Head)</th>
-            <th style="width:22%"><i class="fa-solid fa-calendar-days" style="margin-right:5px"></i>Last Date</th>
-            <th style="width:20%"><i class="fa-solid fa-link" style="margin-right:5px"></i>Payment Link</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></span><span>Students<br><small style="font-weight:400;color:#0A1F44">(UG, PG &amp; University)</small></span></div></td>
-            <td><span class="price-indian">₹ 99</span><span class="price-note">+ 18% GST</span></td>
-            <td><span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;color:var(--navy)">22nd Sept 2026</span></td>
-            <td><span class="coming-soon-badge"><i class="fa-solid fa-clock"></i> Coming Soon</span></td>
-          </tr>
-          <tr>
-            <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-flask"></i></span><span>Researchers &amp; Academicians</span></div></td>
-            <td><span class="price-indian">₹ 199</span><span class="price-note">+ 18% GST</span></td>
-            <td><span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;color:var(--navy)">22nd Sept 2026</span></td>
-            <td><span class="coming-soon-badge"><i class="fa-solid fa-clock"></i> Coming Soon</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- International -->
-    <div class="fee-sub-header">🌐 International Participants</div>
-    <div class="pricing-table-wrap" style="margin-bottom:1.5rem">
-      <table class="pricing-table">
-        <thead>
-          <tr>
-            <th style="width:34%"><i class="fa-solid fa-user" style="margin-right:5px"></i>Category / Name</th>
-            <th style="width:24%"><i class="fa-solid fa-dollar-sign" style="margin-right:5px"></i>Fee (Per Head)</th>
-            <th style="width:22%"><i class="fa-solid fa-calendar-days" style="margin-right:5px"></i>Last Date</th>
-            <th style="width:20%"><i class="fa-solid fa-link" style="margin-right:5px"></i>Payment Link</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></span><span>Students &amp; Researchers</span></div></td>
-            <td><span class="price-intl">$ 6</span><span class="price-note"></span></td>
-            <td><span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;color:var(--navy)">22nd Sept 2026</span></td>
-            <td><span class="coming-soon-badge"><i class="fa-solid fa-clock"></i> Coming Soon</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- Removed "Includes access to all four thematic tracks..." text -->
-
-  <div class="pay-gateway-box" style="margin-top:1.2rem">
-    <span><i class="fa-solid fa-link"></i> <strong>Payment Gateway:</strong></span>
-    <a href="https://rzp.io/rzp/eqYGP8gs" target="_blank" class="pay-gateway-link">https://rzp.io/rzp/eqYGP8gs</a>
-  </div>
-
-  <!-- ══════════ OFFLINE FEES ══════════ -->
-  <div style="margin-top:3rem">
-    <div class="fee-section-header offline-header"><i class="fa-solid fa-location-dot"></i> Offline Registrations (In-Person)</div>
-
-    <!-- Indian Nationals Offline -->
-    <div class="fee-sub-header">Indian Nationals</div>
-    <div class="pricing-table-wrap" style="margin-bottom:.5rem;overflow-x:auto">
-      <table class="pricing-table offline-table">
-        <thead>
-          <tr>
-            <th style="min-width:30px">S.No</th>
-            <th style="min-width:200px">Category</th>
-            <th style="min-width:160px">Fee (Per Head)</th>
-            <th style="min-width:220px">Benefits</th>
-            <th style="min-width:130px">Payment Link</th>
-            <th style="min-width:200px">Accommodation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Students Day 1&2 -->
-          <tr>
-            <td class="sno-cell">1</td>
-            <td>
-              <div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></span>
-              <span><strong>Students</strong><br><small style="color:#0A1F44">(UG, PG &amp; University)</small><br><small style="color:var(--ocean);font-weight:600">Day 1 &amp; 2 Participation Only</small></span></div>
-            </td>
-            <td>
-              <span class="price-indian">₹ 999</span>
-              <span class="price-note">+ 18% GST</span>
-              <span class="early-bird-note"><i class="fa-solid fa-bolt"></i> Early Birds ends by 30th June - Presentation</span>
-            </td>
-            <td class="benefits-cell">
-              <span class="benefit-tag"><i class="fa-solid fa-certificate"></i> Participation E-Certificate</span>
-              <span class="benefit-tag"><i class=""></i> Hi Tea</span>
-              <span class="benefit-tag muted-tag"><i class="fa-solid fa-info-circle"></i> Lunch purchased separately</span>
-            </td>
-            <td class="link-cell">
-              <span class="coming-soon-badge">Coming Soon</span>
-              <small style="display:block;color:#0A1F44;margin-top:3px">Opens 11th June</small>
-            </td>
-            <td class="accom-cell">
-              <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
-              <small style="display:block;color:#0A1F44;margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
-              <small style="color:#0A1F44">Details shared soon</small>
-            </td>
-          </tr>
-          <!-- Students Hackathon -->
-          <tr>
-            <td class="sno-cell">2</td>
-            <td>
-              <div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-lightbulb"></i></span>
-              <span><strong>Students</strong><br><small style="color:#0A1F44">(UG, PG &amp; University)</small><br><small style="color:var(--ocean);font-weight:600">Hackathon / Poster Participants</small></span></div>
-            </td>
-            <td>
-              <span class="price-indian">₹ 1,299</span>
-              <span class="price-note">+ 18% GST</span>
-              <span class="early-bird-note"><i class="fa-solid fa-file-pen"></i> Last date for abstract submission: 31st July</span>
-              <span class="early-bird-note" style="color:#C0392B"><i class="fa-solid fa-clock"></i> Late fee submission: 10th Aug</span>
-            </td>
-            <td class="benefits-cell">
-              <span class="benefit-tag"><i class="fa-solid fa-certificate"></i> Participation E-Certificate</span>
-              <span class="benefit-tag"><i class=""></i> Hi Tea</span>
-              <span class="benefit-tag"><i class="fa-solid fa-trophy"></i> Awards for winners + Winner titles</span>
-              <span class="benefit-tag"><i class="fa-solid fa-bullhorn"></i> Media coverage</span>
-              <span class="benefit-tag muted-tag"><i class="fa-solid fa-info-circle"></i> Lunch purchased separately</span>
-            </td>
-            <td class="link-cell">
-              <span class="coming-soon-badge">Coming Soon</span>
-              <small style="display:block;color:#0A1F44;margin-top:3px">Opens 11th June</small>
-            </td>
-            <td class="accom-cell">
-              <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
-              <small style="display:block;color:#0A1F44;margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
-              <small style="color:#0A1F44">Details shared soon</small>
-            </td>
-          </tr>
-          <!-- Researchers -->
-          <tr>
-            <td class="sno-cell">3</td>
-            <td>
-              <div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-microscope"></i></span>
-              <span><strong>Researchers</strong><br><small style="color:var(--ocean);font-weight:600">Presenters</small></span></div>
-            </td>
-            <td>
-              <span class="price-indian">₹ 3,599</span>
-              <span class="price-note">+ 18% GST</span>
-              <span class="early-bird-note"><i class="fa-solid fa-file-pen"></i> Abstract by 31st July</span>
-              <span class="early-bird-note" style="color:#C0392B"><i class="fa-solid fa-clock"></i> Late fee by 10th Aug</span>
-            </td>
-            <td class="benefits-cell">
-              <span class="benefit-tag"><i class="fa-solid fa-certificate"></i> Participation Certificate</span>
-              <span class="benefit-tag"><i class="fa-solid fa-book-open"></i> Abstract Publication</span>
-              <span class="benefit-tag"><i class="fa-solid fa-utensils"></i> Food 3× for 2 days</span>
-            </td>
-            <td class="link-cell">
-              <span class="coming-soon-badge">Coming Soon</span>
-              <small style="display:block;color:#0A1F44;margin-top:3px">Opens 11th June</small>
-            </td>
-            <td class="accom-cell">
-              <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
-              <small style="display:block;color:#0A1F44;margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
-              <small style="color:#0A1F44">Details shared soon</small>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- International Offline -->
-    <div class="fee-sub-header" style="margin-top:1.8rem">🌐 International Participants</div>
-    <div class="pricing-table-wrap" style="overflow-x:auto">
-      <table class="pricing-table offline-table">
-        <thead>
-          <tr>
-            <th style="min-width:30px">S.No</th>
-            <th style="min-width:200px">Category</th>
-            <th style="min-width:160px">Fee (Per Head)</th>
-            <th style="min-width:260px">Benefits</th>
-            <th style="min-width:130px">Payment Link</th>
-            <th style="min-width:200px">Accommodation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="sno-cell">1</td>
-            <td>
-              <div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></span>
-              <span><strong>Students</strong><br><small style="color:#0A1F44">(UG, PG &amp; University)</small></span></div>
-            </td>
-            <td>
-              <span class="price-intl">$ 20</span>
-              <span class="price-note"></span>
-            </td>
-            <td class="benefits-cell">
-              <span class="benefit-tag"><i class="fa-solid fa-certificate"></i> Participation Certificate</span>
-              <span class="benefit-tag"><i class="fa-solid fa-utensils"></i> Food 3× for 2 days</span>
-              <span class="benefit-tag"><i class="fa-solid fa-bullhorn"></i> Media coverage</span>
-              <span class="benefit-tag"><i class="fa-solid fa-trophy"></i> Cash awards for winners + winner titles</span>
-              <span class="benefit-tag"><i class="fa-solid fa-lightbulb"></i> Hackathon + Poster Presentation</span>
-              <span class="benefit-tag"><i class="fa-solid fa-water"></i> Beach Clean-up Participation &amp; Certificate</span>
-            </td>
-            <td class="link-cell">
-              <span class="coming-soon-badge">Coming Soon</span>
-              <small style="display:block;color:#0A1F44;margin-top:3px">1st Oct 12PM – 4th Oct 12PM</small>
-            </td>
-            <td class="accom-cell">
-              <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
-              <small style="display:block;color:#0A1F44;margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
-              <small style="color:#0A1F44">Details shared soon</small>
-            </td>
-          </tr>
-          <tr>
-            <td class="sno-cell">2</td>
-            <td>
-              <div class="cat-cell"><span class="cat-icon"><i class="fa-solid fa-microscope"></i></span>
-              <span><strong>Researchers</strong><br><small style="color:var(--ocean);font-weight:600">Presenters</small></span></div>
-            </td>
-            <td>
-              <span class="price-intl">$ 50</span>
-              <span class="price-note"></span>
-            </td>
-            <td class="benefits-cell">
-              <span class="benefit-tag"><i class="fa-solid fa-certificate"></i> Participation Certificate</span>
-              <span class="benefit-tag"><i class="fa-solid fa-microphone"></i> Abstract Presentation (if selected)</span>
-              <span class="benefit-tag"><i class="fa-solid fa-book-open"></i> Abstract Publication</span>
-              <span class="benefit-tag"><i class="fa-solid fa-utensils"></i> Food 3× for 2 days</span>
-              <span class="benefit-tag"><i class="fa-solid fa-water"></i> Beach Clean-up + Certificate</span>
-            </td>
-            <td class="link-cell">
-              <span class="coming-soon-badge">Coming Soon</span>
-              <small style="display:block;color:#0A1F44;margin-top:3px">1st Oct 12PM – 4th Oct 12PM</small>
-            </td>
-            <td class="accom-cell">
-              <span class="accom-badge"><i class="fa-solid fa-hotel"></i> Radisson Blue Package</span>
-              <small style="display:block;color:#0A1F44;margin-top:4px">1st Oct 12PM – 4th Oct 12PM</small>
-              <small style="color:#0A1F44">Details shared soon</small>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div style="margin-top:2rem">
+  <div style="margin-top:1rem">
     <div class="reg-forms-heading">Registration Forms</div>
     <div class="reg-links-grid">
       <a href="student register.html" target="_blank" class="reg-link-card">
@@ -887,13 +533,36 @@ footer{background:#fff;padding:0;border-top:3px solid rgba(0,137,123,.2)}
 
 <!-- STUDENT SECTION -->
 <div class="container">
-  <div class="sec-title">For Students (18–25 years) — Poster Presentation</div>
-  <p class="sec-sub" style="margin-bottom:1.5rem">Theme: <strong>Blue Intelligence For A Sustainable Ocean</strong></p>
+  <div class="sec-title"><i class="fa-solid fa-graduation-cap" style="color:var(--teal);margin-right:.5rem"></i>Topics for Students &amp; Researchers</div>
+  <p class="sec-sub" style="margin-bottom:.5rem"><strong>Team = 2 Students</strong></p>
+  <p class="sec-sub" style="margin-bottom:.5rem"><strong>Who can apply = 1 or 2 Teams are eligible</strong></p>
+  <p class="sec-sub" style="margin-bottom:1.5rem"><strong>Cross-disciplinary teams are highly encouraged.</strong></p>
 
-  <div class="sub-topics-grid">
-    <div class="sub-topic-card"><i class="fa-solid fa-ship"></i><span>The Smart Port Challenge<br><small>Shipping Logistics</small></span></div>
-    <div class="sub-topic-card"><i class="fa-solid fa-umbrella-beach"></i><span>The co-Pulse Track<br><small>Eco-Tourism App</small></span></div>
-    <div class="sub-topic-card"><i class="fa-solid fa-scroll"></i><span>The Civic Blueprint<br><small>Coastal Policy</small></span></div>
+  <div class="topics-6-grid">
+    <div class="topic-card">
+      <div class="topic-icon-wrap"><i class="fa-solid fa-water"></i></div>
+      <span>Blue Economy &amp; Ocean Governance</span>
+    </div>
+    <div class="topic-card">
+      <div class="topic-icon-wrap"><i class="fa-solid fa-satellite"></i></div>
+      <span>AI, Satellites &amp; Digital Climate Intelligence</span>
+    </div>
+    <div class="topic-card">
+      <div class="topic-icon-wrap"><i class="fa-solid fa-fish"></i></div>
+      <span>Marine Biodiversity &amp; Coastal Conservation</span>
+    </div>
+    <div class="topic-card">
+      <div class="topic-icon-wrap"><i class="fa-solid fa-bolt"></i></div>
+      <span>Renewable Energy &amp; Green Technology</span>
+    </div>
+    <div class="topic-card">
+      <div class="topic-icon-wrap"><i class="fa-solid fa-anchor"></i></div>
+      <span>Fisheries, Aquaculture &amp; Coastal Livelihoods</span>
+    </div>
+    <div class="topic-card">
+      <div class="topic-icon-wrap"><i class="fa-solid fa-leaf"></i></div>
+      <span>ESG, Carbon Neutrality &amp; Sustainable Finance</span>
+    </div>
   </div>
 
   <div class="reg-blocks-grid" style="margin-top:1.8rem">
